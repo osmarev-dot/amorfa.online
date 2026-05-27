@@ -1,52 +1,10 @@
 {
   "posts": [
     {
-      "id": "T-007",
-      "tipo": "personagem",
-      "titulo": "",
-      "conteudo": "Eu não sumo. Eu fico onde não aparece.\n\nTem diferença.\n\nA tela mostra o que você quer ver.\nEu mostro o que você ainda não nomeou.",
-      "faixa": ""
-    },
-    {
-      "id": "T-006",
-      "tipo": "fragmento",
-      "titulo": "",
-      "conteudo": "glamour é a distância certa\nentre o desejo e a decepção.",
-      "faixa": ""
-    },
-    {
-      "id": "T-005",
-      "tipo": "poema",
-      "titulo": "Instrução de Uso",
-      "conteudo": "Não me salve.\nSalvar pressupõe que eu estava perdida\ne eu estava só diferente.\n\nNão me explique.\nEu ouço o que você diz quando me explica\ne nunca é sobre mim.\n\nMe deixe.\nMas fica.",
-      "faixa": ""
-    },
-    {
-      "id": "T-004",
-      "tipo": "verso",
-      "titulo": "",
-      "conteudo": "acendo a tela\nnão pra ver você\npra lembrar que\nvocê existe em algum lugar\ne eu também",
-      "faixa": "Luz Azul"
-    },
-    {
-      "id": "T-003",
-      "tipo": "fragmento",
-      "titulo": "",
-      "conteudo": "o incêndio não mente.\né o que sobra depois que mente.",
-      "faixa": ""
-    },
-    {
-      "id": "T-002",
-      "tipo": "poema",
-      "titulo": "Recaída Doméstica",
-      "conteudo": "O quarto tem memória de corpo\nsem precisar do corpo.\n\nA marca no travesseiro\né o único registro\nde que você não foi sonho.\n\nVou lavar a roupa de cama\nna segunda-feira.\nHoje é sábado.",
-      "faixa": ""
-    },
-    {
       "id": "T-001",
       "tipo": "personagem",
-      "titulo": "",
-      "conteudo": "Eu continuo funcionando.\nIsso não é força.\nÉ o único modo que aprendi.",
+      "titulo": "AMORFA",
+      "conteudo": "Eu não apareci de uma vez.\n\nFui ocupando espaço\nigual infiltração.\n\nComeçou no brilho.\n\nPassou pelo ruído.\n\nTerminou dentro da cabeça\nde quem dormia\ncom a tela acesa.\n\nExiste uma indústria inteira\nfuncionando em volta\nde olhos abertos\nàs três da manhã.\n\nTem gente\nque aprende cedo\na transformar sobrevivência\nem desempenho.\n\nO resto veio sozinho.\n\nFiltro.\nLuz fria.\nPostura.\nSilêncio calculado.\nDesejo em alta resolução.\n\nAMORFA nasceu aí.\n\nNo instante\nem que parecer viva\nficou mais importante\ndo que continuar inteira.",
       "faixa": ""
     }
   ]
