@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMORFA | Transmissões</title>
+  <meta name="description" content="Fragmentos, versos, poemas e transmissões de AMORFA. Arquivo vivo entre música, corpo e ruína." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://amorfa.online/transmissoes.html" />
+
+  <meta property="og:title" content="AMORFA | Transmissões" />
+  <meta property="og:description" content="Fragmentos, versos, poemas e personagem. Arquivo vivo de AMORFA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://amorfa.online/transmissoes.html" />
+  <meta property="og:image" content="https://amorfa.online/assets/hero-celestial-atlas-v8.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────────
+       DESIGN SYSTEM — idêntico ao index.html
+    ───────────────────────────────────────── */
+    :root {
+      --black: #000;
+      --panel: #050505;
+      --panel2: #090909;
+      --line: rgba(255,255,255,.08);
+      --line2: rgba(255,255,255,.14);
+      --text: #f2f0ed;
+      --muted: #77726f;
+      --soft: #aaa29e;
+      --magenta: #930043;
+      --magenta2: #d00066;
+      --cyan: #008293;
+      --cyan2: #00d7ef;
+      --font-serif: 'Cinzel', 'Times New Roman', serif;
+      --font-body: 'Cormorant Garamond', Georgia, serif;
+      --font-mono: 'Courier New', Courier, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--black); color: var(--text); }
+    body { margin: 0; min-height: 100vh; background: #000; font-family: var(--font-body); overflow-x: hidden; }
+
+    /* CRT scanlines */
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+      background:
+        linear-gradient(rgba(255,255,255,0) 50%, rgba(0,0,0,.34) 50%),
+        linear-gradient(90deg, rgba(147,0,67,.045), rgba(0,130,147,.03), rgba(255,255,255,.018));
+      background-size: 100% 4px, 6px 100%; mix-blend-mode: screen; opacity: .62;
+    }
+    /* Grain */
+    body::after {
+      content: ""; position: fixed; inset: -20%; pointer-events: none; z-index: 9998; opacity: .055;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: grain 1.2s steps(3) infinite;
+    }
+    @keyframes grain { 0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)} }
+
+    a { color: inherit; }
+    .page { position: relative; z-index: 1; }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed; inset: 0 0 auto 0; z-index: 2000;
+      background: rgba(0,0,0,.78); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px);
+    }
+    .nav { max-width: 1420px; margin: 0 auto; padding: 18px 4vw; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+    .brand { font-family: var(--font-serif); font-size: 1.38rem; letter-spacing: .45em; text-decoration: none; line-height: 1; position: relative; }
+    .brand::after { content: ""; position: absolute; left: 0; bottom: -9px; width: 44px; height: 1px; background: linear-gradient(90deg, var(--magenta), transparent); }
+    nav ul { margin: 0; padding: 0; display: flex; list-style: none; gap: 30px; }
+    nav a { font-family: var(--font-serif); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: .25s ease; }
+    nav a:hover, nav a.active { color: var(--text); text-shadow: 0 0 12px rgba(0,215,239,.45); }
+    nav a.active { color: var(--text); border-bottom: 1px solid var(--magenta); padding-bottom: 2px; }
+    .menu-toggle { display: none; border: 1px solid var(--line2); background: #000; color: var(--text); padding: 10px 13px; font-size: 1rem; cursor: pointer; }
+
+    /* ─── PAGE HEADER ─── */
+    .tx-page-head {
+      padding: 142px 4vw 64px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 80%, rgba(147,0,67,.16), transparent 38%),
+        radial-gradient(circle at 92% 20%, rgba(0,215,239,.09), transparent 32%),
+        #000;
+    }
+    .tx-page-head::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,.022) 0 1px, transparent 1px 9px);
+      mix-blend-mode: screen;
+    }
+    .tx-page-inner { max-width: 820px; position: relative; z-index: 1; }
+    .tx-kicker {
+      font-family: var(--font-mono); color: var(--muted); letter-spacing: .35em;
+      text-transform: uppercase; font-size: .78rem; margin: 0 0 20px; display: flex; align-items: center; gap: 14px;
+    }
+    .tx-kicker::before { content: ""; display: block; width: 28px; height: 1px; background: var(--magenta); }
+    .tx-page-title {
+      font-family: var(--font-serif); font-size: clamp(2.8rem, 8vw, 6.5rem); font-weight: 400;
+      letter-spacing: .15em; text-transform: uppercase; margin: 0 0 22px;
+      text-shadow: 2px 0 var(--magenta), -1px 0 rgba(0,215,239,.55);
+      line-height: .94;
+    }
+    .tx-page-note {
+      font-family: var(--font-body); font-style: italic; color: var(--soft);
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem); line-height: 1.7; margin: 0;
+    }
+
+    /* ─── FILTER BAR ─── */
+    .filter-bar {
+      max-width: 1420px; margin: 0 auto; padding: 28px 4vw;
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      border-bottom: 1px solid var(--line);
+    }
+    .filter-label {
+      font-family: var(--font-mono); font-size: .72rem; letter-spacing: .25em;
+      text-transform: uppercase; color: var(--muted); margin-right: 6px;
+    }
+    .filter-btn {
+      appearance: none; border: 1px solid var(--line2); background: transparent;
+      color: var(--muted); font-family: var(--font-mono); font-size: .68rem;
+      letter-spacing: .2em; text-transform: uppercase; padding: 9px 16px;
+      cursor: pointer; transition: .22s ease;
+    }
+    .filter-btn:hover { border-color: rgba(255,255,255,.38); color: var(--text); }
+    .filter-btn.active { color: var(--text); border-color: var(--magenta); box-shadow: 0 0 12px rgba(147,0,67,.22); background: rgba(147,0,67,.08); }
+    .filter-btn[data-filter="personagem"].active { border-color: var(--cyan2); box-shadow: 0 0 12px rgba(0,215,239,.22); background: rgba(0,215,239,.06); }
+    .filter-btn[data-filter="poema"].active { border-color: rgba(255,255,255,.62); }
+    .tx-count {
+      margin-left: auto; font-family: var(--font-mono); font-size: .72rem;
+      letter-spacing: .2em; color: var(--muted); white-space: nowrap;
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    main.tx-main { max-width: 1420px; margin: 0 auto; padding: 72px 4vw 120px; }
+
+    /* ─── TRANSMISSION CARD ─── */
+    /*
+    ╔═══════════════════════════════════════════════════════════════╗
+    ║   PARA ADICIONAR UMA NOVA TRANSMISSÃO:                       ║
+    ║   1. Copie um bloco <article class="tx" ...> completo        ║
+    ║   2. Cole-o NO TOPO da lista (antes das outras)              ║
+    ║   3. Atualize data-type, tx-id, tx-type-label e o conteúdo   ║
+    ║   4. Salve e suba pro GitHub                                  ║
+    ║                                                               ║
+    ║   TIPOS DISPONÍVEIS (data-type):                             ║
+    ║   fragmento | poema | verso | personagem                     ║
+    ╚═══════════════════════════════════════════════════════════════╝
+    */
+    .tx-list {
+      display: grid;
+      gap: 0;
+    }
+
+    article.tx {
+      border-bottom: 1px solid var(--line);
+      padding: 56px 0;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0 52px;
+      align-items: start;
+      transition: background .2s ease;
+      position: relative;
+    }
+    article.tx::before {
+      content: ""; position: absolute; left: -4vw; right: -4vw; inset-block: 0;
+      background: rgba(147,0,67,.0); transition: background .25s ease; pointer-events: none;
+    }
+    article.tx:hover::before { background: rgba(147,0,67,.028); }
+
+    /* Sidebar: ID + type */
+    .tx-sidebar {
+      position: sticky; top: 110px;
+      display: flex; flex-direction: column; gap: 14px; padding-top: 4px;
+    }
+    .tx-id {
+      font-family: var(--font-mono); font-size: .72rem; letter-spacing: .28em;
+      color: var(--muted); text-transform: uppercase;
+    }
+    .tx-type-badge {
+      display: inline-block; font-family: var(--font-mono); font-size: .66rem;
+      letter-spacing: .22em; text-transform: uppercase;
+      padding: 6px 10px; border: 1px solid; width: fit-content;
+    }
+
+    /* Type color coding */
+    article.tx[data-type="fragmento"] .tx-type-badge { color: var(--magenta2); border-color: rgba(208,0,102,.38); background: rgba(208,0,102,.06); }
+    article.tx[data-type="poema"]     .tx-type-badge { color: var(--soft); border-color: rgba(170,162,158,.32); background: rgba(170,162,158,.04); }
+    article.tx[data-type="verso"]     .tx-type-badge { color: var(--cyan2); border-color: rgba(0,215,239,.30); background: rgba(0,215,239,.04); }
+    article.tx[data-type="personagem"] .tx-type-badge { color: var(--cyan); border-color: rgba(0,130,147,.55); background: rgba(0,130,147,.08); }
+
+    /* Content area */
+    .tx-content { min-width: 0; }
+
+    /* Optional title (used for poema type) */
+    .tx-title {
+      font-family: var(--font-serif); font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+      font-weight: 400; letter-spacing: .1em; text-transform: uppercase;
+      margin: 0 0 32px; line-height: 1.14;
+    }
+
+    /* Body text */
+    .tx-body {
+      font-family: var(--font-body); font-size: clamp(1.25rem, 2.2vw, 1.62rem);
+      line-height: 1.88; color: rgba(242,240,237,.9);
+    }
+    .tx-body p { margin: 0 0 1.1em; }
+    .tx-body p:last-child { margin-bottom: 0; }
+    .tx-body br { line-height: 2.4; }
+
+    /* FRAGMENTO: compact, almost terminal-like */
+    article.tx[data-type="fragmento"] .tx-body {
+      font-size: clamp(1.1rem, 1.9vw, 1.38rem);
+      color: var(--soft); line-height: 2;
+    }
+
+    /* PERSONAGEM: italic, character voice, slightly muted */
+    article.tx[data-type="personagem"] .tx-body {
+      font-style: italic;
+      color: rgba(242,240,237,.78);
+      border-left: 1px solid rgba(0,130,147,.38);
+      padding-left: 24px;
+    }
+
+    /* VERSO: monospaced feel, precise */
+    article.tx[data-type="verso"] .tx-body {
+      font-family: var(--font-mono); font-size: clamp(.92rem, 1.6vw, 1.12rem);
+      line-height: 2; letter-spacing: .02em; color: var(--text);
+    }
+
+    /* Footer: optional track link */
+    .tx-foot {
+      margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
+      display: flex; align-items: center; gap: 16px;
+    }
+    .tx-track-link {
+      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: 10px; transition: .2s;
+    }
+    .tx-track-link::before {
+      content: ""; display: block; width: 18px; height: 1px;
+      background: currentColor; transition: width .2s;
+    }
+    .tx-track-link:hover { color: var(--cyan2); }
+    .tx-track-link:hover::before { width: 28px; }
+
+    /* ─── EMPTY STATE ─── */
+    .tx-empty {
+      display: none; text-align: center; padding: 80px 0;
+      font-family: var(--font-mono); color: var(--muted); letter-spacing: .18em; font-size: .82rem;
+    }
+    .tx-empty.visible { display: block; }
+
+    /* ─── FOOTER ─── */
+    footer { border-top: 1px solid var(--line); padding: 38px 4vw; color: var(--muted); font-family: var(--font-serif); letter-spacing: .25em; text-transform: uppercase; font-size: .72rem; }
+    .footer-inner { max-width: 1420px; margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; }
+    .pulse { color: var(--magenta); animation: pulse 2.6s infinite; }
+    @keyframes pulse { 0%,100%{opacity:.42} 50%{opacity:1;text-shadow:0 0 9px var(--magenta)} }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      article.tx { grid-template-columns: 1fr; gap: 20px; padding: 44px 0; }
+      .tx-sidebar { position: static; flex-direction: row; align-items: center; }
+    }
+    @media (max-width: 780px) {
+      .nav { padding: 15px 4vw; }
+      .brand { font-size: 1.05rem; letter-spacing: .34em; }
+      .menu-toggle { display: inline-flex; position: relative; z-index: 2; }
+      nav ul {
+        position: fixed; top: 0; right: -100%; width: min(82vw, 360px); height: 100vh;
+        flex-direction: column; align-items: flex-start; justify-content: center;
+        padding: 44px; gap: 28px; background: rgba(0,0,0,.97);
+        border-left: 1px solid var(--line2); transition: right .34s ease;
+      }
+      nav ul.active { right: 0; }
+      nav a { font-size: .92rem; color: var(--text); }
+      .tx-page-head { padding: 120px 4vw 50px; }
+      main.tx-main { padding: 52px 4vw 90px; }
+      .filter-bar { gap: 8px; }
+      .tx-count { display: none; }
+    }
+    @media (max-width: 520px) {
+      .filter-bar { padding: 18px 4vw; }
+      .filter-btn { padding: 8px 12px; font-size: .62rem; }
+    }
+
+    /* ─── TRANSITIONS ─── */
+    article.tx { transition: opacity .22s ease; }
+    article.tx.hidden { display: none; }
+    article.tx.visible { display: grid; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="AMORFA início">AMORFA</a>
+        <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu">☰</button>
+        <nav aria-label="Navegação principal">
+          <ul id="navMenu">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#ouvir">Ouvir</a></li>
+            <li><a href="index.html#lancamentos">Lançamentos</a></li>
+            <li><a href="index.html#arquivo">Arquivo</a></li>
+            <li><a href="transmissões.html" class="active">Transmissões</a></li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="tx-page-head">
+      <div class="tx-page-inner">
+        <p class="tx-kicker">AMORFA.online // arquivo vivo</p>
+        <h1 class="tx-page-title">Trans<br>missões</h1>
+        <p class="tx-page-note">Fragmentos, versos, poemas e voz de personagem.<br>O que não virou música ainda.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <span class="filter-label">Filtrar //</span>
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="fragmento">Fragmento</button>
+      <button class="filter-btn" data-filter="poema">Poema</button>
+      <button class="filter-btn" data-filter="verso">Verso</button>
+      <button class="filter-btn" data-filter="personagem">Personagem</button>
+      <span class="tx-count" id="txCount"></span>
+    </div>
+
+    <main class="tx-main">
+      <div class="tx-list" id="txList">
+
+        <!-- posts carregados via transmissoes.json -->
+      </div><!-- /tx-list -->
+
+      <p class="tx-empty" id="txEmpty">// nenhuma transmissão nesta frequência</p>
+
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>AMORFA.online</span>
+        <span class="pulse">transmissão em curso</span>
+      </div>
+    </footer>
+  </div><!-- /page -->
+
+  <script>
+    // ─── Menu mobile ───────────────────────────────────────────────
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    // ─── Render ────────────────────────────────────────────────────
+    const txList  = document.getElementById('txList');
+    const txEmpty = document.getElementById('txEmpty');
+    const txCount = document.getElementById('txCount');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    let allPosts = [];
+
+    function nl2br(str) {
+      return str.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
+    }
+
+    function renderPost(post) {
+      const hasTitulo = post.titulo && post.titulo.trim();
+      const hasFaixa  = post.faixa  && post.faixa.trim();
+      return `
+        <article class="tx visible" data-type="${post.tipo}">
+          <div class="tx-sidebar">
+            <span class="tx-id">${post.id}</span>
+            <span class="tx-type-badge">${post.tipo.charAt(0).toUpperCase() + post.tipo.slice(1)}</span>
+          </div>
+          <div class="tx-content">
+            ${hasTitulo ? `<h2 class="tx-title">${post.titulo}</h2>` : ''}
+            <div class="tx-body"><p>${nl2br(post.conteudo)}</p></div>
+            ${hasFaixa ? `<div class="tx-foot"><a class="tx-track-link" href="index.html#ouvir">faixa relacionada: ${post.faixa}</a></div>` : ''}
+          </div>
+        </article>`;
+    }
+
+    function filterBy(tipo) {
+      const items = txList.querySelectorAll('article.tx');
+      let count = 0;
+      items.forEach(item => {
+        const match = tipo === 'todos' || item.dataset.type === tipo;
+        item.classList.toggle('hidden', !match);
+        item.classList.toggle('visible', match);
+        if (match) count++;
+      });
+      txEmpty.classList.toggle('visible', count === 0);
+      txCount.textContent = count + ' transmiss' + (count !== 1 ? 'ões' : 'ão');
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterBy(btn.dataset.filter);
+      });
+    });
+
+    // ─── Load data ─────────────────────────────────────────────────
+    fetch('transmissoes.json')
+      .then(r => r.json())
+      .then(data => {
+        allPosts = data.posts;
+        txList.innerHTML = allPosts.map(renderPost).join('');
+        txCount.textContent = allPosts.length + ' transmissões';
+      })
+      .catch(() => {
+        txEmpty.classList.add('visible');
+        txEmpty.textContent = '// erro ao carregar transmissões';
+      });
+  </script>
+</body>
+</html>
