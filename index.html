@@ -279,10 +279,10 @@
       width: 100%;
       height: auto;
       display: block;
-      mix-blend-mode: screen;
-      filter: brightness(1.08) contrast(1.05);
+      filter: brightness(1.05) contrast(1.02);
     }
   </style>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <div class="page">
@@ -407,142 +407,20 @@
   </div>
 
   <script>
-    const albums = [
-  {
-    "id": "uso",
-    "type": "ÁLBUM I",
-    "date": "29 mai 2026",
-    "status": "lançamento programado",
-    "title": "Tudo Que Eu Uso Me Usa de Volta",
-    "image": "album-1.jpg",
-    "concept": "a superfície salva e devora",
-    "summary": "A porta de entrada da AMORFA: app, vitrine, corpo-produto, glamour, mercado e funcionamento. Um disco sobre usar para sobreviver — e perceber que a superfície também cobra.",
-    "tracks": [
-      "Versão Consumida",
-      "Fusão Nuclear",
-      "Luz Azul",
-      "Modo Avião",
-      "Só o Que Vende / Livre Pra Quem",
-      "Kouros de Silício",
-      "Corpo-Entulho",
-      "Vênus Aflita",
-      "Você Era Banal",
-      "Placebo",
-      "Glamour Febril",
-      "Cento e Oitenta",
-      "Terminal"
-    ]
-  },
-  {
-    "id": "incendios",
-    "type": "ÁLBUM II",
-    "date": "05 jun 2026",
-    "status": "lançamento programado",
-    "title": "Pequenos Incêndios sob o Ar-Condicionado no Máximo",
-    "image": "album-2.jpg",
-    "concept": "o corpo queima sob refrigeração",
-    "summary": "O álbum do contato real. Corpo, marca, temperatura, desejo e dano sob contenção fria. O ar-condicionado no máximo não apaga o incêndio: só deixa a queimadura mais precisa.",
-    "tracks": [
-      "Erro de Cálculo",
-      "Fidelidade Antiga",
-      "Não Claro",
-      "Amor Com Dentes",
-      "O Devorador",
-      "Mercúrio",
-      "Manutenção Mínima",
-      "Pronta",
-      "Portador da Luz",
-      "Hematoma",
-      "O Corpo Que Eu Tentei Ser",
-      "Mão no Bolso"
-    ]
-  },
-  {
-    "id": "ep",
-    "type": "EP",
-    "date": "12 jun 2026",
-    "status": "lançamento programado",
-    "title": "Dia dos Namorados Macabro",
-    "image": "ep-urso-neon-amorfa-v8.png",
-    "color": true,
-    "concept": "o amor como produto com péssimo histórico",
-    "summary": "EP do Dia dos Namorados como performance coletiva de hipocrisia. Quatro faixas sobre presente, vitrine, casa assombrada, romance vendido e afeto embalado como mercadoria com defeito de fábrica.",
-    "tracks": [
-      "Feliz Dia (Que Horror)",
-      "Assombração de Estimação",
-      "Aceito Proposta",
-      "Happy Valentine's (How Ghastly)"
-    ]
-  },
-  {
-    "id": "teologia",
-    "type": "ÁLBUM III",
-    "date": "19 jun 2026",
-    "status": "lançamento programado",
-    "title": "Teologia dos Fracassos Afetivos em Cama de Solteiro",
-    "image": "album-3.jpg",
-    "concept": "a ausência vira liturgia doméstica",
-    "summary": "O álbum da devoção doméstica. A espera vira rito, o quarto vira altar e o quase-amor aprende a se comportar como religião particular.",
-    "tracks": [
-      "Santo Errado",
-      "Tarde Demais",
-      "O Culto da Carne",
-      "Lockdown (Terror Cult)",
-      "Toque Fantasma",
-      "Fracasso de Estimação",
-      "Não Se Preocupa (Era Bituca)",
-      "Cortesia do Medo",
-      "Vinte e Três",
-      "Quase Verdade",
-      "Matéria Escura",
-      "Para Onde Eu Fui?",
-      "O Reino do Quase"
-    ]
-  },
-  {
-    "id": "fantasmogenese",
-    "type": "ÁLBUM IV",
-    "date": "26 jun 2026",
-    "status": "lançamento programado",
-    "title": "Fantasmogênese",
-    "image": "album-4.jpg",
-    "concept": "a forma cede sem espetáculo",
-    "summary": "O álbum da dissolução. A forma cede milímetro por milímetro; o corpo continua funcionando enquanto perde contorno. Começa monumental em Onde Se Guarda e fecha frio em Junho, De Novo.",
-    "tracks": [
-      "Onde Se Guarda",
-      "Frequência Distorcida",
-      "Fantasmogênese",
-      "Campo Nulo",
-      "Baixa Resolução",
-      "Dose de Impulso",
-      "Ritual de Fogo",
-      "Junho, De Novo"
-    ]
-  },
-  {
-    "id": "submundo",
-    "type": "ÁLBUM V",
-    "date": "03 jul 2026",
-    "status": "lançamento programado",
-    "title": "O Arranjo do Submundo",
-    "image": "album-5.jpg",
-    "concept": "a voz volta do fundo sem voltar inteira",
-    "summary": "O álbum da origem subterrânea. Limiar, casa, organismo, ânfora, sutura, guardião, erro original e colapso. A voz volta com barro, corte e circuito fechado.",
-    "tracks": [
-      "LIMIAR",
-      "A Porta Debaixo da Casa",
-      "Organismo Associado",
-      "A Casa Dormia com os Olhos Abertos",
-      "A Ânfora",
-      "A Sutura Invisível",
-      "O Arranjo do Submundo",
-      "O Guardião das Formas",
-      "Erro Original",
-      "Flor de Plástico",
-      "Colapso"
-    ]
-  }
-];
+    let albums = [];
+
+    fetch('data.json')
+      .then(r => r.json())
+      .then(data => {
+        albums = data.albums;
+        renderCards();
+      })
+      .catch(() => {
+        // fallback: render empty state
+        document.getElementById('releaseGrid').innerHTML =
+          '<p style="font-family:var(--font-mono);color:var(--muted);padding:40px 0">// carregando catálogo</p>';
+      });
+
 
     const grid = document.getElementById('releaseGrid');
     const modal = document.getElementById('albumModal');
@@ -611,6 +489,15 @@
         menuBtn.textContent = '☰';
       });
     });
+  </script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+        }
+      });
+    }
   </script>
 </body>
 </html>
