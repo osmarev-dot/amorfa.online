@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMORFA | Transmissões</title>
+  <meta name="description" content="Fragmentos, versos, poemas e transmissões de AMORFA." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://amorfa.online/transmissoes.html" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:#000;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
+      --text:#f2f0ed;--muted:#77726f;--soft:#aaa29e;
+      --magenta:#930043;--magenta2:#d00066;--cyan:#008293;--cyan2:#00d7ef;
+      --font-serif:'Cinzel','Times New Roman',serif;
+      --font-body:'Cormorant Garamond',Georgia,serif;
+      --font-mono:'Courier New',Courier,monospace;
+    }
+    *{box-sizing:border-box;cursor:crosshair;}
+    html{scroll-behavior:smooth;background:var(--black);color:var(--text);}
+    body{margin:0;min-height:100vh;background:#000;font-family:var(--font-body);overflow-x:hidden;}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
+      background:linear-gradient(rgba(255,255,255,0) 50%,rgba(0,0,0,.34) 50%),
+      linear-gradient(90deg,rgba(147,0,67,.045),rgba(0,130,147,.03),rgba(255,255,255,.018));
+      background-size:100% 4px,6px 100%;mix-blend-mode:screen;opacity:.62;}
+    body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:9998;opacity:.055;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation:grain 1.2s steps(3) infinite;}
+    @keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
+    a{color:inherit;text-decoration:none;}
+
+    /* NAV */
+    header{position:fixed;inset:0 0 auto 0;z-index:3000;background:#000;border-bottom:1px solid var(--line2);}
+    .nav{max-width:1420px;margin:0 auto;padding:18px 4vw;display:flex;align-items:center;justify-content:space-between;gap:26px;}
+    .brand{font-family:var(--font-serif);font-size:1.38rem;letter-spacing:.45em;position:relative;}
+    .brand::after{content:"";position:absolute;left:0;bottom:-9px;width:44px;height:1px;background:linear-gradient(90deg,var(--magenta),transparent);}
+    nav ul{margin:0;padding:0;display:flex;list-style:none;gap:30px;}
+    nav a{font-family:var(--font-serif);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);transition:.25s ease;}
+    nav a:hover,nav a.active{color:var(--text);text-shadow:0 0 12px rgba(0,215,239,.45);}
+    nav a.active{border-bottom:1px solid var(--magenta);padding-bottom:2px;}
+    .menu-toggle{display:none;border:1px solid var(--line2);background:#000;color:var(--text);padding:10px 13px;font-size:1rem;cursor:pointer;}
+
+    /* PAGE */
+    .page{position:relative;z-index:1;padding-top:62px;}
+
+    /* HERO */
+    .tx-hero{
+      max-width:1420px;margin:0 auto;
+      padding:72px 4vw 48px;
+      border-bottom:1px solid var(--line);
+    }
+    .tx-kicker{
+      font-family:var(--font-mono);color:var(--muted);letter-spacing:.35em;
+      text-transform:uppercase;font-size:.78rem;margin:0 0 22px;
+      display:flex;align-items:center;gap:14px;
+    }
+    .tx-kicker::before{content:"";display:block;width:28px;height:1px;background:var(--magenta);}
+    .tx-title{
+      font-family:var(--font-serif);
+      font-size:clamp(3rem,9vw,7rem);
+      font-weight:400;letter-spacing:.15em;text-transform:uppercase;
+      margin:0 0 24px;line-height:.92;
+      text-shadow:2px 0 var(--magenta),-1px 0 rgba(0,215,239,.55);
+      animation:quietGlitch 8s infinite;
+    }
+    @keyframes quietGlitch{0%,92%,100%{transform:translate(0)}94%{transform:translate(1px,-1px) skew(.4deg)}96%{transform:translate(-1px,1px) skew(-.3deg)}}
+    .tx-note{font-family:var(--font-body);font-style:italic;color:var(--soft);font-size:clamp(1rem,2vw,1.35rem);line-height:1.7;margin:0;}
+
+    /* FILTERS — sticky */
+    .filter-bar{
+      position:sticky;top:62px;z-index:200;
+      background:#000;
+      border-bottom:1px solid var(--line);
+      max-width:100%;
+    }
+    .filter-inner{
+      max-width:1420px;margin:0 auto;
+      padding:20px 4vw;
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    }
+    .filter-label{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-right:6px;}
+    .filter-btn{
+      appearance:none;border:1px solid var(--line2);background:transparent;
+      color:var(--muted);font-family:var(--font-mono);font-size:.68rem;
+      letter-spacing:.2em;text-transform:uppercase;padding:9px 18px;
+      cursor:pointer;transition:.22s ease;position:relative;overflow:hidden;
+    }
+    .filter-btn::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(90deg,transparent,rgba(0,215,239,.06),transparent);
+      transform:translateX(-100%);transition:transform .3s ease;
+    }
+    .filter-btn:hover::before{transform:translateX(100%);}
+    .filter-btn:hover{
+      border-color:rgba(255,255,255,.38);color:var(--text);
+      text-shadow:0 0 10px rgba(0,215,239,.5);
+    }
+    .filter-btn.active{
+      color:var(--text);border-color:var(--magenta);
+      box-shadow:0 0 14px rgba(147,0,67,.25),inset 0 0 8px rgba(147,0,67,.08);
+      text-shadow:0 0 10px rgba(208,0,102,.6);
+      background:rgba(147,0,67,.06);
+    }
+    .filter-btn[data-filter="personagem"].active{border-color:var(--cyan2);box-shadow:0 0 14px rgba(0,215,239,.22);text-shadow:0 0 10px rgba(0,215,239,.6);background:rgba(0,215,239,.05);}
+    .tx-count{margin-left:auto;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.2em;color:var(--muted);}
+
+    /* LIST */
+    .tx-main{max-width:1420px;margin:0 auto;padding:0 4vw 100px;}
+    .tx-list{list-style:none;margin:0;padding:0;}
+
+    /* ENTRY */
+    .tx-entry{border-bottom:1px solid var(--line);overflow:hidden;}
+    .tx-row{
+      display:grid;
+      grid-template-columns:80px 96px 1fr 22px;
+      align-items:center;gap:0 24px;
+      padding:22px 0;
+      cursor:pointer;transition:background .18s ease;
+      position:relative;
+    }
+    .tx-row::after{
+      content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+      background:linear-gradient(90deg,var(--magenta),var(--cyan),transparent);
+      transform:scaleX(0);transform-origin:left;transition:transform .3s ease;
+    }
+    .tx-row:hover::after,.tx-entry.open .tx-row::after{transform:scaleX(1);}
+    .tx-row:hover{background:rgba(255,255,255,.014);}
+    .tx-entry.open .tx-row{background:rgba(147,0,67,.035);}
+
+    .tx-id{font-family:var(--font-mono);font-size:.67rem;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;}
+    .tx-badge{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:4px 8px;border:1px solid;width:fit-content;}
+    .tx-entry[data-type="fragmento"]  .tx-badge{color:var(--magenta2);border-color:rgba(208,0,102,.35);background:rgba(208,0,102,.05);}
+    .tx-entry[data-type="poema"]      .tx-badge{color:var(--soft);border-color:rgba(170,162,158,.28);background:rgba(170,162,158,.04);}
+    .tx-entry[data-type="verso"]      .tx-badge{color:var(--cyan2);border-color:rgba(0,215,239,.28);background:rgba(0,215,239,.04);}
+    .tx-entry[data-type="personagem"] .tx-badge{color:var(--cyan);border-color:rgba(0,130,147,.45);background:rgba(0,130,147,.06);}
+
+    .tx-preview{font-family:var(--font-body);font-size:1.08rem;color:var(--soft);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .tx-entry.open .tx-row .tx-preview{color:var(--text);}
+    .tx-chev{font-size:.68rem;color:var(--muted);transition:transform .22s ease;font-family:var(--font-mono);text-align:right;}
+    .tx-entry.open .tx-row .tx-chev{transform:rotate(180deg);color:var(--magenta);}
+
+    /* EXPAND */
+    .tx-body-wrap{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
+    .tx-entry.open .tx-body-wrap{max-height:3000px;}
+    .tx-body-inner{padding:32px 0 44px;}
+
+    .tx-image{width:100%;max-width:720px;margin:0 0 28px;overflow:hidden;border:1px solid var(--line);}
+    .tx-image img{width:100%;height:auto;display:block;filter:grayscale(18%) contrast(1.05) brightness(.88);transition:filter .35s ease;}
+    .tx-image img:hover{filter:grayscale(0%) brightness(.95);}
+
+    .tx-post-title{font-family:var(--font-serif);font-size:clamp(1.3rem,2.4vw,2rem);font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin:0 0 22px;line-height:1.14;}
+    .tx-body-text{font-family:var(--font-body);font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.58;color:rgba(242,240,237,.88);max-width:680px;}
+    .tx-body-text p{margin:0 0 .45em;}
+    .tx-body-text p:last-child{margin-bottom:0;}
+    .tx-entry[data-type="personagem"] .tx-body-text{font-style:italic;color:rgba(242,240,237,.75);border-left:1px solid rgba(0,130,147,.35);padding-left:24px;}
+    .tx-entry[data-type="verso"] .tx-body-text{font-family:var(--font-mono);font-size:clamp(.88rem,1.4vw,1.05rem);line-height:1.95;letter-spacing:.02em;}
+
+    .tx-track{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;}
+    .tx-track::before{content:"";display:block;width:18px;height:1px;background:currentColor;}
+    .tx-track:hover{color:var(--cyan2);}
+
+    .tx-empty{display:none;padding:80px 0;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.2em;color:var(--muted);}
+    .tx-empty.visible{display:block;}
+
+    footer{border-top:1px solid var(--line);padding:38px 4vw;color:var(--muted);font-family:var(--font-serif);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem;}
+    .footer-inner{max-width:1420px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;}
+    .pulse{color:var(--magenta);animation:pulse 2.6s infinite;}
+    @keyframes pulse{0%,100%{opacity:.42}50%{opacity:1;text-shadow:0 0 9px var(--magenta)}}
+
+    /* MOBILE */
+    @media(max-width:780px){
+      .nav{padding:15px 4vw;}
+      .brand{font-size:1.05rem;letter-spacing:.34em;}
+      .menu-toggle{display:inline-flex;position:relative;z-index:2;}
+      nav ul{position:fixed;top:0;right:-100%;width:min(82vw,360px);height:100vh;flex-direction:column;align-items:flex-start;justify-content:center;padding:44px;gap:28px;background:#000;border-left:1px solid var(--line2);transition:right .34s ease;z-index:4000;}
+      nav ul.active{right:0;}
+      nav a{font-size:.92rem;color:var(--text);}
+      .tx-hero{padding:52px 4vw 36px;}
+      .tx-row{grid-template-columns:58px 1fr 18px;padding:18px 0;gap:0 10px;}
+      .tx-badge{display:none;}
+      .filter-inner{padding:14px 4vw;gap:8px;}
+      .filter-btn{padding:8px 12px;font-size:.62rem;}
+      .tx-count{display:none;}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">AMORFA</a>
+      <button class="menu-toggle" id="menuBtn">☰</button>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#ouvir">Ouvir</a></li>
+          <li><a href="index.html#lancamentos">Lançamentos</a></li>
+          <li><a href="index.html#arquivo">Arquivo</a></li>
+          <li><a href="transmissoes.html" class="active">Transmissões</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="tx-hero">
+    <p class="tx-kicker">AMORFA.online // arquivo vivo</p>
+    <h1 class="tx-title">Trans<br>missões</h1>
+    <p class="tx-note">Fragmentos, versos, poemas e voz de personagem.<br>O que não virou música ainda.</p>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <span class="filter-label">Filtrar //</span>
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="fragmento">Fragmento</button>
+      <button class="filter-btn" data-filter="poema">Poema</button>
+      <button class="filter-btn" data-filter="verso">Verso</button>
+      <button class="filter-btn" data-filter="personagem">Personagem</button>
+      <span class="tx-count" id="txCount"></span>
+    </div>
+  </div>
+
+  <main class="tx-main">
+    <ul class="tx-list" id="txList"></ul>
+    <div class="tx-empty" id="txEmpty">// nenhuma transmissão nesta frequência</div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>AMORFA.online</span>
+      <span class="pulse">transmissão em curso</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navMenu = document.getElementById('navMenu');
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+  });
+  navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+    navMenu.classList.remove('active'); menuBtn.textContent = '☰';
+  }));
+
+  const txList  = document.getElementById('txList');
+  const txEmpty = document.getElementById('txEmpty');
+  const txCount = document.getElementById('txCount');
+  const filters = document.querySelectorAll('.filter-btn');
+
+  function nl2p(str) {
+    return str.split(/\n\n+/).map(b => '<p>' + b.replace(/\n/g,'<br>') + '</p>').join('');
+  }
+  function firstLine(t) { return t.split('\n')[0].replace(/[*_#]/g,'').trim(); }
+
+  function renderEntry(post) {
+    const hasTitulo = post.titulo && post.titulo.trim();
+    const hasFaixa  = post.faixa  && post.faixa.trim();
+    const hasImagem = post.imagem && post.imagem.trim();
+    const preview   = hasTitulo ? post.titulo : firstLine(post.conteudo);
+    return `
+      <li class="tx-entry" data-type="${post.tipo}">
+        <div class="tx-row" role="button" tabindex="0" aria-expanded="false">
+          <span class="tx-id">${post.id}</span>
+          <span class="tx-badge">${post.tipo.charAt(0).toUpperCase()+post.tipo.slice(1)}</span>
+          <span class="tx-preview">${preview}</span>
+          <span class="tx-chev">▾</span>
+        </div>
+        <div class="tx-body-wrap">
+          <div class="tx-body-inner">
+            ${hasImagem ? `<div class="tx-image"><img src="${post.imagem}" alt="${post.id}" loading="lazy"></div>` : ''}
+            ${hasTitulo ? `<h2 class="tx-post-title">${post.titulo}</h2>` : ''}
+            <div class="tx-body-text">${nl2p(post.conteudo)}</div>
+            ${hasFaixa ? `<div class="tx-track">faixa relacionada: ${post.faixa}</div>` : ''}
+          </div>
+        </div>
+      </li>`;
+  }
+
+  function filterBy(tipo) {
+    const items = txList.querySelectorAll('.tx-entry');
+    let count = 0;
+    items.forEach(item => {
+      const match = tipo === 'todos' || item.dataset.type === tipo;
+      item.style.display = match ? '' : 'none';
+      if (match) count++;
+    });
+    txEmpty.classList.toggle('visible', count === 0);
+    txCount.textContent = count + ' transmiss' + (count !== 1 ? 'ões' : 'ão');
+  }
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterBy(btn.dataset.filter);
+    });
+  });
+
+  txList.addEventListener('click', e => {
+    const row = e.target.closest('.tx-row');
+    if (!row) return;
+    const entry = row.closest('.tx-entry');
+    const isOpen = entry.classList.contains('open');
+    txList.querySelectorAll('.tx-entry.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.tx-row').setAttribute('aria-expanded','false');
+    });
+    if (!isOpen) {
+      entry.classList.add('open');
+      row.setAttribute('aria-expanded','true');
+    }
+  });
+
+  txList.addEventListener('keydown', e => {
+    if (e.key==='Enter'||e.key===' ') {
+      const row = e.target.closest('.tx-row');
+      if (row) { e.preventDefault(); row.click(); }
+    }
+  });
+
+  fetch('transmissoes.json')
+    .then(r => r.json())
+    .then(data => {
+      const posts = [...data.posts].reverse();
+      txList.innerHTML = posts.map(renderEntry).join('');
+      txCount.textContent = posts.length + ' transmissões';
+    })
+    .catch(() => {
+      txEmpty.classList.add('visible');
+      txEmpty.textContent = '// erro ao carregar transmissões';
+    });
+</script>
+</body>
+</html>
