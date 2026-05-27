@@ -4,434 +4,300 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AMORFA | Transmissões</title>
-  <meta name="description" content="Fragmentos, versos, poemas e transmissões de AMORFA. Arquivo vivo entre música, corpo e ruína." />
+  <meta name="description" content="Fragmentos, versos, poemas e transmissões de AMORFA." />
   <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://amorfa.online/transmissoes.html" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="canonical" href="https://amorfa.online/transmissoes.html" />
-
-  <meta property="og:title" content="AMORFA | Transmissões" />
-  <meta property="og:description" content="Fragmentos, versos, poemas e personagem. Arquivo vivo de AMORFA." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://amorfa.online/transmissoes.html" />
-  <meta property="og:image" content="https://amorfa.online/assets/hero-celestial-atlas-v8.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-
   <style>
-    /* ─────────────────────────────────────────
-       DESIGN SYSTEM — idêntico ao index.html
-    ───────────────────────────────────────── */
     :root {
-      --black: #000;
-      --panel: #050505;
-      --panel2: #090909;
-      --line: rgba(255,255,255,.08);
-      --line2: rgba(255,255,255,.14);
-      --text: #f2f0ed;
-      --muted: #77726f;
-      --soft: #aaa29e;
-      --magenta: #930043;
-      --magenta2: #d00066;
-      --cyan: #008293;
-      --cyan2: #00d7ef;
-      --font-serif: 'Cinzel', 'Times New Roman', serif;
-      --font-body: 'Cormorant Garamond', Georgia, serif;
-      --font-mono: 'Courier New', Courier, monospace;
+      --black:#000;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
+      --text:#f2f0ed;--muted:#77726f;--soft:#aaa29e;
+      --magenta:#930043;--magenta2:#d00066;--cyan:#008293;--cyan2:#00d7ef;
+      --font-serif:'Cinzel','Times New Roman',serif;
+      --font-body:'Cormorant Garamond',Georgia,serif;
+      --font-mono:'Courier New',Courier,monospace;
+      --sw:220px;--hh:62px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: var(--black); color: var(--text); }
-    body { margin: 0; min-height: 100vh; background: #000; font-family: var(--font-body); overflow-x: hidden; }
+    *{box-sizing:border-box;cursor:crosshair;}
+    html{scroll-behavior:smooth;background:var(--black);color:var(--text);}
+    body{margin:0;min-height:100vh;background:#000;font-family:var(--font-body);overflow-x:hidden;}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
+      background:linear-gradient(rgba(255,255,255,0) 50%,rgba(0,0,0,.34) 50%),
+      linear-gradient(90deg,rgba(147,0,67,.045),rgba(0,130,147,.03),rgba(255,255,255,.018));
+      background-size:100% 4px,6px 100%;mix-blend-mode:screen;opacity:.62;}
+    body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:9998;opacity:.055;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation:grain 1.2s steps(3) infinite;}
+    @keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
+    a{color:inherit;text-decoration:none;}
 
-    /* CRT scanlines */
-    body::before {
-      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
-      background:
-        linear-gradient(rgba(255,255,255,0) 50%, rgba(0,0,0,.34) 50%),
-        linear-gradient(90deg, rgba(147,0,67,.045), rgba(0,130,147,.03), rgba(255,255,255,.018));
-      background-size: 100% 4px, 6px 100%; mix-blend-mode: screen; opacity: .62;
-    }
-    /* Grain */
-    body::after {
-      content: ""; position: fixed; inset: -20%; pointer-events: none; z-index: 9998; opacity: .055;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      animation: grain 1.2s steps(3) infinite;
-    }
-    @keyframes grain { 0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)} }
+    /* NAV */
+    header{position:fixed;inset:0 0 auto 0;z-index:3000;height:var(--hh);background:#000;border-bottom:1px solid var(--line2);display:flex;align-items:center;}
+    .nav{width:100%;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;gap:26px;}
+    .brand{font-family:var(--font-serif);font-size:1.38rem;letter-spacing:.45em;position:relative;}
+    .brand::after{content:"";position:absolute;left:0;bottom:-9px;width:44px;height:1px;background:linear-gradient(90deg,var(--magenta),transparent);}
+    nav ul{margin:0;padding:0;display:flex;list-style:none;gap:30px;}
+    nav a{font-family:var(--font-serif);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);transition:.25s ease;}
+    nav a:hover,nav a.active{color:var(--text);text-shadow:0 0 12px rgba(0,215,239,.45);}
+    nav a.active{border-bottom:1px solid var(--magenta);padding-bottom:2px;}
+    .menu-toggle{display:none;border:1px solid var(--line2);background:#000;color:var(--text);padding:10px 13px;font-size:1rem;cursor:pointer;}
 
-    a { color: inherit; }
-    .page { position: relative; z-index: 1; }
+    /* LAYOUT */
+    .tx-layout{display:grid;grid-template-columns:var(--sw) 1fr;min-height:100vh;padding-top:var(--hh);}
 
-    /* ─── HEADER ─── */
-    header {
-      position: fixed; inset: 0 0 auto 0; z-index: 2000;
-      background: rgba(0,0,0,.78); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px);
+    /* SIDEBAR — FIXED */
+    .tx-sidebar{
+      position:fixed;top:var(--hh);left:0;
+      width:var(--sw);height:calc(100vh - var(--hh));
+      border-right:1px solid var(--line2);
+      display:flex;flex-direction:column;
+      padding:52px 0 36px;
+      overflow-y:auto;
+      z-index:200;
+      background:#000;
     }
-    .nav { max-width: 1420px; margin: 0 auto; padding: 18px 4vw; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
-    .brand { font-family: var(--font-serif); font-size: 1.38rem; letter-spacing: .45em; text-decoration: none; line-height: 1; position: relative; }
-    .brand::after { content: ""; position: absolute; left: 0; bottom: -9px; width: 44px; height: 1px; background: linear-gradient(90deg, var(--magenta), transparent); }
-    nav ul { margin: 0; padding: 0; display: flex; list-style: none; gap: 30px; }
-    nav a { font-family: var(--font-serif); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: .25s ease; }
-    nav a:hover, nav a.active { color: var(--text); text-shadow: 0 0 12px rgba(0,215,239,.45); }
-    nav a.active { color: var(--text); border-bottom: 1px solid var(--magenta); padding-bottom: 2px; }
-    .menu-toggle { display: none; border: 1px solid var(--line2); background: #000; color: var(--text); padding: 10px 13px; font-size: 1rem; cursor: pointer; }
+    .tx-title-vert{
+      writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);
+      font-family:var(--font-serif);font-size:clamp(1.8rem,2.8vw,2.6rem);
+      font-weight:400;letter-spacing:.22em;text-transform:uppercase;
+      color:var(--text);text-shadow:2px 0 var(--magenta),-1px 0 rgba(0,215,239,.4);
+      padding:0 30px;margin-bottom:52px;line-height:1;
+      flex-shrink:0;
+    }
+    .tx-kicker{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);padding:0 30px;margin-bottom:36px;flex-shrink:0;}
+    .filter-group{display:flex;flex-direction:column;gap:2px;padding:0 22px;flex-shrink:0;}
+    .filter-label{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);padding:0 8px;margin-bottom:10px;}
+    .filter-btn{appearance:none;border:none;background:transparent;color:var(--muted);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:11px 8px;text-align:left;cursor:pointer;transition:.2s ease;border-left:2px solid transparent;}
+    .filter-btn:hover{color:var(--text);border-left-color:rgba(255,255,255,.2);}
+    .filter-btn.active{color:var(--text);border-left-color:var(--magenta);background:rgba(147,0,67,.07);}
+    .tx-count{margin-top:auto;padding:0 30px;font-family:var(--font-mono);font-size:.6rem;letter-spacing:.18em;color:var(--muted);flex-shrink:0;}
 
-    /* ─── PAGE HEADER ─── */
-    .tx-page-head {
-      padding: 142px 4vw 64px;
-      border-bottom: 1px solid var(--line);
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 8% 80%, rgba(147,0,67,.16), transparent 38%),
-        radial-gradient(circle at 92% 20%, rgba(0,215,239,.09), transparent 32%),
-        #000;
-    }
-    .tx-page-head::before {
-      content: ""; position: absolute; inset: 0; pointer-events: none;
-      background: repeating-linear-gradient(0deg, rgba(255,255,255,.022) 0 1px, transparent 1px 9px);
-      mix-blend-mode: screen;
-    }
-    .tx-page-inner { max-width: 820px; position: relative; z-index: 1; }
-    .tx-kicker {
-      font-family: var(--font-mono); color: var(--muted); letter-spacing: .35em;
-      text-transform: uppercase; font-size: .78rem; margin: 0 0 20px; display: flex; align-items: center; gap: 14px;
-    }
-    .tx-kicker::before { content: ""; display: block; width: 28px; height: 1px; background: var(--magenta); }
-    .tx-page-title {
-      font-family: var(--font-serif); font-size: clamp(2.8rem, 8vw, 6.5rem); font-weight: 400;
-      letter-spacing: .15em; text-transform: uppercase; margin: 0 0 22px;
-      text-shadow: 2px 0 var(--magenta), -1px 0 rgba(0,215,239,.55);
-      line-height: .94;
-    }
-    .tx-page-note {
-      font-family: var(--font-body); font-style: italic; color: var(--soft);
-      font-size: clamp(1.1rem, 2.2vw, 1.45rem); line-height: 1.7; margin: 0;
-    }
+    /* MAIN */
+    .tx-main{margin-left:var(--sw);min-height:calc(100vh - var(--hh));}
+    .tx-list{list-style:none;margin:0;padding:0;}
 
-    /* ─── FILTER BAR ─── */
-    .filter-bar {
-      max-width: 1420px; margin: 0 auto; padding: 28px 4vw;
-      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-      border-bottom: 1px solid var(--line);
-    }
-    .filter-label {
-      font-family: var(--font-mono); font-size: .72rem; letter-spacing: .25em;
-      text-transform: uppercase; color: var(--muted); margin-right: 6px;
-    }
-    .filter-btn {
-      appearance: none; border: 1px solid var(--line2); background: transparent;
-      color: var(--muted); font-family: var(--font-mono); font-size: .68rem;
-      letter-spacing: .2em; text-transform: uppercase; padding: 9px 16px;
-      cursor: pointer; transition: .22s ease;
-    }
-    .filter-btn:hover { border-color: rgba(255,255,255,.38); color: var(--text); }
-    .filter-btn.active { color: var(--text); border-color: var(--magenta); box-shadow: 0 0 12px rgba(147,0,67,.22); background: rgba(147,0,67,.08); }
-    .filter-btn[data-filter="personagem"].active { border-color: var(--cyan2); box-shadow: 0 0 12px rgba(0,215,239,.22); background: rgba(0,215,239,.06); }
-    .filter-btn[data-filter="poema"].active { border-color: rgba(255,255,255,.62); }
-    .tx-count {
-      margin-left: auto; font-family: var(--font-mono); font-size: .72rem;
-      letter-spacing: .2em; color: var(--muted); white-space: nowrap;
-    }
+    /* ENTRY ROW */
+    .tx-entry{border-bottom:1px solid var(--line);overflow:hidden;}
+    .tx-row{display:grid;grid-template-columns:80px 92px 1fr 22px;align-items:center;gap:0 20px;padding:20px 48px 20px 40px;cursor:pointer;transition:background .18s ease;position:relative;}
+    .tx-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--magenta);transform:scaleY(0);transform-origin:top;transition:transform .25s ease;}
+    .tx-row:hover{background:rgba(255,255,255,.016);}
+    .tx-entry.open>.tx-row::before{transform:scaleY(1);}
+    .tx-entry.open>.tx-row{background:rgba(147,0,67,.04);}
+    .tx-id{font-family:var(--font-mono);font-size:.67rem;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;}
+    .tx-badge{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:4px 8px;border:1px solid;width:fit-content;}
+    .tx-entry[data-type="fragmento"]  .tx-badge{color:var(--magenta2);border-color:rgba(208,0,102,.35);background:rgba(208,0,102,.05);}
+    .tx-entry[data-type="poema"]      .tx-badge{color:var(--soft);border-color:rgba(170,162,158,.28);background:rgba(170,162,158,.04);}
+    .tx-entry[data-type="verso"]      .tx-badge{color:var(--cyan2);border-color:rgba(0,215,239,.28);background:rgba(0,215,239,.04);}
+    .tx-entry[data-type="personagem"] .tx-badge{color:var(--cyan);border-color:rgba(0,130,147,.45);background:rgba(0,130,147,.06);}
+    .tx-preview{font-family:var(--font-body);font-size:1.06rem;color:var(--soft);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .tx-entry.open>.tx-row .tx-preview{color:var(--text);}
+    .tx-chev{font-size:.68rem;color:var(--muted);transition:transform .22s ease;font-family:var(--font-mono);text-align:right;}
+    .tx-entry.open>.tx-row .tx-chev{transform:rotate(180deg);color:var(--magenta);}
 
-    /* ─── MAIN LAYOUT ─── */
-    main.tx-main { max-width: 1420px; margin: 0 auto; padding: 72px 4vw 120px; }
+    /* EXPANDED */
+    .tx-body-wrap{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
+    .tx-entry.open .tx-body-wrap{max-height:3000px;}
+    .tx-body-inner{padding:0 48px 44px 40px;border-top:1px solid var(--line);}
 
-    /* ─── TRANSMISSION CARD ─── */
-    /*
-    ╔═══════════════════════════════════════════════════════════════╗
-    ║   PARA ADICIONAR UMA NOVA TRANSMISSÃO:                       ║
-    ║   1. Copie um bloco <article class="tx" ...> completo        ║
-    ║   2. Cole-o NO TOPO da lista (antes das outras)              ║
-    ║   3. Atualize data-type, tx-id, tx-type-label e o conteúdo   ║
-    ║   4. Salve e suba pro GitHub                                  ║
-    ║                                                               ║
-    ║   TIPOS DISPONÍVEIS (data-type):                             ║
-    ║   fragmento | poema | verso | personagem                     ║
-    ╚═══════════════════════════════════════════════════════════════╝
-    */
-    .tx-list {
-      display: grid;
-      gap: 0;
-    }
+    /* IMAGE */
+    .tx-image{width:100%;max-width:720px;margin:32px 0 28px;overflow:hidden;border:1px solid var(--line);}
+    .tx-image img{width:100%;height:auto;display:block;filter:grayscale(15%) contrast(1.05) brightness(.9);transition:filter .3s ease;}
+    .tx-image img:hover{filter:grayscale(0%) contrast(1.02) brightness(.95);}
 
-    article.tx {
-      border-bottom: 1px solid var(--line);
-      padding: 56px 0;
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 0 52px;
-      align-items: start;
-      transition: background .2s ease;
-      position: relative;
-    }
-    article.tx::before {
-      content: ""; position: absolute; left: -4vw; right: -4vw; inset-block: 0;
-      background: rgba(147,0,67,.0); transition: background .25s ease; pointer-events: none;
-    }
-    article.tx:hover::before { background: rgba(147,0,67,.028); }
+    .tx-post-title{font-family:var(--font-serif);font-size:clamp(1.3rem,2.2vw,1.9rem);font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin:32px 0 20px;line-height:1.14;}
+    .tx-has-image .tx-post-title{margin-top:0;}
 
-    /* Sidebar: ID + type */
-    .tx-sidebar {
-      position: sticky; top: 110px;
-      display: flex; flex-direction: column; gap: 14px; padding-top: 4px;
-    }
-    .tx-id {
-      font-family: var(--font-mono); font-size: .72rem; letter-spacing: .28em;
-      color: var(--muted); text-transform: uppercase;
-    }
-    .tx-type-badge {
-      display: inline-block; font-family: var(--font-mono); font-size: .66rem;
-      letter-spacing: .22em; text-transform: uppercase;
-      padding: 6px 10px; border: 1px solid; width: fit-content;
-    }
+    .tx-body-text{font-family:var(--font-body);font-size:clamp(1.12rem,1.7vw,1.4rem);line-height:1.58;color:rgba(242,240,237,.88);max-width:680px;}
+    .tx-body-text p{margin:0 0 .45em;}
+    .tx-body-text p:last-child{margin-bottom:0;}
+    .tx-entry[data-type="personagem"] .tx-body-text{font-style:italic;color:rgba(242,240,237,.75);border-left:1px solid rgba(0,130,147,.35);padding-left:24px;}
+    .tx-entry[data-type="verso"] .tx-body-text{font-family:var(--font-mono);font-size:clamp(.86rem,1.3vw,1.02rem);line-height:1.95;letter-spacing:.02em;}
 
-    /* Type color coding */
-    article.tx[data-type="fragmento"] .tx-type-badge { color: var(--magenta2); border-color: rgba(208,0,102,.38); background: rgba(208,0,102,.06); }
-    article.tx[data-type="poema"]     .tx-type-badge { color: var(--soft); border-color: rgba(170,162,158,.32); background: rgba(170,162,158,.04); }
-    article.tx[data-type="verso"]     .tx-type-badge { color: var(--cyan2); border-color: rgba(0,215,239,.30); background: rgba(0,215,239,.04); }
-    article.tx[data-type="personagem"] .tx-type-badge { color: var(--cyan); border-color: rgba(0,130,147,.55); background: rgba(0,130,147,.08); }
+    .tx-track{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;}
+    .tx-track::before{content:"";display:block;width:18px;height:1px;background:currentColor;}
 
-    /* Content area */
-    .tx-content { min-width: 0; }
+    .tx-empty{display:none;padding:80px 48px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.2em;color:var(--muted);}
+    .tx-empty.visible{display:block;}
 
-    /* Optional title (used for poema type) */
-    .tx-title {
-      font-family: var(--font-serif); font-size: clamp(1.4rem, 2.8vw, 2.2rem);
-      font-weight: 400; letter-spacing: .1em; text-transform: uppercase;
-      margin: 0 0 32px; line-height: 1.14;
-    }
+    footer{border-top:1px solid var(--line);padding:32px 48px;margin-left:var(--sw);color:var(--muted);font-family:var(--font-serif);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem;display:flex;justify-content:space-between;}
+    .pulse{color:var(--magenta);animation:pulse 2.6s infinite;}
+    @keyframes pulse{0%,100%{opacity:.42}50%{opacity:1;text-shadow:0 0 9px var(--magenta)}}
 
-    /* Body text */
-    .tx-body {
-      font-family: var(--font-body); font-size: clamp(1.25rem, 2.2vw, 1.62rem);
-      line-height: 1.2; color: rgba(242,240,237,.9);
+    /* MOBILE */
+    @media(max-width:860px){
+      :root{--sw:0px;}
+      .tx-layout{grid-template-columns:1fr;}
+      .tx-sidebar{position:sticky;top:var(--hh);width:100%;height:auto;flex-direction:row;flex-wrap:wrap;padding:14px 4vw;border-right:none;border-bottom:1px solid var(--line2);gap:8px;align-items:center;overflow:visible;}
+      .tx-title-vert{writing-mode:horizontal-tb;transform:none;font-size:1rem;margin:0 16px 0 0;padding:0;letter-spacing:.3em;}
+      .tx-kicker{display:none;}
+      .filter-group{flex-direction:row;flex-wrap:wrap;padding:0;gap:6px;}
+      .filter-label{display:none;}
+      .filter-btn{padding:7px 12px;border:1px solid var(--line2);border-left:2px solid transparent;font-size:.6rem;}
+      .filter-btn.active{border:1px solid var(--magenta);border-left:2px solid var(--magenta);}
+      .tx-count{margin-top:0;padding:0;margin-left:auto;}
+      .tx-main{margin-left:0;}
+      .tx-row{grid-template-columns:58px 1fr 18px;padding:16px 4vw;gap:0 10px;}
+      .tx-badge{display:none;}
+      .tx-body-inner{padding:0 4vw 32px;}
+      .tx-image{max-width:100%;}
+      footer{margin-left:0;padding:24px 4vw;}
+      .menu-toggle{display:inline-flex;}
+      nav ul{position:fixed;top:0;right:-100%;width:min(82vw,360px);height:100vh;flex-direction:column;align-items:flex-start;justify-content:center;padding:44px;gap:28px;background:#000;border-left:1px solid var(--line2);transition:right .34s ease;z-index:4000;}
+      nav ul.active{right:0;}
+      nav a{font-size:.92rem;color:var(--text);}
     }
-   .tx-body p { margin: 0 0 0.4em; }
-    .tx-body p:last-child { margin-bottom: 0; }
-    .tx-body br { line-height: 2.4; }
-
-    /* FRAGMENTO: compact, almost terminal-like */
-    article.tx[data-type="fragmento"] .tx-body {
-      font-size: clamp(1.1rem, 1.9vw, 1.38rem);
-      color: var(--soft); line-height: 2;
-    }
-
-    /* PERSONAGEM: italic, character voice, slightly muted */
-    article.tx[data-type="personagem"] .tx-body {
-      font-style: italic;
-      color: rgba(242,240,237,.78);
-      border-left: 1px solid rgba(0,130,147,.38);
-      padding-left: 24px;
-    }
-
-    /* VERSO: monospaced feel, precise */
-    article.tx[data-type="verso"] .tx-body {
-      font-family: var(--font-mono); font-size: clamp(.92rem, 1.6vw, 1.12rem);
-      line-height: 2; letter-spacing: .02em; color: var(--text);
-    }
-
-    /* Footer: optional track link */
-    .tx-foot {
-      margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line);
-      display: flex; align-items: center; gap: 16px;
-    }
-    .tx-track-link {
-      font-family: var(--font-mono); font-size: .7rem; letter-spacing: .22em;
-      text-transform: uppercase; color: var(--muted); text-decoration: none;
-      display: flex; align-items: center; gap: 10px; transition: .2s;
-    }
-    .tx-track-link::before {
-      content: ""; display: block; width: 18px; height: 1px;
-      background: currentColor; transition: width .2s;
-    }
-    .tx-track-link:hover { color: var(--cyan2); }
-    .tx-track-link:hover::before { width: 28px; }
-
-    /* ─── EMPTY STATE ─── */
-    .tx-empty {
-      display: none; text-align: center; padding: 80px 0;
-      font-family: var(--font-mono); color: var(--muted); letter-spacing: .18em; font-size: .82rem;
-    }
-    .tx-empty.visible { display: block; }
-
-    /* ─── FOOTER ─── */
-    footer { border-top: 1px solid var(--line); padding: 38px 4vw; color: var(--muted); font-family: var(--font-serif); letter-spacing: .25em; text-transform: uppercase; font-size: .72rem; }
-    .footer-inner { max-width: 1420px; margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; }
-    .pulse { color: var(--magenta); animation: pulse 2.6s infinite; }
-    @keyframes pulse { 0%,100%{opacity:.42} 50%{opacity:1;text-shadow:0 0 9px var(--magenta)} }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 900px) {
-      article.tx { grid-template-columns: 1fr; gap: 20px; padding: 44px 0; }
-      .tx-sidebar { position: static; flex-direction: row; align-items: center; }
-    }
-    @media (max-width: 780px) {
-      .nav { padding: 15px 4vw; }
-      .brand { font-size: 1.05rem; letter-spacing: .34em; }
-      .menu-toggle { display: inline-flex; position: relative; z-index: 2; }
-      nav ul {
-        position: fixed; top: 0; right: -100%; width: min(82vw, 360px); height: 100vh;
-        flex-direction: column; align-items: flex-start; justify-content: center;
-        padding: 44px; gap: 28px; background: rgba(0,0,0,.97);
-        border-left: 1px solid var(--line2); transition: right .34s ease;
-      }
-      nav ul.active { right: 0; }
-      nav a { font-size: .92rem; color: var(--text); }
-      .tx-page-head { padding: 120px 4vw 50px; }
-      main.tx-main { padding: 52px 4vw 90px; }
-      .filter-bar { gap: 8px; }
-      .tx-count { display: none; }
-    }
-    @media (max-width: 520px) {
-      .filter-bar { padding: 18px 4vw; }
-      .filter-btn { padding: 8px 12px; font-size: .62rem; }
-    }
-
-    /* ─── TRANSITIONS ─── */
-    article.tx { transition: opacity .22s ease; }
-    article.tx.hidden { display: none; }
-    article.tx.visible { display: grid; }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="nav">
-        <a class="brand" href="index.html" aria-label="AMORFA início">AMORFA</a>
-        <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu">☰</button>
-        <nav aria-label="Navegação principal">
-          <ul id="navMenu">
-            <li><a href="index.html#inicio">Início</a></li>
-            <li><a href="index.html#ouvir">Ouvir</a></li>
-            <li><a href="index.html#lancamentos">Lançamentos</a></li>
-            <li><a href="index.html#arquivo">Arquivo</a></li>
-            <li><a href="transmissões.html" class="active">Transmissões</a></li>
-            <li><a href="index.html#sobre">Sobre</a></li>
-            <li><a href="index.html#contato">Contato</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <div class="tx-page-head">
-      <div class="tx-page-inner">
-        <p class="tx-kicker">AMORFA.online // arquivo vivo</p>
-        <h1 class="tx-page-title">Trans<br>missões</h1>
-        <p class="tx-page-note">Fragmentos, versos, poemas e voz de personagem.<br>O que não virou música ainda.</p>
-      </div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">AMORFA</a>
+      <button class="menu-toggle" id="menuBtn">☰</button>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#ouvir">Ouvir</a></li>
+          <li><a href="index.html#lancamentos">Lançamentos</a></li>
+          <li><a href="index.html#arquivo">Arquivo</a></li>
+          <li><a href="transmissoes.html" class="active">Transmissões</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <div class="filter-bar">
-      <span class="filter-label">Filtrar //</span>
-      <button class="filter-btn active" data-filter="todos">Todos</button>
-      <button class="filter-btn" data-filter="fragmento">Fragmento</button>
-      <button class="filter-btn" data-filter="poema">Poema</button>
-      <button class="filter-btn" data-filter="verso">Verso</button>
-      <button class="filter-btn" data-filter="personagem">Personagem</button>
-      <span class="tx-count" id="txCount"></span>
-    </div>
+  <div class="tx-layout">
+    <aside class="tx-sidebar">
+      <div class="tx-title-vert">Transmissões</div>
+      <div class="tx-kicker">AMORFA.online // arquivo vivo</div>
+      <div class="filter-group">
+        <div class="filter-label">Filtrar //</div>
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="fragmento">Fragmento</button>
+        <button class="filter-btn" data-filter="poema">Poema</button>
+        <button class="filter-btn" data-filter="verso">Verso</button>
+        <button class="filter-btn" data-filter="personagem">Personagem</button>
+      </div>
+      <div class="tx-count" id="txCount"></div>
+    </aside>
 
     <main class="tx-main">
-      <div class="tx-list" id="txList">
-
-        <!-- posts carregados via transmissoes.json -->
-      </div><!-- /tx-list -->
-
-      <p class="tx-empty" id="txEmpty">// nenhuma transmissão nesta frequência</p>
-
+      <ul class="tx-list" id="txList"></ul>
+      <div class="tx-empty" id="txEmpty">// nenhuma transmissão nesta frequência</div>
     </main>
+  </div>
 
-    <footer>
-      <div class="footer-inner">
-        <span>AMORFA.online</span>
-        <span class="pulse">transmissão em curso</span>
-      </div>
-    </footer>
-  </div><!-- /page -->
+  <footer>
+    <span>AMORFA.online</span>
+    <span class="pulse">transmissão em curso</span>
+  </footer>
 
-  <script>
-    // ─── Menu mobile ───────────────────────────────────────────────
-    const menuBtn = document.getElementById('menuBtn');
-    const navMenu = document.getElementById('navMenu');
-    menuBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-    });
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        menuBtn.textContent = '☰';
-      });
-    });
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navMenu = document.getElementById('navMenu');
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+  });
+  navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+    navMenu.classList.remove('active'); menuBtn.textContent = '☰';
+  }));
 
-    // ─── Render ────────────────────────────────────────────────────
-    const txList  = document.getElementById('txList');
-    const txEmpty = document.getElementById('txEmpty');
-    const txCount = document.getElementById('txCount');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    let allPosts = [];
+  const txList  = document.getElementById('txList');
+  const txEmpty = document.getElementById('txEmpty');
+  const txCount = document.getElementById('txCount');
+  const filters = document.querySelectorAll('.filter-btn');
 
-    function nl2br(str) {
-      return str.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>');
-    }
+  function nl2p(str) {
+    return str.split(/\n\n+/).map(b => '<p>' + b.replace(/\n/g,'<br>') + '</p>').join('');
+  }
+  function firstLine(t) { return t.split('\n')[0].replace(/[*_#]/g,'').trim(); }
 
-    function renderPost(post) {
-      const hasTitulo = post.titulo && post.titulo.trim();
-      const hasFaixa  = post.faixa  && post.faixa.trim();
-      return `
-        <article class="tx visible" data-type="${post.tipo}">
-          <div class="tx-sidebar">
-            <span class="tx-id">${post.id}</span>
-            <span class="tx-type-badge">${post.tipo.charAt(0).toUpperCase() + post.tipo.slice(1)}</span>
+  function renderEntry(post) {
+    const hasTitulo = post.titulo && post.titulo.trim();
+    const hasFaixa  = post.faixa  && post.faixa.trim();
+    const hasImagem = post.imagem && post.imagem.trim();
+    const preview   = hasTitulo ? post.titulo : firstLine(post.conteudo);
+    return `
+      <li class="tx-entry${hasImagem?' has-image':''}" data-type="${post.tipo}">
+        <div class="tx-row" role="button" tabindex="0" aria-expanded="false">
+          <span class="tx-id">${post.id}</span>
+          <span class="tx-badge">${post.tipo.charAt(0).toUpperCase()+post.tipo.slice(1)}</span>
+          <span class="tx-preview">${preview}</span>
+          <span class="tx-chev">▾</span>
+        </div>
+        <div class="tx-body-wrap">
+          <div class="tx-body-inner${hasImagem?' tx-has-image':''}">
+            ${hasImagem ? `<div class="tx-image"><img src="${post.imagem}" alt="${hasTitulo?post.titulo:post.id}" loading="lazy"></div>` : ''}
+            ${hasTitulo ? `<h2 class="tx-post-title">${post.titulo}</h2>` : ''}
+            <div class="tx-body-text">${nl2p(post.conteudo)}</div>
+            ${hasFaixa ? `<div class="tx-track">faixa relacionada: ${post.faixa}</div>` : ''}
           </div>
-          <div class="tx-content">
-            ${hasTitulo ? `<h2 class="tx-title">${post.titulo}</h2>` : ''}
-            <div class="tx-body"><p>${nl2br(post.conteudo)}</p></div>
-            ${hasFaixa ? `<div class="tx-foot"><a class="tx-track-link" href="index.html#ouvir">faixa relacionada: ${post.faixa}</a></div>` : ''}
-          </div>
-        </article>`;
-    }
+        </div>
+      </li>`;
+  }
 
-    function filterBy(tipo) {
-      const items = txList.querySelectorAll('article.tx');
-      let count = 0;
-      items.forEach(item => {
-        const match = tipo === 'todos' || item.dataset.type === tipo;
-        item.classList.toggle('hidden', !match);
-        item.classList.toggle('visible', match);
-        if (match) count++;
-      });
-      txEmpty.classList.toggle('visible', count === 0);
-      txCount.textContent = count + ' transmiss' + (count !== 1 ? 'ões' : 'ão');
-    }
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        filterBy(btn.dataset.filter);
-      });
+  function filterBy(tipo) {
+    const items = txList.querySelectorAll('.tx-entry');
+    let count = 0;
+    items.forEach(item => {
+      const match = tipo === 'todos' || item.dataset.type === tipo;
+      item.style.display = match ? '' : 'none';
+      if (match) count++;
     });
+    txEmpty.classList.toggle('visible', count === 0);
+    txCount.textContent = count + ' transmiss' + (count !== 1 ? 'ões' : 'ão');
+  }
 
-    // ─── Load data ─────────────────────────────────────────────────
-    fetch('transmissoes.json')
-      .then(r => r.json())
-      .then(data => {
-        allPosts = data.posts;
-        txList.innerHTML = allPosts.map(renderPost).join('');
-        txCount.textContent = allPosts.length + ' transmissões';
-      })
-      .catch(() => {
-        txEmpty.classList.add('visible');
-        txEmpty.textContent = '// erro ao carregar transmissões';
-      });
-  </script>
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterBy(btn.dataset.filter);
+    });
+  });
+
+  txList.addEventListener('click', e => {
+    const row = e.target.closest('.tx-row');
+    if (!row) return;
+    const entry = row.closest('.tx-entry');
+    const isOpen = entry.classList.contains('open');
+    txList.querySelectorAll('.tx-entry.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.tx-row').setAttribute('aria-expanded','false');
+    });
+    if (!isOpen) {
+      entry.classList.add('open');
+      row.setAttribute('aria-expanded','true');
+      setTimeout(() => entry.scrollIntoView({behavior:'smooth',block:'nearest'}), 50);
+    }
+  });
+
+  txList.addEventListener('keydown', e => {
+    if (e.key==='Enter'||e.key===' ') {
+      const row = e.target.closest('.tx-row');
+      if (row) { e.preventDefault(); row.click(); }
+    }
+  });
+
+  fetch('transmissoes.json')
+    .then(r => r.json())
+    .then(data => {
+      const posts = [...data.posts].reverse();
+      txList.innerHTML = posts.map(renderEntry).join('');
+      txCount.textContent = posts.length + ' transmissões';
+    })
+    .catch(() => {
+      txEmpty.classList.add('visible');
+      txEmpty.textContent = '// erro ao carregar transmissões';
+    });
+</script>
 </body>
 </html>
