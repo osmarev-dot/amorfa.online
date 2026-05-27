@@ -2,7 +2,6 @@ backend:
   name: github
   repo: osmarev-dot/amorfa.online
   branch: main
-  base_url: https://auth.decapcms.org
 
 media_folder: "uploads"
 public_folder: "/uploads"
