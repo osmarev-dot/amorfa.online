@@ -6,6 +6,10 @@
   <title>AMORFA | Site Oficial</title>
   <meta name="description" content="Site oficial da AMORFA. Música brasileira de dark pop, electroclash e pós-industrial entre desejo, tela, corpo e ruína." />
   <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png" />
   <link rel="canonical" href="https://amorfa.online/" />
 
   <meta property="og:title" content="AMORFA | Site Oficial" />
@@ -65,7 +69,7 @@
       --font-body: 'Cormorant Garamond', Georgia, serif;
       --font-mono: 'Courier New', Courier, monospace;
     }
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; cursor: crosshair; }
     html { scroll-behavior: smooth; background: var(--black); color: var(--text); }
     body { margin: 0; min-height: 100vh; background: #000; font-family: var(--font-body); overflow-x: hidden; }
     body::before {
@@ -85,8 +89,8 @@
     .page { position: relative; z-index: 1; }
 
     header {
-      position: fixed; inset: 0 0 auto 0; z-index: 2000; background: rgba(0,0,0,.78);
-      border-bottom: 1px solid var(--line); backdrop-filter: blur(14px);
+      position: fixed; inset: 0 0 auto 0; z-index: 2000; background: #000;
+      border-bottom: 1px solid rgba(255,255,255,.12);
     }
     .nav { max-width: 1420px; margin: 0 auto; padding: 18px 4vw; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
     .brand { font-family: var(--font-serif); font-size: 1.38rem; letter-spacing: .45em; text-decoration: none; line-height: 1; position: relative; }
@@ -122,15 +126,6 @@
     @keyframes heroTear { 0%, 92%, 100% { transform: translate(0,0); } 94% { transform: translate(8px,-2px); } 96% { transform: translate(-5px,1px); } }
     .hero-inner { max-width: 980px; width: min(980px, 100%); position: relative; z-index: 2; }
     .kicker { font-family: var(--font-mono); color: var(--muted); letter-spacing: .35em; text-transform: uppercase; font-size: .78rem; margin: 0 0 22px; }
-    .title-glitch {
-      font-family: var(--font-serif); font-weight: 500; font-size: clamp(4rem, 11vw, 9rem); line-height: .88; letter-spacing: .13em;
-      margin: 0 0 22px; position: relative; text-transform: uppercase; color: var(--text);
-      text-shadow: 2px 0 var(--magenta), -2px 0 var(--cyan);
-      animation: quietGlitch 7s infinite;
-    }
-    .title-glitch::before, .title-glitch::after { content: attr(data-text); position: absolute; left: 0; top: 0; overflow: hidden; clip-path: inset(0 0 70% 0); opacity: .72; pointer-events: none; }
-    .title-glitch::before { transform: translate(2px,-1px); color: var(--magenta2); animation: sliceOne 5.6s infinite; }
-    .title-glitch::after { transform: translate(-2px,1px); color: var(--cyan2); clip-path: inset(66% 0 0 0); animation: sliceTwo 6.4s infinite; }
     @keyframes quietGlitch { 0%, 92%, 100% { transform: translate(0); } 94% { transform: translate(1px,-1px) skew(.5deg); } 96% { transform: translate(-1px,1px) skew(-.4deg); } }
     @keyframes sliceOne { 0%, 90%, 100% { clip-path: inset(0 0 72% 0); } 93% { clip-path: inset(22% 0 47% 0); } 95% { clip-path: inset(8% 0 82% 0); } }
     @keyframes sliceTwo { 0%, 91%, 100% { clip-path: inset(70% 0 0 0); } 94% { clip-path: inset(54% 0 28% 0); } 96% { clip-path: inset(82% 0 8% 0); } }
@@ -142,13 +137,13 @@
       border: 1px solid var(--line2); background: rgba(0,0,0,.42); color: var(--text); text-decoration: none;
       font-family: var(--font-serif); font-size: .76rem; letter-spacing: .28em; text-transform: uppercase; transition: .28s ease;
     }
-    .btn:hover { border-color: rgba(255,255,255,.45); background: rgba(255,255,255,.92); color: #000; box-shadow: 0 0 18px rgba(0,215,239,.18); }
-    .btn.primary { border-color: rgba(147,0,67,.72); box-shadow: inset 0 0 0 1px rgba(147,0,67,.2), 0 0 22px rgba(147,0,67,.10); }
-    .btn.primary:hover { background: var(--magenta); color: white; box-shadow: 0 0 24px rgba(208,0,102,.32); }
+    .btn:hover { border-color: rgba(255,255,255,.45); background: rgba(255,255,255,.92); color: #000; }
+    .btn.primary { border-color: rgba(147,0,67,.72); }
+    .btn.primary:hover { background: var(--magenta); color: white; }
 
     section { max-width: 1420px; margin: 0 auto; padding: 92px 4vw; }
     .section-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 38px; border-bottom: 1px solid var(--line); padding-bottom: 18px; }
-    .section-title { margin: 0; font-family: var(--font-serif); font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 400; letter-spacing: .15em; text-transform: uppercase; text-shadow: 1px 1px 0 var(--magenta); }
+    .section-title { margin: 0; font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 400; letter-spacing: .18em; text-transform: uppercase; text-shadow: 2px 0 var(--magenta); }
     .section-note { margin: 0; max-width: 380px; font-family: var(--font-mono); color: var(--muted); font-size: .82rem; line-height: 1.65; }
 
     .quick { background: var(--panel); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 4vw; }
@@ -160,7 +155,7 @@
     .link-card small { font-family: var(--font-mono); color: var(--muted); letter-spacing: .22em; text-transform: uppercase; }
     .link-card strong { font-family: var(--font-serif); font-weight: 400; letter-spacing: .09em; font-size: 1.22rem; }
 
-    .releases { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 26px; }
+    .releases { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
     .release-card {
       appearance: none; border: 1px solid var(--line); padding: 0; margin: 0; background: var(--panel2); color: inherit; text-align: left; cursor: pointer; overflow: hidden; position: relative; transition: .3s ease; font: inherit;
     }
@@ -169,23 +164,23 @@
     .release-card:hover::before { opacity:1; border-color:rgba(208,0,102,.42); box-shadow: inset 0 0 24px rgba(0,215,239,.12), 0 0 22px rgba(208,0,102,.18); }
     .release-card:hover::after { opacity:.72; animation: cardGlitchLine .85s steps(2) both; }
     @keyframes cardGlitchLine { 0%{transform:translateX(-55%) translateY(-32px)} 38%{transform:translateX(12%) translateY(18px)} 58%{transform:translateX(-8%) translateY(-5px)} 100%{transform:translateX(55%) translateY(28px); opacity:0} }
-    .release-card:hover, .release-card:focus-visible { outline: none; transform: translateY(-4px); border-color: rgba(0,215,239,.55); box-shadow: 0 18px 55px rgba(0,0,0,.70), 0 0 34px rgba(147,0,67,.26), inset 0 0 0 1px rgba(208,0,102,.32); }
+    .release-card:hover, .release-card:focus-visible { outline: none; transform: translateY(-3px); border-color: rgba(0,215,239,.45); }
     .release-card:hover .cover img { transform: scale(1.035); filter: grayscale(82%) contrast(1.16) brightness(.84) saturate(1.12); }
     .cover { aspect-ratio: 1/1; background: #020202; overflow: hidden; border-bottom: 1px solid var(--line); position: relative; }
     .cover::after { content: "CLIQUE PARA ABRIR"; position: absolute; right: 14px; bottom: 13px; font-family: var(--font-mono); font-size: .64rem; letter-spacing: .18em; color: rgba(255,255,255,.62); opacity: 0; transform: translateY(6px); transition: .25s ease; }
     .release-card:hover .cover::after { opacity: 1; transform: translateY(0); }
     .cover img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(100%) contrast(1.1) brightness(.74); transition: .5s ease; }
-    .release-body { padding: 26px; min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; }
+    .release-body { padding: 18px 20px 20px; display: flex; flex-direction: column; justify-content: space-between; }
     .release-meta { display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-family: var(--font-mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 20px; }
-    .release-card h3 { margin: 0 0 18px; font-family: var(--font-serif); font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 400; line-height: 1.18; letter-spacing: .05em; text-transform: uppercase; }
-    .release-card p { margin: 0; color: var(--soft); font-size: 1.04rem; font-style: italic; line-height: 1.45; }
+    .release-card h3 { margin: 0 0 10px; font-family: var(--font-serif); font-size: clamp(1rem, 1.6vw, 1.35rem); font-weight: 400; line-height: 1.18; letter-spacing: .05em; text-transform: uppercase; }
+    .release-card p { margin: 0; color: var(--soft); font-size: .88rem; font-style: italic; line-height: 1.45; }
 
     .archive { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 28px; align-items: stretch; }
     .terminal { padding: 34px; border: 1px solid var(--line); background: #030303; font-family: var(--font-mono); min-height: 100%; }
     .terminal-line { color: var(--muted); line-height: 1.7; margin: 0 0 18px; }
     .terminal-line::before { content: "[SYS] // "; color: var(--magenta); }
     .terminal-line.hot { color: var(--text); text-shadow: 0 0 12px rgba(255,255,255,.14); }
-    .about-text { max-width: 880px; font-size: clamp(1.25rem, 2.3vw, 1.6rem); line-height: 1.8; color: rgba(242,240,237,.9); }
+    .about-text { max-width: 760px; font-size: clamp(1rem, 1.8vw, 1.25rem); line-height: 1.9; color: rgba(242,240,237,.82); }
     .contact-box { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; border: 1px solid var(--line); padding: 32px; background: var(--panel); }
     .contact-link { font-family: var(--font-serif); font-size: clamp(1.25rem, 2.5vw, 2rem); letter-spacing: .08em; text-decoration: none; border-bottom: 1px solid var(--magenta); padding-bottom: 5px; width: fit-content; }
     .contact-link:hover { color: var(--cyan2); border-color: var(--cyan2); }
@@ -196,7 +191,7 @@
 
     .modal { position: fixed; inset: 0; z-index: 5000; display: none; align-items: center; justify-content: center; padding: 22px; }
     .modal.active { display: flex; }
-    .modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.82); backdrop-filter: blur(12px); }
+    .modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.88); }
     .modal-panel { position: relative; width: min(1120px, 100%); max-height: min(86vh, 900px); overflow: auto; background: #040404; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 0 80px rgba(0,0,0,.88); }
     .modal-layout { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr); }
     .modal-art { min-height: 100%; background: #000; border-right: 1px solid var(--line); }
@@ -233,14 +228,14 @@
       100% { transform: translateX(18%) translateY(0); top: 31%; }
     }
     .release-card:hover, .release-card:focus-visible {
-      box-shadow: 0 18px 60px rgba(0,0,0,.78), 0 0 0 1px rgba(208,0,102,.40), 0 0 42px rgba(208,0,102,.28), 0 0 38px rgba(0,215,239,.18);
+      box-shadow: 0 12px 40px rgba(0,0,0,.70), 0 0 0 1px rgba(208,0,102,.35);
     }
     .release-card:hover .cover, .release-card:focus-visible .cover { box-shadow: inset 0 0 0 1px rgba(0,215,239,.22), inset 0 0 28px rgba(208,0,102,.14); }
     .release-card[data-color="true"] .cover img { filter: contrast(1.05) brightness(.90) saturate(1.22); }
     .release-card[data-color="true"]:hover .cover img { filter: contrast(1.12) brightness(.95) saturate(1.38); }
     .modal[data-color="true"] .modal-art img { filter: contrast(1.05) brightness(.9) saturate(1.18); }
-    .modal-panel { box-shadow: 0 0 80px rgba(0,0,0,.88), 0 0 0 1px rgba(208,0,102,.16), 0 0 38px rgba(0,215,239,.10); }
-    .link-card:hover { box-shadow: 0 0 0 1px rgba(208,0,102,.32), 0 0 22px rgba(208,0,102,.12), 0 0 18px rgba(0,215,239,.10); }
+    .modal-panel { box-shadow: 0 0 60px rgba(0,0,0,.92), 0 0 0 1px rgba(208,0,102,.18); }
+    .link-card:hover { box-shadow: none; }
 
     @media (max-width: 1100px) {
       .releases { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -253,7 +248,7 @@
       .nav { padding: 15px 4vw; }
       .brand { font-size: 1.05rem; letter-spacing: .34em; }
       .menu-toggle { display: inline-flex; position: relative; z-index: 2; }
-      nav ul { position: fixed; top: 0; right: -100%; width: min(82vw, 360px); height: 100vh; flex-direction: column; align-items: flex-start; justify-content: center; padding: 44px; gap: 28px; background: rgba(0,0,0,.97); border-left: 1px solid var(--line2); transition: right .34s ease; }
+      nav ul { position: fixed; top: 0; right: -100%; width: min(82vw, 360px); height: 100vh; flex-direction: column; align-items: flex-start; justify-content: center; padding: 44px; gap: 28px; background: #000; border-left: 1px solid rgba(255,255,255,.14); transition: right .34s ease; }
       nav ul.active { right: 0; }
       nav a { font-size: .92rem; color: var(--text); }
       .hero { min-height: 86vh; padding-top: 110px; background-position: 56% center; }
@@ -271,9 +266,21 @@
       .quick-inner { grid-template-columns: 1fr; }
       .actions .btn { width: 100%; }
       .hero-phrase { font-size: 1.32rem; }
-      .title-glitch { letter-spacing: .08em; }
-      .modal { padding: 10px; }
+        .modal { padding: 10px; }
       .modal-content { padding: 28px 22px; }
+    }
+
+    .hero-logo {
+      position: relative;
+      margin: 0 0 8px -2.5vw;
+      width: min(92vw, 860px);
+    }
+    .hero-logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      mix-blend-mode: screen;
+      filter: brightness(1.08) contrast(1.05);
     }
   </style>
 </head>
@@ -289,7 +296,7 @@
             <li><a href="#ouvir">Ouvir</a></li>
             <li><a href="#lancamentos">Lançamentos</a></li>
             <li><a href="#arquivo">Arquivo</a></li>
-            <li><a href="transmissoes.html">Transmissões</a></li>
+            <li><a href="transmissões.html">Transmissões</a></li>
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
@@ -301,7 +308,7 @@
       <section class="hero" id="inicio">
         <div class="hero-inner">
           <p class="kicker">AMORFA.online / transmissão em curso</p>
-          <h1 class="title-glitch" data-text="AMORFA">AMORFA</h1>
+          <div class="hero-logo"><img src="logo-amorfa-hero.webp" alt="AMORFA" /></div>
           <p class="hero-phrase">“a voz que voltou do fundo sem voltar inteira”</p>
           <p class="hero-copy">Dark pop, electroclash e pós-industrial brasileiro. Uma transmissão noturna entre tela, desejo, corpo, glamour deteriorado e sobrevivência.</p>
           <div class="actions">
