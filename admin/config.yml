@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+locale: pt
+
+collections:
+  - name: "transmissoes"
+    label: "Transmissões"
+    files:
+      - name: "posts"
+        label: "Todas as Transmissões"
+        file: "transmissoes.json"
+        fields:
+          - name: posts
+            label: Transmissões
+            label_singular: Transmissão
+            widget: list
+            summary: "{{fields.id}} — {{fields.tipo}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string", hint: "Ex: T-008, T-009..." }
+              - label: "Tipo"
+                name: "tipo"
+                widget: "select"
+                options:
+                  - { label: "Fragmento", value: "fragmento" }
+                  - { label: "Poema", value: "poema" }
+                  - { label: "Verso", value: "verso" }
+                  - { label: "Personagem", value: "personagem" }
+              - { label: "Título (só para poemas)", name: "titulo", widget: "string", required: false, default: "" }
+              - { label: "Conteúdo", name: "conteudo", widget: "text", hint: "Use quebras de linha normais. Linha em branco = nova estrofe." }
+              - { label: "Faixa relacionada (opcional)", name: "faixa", widget: "string", required: false, default: "" }
+
+  - name: "albums"
+    label: "Álbuns"
+    files:
+      - name: "catalogo"
+        label: "Catálogo Completo"
+        file: "data.json"
+        fields:
+          - name: albums
+            label: Álbuns
+            label_singular: Álbum
+            widget: list
+            summary: "{{fields.type}} — {{fields.title}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Tipo", name: "type", widget: "string", hint: "Ex: ÁLBUM I, EP" }
+              - { label: "Data", name: "date", widget: "string", hint: "Ex: 29 mai 2026" }
+              - { label: "Status", name: "status", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Imagem (nome do arquivo)", name: "image", widget: "string" }
+              - { label: "Conceito", name: "concept", widget: "string" }
+              - { label: "Resumo", name: "summary", widget: "text" }
+              - name: tracks
+                label: Faixas
+                widget: list
+                field: { label: "Faixa", name: "track", widget: "string" }
