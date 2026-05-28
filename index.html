@@ -12,11 +12,11 @@
   <meta property="og:description" content="Dark pop, electroclash e pós-industrial brasileiro. Uma transmissão noturna entre desejo, tela, corpo e ruína." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://amorfa.online/" />
-  <meta property="og:image" content="https://amorfa.online/hero-celestial-atlas-v8.jpg" />
+  <meta property="og:image" content="https://amorfa.online/hero-bg-v9.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AMORFA | Site Oficial" />
   <meta name="twitter:description" content="Dark pop, electroclash e pós-industrial brasileiro." />
-  <meta name="twitter:image" content="https://amorfa.online/hero-celestial-atlas-v8.jpg" />
+  <meta name="twitter:image" content="https://amorfa.online/hero-bg-v9.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,13 +96,34 @@
     nav a:hover { color: var(--text); text-shadow: 0 0 12px rgba(0,215,239,.45); }
     .menu-toggle { display: none; border: 1px solid var(--line2); background: #000; color: var(--text); padding: 10px 13px; font-size: 1rem; }
 
+    /* ── SMOKE CANVAS ── */
+    #smoke-canvas { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:2; opacity:.32; }
+
+    /* ── NEON AMBIENT BLEEDS ── */
+    .neon-bleed { position:fixed; pointer-events:none; z-index:3; }
+    .neon-bleed-left { left:-140px; top:15%; width:320px; height:65vh; background:radial-gradient(ellipse at left, rgba(147,0,67,.14) 0%, transparent 68%); animation:bleedPulse 7s ease-in-out infinite; }
+    .neon-bleed-right { right:-140px; top:28%; width:320px; height:55vh; background:radial-gradient(ellipse at right, rgba(0,130,147,.11) 0%, transparent 68%); animation:bleedPulse 9s ease-in-out infinite reverse; }
+    @keyframes bleedPulse { 0%,100%{opacity:.55} 50%{opacity:1} }
+
+    /* ── NEON BARS ── */
+    .neon-bar { position:fixed; height:1px; pointer-events:none; z-index:3; }
+    .neon-bar-m { background:var(--magenta2); box-shadow:0 0 4px 1px var(--magenta2),0 0 14px 2px rgba(208,0,102,.45),0 0 32px 4px rgba(147,0,67,.18); animation:neonFlicker 5s ease-in-out infinite; }
+    .neon-bar-c { background:var(--cyan2); box-shadow:0 0 4px 1px var(--cyan2),0 0 14px 2px rgba(0,215,239,.45),0 0 32px 4px rgba(0,130,147,.18); animation:neonFlicker 7s ease-in-out infinite reverse; }
+    .bar-tl { top:17vh; left:0; width:20vw; }
+    .bar-tr { top:23vh; right:0; width:13vw; }
+    .bar-ml { top:54vh; left:0; width:7vw; }
+    .bar-mr { top:61vh; right:0; width:17vw; }
+    @keyframes neonFlicker { 0%,100%{opacity:1} 91%{opacity:1} 92%{opacity:.2} 93%{opacity:1} 95%{opacity:.5} 96%{opacity:1} }
+
     .hero {
-      min-height: 94vh; padding: 130px 4vw 70px; display: grid; place-items: end start; position: relative; overflow: hidden;
+      min-height: 94vh; padding: 130px 4vw 70px;
+      display: grid; place-items: center;
+      position: relative; overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.97) 0%, rgba(0,0,0,.82) 43%, rgba(0,0,0,.62) 72%, rgba(0,0,0,.94) 100%),
-        radial-gradient(circle at 20% 70%, rgba(147,0,67,.20), transparent 32%),
-        radial-gradient(circle at 82% 35%, rgba(0,215,239,.13), transparent 28%),
-        url('hero-celestial-atlas-v8.jpg') center center / cover no-repeat,
+        linear-gradient(rgba(0,0,0,.52) 0%, rgba(0,0,0,.70) 100%),
+        radial-gradient(circle at 20% 70%, rgba(147,0,67,.18), transparent 34%),
+        radial-gradient(circle at 82% 35%, rgba(0,215,239,.11), transparent 30%),
+        url('hero-bg-v9.jpg') center center / cover no-repeat,
         #000;
       border-bottom: 1px solid var(--line);
     }
@@ -117,18 +138,17 @@
     }
     .hero::after {
       content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
-      background: radial-gradient(circle at 50% 50%, transparent 0 42%, rgba(0,0,0,.62) 76%, #000 100%);
+      background: radial-gradient(circle at 50% 50%, transparent 0 38%, rgba(0,0,0,.55) 72%, #000 100%);
     }
     @keyframes heroTear { 0%, 92%, 100% { transform: translate(0,0); } 94% { transform: translate(8px,-2px); } 96% { transform: translate(-5px,1px); } }
-    .hero-inner { max-width: 980px; width: min(980px, 100%); position: relative; z-index: 2; }
+    .hero-inner { max-width: 820px; width: min(820px, 100%); position: relative; z-index: 2; display:flex; flex-direction:column; align-items:center; text-align:center; }
     .kicker { font-family: var(--font-mono); color: var(--muted); letter-spacing: .35em; text-transform: uppercase; font-size: .78rem; margin: 0 0 22px; }
-    .title-glitch::before,
     @keyframes quietGlitch { 0%, 92%, 100% { transform: translate(0); } 94% { transform: translate(1px,-1px) skew(.5deg); } 96% { transform: translate(-1px,1px) skew(-.4deg); } }
     @keyframes sliceOne { 0%, 90%, 100% { clip-path: inset(0 0 72% 0); } 93% { clip-path: inset(22% 0 47% 0); } 95% { clip-path: inset(8% 0 82% 0); } }
     @keyframes sliceTwo { 0%, 91%, 100% { clip-path: inset(70% 0 0 0); } 94% { clip-path: inset(54% 0 28% 0); } 96% { clip-path: inset(82% 0 8% 0); } }
-    .hero-phrase { margin: 0 0 20px; font-size: clamp(1.55rem, 3vw, 2.55rem); font-style: italic; color: rgba(242,240,237,.9); max-width: 760px; }
-    .hero-copy { max-width: 650px; margin: 0 0 34px; color: var(--soft); font-size: 1.14rem; line-height: 1.72; }
-    .actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .hero-phrase { margin: 0 0 20px; font-size: clamp(1.55rem, 3vw, 2.55rem); font-style: italic; color: rgba(242,240,237,.9); max-width: 760px; text-align:center; }
+    .hero-copy { max-width: 580px; margin: 0 0 34px; color: var(--soft); font-size: 1.14rem; line-height: 1.72; text-align:center; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; justify-content:center; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 14px 26px;
       border: 1px solid var(--line2); background: rgba(0,0,0,.42); color: var(--text); text-decoration: none;
@@ -205,6 +225,7 @@
     .close-modal:hover { background: var(--text); color: #000; }
 
 
+    /* ── ALBUM CARDS — ENHANCED ── */
     .release-card::before {
       content: ""; position: absolute; inset: -1px; z-index: 2; pointer-events: none; opacity: 0;
       border: 1px solid transparent;
@@ -234,6 +255,40 @@
     .modal-panel { box-shadow: 0 0 80px rgba(0,0,0,.88), 0 0 0 1px rgba(208,0,102,.16), 0 0 38px rgba(0,215,239,.10); }
     .link-card:hover { box-shadow: 0 0 0 1px rgba(208,0,102,.32), 0 0 22px rgba(208,0,102,.12), 0 0 18px rgba(0,215,239,.10); }
 
+    /* Cantos em L neon nos cards */
+    .release-card .cover::before {
+      content:''; position:absolute; top:0; left:0; width:24px; height:1px;
+      background:var(--magenta2);
+      box-shadow:0 0 6px 1px rgba(208,0,102,.7);
+      opacity:0; transition:opacity .3s ease; z-index:4;
+    }
+    .release-card .cover::after {
+      content:'CLIQUE PARA ABRIR'; position:absolute; right:14px; bottom:13px;
+      font-family:var(--font-mono); font-size:.64rem; letter-spacing:.18em; color:rgba(255,255,255,.62);
+      opacity:0; transform:translateY(6px); transition:.25s ease;
+    }
+    .release-card:hover .cover::before { opacity:1; }
+    .release-card:hover .cover::after { opacity:1; transform:translateY(0); }
+
+    /* Linha lateral L */
+    .cover { position:relative; }
+    .cover-bracket {
+      position:absolute; top:0; left:0; width:1px; height:24px;
+      background:var(--magenta2);
+      box-shadow:0 0 6px 1px rgba(208,0,102,.7);
+      opacity:0; transition:opacity .3s ease; z-index:4; pointer-events:none;
+    }
+    .release-card:hover .cover-bracket { opacity:1; }
+
+    /* Base glow bar */
+    .card-base-glow {
+      position:absolute; bottom:0; left:15%; right:15%; height:1px;
+      background:var(--magenta2);
+      box-shadow:0 0 8px 1px rgba(208,0,102,.55), 0 0 20px 2px rgba(147,0,67,.22);
+      opacity:0; transition:opacity .35s ease; z-index:4; pointer-events:none;
+    }
+    .release-card:hover .card-base-glow { opacity:1; }
+
     @media (max-width: 1100px) {
       .releases { grid-template-columns: repeat(2, minmax(0,1fr)); }
       .quick-inner { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -248,7 +303,7 @@
       nav ul { position: fixed; top: 0; right: -100%; width: min(82vw, 360px); height: 100vh; flex-direction: column; align-items: flex-start; justify-content: center; padding: 44px; gap: 28px; background: rgba(0,0,0,.97); border-left: 1px solid var(--line2); transition: right .34s ease; }
       nav ul.active { right: 0; }
       nav a { font-size: .92rem; color: var(--text); }
-      .hero { min-height: 86vh; padding-top: 110px; background-position: 56% center; }
+      .hero { min-height: 86vh; padding-top: 110px; background-position: 50% center; place-items: center; }
       .hero-copy { font-size: 1.04rem; }
       section { padding: 70px 4vw; }
       .section-head { display: block; }
@@ -267,12 +322,19 @@
       .modal-content { padding: 28px 22px; }
     }
 
-    .hero-logo { position:relative; margin:0 0 8px -2.5vw; width:min(92vw,860px); }
+    .hero-logo { position:relative; margin:0 0 8px; width:min(88vw,720px); }
     .hero-logo img { width:100%; height:auto; display:block; filter:brightness(1.05) contrast(1.02); }
   </style>
 </head>
 <body>
   <div class="page">
+    <canvas id="smoke-canvas"></canvas>
+    <div class="neon-bleed neon-bleed-left"></div>
+    <div class="neon-bleed neon-bleed-right"></div>
+    <div class="neon-bar neon-bar-m bar-tl"></div>
+    <div class="neon-bar neon-bar-c bar-tr"></div>
+    <div class="neon-bar neon-bar-c bar-ml"></div>
+    <div class="neon-bar neon-bar-m bar-mr"></div>
     <header>
       <div class="nav">
         <a class="brand" href="#inicio" aria-label="AMORFA início">AMORFA</a>
@@ -510,7 +572,7 @@
     function renderCards() {
       grid.innerHTML = albums.map((album, index) => `
         <button class="release-card" type="button" data-index="${index}" data-color="${album.color ? 'true' : 'false'}" aria-label="Abrir ${album.title}">
-          <div class="cover"><img src="${album.image}" alt="Capa de ${album.title}" loading="lazy"></div>
+          <div class="cover"><img src="${album.image}" alt="Capa de ${album.title}" loading="lazy"><div class="cover-bracket"></div></div>
           <div class="release-body">
             <div>
               <div class="release-meta"><span>${album.date}</span><span>${album.type}</span></div>
@@ -518,6 +580,7 @@
             </div>
             <p>“${album.concept}”</p>
           </div>
+          <div class="card-base-glow"></div>
         </button>
       `).join('');
     }
@@ -564,6 +627,58 @@
         menuBtn.textContent = '☰';
       });
     });
+  </script>
+  <script>
+    /* ── SMOKE CANVAS ── */
+    (function(){
+      const canvas = document.getElementById('smoke-canvas');
+      if(!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H;
+      function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+      resize();
+      window.addEventListener('resize', resize);
+      function Particle(){this.reset();}
+      Particle.prototype.reset = function(){
+        this.x = Math.random()*W;
+        this.y = H + Math.random()*60;
+        this.size = Math.random()*110+35;
+        this.vy = -(Math.random()*.28+.07);
+        this.vx = (Math.random()-.5)*.12;
+        this.life = 0;
+        this.max = Math.random()*320+180;
+        this.drift = (Math.random()-.5)*.0025;
+        this.t = Math.random()<.14?'m':Math.random()<.08?'c':'n';
+      };
+      Particle.prototype.update = function(){
+        this.life++; this.y+=this.vy; this.x+=this.vx; this.vx+=this.drift; this.size+=.12;
+        if(this.life>this.max||this.y<-this.size) this.reset();
+      };
+      Particle.prototype.draw = function(){
+        var a = Math.sin((this.life/this.max)*Math.PI)*.055;
+        var r=55,g=45,b=55;
+        if(this.t==='m'){r=95;g=18;b=45;}
+        if(this.t==='c'){r=18;g=75;b=95;}
+        var grd = ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size);
+        grd.addColorStop(0,'rgba('+r+','+g+','+b+','+a+')');
+        grd.addColorStop(1,'rgba('+r+','+g+','+b+',0)');
+        ctx.fillStyle = grd;
+        ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill();
+      };
+      var particles = [];
+      for(var i=0;i<20;i++){
+        var p = new Particle();
+        p.y = Math.random()*H;
+        p.life = Math.floor(Math.random()*p.max);
+        particles.push(p);
+      }
+      function loop(){
+        ctx.clearRect(0,0,W,H);
+        particles.forEach(function(p){p.update();p.draw();});
+        requestAnimationFrame(loop);
+      }
+      loop();
+    })();
   </script>
 </body>
 </html>

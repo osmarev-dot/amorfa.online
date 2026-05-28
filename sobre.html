@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AMORFA | Sobre</title>
-  <meta name="description" content="Cinco álbuns. Cinco operações sobre o mesmo material." />
+  <meta name="description" content="AMORFA é um projeto musical brasileiro de dark pop, electroclash e pós-industrial. A voz que voltou do fundo sem conseguir voltar inteira." />
   <meta name="theme-color" content="#000000" />
   <link rel="canonical" href="https://amorfa.online/sobre.html" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -14,15 +14,45 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <style>
-    :root{--black:#000;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);--text:#f2f0ed;--muted:#77726f;--soft:#aaa29e;--magenta:#930043;--magenta2:#d00066;--cyan:#008293;--cyan2:#00d7ef;--font-serif:'Cinzel','Times New Roman',serif;--font-body:'Cormorant Garamond',Georgia,serif;--font-mono:'Courier New',Courier,monospace;}
+    :root{
+      --black:#000;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
+      --text:#f2f0ed;--muted:#77726f;--soft:#aaa29e;
+      --magenta:#930043;--magenta2:#d00066;--cyan:#008293;--cyan2:#00d7ef;
+      --font-serif:'Cinzel','Times New Roman',serif;
+      --font-body:'Cormorant Garamond',Georgia,serif;
+      --font-mono:'Courier New',Courier,monospace;
+    }
     *{box-sizing:border-box;cursor:crosshair;}
     html{scroll-behavior:smooth;background:var(--black);color:var(--text);}
     body{margin:0;min-height:100vh;background:#000;font-family:var(--font-body);overflow-x:hidden;}
+
+    /* CRT + grain */
     body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;background:linear-gradient(rgba(255,255,255,0) 50%,rgba(0,0,0,.34) 50%),linear-gradient(90deg,rgba(147,0,67,.045),rgba(0,130,147,.03),rgba(255,255,255,.018));background-size:100% 4px,6px 100%;mix-blend-mode:screen;opacity:.62;}
     body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:9998;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(3) infinite;}
     @keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
-    a{color:inherit;text-decoration:none;}.page{position:relative;z-index:1;}
-    header{position:fixed;inset:0 0 auto 0;z-index:3000;background:#000;border-bottom:1px solid var(--line2);}
+
+    /* Smoke canvas */
+    #smoke-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;opacity:.28;}
+
+    /* Neon bleeds */
+    .neon-bleed{position:fixed;pointer-events:none;z-index:3;}
+    .neon-bleed-left{left:-140px;top:15%;width:320px;height:65vh;background:radial-gradient(ellipse at left,rgba(147,0,67,.12) 0%,transparent 68%);animation:bleedPulse 7s ease-in-out infinite;}
+    .neon-bleed-right{right:-140px;top:28%;width:320px;height:55vh;background:radial-gradient(ellipse at right,rgba(0,130,147,.09) 0%,transparent 68%);animation:bleedPulse 9s ease-in-out infinite reverse;}
+    @keyframes bleedPulse{0%,100%{opacity:.5}50%{opacity:1}}
+
+    /* Neon bars */
+    .neon-bar{position:fixed;height:1px;pointer-events:none;z-index:3;}
+    .neon-bar-m{background:var(--magenta2);box-shadow:0 0 4px 1px var(--magenta2),0 0 14px 2px rgba(208,0,102,.4),0 0 30px 4px rgba(147,0,67,.15);animation:neonFlicker 5s ease-in-out infinite;}
+    .neon-bar-c{background:var(--cyan2);box-shadow:0 0 4px 1px var(--cyan2),0 0 14px 2px rgba(0,215,239,.4),0 0 30px 4px rgba(0,130,147,.15);animation:neonFlicker 8s ease-in-out infinite reverse;}
+    .bar-tl{top:18vh;left:0;width:18vw;} .bar-tr{top:25vh;right:0;width:11vw;}
+    .bar-ml{top:52vh;left:0;width:6vw;} .bar-mr{top:68vh;right:0;width:15vw;}
+    @keyframes neonFlicker{0%,100%{opacity:1}91%{opacity:1}92%{opacity:.15}93%{opacity:1}95%{opacity:.45}96%{opacity:1}}
+
+    a{color:inherit;text-decoration:none;}
+    .page{position:relative;z-index:1;}
+
+    /* Header */
+    header{position:fixed;inset:0 0 auto 0;z-index:3000;background:rgba(0,0,0,.88);border-bottom:1px solid var(--line2);backdrop-filter:blur(14px);}
     .nav{max-width:1420px;margin:0 auto;padding:18px 4vw;display:flex;align-items:center;justify-content:space-between;gap:26px;}
     .brand{font-family:var(--font-serif);font-size:1.38rem;letter-spacing:.45em;position:relative;}
     .brand::after{content:"";position:absolute;left:0;bottom:-9px;width:44px;height:1px;background:linear-gradient(90deg,var(--magenta),transparent);}
@@ -31,32 +61,137 @@
     nav a:hover,nav a.active{color:var(--text);text-shadow:0 0 12px rgba(0,215,239,.45);}
     nav a.active{border-bottom:1px solid var(--magenta);padding-bottom:2px;}
     .menu-toggle{display:none;border:1px solid var(--line2);background:#000;color:var(--text);padding:10px 13px;font-size:1rem;cursor:pointer;}
-    .page-hero{padding:142px 4vw 72px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;background:radial-gradient(circle at 5% 90%,rgba(147,0,67,.12),transparent 42%),radial-gradient(circle at 95% 10%,rgba(0,130,147,.07),transparent 38%),#000;}
+
+    /* Page hero */
+    .page-hero{
+      padding:148px 4vw 80px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 5% 90%,rgba(147,0,67,.10),transparent 42%),
+        radial-gradient(circle at 95% 10%,rgba(0,130,147,.07),transparent 38%),
+        #000;
+    }
     .page-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 10px);mix-blend-mode:screen;}
     .hero-inner{max-width:900px;position:relative;z-index:1;}
     .hero-kicker{font-family:var(--font-mono);color:var(--muted);letter-spacing:.35em;text-transform:uppercase;font-size:.78rem;margin:0 0 22px;display:flex;align-items:center;gap:14px;}
     .hero-kicker::before{content:"";display:block;width:28px;height:1px;background:var(--magenta);}
-    .hero-title{font-family:var(--font-serif);font-size:clamp(3rem,9vw,7rem);font-weight:400;letter-spacing:.15em;text-transform:uppercase;margin:0 0 28px;line-height:.92;text-shadow:2px 0 var(--magenta),-1px 0 rgba(0,215,239,.55);}
+    .hero-title{font-family:var(--font-serif);font-size:clamp(3rem,9vw,7rem);font-weight:400;letter-spacing:.15em;text-transform:uppercase;margin:0 0 0;line-height:.92;text-shadow:2px 0 var(--magenta),-1px 0 rgba(0,215,239,.55);}
+
+    /* Main content */
     .main{max-width:1420px;margin:0 auto;padding:0 4vw 120px;}
-    .sobre-body{max-width:780px;padding:72px 0;}
-    .sobre-body p{font-family:var(--font-body);font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.78;color:rgba(242,240,237,.88);margin:0 0 1.4em;}
+    .sobre-body{max-width:760px;padding:72px 0;}
+
+    .sobre-body p{
+      font-family:var(--font-body);
+      font-size:clamp(1.18rem,2vw,1.52rem);
+      line-height:1.82;
+      color:rgba(242,240,237,.88);
+      margin:0 0 1.5em;
+    }
     .sobre-body p:last-child{margin-bottom:0;}
-    .sobre-body strong{font-weight:400;color:var(--text);}
     .sobre-body em{font-style:italic;color:var(--soft);}
-    .sobre-body .lei{font-family:var(--font-serif);font-size:clamp(1.1rem,1.8vw,1.4rem);letter-spacing:.06em;text-transform:uppercase;color:var(--text);margin-top:2em;padding-top:2em;border-top:1px solid var(--line);}
-    .sobre-body .lei::before{content:"";display:block;width:28px;height:1px;background:var(--magenta);margin-bottom:1.4em;}
-    .estados{margin:2.4em 0;display:grid;gap:0;}
-    .estado{border-bottom:1px solid var(--line);padding:22px 0;display:grid;grid-template-columns:100px 1fr;gap:0 32px;align-items:baseline;}
-    .estado-num{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;}
-    .estado-text{font-family:var(--font-body);font-size:clamp(1rem,1.6vw,1.25rem);color:var(--soft);font-style:italic;}
+
+    /* Linha destacada — "Não voltou inteira." */
+    .sobre-body .fragment{
+      font-family:var(--font-serif);
+      font-size:clamp(1rem,1.6vw,1.22rem);
+      letter-spacing:.06em;
+      color:var(--muted);
+      margin:0 0 1.5em;
+      padding-left:0;
+    }
+
+    /* Tabela de estados */
+    .estados{margin:2.6em 0 2.6em;display:grid;gap:0;}
+    .estado{
+      border-bottom:1px solid var(--line);
+      padding:20px 0;
+      display:grid;
+      grid-template-columns:80px 1fr;
+      gap:0 28px;
+      align-items:baseline;
+    }
+    .estado:first-child{border-top:1px solid var(--line);}
+    .estado-num{
+      font-family:var(--font-mono);font-size:.62rem;letter-spacing:.25em;
+      color:var(--magenta2);text-transform:uppercase;
+      transition:.25s ease;
+    }
+    .estado:hover .estado-num{color:var(--cyan2);}
+    .estado-text{
+      font-family:var(--font-body);
+      font-size:clamp(.95rem,1.5vw,1.18rem);
+      color:var(--soft);font-style:italic;line-height:1.5;
+      transition:.25s ease;
+    }
+    .estado:hover .estado-text{color:var(--text);}
+
+    /* Fragmentos curtos */
+    .sobre-body .negacao{
+      font-family:var(--font-body);
+      font-size:clamp(1.05rem,1.65vw,1.32rem);
+      font-style:italic;
+      color:var(--muted);
+      line-height:1.9;
+      margin:0 0 1.5em;
+    }
+
+    /* Lei central */
+    .lei{
+      font-family:var(--font-serif);
+      font-size:clamp(1rem,1.7vw,1.3rem);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--text);
+      margin:2.4em 0 0;
+      padding:2em 0 0;
+      border-top:1px solid var(--line);
+      position:relative;
+    }
+    .lei::before{
+      content:"";display:block;width:28px;height:1px;
+      background:linear-gradient(90deg,var(--magenta2),var(--cyan));
+      box-shadow:0 0 8px rgba(208,0,102,.5);
+      margin-bottom:1.4em;
+    }
+
+    /* Neon divider */
+    .neon-div{
+      width:100%;height:1px;position:relative;margin:0;
+      background:transparent;
+    }
+    .neon-div::after{
+      content:'';position:absolute;left:0;right:0;top:0;height:1px;
+      background:linear-gradient(90deg,transparent,var(--magenta2) 30%,var(--cyan2) 70%,transparent);
+      box-shadow:0 0 8px rgba(208,0,102,.35),0 0 18px rgba(0,215,239,.18);
+    }
+
     footer{border-top:1px solid var(--line);padding:38px 4vw;color:var(--muted);font-family:var(--font-serif);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem;}
     .footer-inner{max-width:1420px;margin:0 auto;display:flex;justify-content:space-between;}
     .pulse{color:var(--magenta);animation:pulse 2.6s infinite;}
     @keyframes pulse{0%,100%{opacity:.42}50%{opacity:1;text-shadow:0 0 9px var(--magenta)}}
-    @media(max-width:780px){.nav{padding:15px 4vw;}.brand{font-size:1.05rem;letter-spacing:.34em;}.menu-toggle{display:inline-flex;position:relative;z-index:2;}nav ul{position:fixed;top:0;right:-100%;width:min(82vw,360px);height:100vh;flex-direction:column;align-items:flex-start;justify-content:center;padding:44px;gap:28px;background:#000;border-left:1px solid var(--line2);transition:right .34s ease;z-index:4000;}nav ul.active{right:0;}nav a{font-size:.92rem;color:var(--text);}.page-hero{padding:110px 4vw 52px;}.estado{grid-template-columns:1fr;gap:6px;}}
+
+    @media(max-width:780px){
+      .nav{padding:15px 4vw;}
+      .brand{font-size:1.05rem;letter-spacing:.34em;}
+      .menu-toggle{display:inline-flex;position:relative;z-index:2;}
+      nav ul{position:fixed;top:0;right:-100%;width:min(82vw,360px);height:100vh;flex-direction:column;align-items:flex-start;justify-content:center;padding:44px;gap:28px;background:#000;border-left:1px solid var(--line2);transition:right .34s ease;z-index:4000;}
+      nav ul.active{right:0;}
+      nav a{font-size:.92rem;color:var(--text);}
+      .page-hero{padding:110px 4vw 52px;}
+      .estado{grid-template-columns:60px 1fr;gap:0 16px;}
+      .neon-bar{display:none;}
+    }
   </style>
 </head>
 <body>
+<canvas id="smoke-canvas"></canvas>
+<div class="neon-bleed neon-bleed-left"></div>
+<div class="neon-bleed neon-bleed-right"></div>
+<div class="neon-bar neon-bar-m bar-tl"></div>
+<div class="neon-bar neon-bar-c bar-tr"></div>
+<div class="neon-bar neon-bar-c bar-ml"></div>
+<div class="neon-bar neon-bar-m bar-mr"></div>
+
 <div class="page">
   <header>
     <div class="nav">
@@ -83,22 +218,42 @@
     </div>
   </div>
 
+  <div class="neon-div"></div>
+
   <main class="main">
     <div class="sobre-body">
-      <p>AMORFA é um projeto musical brasileiro de dark pop, electroclash e pós-industrial.</p>
-      <p>Cinco álbuns. Cinco operações sobre o mesmo material.</p>
+
+      <p><strong>AMORFA</strong> é um projeto musical brasileiro de dark pop, electroclash e pós-industrial.</p>
+
+      <p>O nome vem de uma condição: aquilo que não conserva forma fixa. Antes de existir como música, AMORFA existiu como livro — <em>Onde Se Guarda o Que Não Existe Mais</em>, nunca publicado, nunca descartado. O livro desceu. AMORFA é o que voltou do fundo com voz.</p>
+
+      <p class="fragment">Não voltou inteira.</p>
+
+      <p>AMORFA canta gente que continua funcionando mesmo quando o corpo já acusa a falha.</p>
+
+      <p>A discografia é uma sequência de deterioração:</p>
 
       <div class="estados">
-        <div class="estado"><span class="estado-num">I</span><span class="estado-text">o corpo na vitrine. tudo que salva devora.</span></div>
-        <div class="estado"><span class="estado-num">II</span><span class="estado-text">o contato: a carne que aquece, marca e esfria.</span></div>
-        <div class="estado"><span class="estado-num">III</span><span class="estado-text">a devoção: a ausência que vira altar. o sinal que não chegou vira oração.</span></div>
-        <div class="estado"><span class="estado-num">IV</span><span class="estado-text">a dissolução: a forma cedendo milímetro a milímetro sem espetáculo.</span></div>
-        <div class="estado"><span class="estado-num">V</span><span class="estado-text">a origem: o fundo. o arranjo. o que nunca saiu.</span></div>
+        <div class="estado"><span class="estado-num">I</span><span class="estado-text">a superfície que salva e devora</span></div>
+        <div class="estado"><span class="estado-num">II</span><span class="estado-text">o contato que aquece e marca</span></div>
+        <div class="estado"><span class="estado-num">III</span><span class="estado-text">a ausência transformada em culto doméstico</span></div>
+        <div class="estado"><span class="estado-num">IV</span><span class="estado-text">a forma que dissolve</span></div>
+        <div class="estado"><span class="estado-num">V</span><span class="estado-text">o fundo que revela suas entidades</span></div>
       </div>
 
-      <p>Não é arco de cura.<br>É circuito fechado.</p>
+      <p class="negacao">
+        O som não conserta. A voz não salva.<br>
+        A frequência confirma o que o corpo já sabia.
+      </p>
+
+      <p>Tela acesa. Vitrine. Carne. Ruído. Cinza.</p>
+
+      <p>Não é pop solar. Não é rock teatral. Não é confissão polida.</p>
+
+      <p>É música para quando a superfície começa a devolver o dano.</p>
 
       <p class="lei">tudo que salva também devora.</p>
+
     </div>
   </main>
 
@@ -109,11 +264,57 @@
     </div>
   </footer>
 </div>
+
 <script>
+  /* menu */
   const menuBtn = document.getElementById('menuBtn');
   const navMenu = document.getElementById('navMenu');
-  menuBtn.addEventListener('click', () => { navMenu.classList.toggle('active'); menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰'; });
-  navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { navMenu.classList.remove('active'); menuBtn.textContent = '☰'; }));
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+  });
+  navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+    navMenu.classList.remove('active'); menuBtn.textContent = '☰';
+  }));
+
+  /* smoke */
+  (function(){
+    const canvas = document.getElementById('smoke-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+    function P(){this.reset();}
+    P.prototype.reset = function(){
+      this.x=Math.random()*W; this.y=H+Math.random()*60;
+      this.size=Math.random()*100+30; this.vy=-(Math.random()*.25+.06);
+      this.vx=(Math.random()-.5)*.1; this.life=0; this.max=Math.random()*300+180;
+      this.drift=(Math.random()-.5)*.002;
+      this.t=Math.random()<.13?'m':Math.random()<.07?'c':'n';
+    };
+    P.prototype.update=function(){
+      this.life++; this.y+=this.vy; this.x+=this.vx; this.vx+=this.drift; this.size+=.1;
+      if(this.life>this.max||this.y<-this.size) this.reset();
+    };
+    P.prototype.draw=function(){
+      var a=Math.sin((this.life/this.max)*Math.PI)*.05;
+      var r=55,g=45,b=55;
+      if(this.t==='m'){r=90;g=15;b=42;}
+      if(this.t==='c'){r=15;g=72;b=90;}
+      var grd=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size);
+      grd.addColorStop(0,'rgba('+r+','+g+','+b+','+a+')');
+      grd.addColorStop(1,'rgba('+r+','+g+','+b+',0)');
+      ctx.fillStyle=grd; ctx.beginPath(); ctx.arc(this.x,this.y,this.size,0,Math.PI*2); ctx.fill();
+    };
+    var pts=[];
+    for(var i=0;i<18;i++){
+      var p=new P(); p.y=Math.random()*H; p.life=Math.floor(Math.random()*p.max); pts.push(p);
+    }
+    function loop(){ ctx.clearRect(0,0,W,H); pts.forEach(function(p){p.update();p.draw();}); requestAnimationFrame(loop); }
+    loop();
+  })();
 </script>
 </body>
 </html>
