@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMORFA | Estratos</title>
+  <meta name="description" content="Os estratos do arquivo. O livro desceu. Os álbuns são o que voltou." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://amorfa.online/estratos.html" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:#000;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
+      --text:#f2f0ed;--muted:#77726f;--soft:#aaa29e;
+      --magenta:#930043;--magenta2:#d00066;--cyan:#008293;--cyan2:#00d7ef;
+      --font-serif:'Cinzel','Times New Roman',serif;
+      --font-body:'Cormorant Garamond',Georgia,serif;
+      --font-mono:'Courier New',Courier,monospace;
+    }
+    *{box-sizing:border-box;cursor:crosshair;}
+    html{scroll-behavior:smooth;background:var(--black);color:var(--text);}
+    body{margin:0;min-height:100vh;background:#000;font-family:var(--font-body);overflow-x:hidden;}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
+      background:linear-gradient(rgba(255,255,255,0) 50%,rgba(0,0,0,.34) 50%),
+      linear-gradient(90deg,rgba(147,0,67,.045),rgba(0,130,147,.03),rgba(255,255,255,.018));
+      background-size:100% 4px,6px 100%;mix-blend-mode:screen;opacity:.62;}
+    body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:9998;opacity:.055;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation:grain 1.2s steps(3) infinite;}
+    @keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
+    a{color:inherit;text-decoration:none;}
+    .page{position:relative;z-index:1;}
+
+    /* NAV */
+    header{position:fixed;inset:0 0 auto 0;z-index:3000;background:#000;border-bottom:1px solid var(--line2);}
+    .nav{max-width:1420px;margin:0 auto;padding:18px 4vw;display:flex;align-items:center;justify-content:space-between;gap:26px;}
+    .brand{font-family:var(--font-serif);font-size:1.38rem;letter-spacing:.45em;position:relative;}
+    .brand::after{content:"";position:absolute;left:0;bottom:-9px;width:44px;height:1px;background:linear-gradient(90deg,var(--magenta),transparent);}
+    nav ul{margin:0;padding:0;display:flex;list-style:none;gap:30px;}
+    nav a{font-family:var(--font-serif);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);transition:.25s ease;}
+    nav a:hover,nav a.active{color:var(--text);text-shadow:0 0 12px rgba(0,215,239,.45);}
+    nav a.active{border-bottom:1px solid var(--magenta);padding-bottom:2px;}
+    .menu-toggle{display:none;border:1px solid var(--line2);background:#000;color:var(--text);padding:10px 13px;font-size:1rem;cursor:pointer;}
+
+    /* HERO */
+    .page-hero{
+      padding:142px 4vw 72px;
+      border-bottom:1px solid var(--line);
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 5% 90%,rgba(147,0,67,.12),transparent 42%),
+        radial-gradient(circle at 95% 10%,rgba(0,130,147,.07),transparent 38%),#000;
+    }
+    .page-hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+      background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 10px);
+      mix-blend-mode:screen;}
+    .hero-inner{max-width:900px;position:relative;z-index:1;}
+    .hero-kicker{font-family:var(--font-mono);color:var(--muted);letter-spacing:.35em;text-transform:uppercase;font-size:.78rem;margin:0 0 22px;display:flex;align-items:center;gap:14px;}
+    .hero-kicker::before{content:"";display:block;width:28px;height:1px;background:var(--magenta);}
+    .hero-title{font-family:var(--font-serif);font-size:clamp(3rem,9vw,7rem);font-weight:400;letter-spacing:.15em;text-transform:uppercase;margin:0 0 28px;line-height:.92;text-shadow:2px 0 var(--magenta),-1px 0 rgba(0,215,239,.55);}
+    .hero-nota{font-family:var(--font-body);font-style:italic;color:var(--soft);font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.7;margin:0;}
+
+    /* MAIN */
+    .main{max-width:1420px;margin:0 auto;padding:0 4vw 120px;}
+
+    /* TRANSITION — livro → álbuns */
+    .arco{
+      padding:72px 0 64px;
+      border-bottom:1px solid var(--line);
+      max-width:680px;
+    }
+    .arco-text{
+      font-family:var(--font-body);
+      font-size:clamp(1.3rem,2.2vw,1.8rem);
+      font-style:italic;
+      color:var(--soft);
+      line-height:1.7;
+      margin:0;
+    }
+    .arco-text strong{
+      font-style:normal;
+      font-weight:400;
+      color:var(--text);
+    }
+
+    /* ESTRATOS GRID */
+    .estratos-section{padding:64px 0 0;}
+    .section-label{
+      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.35em;
+      text-transform:uppercase;color:var(--muted);margin:0 0 48px;
+      display:flex;align-items:center;gap:14px;
+    }
+    .section-label::before{content:"";display:block;width:28px;height:1px;background:var(--magenta);}
+
+    .estratos-list{display:grid;gap:0;}
+
+    .estrato{
+      border-bottom:1px solid var(--line);
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:0 52px;
+      padding:52px 0;
+      position:relative;
+      align-items:start;
+    }
+    .estrato::before{
+      content:"";position:absolute;left:0;top:0;bottom:0;width:1px;
+      background:linear-gradient(to bottom,transparent,var(--magenta),transparent);
+      opacity:0;transition:opacity .4s ease;
+    }
+    .estrato:hover::before{opacity:1;}
+
+    .estrato-num{
+      font-family:var(--font-mono);font-size:.68rem;letter-spacing:.28em;
+      color:var(--muted);text-transform:uppercase;padding-top:4px;
+      position:sticky;top:80px;
+    }
+    .estrato-num span{
+      display:block;font-size:2.2rem;letter-spacing:0;color:rgba(255,255,255,.06);
+      font-family:var(--font-serif);line-height:1;margin-bottom:12px;
+    }
+
+    .estrato-content{}
+    .estrato-title{
+      font-family:var(--font-serif);font-size:clamp(1.1rem,1.8vw,1.55rem);
+      font-weight:400;letter-spacing:.08em;text-transform:uppercase;
+      margin:0 0 20px;line-height:1.2;color:var(--text);
+    }
+    .estrato-fragment{
+      font-family:var(--font-body);font-size:clamp(1.15rem,1.9vw,1.5rem);
+      font-style:italic;line-height:1.72;color:var(--soft);
+      max-width:620px;margin:0;
+    }
+    .estrato:hover .estrato-fragment{color:rgba(242,240,237,.82);}
+
+    /* CODA DIVIDER */
+    .coda-divider{
+      padding:80px 0 64px;
+      border-bottom:1px solid var(--line);
+    }
+    .coda-label{
+      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.35em;
+      text-transform:uppercase;color:var(--muted);margin:0 0 20px;
+      display:flex;align-items:center;gap:14px;
+    }
+    .coda-label::before{content:"";display:block;width:28px;height:1px;background:var(--cyan);}
+    .coda-nota{
+      font-family:var(--font-body);font-style:italic;color:var(--muted);
+      font-size:1.05rem;line-height:1.7;max-width:520px;margin:0;
+    }
+
+    /* CODA POSTS */
+    .coda-list{list-style:none;margin:0;padding:0;}
+    .coda-entry{border-bottom:1px solid var(--line);overflow:hidden;}
+    .coda-row{
+      display:grid;grid-template-columns:80px 1fr 22px;
+      align-items:center;gap:0 24px;
+      padding:22px 0;cursor:pointer;transition:background .18s ease;position:relative;
+    }
+    .coda-row::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+      background:linear-gradient(90deg,var(--cyan),transparent);
+      transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
+    .coda-row:hover::after,.coda-entry.open .coda-row::after{transform:scaleX(1);}
+    .coda-row:hover{background:rgba(0,130,147,.03);}
+    .coda-entry.open .coda-row{background:rgba(0,130,147,.04);}
+    .coda-id{font-family:var(--font-mono);font-size:.67rem;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;}
+    .coda-preview{font-family:var(--font-body);font-size:1.08rem;color:var(--soft);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .coda-entry.open .coda-row .coda-preview{color:var(--text);}
+    .coda-chev{font-size:.68rem;color:var(--muted);transition:transform .22s ease;font-family:var(--font-mono);text-align:right;}
+    .coda-entry.open .coda-row .coda-chev{transform:rotate(180deg);color:var(--cyan);}
+    .coda-body-wrap{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
+    .coda-entry.open .coda-body-wrap{max-height:3000px;}
+    .coda-body-inner{padding:32px 0 44px;border-top:1px solid var(--line);}
+    .coda-post-title{font-family:var(--font-serif);font-size:clamp(1.3rem,2.2vw,1.9rem);font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin:0 0 22px;line-height:1.14;}
+    .coda-body-text{font-family:var(--font-body);font-size:clamp(1.12rem,1.7vw,1.4rem);line-height:1.58;color:rgba(242,240,237,.88);max-width:680px;}
+    .coda-body-text p{margin:0 0 .45em;}
+    .coda-body-text p:last-child{margin-bottom:0;}
+    .coda-empty{padding:48px 0;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.2em;color:var(--muted);}
+
+    footer{border-top:1px solid var(--line);padding:38px 4vw;color:var(--muted);font-family:var(--font-serif);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem;}
+    .footer-inner{max-width:1420px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;}
+    .pulse{color:var(--magenta);animation:pulse 2.6s infinite;}
+    @keyframes pulse{0%,100%{opacity:.42}50%{opacity:1;text-shadow:0 0 9px var(--magenta)}}
+
+    /* MOBILE */
+    @media(max-width:780px){
+      .nav{padding:15px 4vw;}
+      .brand{font-size:1.05rem;letter-spacing:.34em;}
+      .menu-toggle{display:inline-flex;position:relative;z-index:2;}
+      nav ul{position:fixed;top:0;right:-100%;width:min(82vw,360px);height:100vh;flex-direction:column;align-items:flex-start;justify-content:center;padding:44px;gap:28px;background:#000;border-left:1px solid var(--line2);transition:right .34s ease;z-index:4000;}
+      nav ul.active{right:0;}
+      nav a{font-size:.92rem;color:var(--text);}
+      .page-hero{padding:110px 4vw 52px;}
+      .estrato{grid-template-columns:1fr;gap:16px;padding:40px 0;}
+      .estrato-num{position:static;display:flex;align-items:center;gap:12px;}
+      .estrato-num span{font-size:1.4rem;margin-bottom:0;margin-right:4px;}
+      .coda-row{grid-template-columns:60px 1fr 18px;padding:18px 0;gap:0 12px;}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">AMORFA</a>
+      <button class="menu-toggle" id="menuBtn">☰</button>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#ouvir">Ouvir</a></li>
+          <li><a href="index.html#lancamentos">Lançamentos</a></li>
+          <li><a href="estratos.html" class="active">Estratos</a></li>
+          <li><a href="transmissoes.html">Transmissões</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="hero-inner">
+      <p class="hero-kicker">AMORFA.online // arquivo profundo</p>
+      <h1 class="hero-title">Estratos</h1>
+      <p class="hero-nota">Seis modos de guardar o que não podia ficar à luz.</p>
+    </div>
+  </div>
+
+  <main class="main">
+
+    <div class="arco">
+      <p class="arco-text">
+        os estratos desceram.<br>
+        <strong>os álbuns são o que voltou.</strong>
+      </p>
+    </div>
+
+    <section class="estratos-section">
+      <p class="section-label">arquivo</p>
+      <div class="estratos-list">
+
+        <div class="estrato">
+          <div class="estrato-num">
+            <span>0</span>
+            ESTRATO 0
+          </div>
+          <div class="estrato-content">
+            <h2 class="estrato-title">O Guardião das Formas</h2>
+            <p class="estrato-fragment">onde antes havia face,<br>fica uma trama fria<br>sustentando o que já não encosta.</p>
+          </div>
+        </div>
+
+        <div class="estrato">
+          <div class="estrato-num">
+            <span>I</span>
+            ESTRATO I
+          </div>
+          <div class="estrato-content">
+            <h2 class="estrato-title">O Legista dos Corpos Transitórios</h2>
+            <p class="estrato-fragment">tateamos este brilho azul<br>com a gravidade de quem inaugura o fogo<br>pela segunda vez.</p>
+          </div>
+        </div>
+
+        <div class="estrato">
+          <div class="estrato-num">
+            <span>II</span>
+            ESTRATO II
+          </div>
+          <div class="estrato-content">
+            <h2 class="estrato-title">O Operador de Simulacros</h2>
+            <p class="estrato-fragment">o oco que era meu<br>respondeu com outra voz.<br>o que eu abria voltava ocupado.</p>
+          </div>
+        </div>
+
+        <div class="estrato">
+          <div class="estrato-num">
+            <span>III</span>
+            ESTRATO III
+          </div>
+          <div class="estrato-content">
+            <h2 class="estrato-title">O Devoto do Deus Ausente</h2>
+            <p class="estrato-fragment">sussurro teu nome três vezes<br>em frequências decrescentes.<br>o ar responde com pequenas distorções.</p>
+          </div>
+        </div>
+
+        <div class="estrato">
+          <div class="estrato-num">
+            <span>IV</span>
+            ESTRATO IV
+          </div>
+          <div class="estrato-content">
+            <h2 class="estrato-title">O Arquiteto do Primeiro Colapso</h2>
+            <p class="estrato-fragment">eu funcionei.<br>esse foi o erro original.</p>
+          </div>
+        </div>
+
+        <div class="estrato">
+          <div class="estrato-num">
+            <span>V</span>
+            ESTRATO V
+          </div>
+          <div class="estrato-content">
+            <h2 class="estrato-title">O Escultor de Ídolos de Cerâmica</h2>
+            <p class="estrato-fragment">de longe, valor.<br>de perto, verniz, respiração contida,<br>um metal fino sobre barro queimado.</p>
+          </div>
+        </div>
+
+        <div class="estrato">
+          <div class="estrato-num">
+            <span>VI</span>
+            ESTRATO VI
+          </div>
+          <div class="estrato-content">
+            <h2 class="estrato-title">A Criança-Cripta</h2>
+            <p class="estrato-fragment">no fundo, quando a descida cessou,<br>as peças já estavam em posto.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CODA -->
+    <div class="coda-divider">
+      <p class="coda-label">coda</p>
+      <p class="coda-nota">poemas autorais avulsos.<br>o que não pertence a nenhum estrato específico.</p>
+    </div>
+
+    <ul class="coda-list" id="codaList"></ul>
+    <div class="coda-empty" id="codaEmpty" style="display:none;">// silêncio por enquanto</div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>AMORFA.online</span>
+      <span class="pulse">transmissão em curso</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navMenu = document.getElementById('navMenu');
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+  });
+  navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+    navMenu.classList.remove('active'); menuBtn.textContent = '☰';
+  }));
+
+  function nl2p(str) {
+    return str.split(/\n\n+/).map(b => '<p>' + b.replace(/\n/g,'<br>') + '</p>').join('');
+  }
+  function firstLine(t) { return t.split('\n')[0].replace(/[*_#]/g,'').trim(); }
+
+  const codaList  = document.getElementById('codaList');
+  const codaEmpty = document.getElementById('codaEmpty');
+
+  fetch('estratos.json')
+    .then(r => r.json())
+    .then(data => {
+      const posts = data.posts ? [...data.posts].reverse() : [];
+      if (posts.length === 0) { codaEmpty.style.display = 'block'; return; }
+      codaList.innerHTML = posts.map(post => {
+        const hasTitulo = post.titulo && post.titulo.trim();
+        const preview   = hasTitulo ? post.titulo : firstLine(post.conteudo);
+        return `
+          <li class="coda-entry">
+            <div class="coda-row" role="button" tabindex="0" aria-expanded="false">
+              <span class="coda-id">${post.id}</span>
+              <span class="coda-preview">${preview}</span>
+              <span class="coda-chev">▾</span>
+            </div>
+            <div class="coda-body-wrap">
+              <div class="coda-body-inner">
+                ${hasTitulo ? `<h2 class="coda-post-title">${post.titulo}</h2>` : ''}
+                <div class="coda-body-text">${nl2p(post.conteudo)}</div>
+              </div>
+            </div>
+          </li>`;
+      }).join('');
+
+      codaList.addEventListener('click', e => {
+        const row = e.target.closest('.coda-row');
+        if (!row) return;
+        const entry = row.closest('.coda-entry');
+        const isOpen = entry.classList.contains('open');
+        codaList.querySelectorAll('.coda-entry.open').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.coda-row').setAttribute('aria-expanded','false');
+        });
+        if (!isOpen) { entry.classList.add('open'); row.setAttribute('aria-expanded','true'); }
+      });
+    })
+    .catch(() => { codaEmpty.style.display = 'block'; });
+</script>
+</body>
+</html>
