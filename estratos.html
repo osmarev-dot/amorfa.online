@@ -167,14 +167,15 @@
       <button class="menu-toggle" id="menuBtn">☰</button>
       <nav>
         <ul id="navMenu">
-          <li><a href="index.html#inicio">Início</a></li>
-          <li><a href="ouvir.html">Ouvir</a></li>
-          <li><a href="lancamentos.html">Lançamentos</a></li>
-          <li><a href="estratos.html" class="active">Estratos</a></li>
-          <li><a href="transmissoes.html">Transmissões</a></li>
-          <li><a href="index.html#sobre">Sobre</a></li>
-          <li><a href="index.html#contato">Contato</a></li>
-        </ul>
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="ouvir.html">Ouvir</a></li>
+            <li><a href="onde-se-guarda.html">Onde Se Guarda</a></li>
+            <li><a href="ep.html">EP</a></li>
+            <li><a href="estratos.html" class="active">Estratos</a></li>
+            <li><a href="transmissoes.html">Transmissões</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
       </nav>
     </div>
   </header>
@@ -205,130 +206,24 @@
 
 <script>
   // NAV
-  const menuBtn = document.getElementById('menuBtn');
-  const navMenu = document.getElementById('navMenu');
-  menuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-  });
-  navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
-    navMenu.classList.remove('active'); menuBtn.textContent = '☰';
-  }));
-
-  // DATA
-  const ESTRATOS = [
-    { id: '0',   titulo: 'O Guardião das Formas',
-      frag: 'onde antes havia face,\nfica uma trama fria\nsustentando o que já não encosta.' },
-    { id: 'I',   titulo: 'O Legista dos Corpos Transitórios',
-      frag: 'tateamos este brilho azul\ncom a gravidade de quem inaugura o fogo\npela segunda vez.' },
-    { id: 'II',  titulo: 'O Operador de Simulacros',
-      frag: 'o oco que era meu\nrespondeu com outra voz.\no que eu abria voltava ocupado.' },
-    { id: 'III', titulo: 'O Devoto do Deus Ausente',
-      frag: 'sussurro teu nome três vezes\nem frequências decrescentes.\no ar responde com pequenas distorções.' },
-    { id: 'IV',  titulo: 'O Arquiteto do Primeiro Colapso',
-      frag: 'eu funcionei.\nesse foi o erro original.' },
-    { id: 'V',   titulo: 'O Escultor de Ídolos de Cerâmica',
-      frag: 'de longe, valor.\nde perto, verniz, respiração contida,\num metal fino sobre barro queimado.' },
-    { id: 'VI',  titulo: 'A Criança-Cripta',
-      frag: 'no fundo, quando a descida cessou,\nas peças já estavam em posto.' },
-  ];
-
-  function nl2p(str) {
-    return str.split(/\n\n+/).map(b => '<p>' + b.replace(/\n/g,'<br>') + '</p>').join('');
-  }
-  function firstLine(t) { return t.split('\n')[0].trim(); }
-
-  function renderPost(post) {
-    const hasTitulo = post.titulo && post.titulo.trim();
-    const preview   = hasTitulo ? post.titulo : firstLine(post.conteudo);
-    return `
-      <div class="post-entry">
-        <div class="post-row" role="button" tabindex="0" aria-expanded="false">
-          <span class="post-id">${post.id}</span>
-          <span class="post-preview">${preview}</span>
-          <span class="post-chev">▾</span>
-        </div>
-        <div class="post-body-wrap">
-          <div class="post-body-inner">
-            ${hasTitulo ? `<h3 class="post-title">${post.titulo}</h3>` : ''}
-            <div class="post-text">${nl2p(post.conteudo)}</div>
-          </div>
-        </div>
-      </div>`;
-  }
-
-  function setupToggle(container) {
-    container.addEventListener('click', e => {
-      const row = e.target.closest('.post-row');
-      if (!row) return;
-      const entry = row.closest('.post-entry');
-      const isOpen = entry.classList.contains('open');
-      container.querySelectorAll('.post-entry.open').forEach(el => {
-        el.classList.remove('open');
-        el.querySelector('.post-row').setAttribute('aria-expanded','false');
+  const menuBtn=document.getElementById('menuBtn');
+    const navMenu=document.getElementById('navMenu');
+    if(menuBtn&&navMenu){
+      menuBtn.addEventListener('click',()=>{
+        navMenu.classList.toggle('active');
+        menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';
       });
-      if (!isOpen) { entry.classList.add('open'); row.setAttribute('aria-expanded','true'); }
-    });
-    container.addEventListener('keydown', e => {
-      if (e.key==='Enter'||e.key===' ') {
-        const row = e.target.closest('.post-row');
-        if (row) { e.preventDefault(); row.click(); }
-      }
-    });
-  }
-
-  function render(allPosts) {
-    const main = document.getElementById('mainContent');
-    let html = '';
-
-    // Each estrato
-    ESTRATOS.forEach(est => {
-      const posts = allPosts.filter(p => p.estrato === est.id).reverse();
-      const postsHtml = posts.map(renderPost).join('');
-      const hasPosts = posts.length > 0;
-
-      html += `
-        <section class="estrato-block" data-estrato="${est.id}">
-          <div class="estrato-header">
-            <div class="estrato-num-col">
-              <span class="estrato-num-big">${est.id}</span>
-              ESTRATO ${est.id}
-            </div>
-            <div>
-              <h2 class="estrato-title-text">${est.titulo}</h2>
-              <p class="estrato-fragment">${est.frag.replace(/\n/g,'<br>')}</p>
-            </div>
-          </div>
-          <div class="estrato-posts${hasPosts?'':' empty'}" id="posts-${est.id}">
-            ${postsHtml}
-          </div>
-        </section>`;
-    });
-
-    // Coda
-    const codaPosts = allPosts.filter(p => p.estrato === 'coda').reverse();
-    const codaHtml  = codaPosts.map(renderPost).join('');
-    html += `
-      <section class="coda-block">
-        <div class="coda-header">
-          <p class="coda-label">coda</p>
-          <p class="coda-nota">poemas autorais avulsos.<br>o que não pertence a nenhum estrato específico.</p>
-        </div>
-        <div class="coda-posts${codaPosts.length===0?' empty':''}">
-          ${codaPosts.length===0 ? '// silêncio por enquanto' : codaHtml}
-        </div>
-      </section>`;
-
-    main.innerHTML = html;
-
-    // Setup toggles for each section
-    document.querySelectorAll('.estrato-posts,.coda-posts').forEach(setupToggle);
-  }
-
-  fetch('estratos.json')
-    .then(r => r.json())
-    .then(data => render(data.posts || []))
-    .catch(() => render([]));
-</script>
+      // Close on link click — use timeout so navigation fires first
+      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{
+        setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);
+      }));
+      // Close on outside click
+      document.addEventListener('click',e=>{
+        if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){
+          navMenu.classList.remove('active');menuBtn.textContent='☰';
+        }
+      });
+    }
+  </script>
 </body>
 </html>

@@ -198,14 +198,15 @@
       <button class="menu-toggle" id="menuBtn">☰</button>
       <nav>
         <ul id="navMenu">
-          <li><a href="index.html#inicio">Início</a></li>
-          <li><a href="ouvir.html">Ouvir</a></li>
-          <li><a href="lancamentos.html">Lançamentos</a></li>
-          <li><a href="estratos.html">Estratos</a></li>
-          <li><a href="transmissoes.html" class="active">Transmissões</a></li>
-          <li><a href="index.html#sobre">Sobre</a></li>
-          <li><a href="index.html#contato">Contato</a></li>
-        </ul>
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="ouvir.html">Ouvir</a></li>
+            <li><a href="onde-se-guarda.html">Onde Se Guarda</a></li>
+            <li><a href="ep.html">EP</a></li>
+            <li><a href="estratos.html">Estratos</a></li>
+            <li><a href="transmissoes.html" class="active">Transmissões</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
       </nav>
     </div>
   </header>
@@ -242,103 +243,24 @@
 </div>
 
 <script>
-  const menuBtn = document.getElementById('menuBtn');
-  const navMenu = document.getElementById('navMenu');
-  menuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-  });
-  navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
-    navMenu.classList.remove('active'); menuBtn.textContent = '☰';
-  }));
-
-  const txList  = document.getElementById('txList');
-  const txEmpty = document.getElementById('txEmpty');
-  const txCount = document.getElementById('txCount');
-  const filters = document.querySelectorAll('.filter-btn');
-
-  function nl2p(str) {
-    return str.split(/\n\n+/).map(b => '<p>' + b.replace(/\n/g,'<br>') + '</p>').join('');
-  }
-  function firstLine(t) { return t.split('\n')[0].replace(/[*_#]/g,'').trim(); }
-
-  function renderEntry(post) {
-    const hasTitulo = post.titulo && post.titulo.trim();
-    const hasFaixa  = post.faixa  && post.faixa.trim();
-    const hasImagem = post.imagem && post.imagem.trim();
-    const preview   = hasTitulo ? post.titulo : firstLine(post.conteudo);
-    return `
-      <li class="tx-entry" data-type="${post.tipo}">
-        <div class="tx-row" role="button" tabindex="0" aria-expanded="false">
-          <span class="tx-id">${post.id}</span>
-          <span class="tx-badge">${post.tipo.charAt(0).toUpperCase()+post.tipo.slice(1)}</span>
-          <span class="tx-preview">${preview}</span>
-          <span class="tx-chev">▾</span>
-        </div>
-        <div class="tx-body-wrap">
-          <div class="tx-body-inner">
-            ${hasImagem ? `<div class="tx-image"><img src="${post.imagem}" alt="${post.id}" loading="lazy"></div>` : ''}
-            ${hasTitulo ? `<h2 class="tx-post-title">${post.titulo}</h2>` : ''}
-            <div class="tx-body-text">${nl2p(post.conteudo)}</div>
-            ${hasFaixa ? `<div class="tx-track">faixa relacionada: ${post.faixa}</div>` : ''}
-          </div>
-        </div>
-      </li>`;
-  }
-
-  function filterBy(tipo) {
-    const items = txList.querySelectorAll('.tx-entry');
-    let count = 0;
-    items.forEach(item => {
-      const match = tipo === 'todos' || item.dataset.type === tipo;
-      item.style.display = match ? '' : 'none';
-      if (match) count++;
-    });
-    txEmpty.classList.toggle('visible', count === 0);
-    txCount.textContent = count + ' transmiss' + (count !== 1 ? 'ões' : 'ão');
-  }
-
-  filters.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filters.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filterBy(btn.dataset.filter);
-    });
-  });
-
-  txList.addEventListener('click', e => {
-    const row = e.target.closest('.tx-row');
-    if (!row) return;
-    const entry = row.closest('.tx-entry');
-    const isOpen = entry.classList.contains('open');
-    txList.querySelectorAll('.tx-entry.open').forEach(el => {
-      el.classList.remove('open');
-      el.querySelector('.tx-row').setAttribute('aria-expanded','false');
-    });
-    if (!isOpen) {
-      entry.classList.add('open');
-      row.setAttribute('aria-expanded','true');
+  const menuBtn=document.getElementById('menuBtn');
+    const navMenu=document.getElementById('navMenu');
+    if(menuBtn&&navMenu){
+      menuBtn.addEventListener('click',()=>{
+        navMenu.classList.toggle('active');
+        menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';
+      });
+      // Close on link click — use timeout so navigation fires first
+      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{
+        setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);
+      }));
+      // Close on outside click
+      document.addEventListener('click',e=>{
+        if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){
+          navMenu.classList.remove('active');menuBtn.textContent='☰';
+        }
+      });
     }
-  });
-
-  txList.addEventListener('keydown', e => {
-    if (e.key==='Enter'||e.key===' ') {
-      const row = e.target.closest('.tx-row');
-      if (row) { e.preventDefault(); row.click(); }
-    }
-  });
-
-  fetch('transmissoes.json')
-    .then(r => r.json())
-    .then(data => {
-      const posts = [...data.posts].reverse();
-      txList.innerHTML = posts.map(renderEntry).join('');
-      txCount.textContent = posts.length + ' transmissões';
-    })
-    .catch(() => {
-      txEmpty.classList.add('visible');
-      txEmpty.textContent = '// erro ao carregar transmissões';
-    });
-</script>
+  </script>
 </body>
 </html>
