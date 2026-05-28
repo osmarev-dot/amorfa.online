@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMORFA | Site Oficial</title>
-  <meta name="description" content="Site oficial da AMORFA. Música brasileira de dark pop, electroclash e pós-industrial entre desejo, tela, corpo e ruína." />
+  <title>Lançamentos | AMORFA</title>
+  <meta name="description" content="Catálogo oficial da AMORFA. Datas, capas, conceitos e setlists dos lançamentos." />
   <meta name="theme-color" content="#000000" />
-  <link rel="canonical" href="https://amorfa.online/" />
+  <link rel="canonical" href="https://amorfa.online/lancamentos.html" />
 
-  <meta property="og:title" content="AMORFA | Site Oficial" />
+  <meta property="og:title" content="Lançamentos | AMORFA" />
   <meta property="og:description" content="A forma falhou. A voz continuou. Dark pop, electroclash e pós-industrial brasileiro." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://amorfa.online/" />
+  <meta property="og:url" content="https://amorfa.online/lancamentos.html" />
   <meta property="og:image" content="https://amorfa.online/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -30,33 +30,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    "@id": "https://amorfa.online/#artist",
-    "name": "AMORFA",
-    "url": "https://amorfa.online/",
-    "image": "https://amorfa.online/og-image.jpg",
-    "email": "projetoamorfa@gmail.com",
-    "foundingDate": "2026",
-    "inLanguage": "pt-BR",
-    "genre": ["Dark Pop", "Electroclash", "Post-Industrial", "Alternative Rock", "Post-Punk", "Art Pop"],
-    "sameAs": [
-      "https://www.instagram.com/amorfa.online",
-      "https://www.tiktok.com/@amorfa.wav",
-      "https://www.youtube.com/@AMORFA"
-    ],
-    "description": "Projeto musical brasileiro de dark pop, electroclash e pós-industrial. A forma falhou. A voz continuou.",
-    "album": [
-      { "@type": "MusicAlbum", "name": "Tudo Que Eu Uso Me Usa de Volta", "datePublished": "2026-05-29", "genre": ["Dark Pop", "Electroclash", "Alternative Dance", "Synth Rock"], "image": "https://amorfa.online/album-1.webp", "url": "https://amorfa.online/#album-uso" },
-      { "@type": "MusicAlbum", "name": "Pequenos Incêndios sob o Ar-Condicionado no Máximo", "datePublished": "2026-06-05", "genre": ["Post-Industrial", "Alternative Rock", "Dark Pop", "Industrial Pop"], "image": "https://amorfa.online/album-2.webp", "url": "https://amorfa.online/#album-incendios" },
-      { "@type": "MusicAlbum", "name": "Dia dos Namorados Macabro", "datePublished": "2026-06-12", "genre": ["Dark Pop", "Alternative Pop", "Electroclash"], "image": "https://amorfa.online/ep-dia-dos-namorados.webp", "url": "https://amorfa.online/#album-ep" },
-      { "@type": "MusicAlbum", "name": "Teologia dos Fracassos Afetivos em Cama de Solteiro", "datePublished": "2026-06-19", "genre": ["Dark Pop", "Dream Pop", "Trip Hop", "Post-Punk"], "image": "https://amorfa.online/album-3.webp", "url": "https://amorfa.online/#album-teologia" },
-      { "@type": "MusicAlbum", "name": "Fantasmogênese", "datePublished": "2026-06-26", "genre": ["Art Pop", "Experimental", "Dark Ambient", "Post-Punk"], "image": "https://amorfa.online/album-4.webp", "url": "https://amorfa.online/#album-fantasmogenese" },
-      { "@type": "MusicAlbum", "name": "O Arranjo do Submundo", "datePublished": "2026-07-03", "genre": ["Experimental", "Post-Industrial", "Dark Ambient", "Art Rock"], "image": "https://amorfa.online/album-5.webp", "url": "https://amorfa.online/#album-submundo" }
-    ]
-  }
-  </script>
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"Discografia AMORFA",
+  "itemListElement":[
+    {"@type":"MusicAlbum","position":1,"name":"Tudo Que Eu Uso Me Usa de Volta"},
+    {"@type":"MusicAlbum","position":2,"name":"Pequenos Incêndios sob o Ar-Condicionado no Máximo"},
+    {"@type":"MusicAlbum","position":3,"name":"Dia dos Namorados Macabro"},
+    {"@type":"MusicAlbum","position":4,"name":"Teologia dos Fracassos Afetivos em Cama de Solteiro"},
+    {"@type":"MusicAlbum","position":5,"name":"Fantasmogênese"},
+    {"@type":"MusicAlbum","position":6,"name":"O Arranjo do Submundo"}
+  ]
+}
+</script>
 
   <style>
     :root {
@@ -120,88 +107,66 @@ body::-webkit-scrollbar,
       </div>
     </header>
 
+
     <main>
-      <section class="hero" id="inicio">
+      <section class="hero" style="min-height:54vh;">
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-grid">
           <div>
-            <p class="signal">AMORFA.online // sinal ativo</p>
-            <div class="hero-logo"><img src="logo-amorfa-hero.webp" alt="AMORFA" /></div>
-            <p class="hero-phrase">a forma falhou.<br>a voz continuou.</p>
+            <p class="signal">AMORFA.online // catálogo</p>
+            <h1 class="section-title" style="font-size:clamp(2.2rem,6vw,5.4rem);margin:0 0 18px;">Lançamentos</h1>
+            <p class="hero-phrase">seis registros.<br>a ordem importa.</p>
           </div>
-          <div class="hero-copy">
-            <p>dark pop, electroclash e pós-industrial brasileiro. entre vitrine, carne, ausência e frequência.</p>
-            <a class="btn primary" href="lancamentos.html">entrar no arquivo</a>
-          </div>
+          <div class="hero-copy"><p>cinco estados, cinco descidas. cada lançamento funciona como documento físico do colapso. clique em cada registro para abrir o arquivo.</p></div>
         </div>
       </section>
-
-      <section class="home-portals" aria-label="Portais principais">
+      <section id="lancamentos">
         <div class="section-head">
-          <h2 class="section-title">Arquivo vivo</h2>
-          <p class="section-note">entrada principal. ouvir e lançamentos agora são páginas próprias, não âncoras perdidas dentro do mesmo fluxo.</p>
+          <h2 class="section-title">Lançamentos</h2>
+          <p class="section-note">seis registros em sequência. a ordem importa. começa pela vitrine, desce pela carne, entra no culto doméstico e termina no subsolo.</p>
         </div>
-        <div class="portal-grid">
-          <a class="portal-card" href="ouvir.html">
-            <small>01 // sinal</small>
-            <strong>Ouvir</strong>
-            <span>TikTok, Instagram, YouTube e Spotify em preparação.</span>
-          </a>
-          <a class="portal-card" href="lancamentos.html">
-            <small>02 // catálogo</small>
-            <strong>Lançamentos</strong>
-            <span>álbuns, EP, datas, capas e setlists.</span>
-          </a>
-          <a class="portal-card" href="estratos.html">
-            <small>03 // camadas</small>
-            <strong>Estratos</strong>
-            <span>fragmentos, arquivo e matéria conceitual.</span>
-          </a>
-          <a class="portal-card" href="transmissoes.html">
-            <small>04 // ruído</small>
-            <strong>Transmissões</strong>
-            <span>postagens, logs e sinais do projeto.</span>
-          </a>
-        </div>
+        <div class="album-stack" id="releaseGrid"></div>
       </section>
 
-      <section id="arquivo">
-        <div class="section-head">
-          <h2 class="section-title">Arquivo</h2>
-          <p class="section-note">não é lore decorativa. é sistema de leitura para faixas, capas, transmissões e restos.</p>
-        </div>
-        <div class="archive">
-          <div class="terminal">
-            <p class="terminal-line">vitrine detectada</p>
-            <p class="terminal-line">corpo sob refrigeração</p>
-            <p class="terminal-line">falha afetiva catalogada</p>
-            <p class="terminal-line">sinal residual em transmissão</p>
-            <p class="terminal-line">submundo em abertura</p>
-          </div>
-          <p class="about-text">AMORFA opera como cantora, fantasma, avatar e prova material. A música não explica a ruína: organiza o que continuou funcionando depois dela.</p>
-        </div>
-      </section>
 
-      <section id="contato">
-        <div class="section-head"><h2 class="section-title">Contato</h2></div>
-        <div class="contact-box">
-          <a class="contact-link" href="mailto:projetoamorfa@gmail.com">projetoamorfa@gmail.com</a>
-          <span style="font-family:var(--mono);color:var(--muted);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;">transmissão direta // booking // imprensa</span>
-        </div>
-      </section>
     </main>
-
     <footer><div class="footer-inner"><span>AMORFA.online</span><span class="pulse">sinal ativo</span></div></footer>
+
   </div>
 
-  <script>
-    const menuBtn=document.getElementById('menuBtn');
-    const navMenu=document.getElementById('navMenu');
-    if(menuBtn&&navMenu){
-      menuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰'});
-      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{navMenu.classList.remove('active');menuBtn.textContent='☰'}));
-    }
-  </script>
+  <div class="modal" id="albumModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-panel">
+      <button class="close-modal" type="button" aria-label="Fechar" data-close="true">×</button>
+      <div class="modal-layout">
+        <div class="modal-art"><img id="modalImage" src="" alt=""></div>
+        <div class="modal-content">
+          <div class="modal-meta" id="modalMeta"></div>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-summary" id="modalSummary"></p>
+          <h3 class="setlist-title">Setlist</h3>
+          <ol class="tracklist" id="modalTracks"></ol>
+          <div style="margin-top:34px;"><button class="btn" type="button" data-close="true">Fechar</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+
+  <script>
+    const albums = [
+      {id:"uso",type:"ÁLBUM I",date:"29 mai 2026",status:"lançamento programado",title:"Tudo Que Eu Uso Me Usa de Volta",image:"album-1.webp",concept:"a superfície salva e devora",summary:"A porta de entrada da AMORFA: app, vitrine, corpo-produto, glamour, mercado e funcionamento. Um disco sobre usar para sobreviver — e perceber que a superfície também cobra.",tracks:["Versão Consumida","Fusão Nuclear","Luz Azul","Modo Avião","Só o Que Vende / Livre Pra Quem","Kouros de Silício","Corpo-Entulho","Vênus Aflita","Você Era Banal","Placebo","Glamour Febril","Cento e Oitenta","Terminal"]},
+      {id:"incendios",type:"ÁLBUM II",date:"05 jun 2026",status:"lançamento programado",title:"Pequenos Incêndios sob o Ar-Condicionado no Máximo",image:"album-2.webp",concept:"o corpo queima sob refrigeração",summary:"O álbum do contato real. Corpo, marca, temperatura, desejo e dano sob contenção fria. O ar-condicionado no máximo não apaga o incêndio: só deixa a queimadura mais precisa.",tracks:["Erro de Cálculo","Fidelidade Antiga","Não Claro","Amor Com Dentes","O Devorador","Mercúrio","Manutenção Mínima","Pronta","Portador da Luz","Hematoma","O Corpo Que Eu Tentei Ser","Mão no Bolso"]},
+      {id:"ep",type:"EP",date:"12 jun 2026",status:"lançamento programado",title:"Dia dos Namorados Macabro",image:"ep-dia-dos-namorados.webp",color:true,concept:"o amor como produto com péssimo histórico",summary:"EP do Dia dos Namorados como performance coletiva de hipocrisia. Quatro faixas sobre presente, vitrine, casa assombrada, romance vendido e afeto embalado como mercadoria com defeito de fábrica.",tracks:["Feliz Dia (Que Horror)","Assombração de Estimação","Aceito Proposta","Happy Valentine's (How Ghastly)"]},
+      {id:"teologia",type:"ÁLBUM III",date:"19 jun 2026",status:"lançamento programado",title:"Teologia dos Fracassos Afetivos em Cama de Solteiro",image:"album-3.webp",concept:"a ausência vira liturgia doméstica",summary:"O álbum da devoção doméstica. A espera vira rito, o quarto vira altar e o quase-amor aprende a se comportar como religião particular.",tracks:["Santo Errado","Tarde Demais","O Culto da Carne","Lockdown (Terror Cult)","Toque Fantasma","Fracasso de Estimação","Não Se Preocupa (Era Bituca)","Cortesia do Medo","Vinte e Três","Quase Verdade","Matéria Escura","Para Onde Eu Fui?","O Reino do Quase"]},
+      {id:"fantasmogenese",type:"ÁLBUM IV",date:"26 jun 2026",status:"lançamento programado",title:"Fantasmogênese",image:"album-4.webp",concept:"a forma cede sem espetáculo",summary:"O álbum da dissolução. A forma cede milímetro por milímetro; o corpo continua funcionando enquanto perde contorno. Começa monumental em Onde Se Guarda e fecha frio em Junho, De Novo.",tracks:["Onde Se Guarda","Frequência Distorcida","Fantasmogênese","Campo Nulo","Baixa Resolução","Dose de Impulso","Ritual de Fogo","Junho, De Novo"]},
+      {id:"submundo",type:"ÁLBUM V",date:"03 jul 2026",status:"lançamento programado",title:"O Arranjo do Submundo",image:"album-5.webp",concept:"a voz volta do fundo sem voltar inteira",summary:"O álbum da origem subterrânea. Limiar, casa, organismo, ânfora, sutura, guardião, erro original e colapso. A voz volta com barro, corte e circuito fechado.",tracks:["LIMIAR","A Porta Debaixo da Casa","Organismo Associado","A Casa Dormia com os Olhos Abertos","A Ânfora","A Sutura Invisível","O Arranjo do Submundo","O Guardião das Formas","Erro Original","Flor de Plástico","Colapso"]}
+    ];
+    const grid=document.getElementById('releaseGrid'),modal=document.getElementById('albumModal'),modalImage=document.getElementById('modalImage'),modalMeta=document.getElementById('modalMeta'),modalTitle=document.getElementById('modalTitle'),modalSummary=document.getElementById('modalSummary'),modalTracks=document.getElementById('modalTracks'),menuBtn=document.getElementById('menuBtn'),navMenu=document.getElementById('navMenu');
+    function renderCards(){grid.innerHTML=albums.map((a,i)=>`<button class="album-row" id="album-${a.id}" type="button" data-index="${i}" data-color="${a.color?'true':'false'}" aria-label="Abrir ${a.title}"><div class="album-art"><img src="${a.image}" alt="Capa de ${a.title}" loading="lazy"></div><div class="album-info"><div><div class="album-meta"><span class="chip">${a.type}</span><span class="chip">${a.date}</span><span class="chip">${a.status}</span></div><h3 class="album-title">${a.title}</h3><p class="album-concept">“${a.concept}”</p><p class="album-summary">${a.summary}</p></div><div class="album-action">abrir arquivo + setlist</div></div></button>`).join('')}
+    function openAlbum(i){const a=albums[i];modalImage.src=a.image;modalImage.alt=`Capa de ${a.title}`;modal.dataset.color=a.color?'true':'false';modalMeta.innerHTML=`<span class="chip">${a.type}</span><span class="chip">${a.date}</span><span class="chip">${a.status}</span>`;modalTitle.textContent=a.title;modalSummary.textContent=a.summary;modalTracks.innerHTML=a.tracks.map(t=>`<li>${t}</li>`).join('');modal.classList.add('active');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.querySelector('.close-modal').focus()}
+    function closeModal(){modal.classList.remove('active');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+    renderCards();grid.addEventListener('click',e=>{const c=e.target.closest('.album-row');if(c)openAlbum(c.dataset.index)});modal.addEventListener('click',e=>{if(e.target.dataset.close==='true')closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});menuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰'});navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{navMenu.classList.remove('active');menuBtn.textContent='☰'}));
+  </script>
 </body>
 </html>
