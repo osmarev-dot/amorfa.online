@@ -8,11 +8,25 @@
       "faixa": ""
     },
     {
-      "titulo": "",
-      "faixa": "Versão Consumida - AMORFA",
       "id": "T- 002",
       "tipo": "verso",
-      "conteudo": "Posta uma foto.\napaga.\nposta de novo.\nespera.\n\nsem perceber,\no teu corpo inteiro\ncomeça a depender\nde uma luz azul\npra continuar funcionando.\n"
+      "titulo": "",
+      "conteudo": "Posta uma foto.\napaga.\nposta de novo.\nespera.\n\nsem perceber,\no teu corpo inteiro\ncomeça a depender\nde uma luz azul\npra continuar funcionando.",
+      "faixa": "Versão Consumida - AMORFA"
+    },
+    {
+      "id": "T- 003",
+      "tipo": "poema",
+      "titulo": "TRAMA",
+      "conteudo": "Entre dois galhos,\no fio.\nNos nós,\no orvalho endurece\no desenho\nque a luz quase apaga.\nDe longe,\nrenda.\nDe perto,\ncola.\nRocei primeiro.\nManga.\nPulso.\nUm fio frio,\nquase cabelo molhado,\npegou na pele.\nDepois outro\ne outro.\nNos galhos,\na trama seguia limpa.\nNo braço,\njá prendia.\nTentei limpar.\nA seda cedia,\nrefazia-se,\nmais fiel à carne\ndo que a água.\nUm casco leve de inseto,\numa asa mal dobrada,\ne o centro repuxando\nsem mover as folhas.\nO extremo mais remoto\njá puxava o centro\npela minha pele.",
+      "faixa": ""
+    },
+    {
+      "id": "T - 004",
+      "tipo": "verso",
+      "titulo": "Brilhar",
+      "conteudo": "Eu brilho até cansar.\nVocê nem sente o calor\ne eu ainda chamo de sinal.\nTe vejo antes da curva.\nTe ouço antes do som.\nVocê não chega nunca,\nmas bagunça minha gravidade.",
+      "faixa": "Fusão Nuclear - Amorfa"
     }
   ]
 }
