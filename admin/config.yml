@@ -34,6 +34,23 @@ collections:
                   - {label: "Verso", value: "verso"}
                   - {label: "Personagem", value: "personagem"}
               - {label: "Título (opcional)", name: "titulo", widget: "string", required: false, default: ""}
-              - {label: "Imagem (opcional)", name: "imagem", widget: "image", required: false, default: "", hint: "Foto, colagem ou qualquer imagem. Aparece no topo do post."}
-              - {label: "Conteúdo", name: "conteudo", widget: "text", hint: "Linha em branco = nova estrofe"}
+              - {label: "Imagem (opcional)", name: "imagem", widget: "image", required: false, default: ""}
+              - {label: "Conteúdo", name: "conteudo", widget: "text"}
               - {label: "Faixa relacionada (opcional)", name: "faixa", widget: "string", required: false, default: ""}
+
+  - name: "coda"
+    label: "Coda — Poemas Avulsos"
+    files:
+      - name: "posts"
+        label: "Coda"
+        file: "estratos.json"
+        fields:
+          - name: posts
+            label: Poemas
+            label_singular: Poema
+            widget: list
+            summary: "{{fields.id}} — {{fields.titulo}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string", hint: "Ex: C-001, C-002..."}
+              - {label: "Título (opcional)", name: "titulo", widget: "string", required: false, default: ""}
+              - {label: "Conteúdo", name: "conteudo", widget: "text"}
