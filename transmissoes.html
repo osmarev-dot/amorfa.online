@@ -46,9 +46,9 @@
     .signal{font-family:var(--mono);font-size:.74rem;letter-spacing:.34em;color:var(--muted);text-transform:uppercase;margin:0 0 30px}
     .hero-logo{width:min(760px,92vw);margin:0 0 18px}
     .hero-logo img{width:100%;height:auto;display:block;filter:contrast(1.08) brightness(1.04)}
-    .hero-phrase{font-size:clamp(1.55rem,3.2vw,3rem);font-style:italic;line-height:1.12;margin:0;color:rgba(242,240,237,.92)}
+    .hero-phrase{font-size:clamp(1.35rem,2.8vw,2.5rem);font-style:italic;line-height:1.12;margin:0;color:rgba(242,240,237,.92)}
     .hero-copy{align-self:center;border-left:1px solid var(--line2);padding:0 0 0 34px}
-    .hero-copy p{margin:0 0 28px;color:var(--soft);font-size:clamp(1.18rem,2vw,1.55rem);line-height:1.55}
+    .hero-copy p{margin:0 0 28px;color:var(--soft);font-size:clamp(1rem,1.6vw,1.25rem);line-height:1.5}
     .contact-box{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;border:1px solid var(--line);padding:32px;background:#030303}
     .contact-link{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,2rem);letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--magenta2);padding-bottom:5px;width:fit-content}
     .contact-link:hover{color:var(--cyan);border-color:var(--cyan)}
@@ -71,8 +71,8 @@
     .album-row:hover{border-color:rgba(255,255,255,.22);box-shadow:0 22px 70px rgba(0,0,0,.78),0 0 34px rgba(147,0,67,.16)}
     .album-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;padding-top:32px}
     .album-title{margin:0 0 20px;font-family:var(--serif);font-size:clamp(1.7rem,4vw,3.8rem);font-weight:400;letter-spacing:.04em;line-height:1.06;text-transform:uppercase}
-    .album-concept{margin:0 0 20px;color:var(--text);font-size:clamp(1.16rem,2vw,1.5rem);font-style:italic}
-    .album-summary{margin:0;color:var(--soft);font-size:1.08rem;line-height:1.58;max-width:760px}
+    .album-concept{margin:0 0 20px;color:var(--text);font-size:clamp(1rem,1.5vw,1.22rem);font-style:italic}
+    .album-summary{margin:0;color:var(--soft);font-size:.95rem;line-height:1.55;max-width:760px}
     .album-action{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:28px}
     .album-row:hover .album-action{color:var(--text)}
     .modal{position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;padding:22px}
@@ -85,9 +85,9 @@
     .modal-content{padding:clamp(28px,5vw,56px)}
     .modal-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
     .modal-title{margin:0 0 16px;font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.35rem);line-height:1.05;font-weight:400;letter-spacing:.06em;text-transform:uppercase}
-    .modal-summary{margin:0 0 34px;color:var(--soft);font-size:1.14rem;line-height:1.7}
+    .modal-summary{margin:0 0 34px;color:var(--soft);font-size:1rem;line-height:1.62}
     .setlist-title{margin:0 0 14px;font-family:var(--mono);color:var(--magenta2);font-size:.78rem;letter-spacing:.25em;text-transform:uppercase}
-    .tracklist{columns:2;column-gap:42px;margin:0;padding-left:22px;color:var(--text);font-size:1.05rem;line-height:1.75}
+    .tracklist{columns:2;column-gap:42px;margin:0;padding-left:22px;color:var(--text);font-size:.95rem;line-height:1.68}
     .tracklist li{break-inside:avoid;padding-left:4px}
     .close-modal{position:absolute;top:16px;right:16px;z-index:2;width:42px;height:42px;border:1px solid var(--line2);background:#000;color:var(--text);font-size:1.3rem;cursor:pointer}
     .close-modal:hover{background:var(--text);color:#000}
@@ -125,7 +125,7 @@
     .tx-row:hover{background:rgba(255,255,255,.02)}
     .tx-id{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;color:#333;text-transform:uppercase}
     .tx-badge{font-family:var(--mono);font-size:.58rem;letter-spacing:.15em;color:var(--magenta2);text-transform:uppercase;border:1px solid rgba(208,0,102,.22);padding:3px 7px;width:fit-content}
-    .tx-preview{font-family:var(--body);font-size:1.05rem;font-style:italic;color:var(--soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .tx-preview{font-family:var(--body);font-size:.95rem;font-style:italic;color:var(--soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
     .tx-chev{color:var(--muted);font-size:.8rem;transition:transform .25s;justify-self:end}
     .tx-row[aria-expanded="true"] .tx-chev{transform:rotate(180deg)}
     .tx-body-wrap{overflow:hidden;max-height:0;transition:max-height .35s ease}
@@ -134,7 +134,7 @@
     .tx-image{margin:22px 0;max-width:440px}
     .tx-image img{width:100%;height:auto;display:block;filter:grayscale(80%) contrast(1.08)}
     .tx-titulo{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.9rem);font-weight:400;letter-spacing:.08em;text-transform:uppercase;margin:22px 0 14px;color:var(--text)}
-    .tx-conteudo{font-family:var(--body);font-size:clamp(1.05rem,1.8vw,1.3rem);line-height:1.85;color:rgba(242,240,237,.85);white-space:pre-line;margin:0 0 16px}
+    .tx-conteudo{font-family:var(--body);font-size:clamp(.9rem,1.5vw,1.1rem);line-height:1.78;color:rgba(242,240,237,.85);white-space:pre-line;margin:0 0 16px}
     .tx-faixa{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
     .tx-empty{padding:80px 0;font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;color:#2a2a2a;text-transform:lowercase;text-align:center}
     @media(max-width:780px){.tx-row{grid-template-columns:60px 80px 1fr 18px;gap:0 10px}.tx-body-inner{padding:16px 0 24px 0}}
@@ -148,14 +148,14 @@
       <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu">☰</button>
       <nav aria-label="Navegação principal">
         <ul id="navMenu">
-          <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#inicio">Início</a></li>
             <li><a href="ouvir.html">Ouvir</a></li>
             <li><a href="onde-se-guarda.html">Onde Se Guarda</a></li>
             <li><a href="ep.html">EP</a></li>
             <li><a href="transmissoes.html" class="active">Transmissões</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="index.html#contato">Contato</a></li>
-        </ul>
+          </ul>
       </nav>
     </div>
   </header>
@@ -182,84 +182,10 @@
     const menuBtn=document.getElementById('menuBtn');
     const navMenu=document.getElementById('navMenu');
     if(menuBtn&&navMenu){
-      menuBtn.addEventListener('click',()=>{
-        navMenu.classList.toggle('active');
-        menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';
-      });
-      // Close on link click — use timeout so navigation fires first
-      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{
-        setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);
-      }));
-      // Close on outside click
-      document.addEventListener('click',e=>{
-        if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){
-          navMenu.classList.remove('active');menuBtn.textContent='☰';
-        }
-      });
+      menuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';});
+      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);}));
+      document.addEventListener('click',e=>{if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){navMenu.classList.remove('active');menuBtn.textContent='☰';}});
     }
-
-  
-  function firstLine(s){ return s ? s.split('\n')[0].trim() : ''; }
-
-  fetch('transmissoes.json')
-    .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
-    .then(data => {
-      const posts = Array.isArray(data.posts) ? [...data.posts].reverse() : [];
-      renderTx(posts);
-    })
-    .catch(err => {
-      console.error('transmissoes fetch error:', err);
-      document.getElementById('txList').innerHTML =
-        '<li class="tx-empty">// erro ao carregar arquivo — tente recarregar a página</li>';
-    });
-
-  function renderTx(posts) {
-    const list  = document.getElementById('txList');
-    const count = document.getElementById('txCount');
-    count.textContent = posts.length + ' transmiss' + (posts.length === 1 ? 'ão' : 'ões');
-
-    if (!posts.length) {
-      list.innerHTML = '<li class="tx-empty">// arquivo em silêncio</li>';
-      return;
-    }
-
-    list.innerHTML = posts.map((p, i) => {
-      const hasTitulo = p.titulo && p.titulo.trim();
-      const hasFaixa  = p.faixa  && p.faixa.trim();
-      const hasImagem = p.imagem && p.imagem.trim();
-      const preview   = hasTitulo ? p.titulo : firstLine(p.conteudo);
-      const tipo      = p.tipo || 'fragmento';
-      const conteudo  = (p.conteudo || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-      return `<li class="tx-entry">
-        <div class="tx-row" role="button" tabindex="0" aria-expanded="false" data-idx="${i}">
-          <span class="tx-id">${p.id || ''}</span>
-          <span class="tx-badge">${tipo.charAt(0).toUpperCase()+tipo.slice(1)}</span>
-          <span class="tx-preview">${preview}</span>
-          <span class="tx-chev">▾</span>
-        </div>
-        <div class="tx-body-wrap">
-          <div class="tx-body-inner">
-            ${hasImagem ? `<div class="tx-image"><img src="${p.imagem}" alt="" loading="lazy"></div>` : ''}
-            ${hasTitulo ? `<h2 class="tx-titulo">${p.titulo}</h2>` : ''}
-            <p class="tx-conteudo">${conteudo}</p>
-            ${hasFaixa  ? `<p class="tx-faixa">faixa: ${p.faixa}</p>` : ''}
-          </div>
-        </div>
-      </li>`;
-    }).join('');
-
-    list.querySelectorAll('.tx-row').forEach(row => {
-      row.addEventListener('click', () => toggleRow(row));
-      row.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleRow(row);} });
-    });
-  }
-
-  function toggleRow(row) {
-    const expanded = row.getAttribute('aria-expanded') === 'true';
-    row.setAttribute('aria-expanded', !expanded);
-    row.nextElementSibling.classList.toggle('open', !expanded);
-  }
-
-</script>
+  </script>
 </body>
 </html>

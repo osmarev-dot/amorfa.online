@@ -86,9 +86,9 @@
     .signal{font-family:var(--mono);font-size:.74rem;letter-spacing:.34em;color:var(--muted);text-transform:uppercase;margin:0 0 30px}
     .hero-logo{width:min(760px,92vw);margin:0 0 18px}
     .hero-logo img{width:100%;height:auto;display:block;filter:contrast(1.08) brightness(1.04)}
-    .hero-phrase{font-size:clamp(1.55rem,3.2vw,3rem);font-style:italic;line-height:1.12;margin:0;color:rgba(242,240,237,.92)}
+    .hero-phrase{font-size:clamp(1.35rem,2.8vw,2.5rem);font-style:italic;line-height:1.12;margin:0;color:rgba(242,240,237,.92)}
     .hero-copy{align-self:center;border-left:1px solid var(--line2);padding:0 0 0 34px}
-    .hero-copy p{margin:0 0 28px;color:var(--soft);font-size:clamp(1.18rem,2vw,1.55rem);line-height:1.55}
+    .hero-copy p{margin:0 0 28px;color:var(--soft);font-size:clamp(1rem,1.6vw,1.25rem);line-height:1.5}
     .contact-box{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;border:1px solid var(--line);padding:32px;background:#030303}
     .contact-link{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,2rem);letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--magenta2);padding-bottom:5px;width:fit-content}
     .contact-link:hover{color:var(--cyan);border-color:var(--cyan)}
@@ -111,8 +111,8 @@
     .album-row:hover{border-color:rgba(255,255,255,.22);box-shadow:0 22px 70px rgba(0,0,0,.78),0 0 34px rgba(147,0,67,.16)}
     .album-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;padding-top:32px}
     .album-title{margin:0 0 20px;font-family:var(--serif);font-size:clamp(1.7rem,4vw,3.8rem);font-weight:400;letter-spacing:.04em;line-height:1.06;text-transform:uppercase}
-    .album-concept{margin:0 0 20px;color:var(--text);font-size:clamp(1.16rem,2vw,1.5rem);font-style:italic}
-    .album-summary{margin:0;color:var(--soft);font-size:1.08rem;line-height:1.58;max-width:760px}
+    .album-concept{margin:0 0 20px;color:var(--text);font-size:clamp(1rem,1.5vw,1.22rem);font-style:italic}
+    .album-summary{margin:0;color:var(--soft);font-size:.95rem;line-height:1.55;max-width:760px}
     .album-action{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:28px}
     .album-row:hover .album-action{color:var(--text)}
     .modal{position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;padding:22px}
@@ -125,9 +125,9 @@
     .modal-content{padding:clamp(28px,5vw,56px)}
     .modal-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
     .modal-title{margin:0 0 16px;font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.35rem);line-height:1.05;font-weight:400;letter-spacing:.06em;text-transform:uppercase}
-    .modal-summary{margin:0 0 34px;color:var(--soft);font-size:1.14rem;line-height:1.7}
+    .modal-summary{margin:0 0 34px;color:var(--soft);font-size:1rem;line-height:1.62}
     .setlist-title{margin:0 0 14px;font-family:var(--mono);color:var(--magenta2);font-size:.78rem;letter-spacing:.25em;text-transform:uppercase}
-    .tracklist{columns:2;column-gap:42px;margin:0;padding-left:22px;color:var(--text);font-size:1.05rem;line-height:1.75}
+    .tracklist{columns:2;column-gap:42px;margin:0;padding-left:22px;color:var(--text);font-size:.95rem;line-height:1.68}
     .tracklist li{break-inside:avoid;padding-left:4px}
     .close-modal{position:absolute;top:16px;right:16px;z-index:2;width:42px;height:42px;border:1px solid var(--line2);background:#000;color:var(--text);font-size:1.3rem;cursor:pointer}
     .close-modal:hover{background:var(--text);color:#000}
@@ -162,7 +162,6 @@
             <li><a href="ouvir.html">Ouvir</a></li>
             <li><a href="onde-se-guarda.html">Onde Se Guarda</a></li>
             <li><a href="ep.html">EP</a></li>
-            <li><a href="estratos.html">Estratos</a></li>
             <li><a href="transmissoes.html">Transmissões</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="index.html#contato">Contato</a></li>
@@ -213,21 +212,10 @@
     const menuBtn=document.getElementById('menuBtn');
     const navMenu=document.getElementById('navMenu');
     if(menuBtn&&navMenu){
-      menuBtn.addEventListener('click',()=>{
-        navMenu.classList.toggle('active');
-        menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';
-      });
-      // Close on link click — use timeout so navigation fires first
-      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{
-        setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);
-      }));
-      // Close on outside click
-      document.addEventListener('click',e=>{
-        if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){
-          navMenu.classList.remove('active');menuBtn.textContent='☰';
-        }
-      });
+      menuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';});
+      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);}));
+      document.addEventListener('click',e=>{if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){navMenu.classList.remove('active');menuBtn.textContent='☰';}});
     }
-</script>
+  </script>
 </body>
 </html>

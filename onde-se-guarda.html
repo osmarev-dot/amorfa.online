@@ -59,9 +59,9 @@
     .signal{font-family:var(--mono);font-size:.74rem;letter-spacing:.34em;color:var(--muted);text-transform:uppercase;margin:0 0 30px}
     .hero-logo{width:min(760px,92vw);margin:0 0 18px}
     .hero-logo img{width:100%;height:auto;display:block;filter:contrast(1.08) brightness(1.04)}
-    .hero-phrase{font-size:clamp(1.55rem,3.2vw,3rem);font-style:italic;line-height:1.12;margin:0;color:rgba(242,240,237,.92)}
+    .hero-phrase{font-size:clamp(1.35rem,2.8vw,2.5rem);font-style:italic;line-height:1.12;margin:0;color:rgba(242,240,237,.92)}
     .hero-copy{align-self:center;border-left:1px solid var(--line2);padding:0 0 0 34px}
-    .hero-copy p{margin:0 0 28px;color:var(--soft);font-size:clamp(1.18rem,2vw,1.55rem);line-height:1.55}
+    .hero-copy p{margin:0 0 28px;color:var(--soft);font-size:clamp(1rem,1.6vw,1.25rem);line-height:1.5}
     .contact-box{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;border:1px solid var(--line);padding:32px;background:#030303}
     .contact-link{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,2rem);letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--magenta2);padding-bottom:5px;width:fit-content}
     .contact-link:hover{color:var(--cyan);border-color:var(--cyan)}
@@ -84,8 +84,8 @@
     .album-row:hover{border-color:rgba(255,255,255,.22);box-shadow:0 22px 70px rgba(0,0,0,.78),0 0 34px rgba(147,0,67,.16)}
     .album-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;padding-top:32px}
     .album-title{margin:0 0 20px;font-family:var(--serif);font-size:clamp(1.7rem,4vw,3.8rem);font-weight:400;letter-spacing:.04em;line-height:1.06;text-transform:uppercase}
-    .album-concept{margin:0 0 20px;color:var(--text);font-size:clamp(1.16rem,2vw,1.5rem);font-style:italic}
-    .album-summary{margin:0;color:var(--soft);font-size:1.08rem;line-height:1.58;max-width:760px}
+    .album-concept{margin:0 0 20px;color:var(--text);font-size:clamp(1rem,1.5vw,1.22rem);font-style:italic}
+    .album-summary{margin:0;color:var(--soft);font-size:.95rem;line-height:1.55;max-width:760px}
     .album-action{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:28px}
     .album-row:hover .album-action{color:var(--text)}
     .modal{position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;padding:22px}
@@ -98,9 +98,9 @@
     .modal-content{padding:clamp(28px,5vw,56px)}
     .modal-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
     .modal-title{margin:0 0 16px;font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.35rem);line-height:1.05;font-weight:400;letter-spacing:.06em;text-transform:uppercase}
-    .modal-summary{margin:0 0 34px;color:var(--soft);font-size:1.14rem;line-height:1.7}
+    .modal-summary{margin:0 0 34px;color:var(--soft);font-size:1rem;line-height:1.62}
     .setlist-title{margin:0 0 14px;font-family:var(--mono);color:var(--magenta2);font-size:.78rem;letter-spacing:.25em;text-transform:uppercase}
-    .tracklist{columns:2;column-gap:42px;margin:0;padding-left:22px;color:var(--text);font-size:1.05rem;line-height:1.75}
+    .tracklist{columns:2;column-gap:42px;margin:0;padding-left:22px;color:var(--text);font-size:.95rem;line-height:1.68}
     .tracklist li{break-inside:avoid;padding-left:4px}
     .close-modal{position:absolute;top:16px;right:16px;z-index:2;width:42px;height:42px;border:1px solid var(--line2);background:#000;color:var(--text);font-size:1.3rem;cursor:pointer}
     .close-modal:hover{background:var(--text);color:#000}
@@ -121,7 +121,42 @@
     .link-card.disabled{opacity:.55;cursor:default} .link-card.disabled:hover{background:rgba(255,255,255,.012)}
     @media(max-width:1100px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-copy{border-left:0;border-top:1px solid var(--line2);padding:28px 0 0}.album-row,.album-row:nth-child(even){grid-template-columns:1fr}.album-row:nth-child(even) .album-art{order:0}.album-art{min-height:360px}.modal-layout{grid-template-columns:1fr}.modal-art img{min-height:auto;max-height:370px}.contact-box{grid-template-columns:1fr}.section-head{grid-template-columns:1fr}.tracklist{columns:1}.quick-link-inner{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:780px){.nav{padding:15px 4vw}.brand{font-size:1.05rem;letter-spacing:.34em}.menu-toggle{display:inline-flex;position:relative;z-index:2}nav ul{position:fixed;top:0;right:-100%;width:min(84vw,370px);height:100vh;flex-direction:column;align-items:flex-start;justify-content:center;padding:44px;gap:22px;background:rgba(0,0,0,.97);border-left:1px solid var(--line2);transition:right .34s}nav ul.active{right:0}nav a{font-size:.88rem;color:var(--text)}.hero{padding-top:108px}section{padding:74px 4vw}.album-info{padding:32px}.album-info::before{top:32px;left:32px}.album-meta{padding-top:28px}.footer-inner{flex-direction:column}.modal{padding:10px}.modal-content{padding:28px 22px}.quick-link-inner{grid-template-columns:1fr}.link-card{border-left:1px solid var(--line)}}
-</style>
+
+    .egg-wrap {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 4vw 80px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .egg {
+      font-family: var(--mono);
+      font-size: .62rem;
+      letter-spacing: .18em;
+      color: rgba(242,240,237,.05);
+      text-decoration: none;
+      text-transform: lowercase;
+      cursor: default;
+      transition: color .6s ease, text-shadow .6s ease;
+      user-select: none;
+      position: relative;
+    }
+    .egg::before {
+      content: '//';
+      margin-right: .5em;
+      color: rgba(208,0,102,.04);
+      transition: color .6s ease;
+    }
+    .egg:hover {
+      color: rgba(242,240,237,.18);
+      text-shadow: 0 0 12px rgba(208,0,102,.15);
+      cursor: pointer;
+    }
+    .egg:hover::before {
+      color: rgba(208,0,102,.25);
+    }
+
+  </style>
 </head>
 <body>
   <div class="page">
@@ -135,7 +170,6 @@
             <li><a href="ouvir.html">Ouvir</a></li>
             <li><a href="onde-se-guarda.html" class="active">Onde Se Guarda</a></li>
             <li><a href="ep.html">EP</a></li>
-            <li><a href="estratos.html">Estratos</a></li>
             <li><a href="transmissoes.html">Transmissões</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="index.html#contato">Contato</a></li>
@@ -166,6 +200,10 @@
         </div>
         <div class="album-stack" id="releaseGrid"></div>
       </section>
+    
+      <div class="egg-wrap">
+        <a class="egg" href="estratos.html" tabindex="-1" aria-hidden="true">eu funcionei. esse foi o erro original.</a>
+      </div>
     </main>
       <div class="modal" id="albumModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-backdrop" data-close="true"></div>
@@ -190,51 +228,10 @@
     const menuBtn=document.getElementById('menuBtn');
     const navMenu=document.getElementById('navMenu');
     if(menuBtn&&navMenu){
-      menuBtn.addEventListener('click',()=>{
-        navMenu.classList.toggle('active');
-        menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';
-      });
-      // Close on link click — use timeout so navigation fires first
-      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{
-        setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);
-      }));
-      // Close on outside click
-      document.addEventListener('click',e=>{
-        if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){
-          navMenu.classList.remove('active');menuBtn.textContent='☰';
-        }
-      });
+      menuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';});
+      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);}));
+      document.addEventListener('click',e=>{if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){navMenu.classList.remove('active');menuBtn.textContent='☰';}});
     }
-    const albums = [
-      {id:"uso",type:"ÁLBUM I",date:"29 mai 2026",status:"lançamento programado",title:"Tudo Que Eu Uso Me Usa de Volta",image:"album-1.webp",concept:"a superfície salva e devora",summary:"A porta de entrada da AMORFA: app, vitrine, corpo-produto, glamour, mercado e funcionamento. Um disco sobre usar para sobreviver — e perceber que a superfície também cobra.",tracks:["Versão Consumida","Fusão Nuclear","Luz Azul","Modo Avião","Só o Que Vende / Livre Pra Quem","Kouros de Silício","Corpo-Entulho","Vênus Aflita","Você Era Banal","Placebo","Glamour Febril","Cento e Oitenta","Terminal"]},
-      {id:"incendios",type:"ÁLBUM II",date:"05 jun 2026",status:"lançamento programado",title:"Pequenos Incêndios sob o Ar-Condicionado no Máximo",image:"album-2.webp",concept:"o corpo queima sob refrigeração",summary:"O álbum do contato real. Corpo, marca, temperatura, desejo e dano sob contenção fria. O ar-condicionado no máximo não apaga o incêndio: só deixa a queimadura mais precisa.",tracks:["Erro de Cálculo","Fidelidade Antiga","Não Claro","Amor Com Dentes","O Devorador","Mercúrio","Manutenção Mínima","Pronta","Portador da Luz","Hematoma","O Corpo Que Eu Tentei Ser","Mão no Bolso"]},
-      {id:"teologia",type:"ÁLBUM III",date:"19 jun 2026",status:"lançamento programado",title:"Teologia dos Fracassos Afetivos em Cama de Solteiro",image:"album-3.webp",concept:"a ausência vira liturgia doméstica",summary:"O álbum da devoção doméstica. A espera vira rito, o quarto vira altar e o quase-amor aprende a se comportar como religião particular.",tracks:["Santo Errado","Tarde Demais","O Culto da Carne","Lockdown (Terror Cult)","Toque Fantasma","Fracasso de Estimação","Não Se Preocupa (Era Bituca)","Cortesia do Medo","Vinte e Três","Quase Verdade","Matéria Escura","Para Onde Eu Fui?","O Reino do Quase"]},
-      {id:"fantasmogenese",type:"ÁLBUM IV",date:"26 jun 2026",status:"lançamento programado",title:"Fantasmogênese",image:"album-4.webp",concept:"a forma cede sem espetáculo",summary:"O álbum da dissolução. A forma cede milímetro por milímetro; o corpo continua funcionando enquanto perde contorno. Começa monumental em Onde Se Guarda e fecha frio em Junho, De Novo.",tracks:["Onde Se Guarda","Frequência Distorcida","Fantasmogênese","Campo Nulo","Baixa Resolução","Dose de Impulso","Ritual de Fogo","Junho, De Novo"]},
-      {id:"submundo",type:"ÁLBUM V",date:"03 jul 2026",status:"lançamento programado",title:"O Arranjo do Submundo",image:"album-5.webp",concept:"a voz volta do fundo sem voltar inteira",summary:"O álbum da origem subterrânea. Limiar, casa, organismo, ânfora, sutura, guardião, erro original e colapso. A voz volta com barro, corte e circuito fechado.",tracks:["LIMIAR","A Porta Debaixo da Casa","Organismo Associado","A Casa Dormia com os Olhos Abertos","A Ânfora","A Sutura Invisível","O Arranjo do Submundo","O Guardião das Formas","Erro Original","Flor de Plástico","Colapso"]}
-    ];
-    const grid=document.getElementById('releaseGrid');
-    const modal=document.getElementById('albumModal');
-    function renderCards(){
-      grid.innerHTML=albums.map((a,i)=>`<button class="album-row" id="album-${a.id}" type="button" data-index="${i}" data-color="${a.color?'true':'false'}" aria-label="Abrir ${a.title}"><div class="album-art"><img src="${a.image}" alt="Capa de ${a.title}" loading="lazy"></div><div class="album-info"><div><div class="album-meta"><span class="chip">${a.type}</span><span class="chip">${a.date}</span><span class="chip">${a.status}</span></div><h3 class="album-title">${a.title}</h3><p class="album-concept">"${a.concept}"</p><p class="album-summary">${a.summary}</p></div><div class="album-action">abrir arquivo + setlist →</div></div></button>`).join('');
-    }
-    function openAlbum(i){
-      const a=albums[i];
-      document.getElementById('modalImage').src=a.image;
-      document.getElementById('modalImage').alt=`Capa de ${a.title}`;
-      modal.dataset.color=a.color?'true':'false';
-      document.getElementById('modalMeta').innerHTML=`<span class="chip">${a.type}</span><span class="chip">${a.date}</span><span class="chip">${a.status}</span>`;
-      document.getElementById('modalTitle').textContent=a.title;
-      document.getElementById('modalSummary').textContent=a.summary;
-      document.getElementById('modalTracks').innerHTML=a.tracks.map(t=>`<li>${t}</li>`).join('');
-      modal.classList.add('active');modal.setAttribute('aria-hidden','false');
-      document.body.style.overflow='hidden';
-      modal.querySelector('.close-modal').focus();
-    }
-    function closeModal(){modal.classList.remove('active');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
-    renderCards();
-    grid.addEventListener('click',e=>{const c=e.target.closest('.album-row');if(c)openAlbum(+c.dataset.index);});
-    modal.addEventListener('click',e=>{if(e.target.dataset.close==='true')closeModal();});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-</script>
+  </script>
 </body>
 </html>
