@@ -4,187 +4,72 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Estratos | AMORFA</title>
-  <meta name="description" content="Seis estratos do livro que nunca saiu."/>
-  <meta name="robots" content="noindex,nofollow"/>
+  <meta name="description" content="Seis estratos do livro que nunca saiu. O arquivo profundo da AMORFA."/>
+  <meta name="theme-color" content="#000000"/>
+  <link rel="canonical" href="https://amorfa.online/estratos.html"/>
+  <meta property="og:title" content="Estratos | AMORFA"/>
+  <meta property="og:description" content="Seis estratos do livro que nunca saiu. O arquivo profundo da AMORFA."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://amorfa.online/estratos.html"/>
+  <meta property="og:image" content="https://amorfa.online/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Estratos | AMORFA"/>
+  <meta name="twitter:description" content="Seis estratos do livro que nunca saiu. O arquivo profundo da AMORFA."/>
+  <meta name="twitter:image" content="https://amorfa.online/og-image.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <style>
-  *{box-sizing:border-box} html{scroll-behavior:smooth;background:#000;color:#f2f0ed}
-  body{margin:0;background:#000;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
-    background:linear-gradient(rgba(255,255,255,0) 50%,rgba(0,0,0,.22) 50%),
-    linear-gradient(90deg,rgba(147,0,67,.025),rgba(0,130,147,.018));
-    background-size:100% 4px,7px 100%;mix-blend-mode:screen;opacity:.36}
-  body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:9998;opacity:.045;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    animation:grain 1.4s steps(3) infinite}
-  @keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
-  a{color:inherit}
-  :root{--m:#930043;--m2:#d00066;--c:#00d7ef;--c2:#008293;--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.18);
-        --serif:'Cinzel','Times New Roman',serif;--body:'Cormorant Garamond',Georgia,serif;--mono:'Courier New',Courier,monospace}
+:root{--m:#930043;--m2:#d00066;--c:#00d7ef;--c2:#008293;--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.18);--text:#f2f0ed;--muted:#77726f;--soft:#aaa29e;--serif:'Cinzel','Times New Roman',serif;--body:'Cormorant Garamond',Georgia,serif;--mono:'Courier New',Courier,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:#000;color:var(--text)}body{margin:0;background:#000;font-family:var(--body);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;background:linear-gradient(rgba(255,255,255,0) 50%,rgba(0,0,0,.22) 50%),linear-gradient(90deg,rgba(147,0,67,.025),rgba(0,130,147,.018));background-size:100% 4px,7px 100%;mix-blend-mode:screen;opacity:.36}
+body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:9998;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.4s steps(3) infinite}
+@keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
+a{color:inherit}
+header{position:fixed;inset:0 0 auto;z-index:2000;background:rgba(0,0,0,.74);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+.nav{max-width:1500px;margin:0 auto;padding:18px 4vw;display:flex;align-items:center;justify-content:space-between;gap:26px}
+.brand{font-family:var(--serif);font-size:1.32rem;letter-spacing:.45em;text-decoration:none}
+.brand::after{content:"";display:block;width:42px;height:1px;background:rgba(208,0,102,.65);margin-top:8px}
+nav ul{margin:0;padding:0;display:flex;list-style:none;gap:22px}
+nav a{font-family:var(--serif);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:.2s}
+nav a:hover,nav a.active{color:var(--text)}nav a.active{border-bottom:1px solid var(--m);padding-bottom:2px}
+.menu-toggle{display:none;border:1px solid var(--line2);background:#000;color:var(--text);padding:10px 13px;font-size:1rem;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:38px 4vw;color:var(--muted);font-family:var(--serif);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem}
+.footer-inner{max-width:1500px;margin:0 auto;display:flex;justify-content:space-between;gap:20px}
+.pulse{color:var(--m2)}
+@media(max-width:780px){.nav{padding:15px 4vw}.brand{font-size:1.05rem;letter-spacing:.34em}.menu-toggle{display:inline-flex;position:relative;z-index:2}nav ul{position:fixed;top:0;right:-100%;width:min(84vw,370px);height:100vh;flex-direction:column;align-items:flex-start;justify-content:center;padding:44px;gap:22px;background:rgba(0,0,0,.97);border-left:1px solid var(--line2);transition:right .34s}nav ul.active{right:0}nav a{font-size:.88rem;color:var(--text)}}
 
-  /* HEADER */
-  header{position:fixed;inset:0 0 auto;z-index:2000;background:rgba(0,0,0,.74);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
-  .nav{max-width:1500px;margin:0 auto;padding:18px 4vw;display:flex;align-items:center;justify-content:space-between;gap:26px}
-  .brand{font-family:var(--serif);font-size:1.32rem;letter-spacing:.45em;text-decoration:none}
-  .brand::after{content:"";display:block;width:42px;height:1px;background:rgba(208,0,102,.65);margin-top:8px}
-  nav ul{margin:0;padding:0;display:flex;list-style:none;gap:22px}
-  nav a{font-family:var(--serif);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#77726f;text-decoration:none;transition:.2s}
-  nav a:hover{color:#f2f0ed}
-  .menu-toggle{display:none;border:1px solid var(--line2);background:#000;color:#f2f0ed;padding:10px 13px;font-size:1rem;cursor:pointer}
+section{max-width:1500px;margin:0 auto;padding:80px 4vw}
+.est-hero{min-height:56vh;padding:130px 4vw 60px;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#000}
+.est-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 8% 80%,rgba(147,0,67,.14),transparent 38%),radial-gradient(circle at 92% 15%,rgba(0,130,147,.07),transparent 32%);pointer-events:none}
+.est-inner{position:relative;z-index:1;max-width:1500px;width:100%;margin:0 auto}
+.eyebrow{font-family:var(--mono);color:var(--muted);font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;margin:0 0 24px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";display:block;width:26px;height:1px;background:var(--m2)}
+.est-h1{font-family:var(--serif);font-size:clamp(3.5rem,10vw,8rem);font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px;line-height:.9;text-shadow:2px 0 var(--m),-1px 0 rgba(0,215,239,.45)}
+.est-sub{font-size:clamp(1rem,1.8vw,1.3rem);font-style:italic;color:var(--soft);margin:24px 0 0;max-width:540px;line-height:1.55}
+/* Grid of estratos */
+.est-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.est-card{background:#030303;text-decoration:none;padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:.25s;position:relative;overflow:hidden;min-height:200px}
+.est-card::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:linear-gradient(90deg,var(--m2),var(--c),transparent);transform:translateX(-75%);transition:.32s}
+.est-card:hover{background:#060606;transform:translateY(-2px)}
+.est-card:hover::after{transform:translateX(0)}
+.est-card.coda-card::after{background:linear-gradient(90deg,var(--c),var(--m2),transparent)}
+.est-num{font-family:var(--serif);font-size:clamp(2.2rem,4vw,4rem);font-weight:400;letter-spacing:.05em;color:rgba(208,0,102,.22);line-height:1;transition:.25s}
+.est-card:hover .est-num{color:rgba(208,0,102,.45)}
+.est-card.coda-card .est-num{color:rgba(0,130,147,.22)}
+.est-card.coda-card:hover .est-num{color:rgba(0,215,239,.45)}
+.est-nome{font-family:var(--serif);font-size:clamp(1rem,1.8vw,1.35rem);font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:var(--text);margin:0}
+.est-frase{font-family:var(--body);font-style:italic;font-size:clamp(.82rem,1.3vw,.98rem);color:var(--muted);line-height:1.6;margin:0}
+.est-arrow{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;color:#2a2a2a;text-transform:lowercase;margin-top:auto;transition:.22s}
+.est-card:hover .est-arrow{color:var(--muted)}
+@media(max-width:780px){.est-grid{grid-template-columns:1fr}}
 
-  /* INTRO */
-  .est-intro{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
-    padding:0 4vw 72px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-  .est-intro::before{content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 8% 80%,rgba(147,0,67,.14),transparent 40%),
-    radial-gradient(circle at 92% 15%,rgba(0,130,147,.08),transparent 35%)}
-  .est-intro-inner{position:relative;z-index:1;max-width:1500px;width:100%;margin:0 auto}
-  .est-eyebrow{font-family:var(--mono);color:#77726f;font-size:.7rem;letter-spacing:.35em;
-    text-transform:uppercase;margin:0 0 28px;display:flex;align-items:center;gap:14px}
-  .est-eyebrow::before{content:"";display:block;width:28px;height:1px;background:var(--m2)}
-  .est-title{font-family:var(--serif);font-size:clamp(4rem,11vw,9.5rem);font-weight:400;
-    letter-spacing:.1em;text-transform:uppercase;margin:0;line-height:.88;
-    text-shadow:3px 0 var(--m),-2px 0 rgba(0,215,239,.4)}
-  .est-tagline{margin:32px 0 0;font-size:clamp(1.1rem,2vw,1.5rem);font-style:italic;
-    color:rgba(242,240,237,.55);line-height:1.5;max-width:600px}
-  /* Scroll hint */
-  .scroll-hint{position:absolute;bottom:32px;right:4vw;font-family:var(--mono);
-    font-size:.55rem;letter-spacing:.22em;color:#2a2a2a;text-transform:lowercase;
-    display:flex;align-items:center;gap:10px}
-  .scroll-hint::before{content:"";display:block;width:1px;height:36px;background:linear-gradient(to bottom,transparent,#2a2a2a)}
-
-  /* BODY */
-  .est-body{max-width:1500px;margin:0 auto}
-
-  /* ESTRATO SECTION */
-  .estrato-section{
-    display:grid;
-    grid-template-columns:200px 1fr;
-    min-height:100vh;
-    border-bottom:1px solid var(--line);
-  }
-
-  /* LEFT SPINE */
-  .est-spine{
-    border-right:1px solid var(--line);
-    padding:80px 40px;
-    position:sticky;
-    top:64px;
-    height:calc(100vh - 64px);
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    background:#000;
-    z-index:5;
-  }
-  .est-spine-num{
-    font-family:var(--serif);
-    font-size:clamp(5rem,8vw,8rem);
-    font-weight:400;
-    line-height:1;
-    color:rgba(208,0,102,.12);
-    letter-spacing:-.02em;
-    user-select:none;
-  }
-  .est-spine-label{
-    font-family:var(--mono);
-    font-size:.52rem;
-    letter-spacing:.22em;
-    color:#2a2a2a;
-    text-transform:uppercase;
-    writing-mode:vertical-rl;
-    transform:rotate(180deg);
-  }
-
-  /* RIGHT CONTENT */
-  .est-content{padding:80px 60px 80px 60px}
-  .est-name{
-    font-family:var(--serif);
-    font-size:clamp(1.5rem,3vw,2.8rem);
-    font-weight:400;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    margin:0 0 28px;
-    color:#f2f0ed;
-    padding-bottom:24px;
-    border-bottom:1px solid var(--line);
-  }
-  .est-epigraph{
-    font-size:clamp(.9rem,1.4vw,1.1rem);
-    font-style:italic;
-    color:rgba(242,240,237,.42);
-    line-height:1.65;
-    margin:0 0 56px;
-    max-width:560px;
-    padding-left:20px;
-    border-left:1px solid rgba(147,0,67,.25);
-  }
-
-  /* Poems container */
-  .est-poems{display:grid;gap:56px}
-  .poem{position:relative}
-  .poem::before{
-    content:"";position:absolute;top:0;left:-20px;
-    width:1px;height:32px;
-    background:var(--m2);
-    box-shadow:0 0 8px var(--m2);
-  }
-  .poem-title{
-    font-family:var(--serif);font-size:.78rem;letter-spacing:.2em;
-    text-transform:uppercase;color:#77726f;margin:0 0 16px
-  }
-  .poem-body{
-    font-family:var(--body);font-size:clamp(.92rem,1.4vw,1.08rem);
-    line-height:1.88;color:rgba(242,240,237,.82);white-space:pre-line;margin:0
-  }
-
-  /* Empty placeholder */
-  .est-empty{
-    font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;
-    color:#1a1a1a;text-transform:lowercase;padding:20px 0 0;
-  }
-
-  /* CODA */
-  .coda-section{
-    grid-template-columns:200px 1fr;
-    border-bottom:1px solid var(--line);
-  }
-  .coda-section .est-spine-num{color:rgba(0,130,147,.12)}
-  .coda-section .poem::before{background:var(--c);box-shadow:0 0 8px var(--c)}
-
-  /* FOOTER */
-  footer{border-top:1px solid var(--line);padding:38px 4vw;color:#77726f;
-    font-family:var(--serif);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem}
-  .footer-inner{max-width:1500px;margin:0 auto;display:flex;justify-content:space-between}
-  .pulse{color:var(--m2)}
-
-  /* LOADING */
-  #estLoading{
-    grid-column:1/-1;padding:120px 4vw;
-    font-family:var(--mono);font-size:.65rem;letter-spacing:.22em;
-    color:#1a1a1a;text-align:center;text-transform:lowercase
-  }
-
-  @media(max-width:900px){
-    .estrato-section,.coda-section{grid-template-columns:1fr}
-    .est-spine{position:relative;height:auto;top:auto;border-right:none;border-bottom:1px solid var(--line);padding:40px 4vw 32px;flex-direction:row;align-items:center;gap:20px}
-    .est-spine-label{writing-mode:horizontal-tb;transform:none}
-    .est-content{padding:40px 4vw 60px}
-  }
-  @media(max-width:780px){
-    .nav{padding:15px 4vw}.brand{font-size:1.05rem;letter-spacing:.34em}
-    .menu-toggle{display:inline-flex;position:relative;z-index:2}
-    nav ul{position:fixed;top:0;right:-100%;width:min(84vw,370px);height:100vh;
-      flex-direction:column;align-items:flex-start;justify-content:center;
-      padding:44px;gap:22px;background:rgba(0,0,0,.97);border-left:1px solid var(--line2);transition:right .34s}
-    nav ul.active{right:0} nav a{font-size:.88rem;color:#f2f0ed}
-  }
 </style>
 </head>
 <body>
@@ -192,8 +77,7 @@
   <div class="nav">
     <a class="brand" href="index.html#inicio" aria-label="AMORFA início">AMORFA</a>
     <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu">☰</button>
-    <nav aria-label="Navegação principal">
-      <ul id="navMenu">
+    <nav aria-label="Navegação principal"><ul id="navMenu">
             <li><a href="index.html#inicio">Início</a></li>
             <li><a href="ouvir.html">Ouvir</a></li>
             <li><a href="onde-se-guarda.html">Onde Se Guarda</a></li>
@@ -201,159 +85,75 @@
             <li><a href="transmissoes.html">Transmissões</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="index.html#contato">Contato</a></li>
-          </ul>
-    </nav>
+          </ul></nav>
   </div>
 </header>
+<div style="position:relative;z-index:1">
 
-<!-- INTRO -->
-<section class="est-intro">
-  <div class="est-intro-inner">
-    <p class="est-eyebrow">onde se guarda o que não existe mais</p>
-    <h1 class="est-title">Estratos</h1>
-    <p class="est-tagline">Seis modos de guardar o que não podia ficar à luz.<br>O livro que desceu. A voz que voltou.</p>
+<div class="est-hero">
+  <div class="est-inner">
+    <p class="eyebrow">onde se guarda o que não existe mais</p>
+    <h1 class="est-h1">Estratos</h1>
+    <p class="est-sub">Seis modos de guardar o que não podia ficar à luz.<br>O livro que desceu. A voz que voltou.</p>
   </div>
-  <span class="scroll-hint">descer</span>
+</div>
+
+<section>
+  <div class="est-grid">
+    <a class="est-card" href="estrato-0.html">
+      <span class="est-num">0</span>
+      <h2 class="est-nome">O Guardião das Formas</h2>
+      <p class="est-frase">&#8220;onde antes havia face, fica uma trama fria sustentando o que já não encosta.&#8221;</p>
+      <span class="est-arrow">entrar →</span>
+    </a>
+    <a class="est-card" href="estrato-i.html">
+      <span class="est-num">I</span>
+      <h2 class="est-nome">O Legista dos Corpos Transitórios</h2>
+      <p class="est-frase">&#8220;tateamos este brilho azul com a gravidade de quem inaugura o fogo pela segunda vez.&#8221;</p>
+      <span class="est-arrow">entrar →</span>
+    </a>
+    <a class="est-card" href="estrato-ii.html">
+      <span class="est-num">II</span>
+      <h2 class="est-nome">O Operador de Simulacros</h2>
+      <p class="est-frase">&#8220;o oco que era meu respondeu com outra voz. o que eu abria voltava ocupado.&#8221;</p>
+      <span class="est-arrow">entrar →</span>
+    </a>
+    <a class="est-card" href="estrato-iii.html">
+      <span class="est-num">III</span>
+      <h2 class="est-nome">O Devoto do Deus Ausente</h2>
+      <p class="est-frase">&#8220;sussurro teu nome três vezes em frequências decrescentes. o ar responde com pequenas distorções.&#8221;</p>
+      <span class="est-arrow">entrar →</span>
+    </a>
+    <a class="est-card" href="estrato-iv.html">
+      <span class="est-num">IV</span>
+      <h2 class="est-nome">O Arquiteto do Primeiro Colapso</h2>
+      <p class="est-frase">&#8220;eu funcionei. esse foi o erro original.&#8221;</p>
+      <span class="est-arrow">entrar →</span>
+    </a>
+    <a class="est-card" href="estrato-v.html">
+      <span class="est-num">V</span>
+      <h2 class="est-nome">O Escultor de Ídolos de Cerâmica</h2>
+      <p class="est-frase">&#8220;de longe, valor. de perto, verniz, respiração contida, um metal fino sobre barro queimado.&#8221;</p>
+      <span class="est-arrow">entrar →</span>
+    </a>
+    <a class="est-card" href="estrato-vi.html">
+      <span class="est-num">VI</span>
+      <h2 class="est-nome">A Criança-Cripta</h2>
+      <p class="est-frase">&#8220;no fundo, quando a descida cessou, as peças já estavam em posto.&#8221;</p>
+      <span class="est-arrow">entrar →</span>
+    </a>
+    <a class="est-card coda-card" href="estrato-coda.html">
+      <span class="est-num">Coda</span>
+      <h2 class="est-nome">Poemas Avulsos</h2>
+      <p class="est-frase">&#8220;o que não cabe nos estratos ainda pertence ao arquivo.&#8221;</p>
+      <span class="est-arrow">entrar →</span>
+    </a>
+  </div>
 </section>
 
-<!-- ESTRATOS -->
-<main class="est-body" id="estBody">
-
-      <div class="estrato-section" id="estrato-0" data-est="0">
-        <div class="est-spine">
-          <span class="est-spine-num">0</span>
-          <span class="est-spine-label">O Guardião das Formas</span>
-        </div>
-        <div class="est-content">
-          <h2 class="est-name">O Guardião das Formas</h2>
-          <p class="est-epigraph">&#8220;onde antes havia face, fica uma trama fria sustentando o que já não encosta.&#8221;</p>
-          <div class="est-poems" id="poems-0">
-            <p class="est-empty">// silêncio</p>
-          </div>
-        </div>
-      </div>
-      <div class="estrato-section" id="estrato-I" data-est="I">
-        <div class="est-spine">
-          <span class="est-spine-num">I</span>
-          <span class="est-spine-label">O Legista dos Corpos Transitórios</span>
-        </div>
-        <div class="est-content">
-          <h2 class="est-name">O Legista dos Corpos Transitórios</h2>
-          <p class="est-epigraph">&#8220;tateamos este brilho azul com a gravidade de quem inaugura o fogo pela segunda vez.&#8221;</p>
-          <div class="est-poems" id="poems-I">
-            <p class="est-empty">// silêncio</p>
-          </div>
-        </div>
-      </div>
-      <div class="estrato-section" id="estrato-II" data-est="II">
-        <div class="est-spine">
-          <span class="est-spine-num">II</span>
-          <span class="est-spine-label">O Operador de Simulacros</span>
-        </div>
-        <div class="est-content">
-          <h2 class="est-name">O Operador de Simulacros</h2>
-          <p class="est-epigraph">&#8220;o oco que era meu respondeu com outra voz. o que eu abria voltava ocupado.&#8221;</p>
-          <div class="est-poems" id="poems-II">
-            <p class="est-empty">// silêncio</p>
-          </div>
-        </div>
-      </div>
-      <div class="estrato-section" id="estrato-III" data-est="III">
-        <div class="est-spine">
-          <span class="est-spine-num">III</span>
-          <span class="est-spine-label">O Devoto do Deus Ausente</span>
-        </div>
-        <div class="est-content">
-          <h2 class="est-name">O Devoto do Deus Ausente</h2>
-          <p class="est-epigraph">&#8220;sussurro teu nome três vezes em frequências decrescentes. o ar responde com pequenas distorções.&#8221;</p>
-          <div class="est-poems" id="poems-III">
-            <p class="est-empty">// silêncio</p>
-          </div>
-        </div>
-      </div>
-      <div class="estrato-section" id="estrato-IV" data-est="IV">
-        <div class="est-spine">
-          <span class="est-spine-num">IV</span>
-          <span class="est-spine-label">O Arquiteto do Primeiro Colapso</span>
-        </div>
-        <div class="est-content">
-          <h2 class="est-name">O Arquiteto do Primeiro Colapso</h2>
-          <p class="est-epigraph">&#8220;eu funcionei. esse foi o erro original.&#8221;</p>
-          <div class="est-poems" id="poems-IV">
-            <p class="est-empty">// silêncio</p>
-          </div>
-        </div>
-      </div>
-      <div class="estrato-section" id="estrato-V" data-est="V">
-        <div class="est-spine">
-          <span class="est-spine-num">V</span>
-          <span class="est-spine-label">O Escultor de Ídolos de Cerâmica</span>
-        </div>
-        <div class="est-content">
-          <h2 class="est-name">O Escultor de Ídolos de Cerâmica</h2>
-          <p class="est-epigraph">&#8220;de longe, valor. de perto, verniz, respiração contida, um metal fino sobre barro queimado.&#8221;</p>
-          <div class="est-poems" id="poems-V">
-            <p class="est-empty">// silêncio</p>
-          </div>
-        </div>
-      </div>
-      <div class="estrato-section" id="estrato-VI" data-est="VI">
-        <div class="est-spine">
-          <span class="est-spine-num">VI</span>
-          <span class="est-spine-label">A Criança-Cripta</span>
-        </div>
-        <div class="est-content">
-          <h2 class="est-name">A Criança-Cripta</h2>
-          <p class="est-epigraph">&#8220;no fundo, quando a descida cessou, as peças já estavam em posto.&#8221;</p>
-          <div class="est-poems" id="poems-VI">
-            <p class="est-empty">// silêncio</p>
-          </div>
-        </div>
-      </div>
-      <div class="estrato-section coda-section" id="estrato-coda" data-est="coda">
-        <div class="est-spine">
-          <span class="est-spine-num" style="font-size:clamp(2.5rem,4vw,4rem);letter-spacing:.05em;color:rgba(0,130,147,.12)">Coda</span>
-          <span class="est-spine-label">Poemas Avulsos</span>
-        </div>
-        <div class="est-content">
-          <h2 class="est-name">Poemas Avulsos</h2>
-          <p class="est-epigraph" style="border-color:rgba(0,130,147,.25)">&#8220;o que não cabe nos estratos ainda pertence ao arquivo.&#8221;</p>
-          <div class="est-poems" id="poems-coda">
-            <p class="est-empty">// silêncio</p>
-          </div>
-        </div>
-      </div>
-</main>
-
+</div>
 <footer><div class="footer-inner"><span>AMORFA.online</span><span class="pulse">sinal ativo</span></div></footer>
-
 <script>
-  fetch('estratos.json')
-    .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
-    .then(data => {
-      const poemas = Array.isArray(data.posts) ? data.posts : [];
-      if(!poemas.length) return; // all sections show silencio
-      // Group by estrato
-      const byEst = {};
-      poemas.forEach(p => {
-        const k = p.estrato || 'coda';
-        if(!byEst[k]) byEst[k] = [];
-        byEst[k].push(p);
-      });
-      Object.entries(byEst).forEach(([k, poems]) => {
-        const container = document.getElementById('poems-' + k);
-        if(!container) return;
-        container.innerHTML = poems.map(p => {
-          const titulo = p.titulo && p.titulo.trim()
-            ? `<p class="poem-title">${p.titulo}</p>` : '';
-          const corpo = (p.conteudo || '')
-            .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-          return `<div class="poem">${titulo}<p class="poem-body">${corpo}</p></div>`;
-        }).join('');
-      });
-    })
-    .catch(err => console.warn('estratos fetch:', err));
-
     const menuBtn=document.getElementById('menuBtn');
     const navMenu=document.getElementById('navMenu');
     if(menuBtn&&navMenu){
