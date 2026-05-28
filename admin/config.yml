@@ -38,19 +38,32 @@ collections:
               - {label: "Conteúdo", name: "conteudo", widget: "text"}
               - {label: "Faixa relacionada (opcional)", name: "faixa", widget: "string", required: false, default: ""}
 
-  - name: "coda"
-    label: "Coda — Poemas Avulsos"
+  - name: "estratos"
+    label: "Estratos — Poemas"
     files:
       - name: "posts"
-        label: "Coda"
+        label: "Todos os Poemas dos Estratos"
         file: "estratos.json"
         fields:
           - name: posts
             label: Poemas
             label_singular: Poema
             widget: list
-            summary: "{{fields.id}} — {{fields.titulo}}"
+            summary: "{{fields.id}} — {{fields.estrato}} — {{fields.titulo}}"
             fields:
-              - {label: "ID", name: "id", widget: "string", hint: "Ex: C-001, C-002..."}
+              - {label: "ID", name: "id", widget: "string", hint: "Ex: E-001, E-002..."}
+              - label: "Estrato"
+                name: "estrato"
+                widget: "select"
+                hint: "Em qual estrato esse poema vai aparecer"
+                options:
+                  - {label: "Estrato 0 — O Guardião das Formas", value: "0"}
+                  - {label: "Estrato I — O Legista dos Corpos Transitórios", value: "I"}
+                  - {label: "Estrato II — O Operador de Simulacros", value: "II"}
+                  - {label: "Estrato III — O Devoto do Deus Ausente", value: "III"}
+                  - {label: "Estrato IV — O Arquiteto do Primeiro Colapso", value: "IV"}
+                  - {label: "Estrato V — O Escultor de Ídolos de Cerâmica", value: "V"}
+                  - {label: "Estrato VI — A Criança-Cripta", value: "VI"}
+                  - {label: "Coda — Poemas Avulsos", value: "coda"}
               - {label: "Título (opcional)", name: "titulo", widget: "string", required: false, default: ""}
               - {label: "Conteúdo", name: "conteudo", widget: "text"}
