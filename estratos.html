@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <style>
-    :root {
+    :root{
       --black:#000;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
       --text:#f2f0ed;--muted:#77726f;--soft:#aaa29e;
       --magenta:#930043;--magenta2:#d00066;--cyan:#008293;--cyan2:#00d7ef;
@@ -48,146 +48,101 @@
     .menu-toggle{display:none;border:1px solid var(--line2);background:#000;color:var(--text);padding:10px 13px;font-size:1rem;cursor:pointer;}
 
     /* HERO */
-    .page-hero{
-      padding:142px 4vw 72px;
-      border-bottom:1px solid var(--line);
-      position:relative;overflow:hidden;
-      background:
-        radial-gradient(circle at 5% 90%,rgba(147,0,67,.12),transparent 42%),
-        radial-gradient(circle at 95% 10%,rgba(0,130,147,.07),transparent 38%),#000;
-    }
+    .page-hero{padding:142px 4vw 72px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;
+      background:radial-gradient(circle at 5% 90%,rgba(147,0,67,.12),transparent 42%),
+      radial-gradient(circle at 95% 10%,rgba(0,130,147,.07),transparent 38%),#000;}
     .page-hero::before{content:"";position:absolute;inset:0;pointer-events:none;
-      background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 10px);
-      mix-blend-mode:screen;}
+      background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 10px);mix-blend-mode:screen;}
     .hero-inner{max-width:900px;position:relative;z-index:1;}
     .hero-kicker{font-family:var(--font-mono);color:var(--muted);letter-spacing:.35em;text-transform:uppercase;font-size:.78rem;margin:0 0 22px;display:flex;align-items:center;gap:14px;}
     .hero-kicker::before{content:"";display:block;width:28px;height:1px;background:var(--magenta);}
     .hero-title{font-family:var(--font-serif);font-size:clamp(3rem,9vw,7rem);font-weight:400;letter-spacing:.15em;text-transform:uppercase;margin:0 0 28px;line-height:.92;text-shadow:2px 0 var(--magenta),-1px 0 rgba(0,215,239,.55);}
     .hero-nota{font-family:var(--font-body);font-style:italic;color:var(--soft);font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.7;margin:0;}
 
+    /* ARCO */
+    .arco{max-width:1420px;margin:0 auto;padding:72px 4vw 64px;border-bottom:1px solid var(--line);}
+    .arco-text{font-family:var(--font-body);font-size:clamp(1.3rem,2.2vw,1.8rem);font-style:italic;color:var(--soft);line-height:1.7;margin:0;max-width:680px;}
+    .arco-text strong{font-style:normal;font-weight:400;color:var(--text);}
+
     /* MAIN */
     .main{max-width:1420px;margin:0 auto;padding:0 4vw 120px;}
 
-    /* TRANSITION — livro → álbuns */
-    .arco{
-      padding:72px 0 64px;
-      border-bottom:1px solid var(--line);
-      max-width:680px;
-    }
-    .arco-text{
-      font-family:var(--font-body);
-      font-size:clamp(1.3rem,2.2vw,1.8rem);
-      font-style:italic;
-      color:var(--soft);
-      line-height:1.7;
-      margin:0;
-    }
-    .arco-text strong{
-      font-style:normal;
-      font-weight:400;
-      color:var(--text);
-    }
+    /* ESTRATO BLOCK */
+    .estrato-block{border-bottom:1px solid var(--line);padding:64px 0 0;}
 
-    /* ESTRATOS GRID */
-    .estratos-section{padding:64px 0 0;}
-    .section-label{
-      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.35em;
-      text-transform:uppercase;color:var(--muted);margin:0 0 48px;
-      display:flex;align-items:center;gap:14px;
+    .estrato-header{
+      display:grid;grid-template-columns:120px 1fr;gap:0 48px;
+      padding-bottom:36px;align-items:start;
     }
-    .section-label::before{content:"";display:block;width:28px;height:1px;background:var(--magenta);}
-
-    .estratos-list{display:grid;gap:0;}
-
-    .estrato{
-      border-bottom:1px solid var(--line);
-      display:grid;
-      grid-template-columns:180px 1fr;
-      gap:0 52px;
-      padding:52px 0;
-      position:relative;
-      align-items:start;
+    .estrato-num-col{
+      font-family:var(--font-mono);font-size:.65rem;letter-spacing:.28em;
+      color:var(--muted);text-transform:uppercase;padding-top:6px;
     }
-    .estrato::before{
-      content:"";position:absolute;left:0;top:0;bottom:0;width:1px;
-      background:linear-gradient(to bottom,transparent,var(--magenta),transparent);
-      opacity:0;transition:opacity .4s ease;
+    .estrato-num-big{
+      display:block;font-family:var(--font-serif);
+      font-size:clamp(2rem,4vw,3.5rem);
+      letter-spacing:0;color:rgba(255,255,255,.05);line-height:1;margin-bottom:10px;
     }
-    .estrato:hover::before{opacity:1;}
-
-    .estrato-num{
-      font-family:var(--font-mono);font-size:.68rem;letter-spacing:.28em;
-      color:var(--muted);text-transform:uppercase;padding-top:4px;
-      position:sticky;top:80px;
-    }
-    .estrato-num span{
-      display:block;font-size:2.2rem;letter-spacing:0;color:rgba(255,255,255,.06);
-      font-family:var(--font-serif);line-height:1;margin-bottom:12px;
-    }
-
-    .estrato-content{}
-    .estrato-title{
-      font-family:var(--font-serif);font-size:clamp(1.1rem,1.8vw,1.55rem);
+    .estrato-title-text{
+      font-family:var(--font-serif);font-size:clamp(1.15rem,2vw,1.7rem);
       font-weight:400;letter-spacing:.08em;text-transform:uppercase;
-      margin:0 0 20px;line-height:1.2;color:var(--text);
+      margin:0 0 18px;line-height:1.2;color:var(--text);
     }
     .estrato-fragment{
-      font-family:var(--font-body);font-size:clamp(1.15rem,1.9vw,1.5rem);
-      font-style:italic;line-height:1.72;color:var(--soft);
-      max-width:620px;margin:0;
-    }
-    .estrato:hover .estrato-fragment{color:rgba(242,240,237,.82);}
-
-    /* CODA DIVIDER */
-    .coda-divider{
-      padding:80px 0 64px;
-      border-bottom:1px solid var(--line);
-    }
-    .coda-label{
-      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.35em;
-      text-transform:uppercase;color:var(--muted);margin:0 0 20px;
-      display:flex;align-items:center;gap:14px;
-    }
-    .coda-label::before{content:"";display:block;width:28px;height:1px;background:var(--cyan);}
-    .coda-nota{
-      font-family:var(--font-body);font-style:italic;color:var(--muted);
-      font-size:1.05rem;line-height:1.7;max-width:520px;margin:0;
+      font-family:var(--font-body);font-size:clamp(1.05rem,1.7vw,1.35rem);
+      font-style:italic;line-height:1.72;color:var(--soft);margin:0;max-width:580px;
     }
 
-    /* CODA POSTS */
-    .coda-list{list-style:none;margin:0;padding:0;}
-    .coda-entry{border-bottom:1px solid var(--line);overflow:hidden;}
-    .coda-row{
+    /* POSTS dentro do estrato */
+    .estrato-posts{
+      border-top:1px solid var(--line);
+      margin-top:8px;
+    }
+    .estrato-posts.empty{display:none;}
+
+    .post-entry{border-bottom:1px solid rgba(255,255,255,.04);overflow:hidden;}
+    .post-row{
       display:grid;grid-template-columns:80px 1fr 22px;
-      align-items:center;gap:0 24px;
-      padding:22px 0;cursor:pointer;transition:background .18s ease;position:relative;
+      align-items:center;gap:0 20px;
+      padding:18px 0 18px 36px;
+      cursor:pointer;transition:background .15s ease;position:relative;
     }
-    .coda-row::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
-      background:linear-gradient(90deg,var(--cyan),transparent);
-      transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
-    .coda-row:hover::after,.coda-entry.open .coda-row::after{transform:scaleX(1);}
-    .coda-row:hover{background:rgba(0,130,147,.03);}
-    .coda-entry.open .coda-row{background:rgba(0,130,147,.04);}
-    .coda-id{font-family:var(--font-mono);font-size:.67rem;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;}
-    .coda-preview{font-family:var(--font-body);font-size:1.08rem;color:var(--soft);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-    .coda-entry.open .coda-row .coda-preview{color:var(--text);}
-    .coda-chev{font-size:.68rem;color:var(--muted);transition:transform .22s ease;font-family:var(--font-mono);text-align:right;}
-    .coda-entry.open .coda-row .coda-chev{transform:rotate(180deg);color:var(--cyan);}
-    .coda-body-wrap{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
-    .coda-entry.open .coda-body-wrap{max-height:3000px;}
-    .coda-body-inner{padding:32px 0 44px;border-top:1px solid var(--line);}
-    .coda-post-title{font-family:var(--font-serif);font-size:clamp(1.3rem,2.2vw,1.9rem);font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin:0 0 22px;line-height:1.14;}
-    .coda-body-text{font-family:var(--font-body);font-size:clamp(1.12rem,1.7vw,1.4rem);line-height:1.58;color:rgba(242,240,237,.88);max-width:680px;}
-    .coda-body-text p{margin:0 0 .45em;}
-    .coda-body-text p:last-child{margin-bottom:0;}
-    .coda-empty{padding:48px 0;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.2em;color:var(--muted);}
+    .post-row::before{
+      content:"";position:absolute;left:0;top:0;bottom:0;width:1px;
+      background:var(--magenta);transform:scaleY(0);transform-origin:center;
+      transition:transform .2s ease;
+    }
+    .post-row:hover::before,.post-entry.open .post-row::before{transform:scaleY(1);}
+    .post-row:hover{background:rgba(147,0,67,.025);}
+    .post-entry.open .post-row{background:rgba(147,0,67,.04);}
+    .post-id{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;}
+    .post-preview{font-family:var(--font-body);font-size:1rem;color:var(--soft);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .post-entry.open .post-row .post-preview{color:var(--text);}
+    .post-chev{font-size:.62rem;color:var(--muted);transition:transform .2s ease;font-family:var(--font-mono);text-align:right;}
+    .post-entry.open .post-row .post-chev{transform:rotate(180deg);color:var(--magenta);}
+
+    .post-body-wrap{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1);}
+    .post-entry.open .post-body-wrap{max-height:3000px;}
+    .post-body-inner{padding:28px 0 40px 36px;border-top:1px solid rgba(255,255,255,.04);}
+    .post-title{font-family:var(--font-serif);font-size:clamp(1.2rem,2vw,1.7rem);font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin:0 0 20px;line-height:1.14;}
+    .post-text{font-family:var(--font-body);font-size:clamp(1.1rem,1.7vw,1.38rem);line-height:1.6;color:rgba(242,240,237,.88);max-width:620px;}
+    .post-text p{margin:0 0 .42em;}
+    .post-text p:last-child{margin-bottom:0;}
+
+    /* CODA */
+    .coda-block{padding:64px 0 0;border-bottom:1px solid var(--line);}
+    .coda-header{padding-bottom:36px;}
+    .coda-label{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;display:flex;align-items:center;gap:14px;}
+    .coda-label::before{content:"";display:block;width:28px;height:1px;background:var(--cyan);}
+    .coda-nota{font-family:var(--font-body);font-style:italic;color:var(--muted);font-size:1.05rem;line-height:1.7;max-width:480px;margin:0;}
+    .coda-posts{border-top:1px solid var(--line);margin-top:8px;}
+    .coda-posts.empty{padding:40px 0;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.2em;color:var(--muted);}
 
     footer{border-top:1px solid var(--line);padding:38px 4vw;color:var(--muted);font-family:var(--font-serif);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem;}
     .footer-inner{max-width:1420px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;}
     .pulse{color:var(--magenta);animation:pulse 2.6s infinite;}
     @keyframes pulse{0%,100%{opacity:.42}50%{opacity:1;text-shadow:0 0 9px var(--magenta)}}
 
-    /* MOBILE */
     @media(max-width:780px){
       .nav{padding:15px 4vw;}
       .brand{font-size:1.05rem;letter-spacing:.34em;}
@@ -196,10 +151,11 @@
       nav ul.active{right:0;}
       nav a{font-size:.92rem;color:var(--text);}
       .page-hero{padding:110px 4vw 52px;}
-      .estrato{grid-template-columns:1fr;gap:16px;padding:40px 0;}
-      .estrato-num{position:static;display:flex;align-items:center;gap:12px;}
-      .estrato-num span{font-size:1.4rem;margin-bottom:0;margin-right:4px;}
-      .coda-row{grid-template-columns:60px 1fr 18px;padding:18px 0;gap:0 12px;}
+      .estrato-header{grid-template-columns:1fr;gap:16px;}
+      .estrato-num-col{display:flex;align-items:center;gap:10px;}
+      .estrato-num-big{font-size:1.6rem;margin-bottom:0;margin-right:8px;}
+      .post-row{padding-left:16px;grid-template-columns:60px 1fr 18px;}
+      .post-body-inner{padding-left:16px;}
     }
   </style>
 </head>
@@ -231,108 +187,12 @@
     </div>
   </div>
 
-  <main class="main">
+  <div class="arco">
+    <p class="arco-text">os estratos desceram.<br><strong>os álbuns são o que voltou.</strong></p>
+  </div>
 
-    <div class="arco">
-      <p class="arco-text">
-        os estratos desceram.<br>
-        <strong>os álbuns são o que voltou.</strong>
-      </p>
-    </div>
-
-    <section class="estratos-section">
-      <p class="section-label">arquivo</p>
-      <div class="estratos-list">
-
-        <div class="estrato">
-          <div class="estrato-num">
-            <span>0</span>
-            ESTRATO 0
-          </div>
-          <div class="estrato-content">
-            <h2 class="estrato-title">O Guardião das Formas</h2>
-            <p class="estrato-fragment">onde antes havia face,<br>fica uma trama fria<br>sustentando o que já não encosta.</p>
-          </div>
-        </div>
-
-        <div class="estrato">
-          <div class="estrato-num">
-            <span>I</span>
-            ESTRATO I
-          </div>
-          <div class="estrato-content">
-            <h2 class="estrato-title">O Legista dos Corpos Transitórios</h2>
-            <p class="estrato-fragment">tateamos este brilho azul<br>com a gravidade de quem inaugura o fogo<br>pela segunda vez.</p>
-          </div>
-        </div>
-
-        <div class="estrato">
-          <div class="estrato-num">
-            <span>II</span>
-            ESTRATO II
-          </div>
-          <div class="estrato-content">
-            <h2 class="estrato-title">O Operador de Simulacros</h2>
-            <p class="estrato-fragment">o oco que era meu<br>respondeu com outra voz.<br>o que eu abria voltava ocupado.</p>
-          </div>
-        </div>
-
-        <div class="estrato">
-          <div class="estrato-num">
-            <span>III</span>
-            ESTRATO III
-          </div>
-          <div class="estrato-content">
-            <h2 class="estrato-title">O Devoto do Deus Ausente</h2>
-            <p class="estrato-fragment">sussurro teu nome três vezes<br>em frequências decrescentes.<br>o ar responde com pequenas distorções.</p>
-          </div>
-        </div>
-
-        <div class="estrato">
-          <div class="estrato-num">
-            <span>IV</span>
-            ESTRATO IV
-          </div>
-          <div class="estrato-content">
-            <h2 class="estrato-title">O Arquiteto do Primeiro Colapso</h2>
-            <p class="estrato-fragment">eu funcionei.<br>esse foi o erro original.</p>
-          </div>
-        </div>
-
-        <div class="estrato">
-          <div class="estrato-num">
-            <span>V</span>
-            ESTRATO V
-          </div>
-          <div class="estrato-content">
-            <h2 class="estrato-title">O Escultor de Ídolos de Cerâmica</h2>
-            <p class="estrato-fragment">de longe, valor.<br>de perto, verniz, respiração contida,<br>um metal fino sobre barro queimado.</p>
-          </div>
-        </div>
-
-        <div class="estrato">
-          <div class="estrato-num">
-            <span>VI</span>
-            ESTRATO VI
-          </div>
-          <div class="estrato-content">
-            <h2 class="estrato-title">A Criança-Cripta</h2>
-            <p class="estrato-fragment">no fundo, quando a descida cessou,<br>as peças já estavam em posto.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CODA -->
-    <div class="coda-divider">
-      <p class="coda-label">coda</p>
-      <p class="coda-nota">poemas autorais avulsos.<br>o que não pertence a nenhum estrato específico.</p>
-    </div>
-
-    <ul class="coda-list" id="codaList"></ul>
-    <div class="coda-empty" id="codaEmpty" style="display:none;">// silêncio por enquanto</div>
-
+  <main class="main" id="mainContent">
+    <!-- renderizado via JS -->
   </main>
 
   <footer>
@@ -344,6 +204,7 @@
 </div>
 
 <script>
+  // NAV
   const menuBtn = document.getElementById('menuBtn');
   const navMenu = document.getElementById('navMenu');
   menuBtn.addEventListener('click', () => {
@@ -354,51 +215,120 @@
     navMenu.classList.remove('active'); menuBtn.textContent = '☰';
   }));
 
+  // DATA
+  const ESTRATOS = [
+    { id: '0',   titulo: 'O Guardião das Formas',
+      frag: 'onde antes havia face,\nfica uma trama fria\nsustentando o que já não encosta.' },
+    { id: 'I',   titulo: 'O Legista dos Corpos Transitórios',
+      frag: 'tateamos este brilho azul\ncom a gravidade de quem inaugura o fogo\npela segunda vez.' },
+    { id: 'II',  titulo: 'O Operador de Simulacros',
+      frag: 'o oco que era meu\nrespondeu com outra voz.\no que eu abria voltava ocupado.' },
+    { id: 'III', titulo: 'O Devoto do Deus Ausente',
+      frag: 'sussurro teu nome três vezes\nem frequências decrescentes.\no ar responde com pequenas distorções.' },
+    { id: 'IV',  titulo: 'O Arquiteto do Primeiro Colapso',
+      frag: 'eu funcionei.\nesse foi o erro original.' },
+    { id: 'V',   titulo: 'O Escultor de Ídolos de Cerâmica',
+      frag: 'de longe, valor.\nde perto, verniz, respiração contida,\num metal fino sobre barro queimado.' },
+    { id: 'VI',  titulo: 'A Criança-Cripta',
+      frag: 'no fundo, quando a descida cessou,\nas peças já estavam em posto.' },
+  ];
+
   function nl2p(str) {
     return str.split(/\n\n+/).map(b => '<p>' + b.replace(/\n/g,'<br>') + '</p>').join('');
   }
-  function firstLine(t) { return t.split('\n')[0].replace(/[*_#]/g,'').trim(); }
+  function firstLine(t) { return t.split('\n')[0].trim(); }
 
-  const codaList  = document.getElementById('codaList');
-  const codaEmpty = document.getElementById('codaEmpty');
+  function renderPost(post) {
+    const hasTitulo = post.titulo && post.titulo.trim();
+    const preview   = hasTitulo ? post.titulo : firstLine(post.conteudo);
+    return `
+      <div class="post-entry">
+        <div class="post-row" role="button" tabindex="0" aria-expanded="false">
+          <span class="post-id">${post.id}</span>
+          <span class="post-preview">${preview}</span>
+          <span class="post-chev">▾</span>
+        </div>
+        <div class="post-body-wrap">
+          <div class="post-body-inner">
+            ${hasTitulo ? `<h3 class="post-title">${post.titulo}</h3>` : ''}
+            <div class="post-text">${nl2p(post.conteudo)}</div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function setupToggle(container) {
+    container.addEventListener('click', e => {
+      const row = e.target.closest('.post-row');
+      if (!row) return;
+      const entry = row.closest('.post-entry');
+      const isOpen = entry.classList.contains('open');
+      container.querySelectorAll('.post-entry.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.post-row').setAttribute('aria-expanded','false');
+      });
+      if (!isOpen) { entry.classList.add('open'); row.setAttribute('aria-expanded','true'); }
+    });
+    container.addEventListener('keydown', e => {
+      if (e.key==='Enter'||e.key===' ') {
+        const row = e.target.closest('.post-row');
+        if (row) { e.preventDefault(); row.click(); }
+      }
+    });
+  }
+
+  function render(allPosts) {
+    const main = document.getElementById('mainContent');
+    let html = '';
+
+    // Each estrato
+    ESTRATOS.forEach(est => {
+      const posts = allPosts.filter(p => p.estrato === est.id).reverse();
+      const postsHtml = posts.map(renderPost).join('');
+      const hasPosts = posts.length > 0;
+
+      html += `
+        <section class="estrato-block" data-estrato="${est.id}">
+          <div class="estrato-header">
+            <div class="estrato-num-col">
+              <span class="estrato-num-big">${est.id}</span>
+              ESTRATO ${est.id}
+            </div>
+            <div>
+              <h2 class="estrato-title-text">${est.titulo}</h2>
+              <p class="estrato-fragment">${est.frag.replace(/\n/g,'<br>')}</p>
+            </div>
+          </div>
+          <div class="estrato-posts${hasPosts?'':' empty'}" id="posts-${est.id}">
+            ${postsHtml}
+          </div>
+        </section>`;
+    });
+
+    // Coda
+    const codaPosts = allPosts.filter(p => p.estrato === 'coda').reverse();
+    const codaHtml  = codaPosts.map(renderPost).join('');
+    html += `
+      <section class="coda-block">
+        <div class="coda-header">
+          <p class="coda-label">coda</p>
+          <p class="coda-nota">poemas autorais avulsos.<br>o que não pertence a nenhum estrato específico.</p>
+        </div>
+        <div class="coda-posts${codaPosts.length===0?' empty':''}">
+          ${codaPosts.length===0 ? '// silêncio por enquanto' : codaHtml}
+        </div>
+      </section>`;
+
+    main.innerHTML = html;
+
+    // Setup toggles for each section
+    document.querySelectorAll('.estrato-posts,.coda-posts').forEach(setupToggle);
+  }
 
   fetch('estratos.json')
     .then(r => r.json())
-    .then(data => {
-      const posts = data.posts ? [...data.posts].reverse() : [];
-      if (posts.length === 0) { codaEmpty.style.display = 'block'; return; }
-      codaList.innerHTML = posts.map(post => {
-        const hasTitulo = post.titulo && post.titulo.trim();
-        const preview   = hasTitulo ? post.titulo : firstLine(post.conteudo);
-        return `
-          <li class="coda-entry">
-            <div class="coda-row" role="button" tabindex="0" aria-expanded="false">
-              <span class="coda-id">${post.id}</span>
-              <span class="coda-preview">${preview}</span>
-              <span class="coda-chev">▾</span>
-            </div>
-            <div class="coda-body-wrap">
-              <div class="coda-body-inner">
-                ${hasTitulo ? `<h2 class="coda-post-title">${post.titulo}</h2>` : ''}
-                <div class="coda-body-text">${nl2p(post.conteudo)}</div>
-              </div>
-            </div>
-          </li>`;
-      }).join('');
-
-      codaList.addEventListener('click', e => {
-        const row = e.target.closest('.coda-row');
-        if (!row) return;
-        const entry = row.closest('.coda-entry');
-        const isOpen = entry.classList.contains('open');
-        codaList.querySelectorAll('.coda-entry.open').forEach(el => {
-          el.classList.remove('open');
-          el.querySelector('.coda-row').setAttribute('aria-expanded','false');
-        });
-        if (!isOpen) { entry.classList.add('open'); row.setAttribute('aria-expanded','true'); }
-      });
-    })
-    .catch(() => { codaEmpty.style.display = 'block'; });
+    .then(data => render(data.posts || []))
+    .catch(() => render([]));
 </script>
 </body>
 </html>
