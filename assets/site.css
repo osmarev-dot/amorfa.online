@@ -162,7 +162,7 @@ input {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -241,9 +241,10 @@ input {
 
 .section-head {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
-  gap: 40px;
-  align-items: end;
+  grid-template-columns: minmax(0, 900px);
+  gap: 0;
+  align-items: start;
+  max-width: 900px;
   margin-bottom: 36px;
 }
 
@@ -290,6 +291,11 @@ input {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.75;
+}
+
+.section-head .section-copy {
+  max-width: 700px;
+  margin-top: 18px;
 }
 
 .hero {
