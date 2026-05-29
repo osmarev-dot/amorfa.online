@@ -1,151 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre | AMORFA</title>
-  <meta name="description" content="AMORFA é um projeto musical brasileiro de dark pop, electroclash e pós-industrial. A voz que voltou do fundo sem conseguir voltar inteira." />
-  <meta name="theme-color" content="#000000" />
-  <link rel="canonical" href="https://amorfa.online/sobre.html" />
-  <meta property="og:title" content="Sobre | AMORFA" />
-  <meta property="og:description" content="AMORFA é um projeto musical brasileiro de dark pop, electroclash e pós-industrial. A voz que voltou do fundo sem conseguir voltar inteira." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://amorfa.online/sobre.html" />
-  <meta property="og:image" content="https://amorfa.online/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sobre | AMORFA" />
-  <meta name="twitter:description" content="AMORFA é um projeto musical brasileiro de dark pop, electroclash e pós-industrial. A voz que voltou do fundo sem conseguir voltar inteira." />
-  <meta name="twitter:image" content="https://amorfa.online/og-image.jpg" />
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon-32x32.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --black:#000; --ink:#050505; --panel:#080808; --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
-      --text:#f2f0ed; --muted:#77726f; --soft:#aaa29e; --magenta:#930043; --magenta2:#d00066; --cyan:#00d7ef;
-      --serif:'Cinzel','Times New Roman',serif; --body:'Cormorant Garamond',Georgia,serif; --mono:'Courier New',Courier,monospace;
-    }
-    *{box-sizing:border-box} html{scroll-behavior:smooth;background:#000;color:var(--text)} body{margin:0;background:#000;font-family:var(--body);overflow-x:hidden}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;background:linear-gradient(rgba(255,255,255,0) 50%,rgba(0,0,0,.22) 50%),linear-gradient(90deg,rgba(147,0,67,.025),rgba(0,130,147,.018));background-size:100% 4px,7px 100%;mix-blend-mode:screen;opacity:.36}
-    body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:9998;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.4s steps(3) infinite}@keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
-    a{color:inherit} .page{position:relative;z-index:1}
-    .page::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 8% 20%,rgba(147,0,67,.09),transparent 26%),radial-gradient(circle at 92% 44%,rgba(0,215,239,.055),transparent 28%)}
-    header{position:fixed;inset:0 0 auto;z-index:2000;background:rgba(0,0,0,.74);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
-    .nav{max-width:1500px;margin:0 auto;padding:18px 4vw;display:flex;align-items:center;justify-content:space-between;gap:26px}
-    .brand{font-family:var(--serif);font-size:1.32rem;letter-spacing:.45em;text-decoration:none}
-    .brand::after{content:"";display:block;width:42px;height:1px;background:rgba(208,0,102,.65);margin-top:8px}
-    nav ul{margin:0;padding:0;display:flex;list-style:none;gap:22px}
-    nav a{font-family:var(--serif);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:.2s}
-    nav a:hover,nav a.active{color:var(--text)} nav a.active{border-bottom:1px solid var(--magenta);padding-bottom:2px}
-    .menu-toggle{display:none;border:1px solid var(--line2);background:#000;color:var(--text);padding:10px 13px;font-size:1rem;cursor:pointer}
-    section{max-width:1500px;margin:0 auto;padding:100px 4vw}
-    .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,420px);gap:40px;align-items:end;margin-bottom:58px;border-bottom:1px solid var(--line);padding-bottom:22px}
-    .section-title{margin:0;font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.8rem);font-weight:400;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 0 12px rgba(208,0,102,.18)}
-    .section-note{margin:0;font-family:var(--mono);font-size:.82rem;line-height:1.72;letter-spacing:.06em;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:13px 22px;border:1px solid var(--line2);background:rgba(0,0,0,.46);color:var(--text);text-decoration:none;font-family:var(--serif);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;transition:.25s}
-    .btn:hover{background:var(--text);color:#000} .btn.primary{border-color:rgba(208,0,102,.56)}
-    .chip{border:1px solid var(--line2);color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:8px 10px}
-    .hero{min-height:100vh;padding:118px 4vw 62px;display:grid;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#000}
-    .hero-bg{position:absolute;inset:0;background:url('hero-bg-v9.webp') center 30% / cover no-repeat;opacity:.38;filter:grayscale(100%) contrast(1.2) brightness(.58)}
-    .hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 52% 42%,transparent 0 22%,rgba(0,0,0,.45) 58%,#000 100%),linear-gradient(90deg,#000 0%,transparent 25%,transparent 72%,#000 100%)}
-    .hero-grid{position:relative;z-index:2;max-width:1500px;margin:0 auto;width:100%;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:7vw;align-items:center}
-    .signal{font-family:var(--mono);font-size:.74rem;letter-spacing:.34em;color:var(--muted);text-transform:uppercase;margin:0 0 30px}
-    .hero-logo{width:min(760px,92vw);margin:0 0 18px}
-    .hero-logo img{width:100%;height:auto;display:block;filter:contrast(1.08) brightness(1.04)}
-    .hero-phrase{font-size:clamp(1.35rem,2.8vw,2.5rem);font-style:italic;line-height:1.12;margin:0;color:rgba(242,240,237,.92)}
-    .hero-copy{align-self:center;border-left:1px solid var(--line2);padding:0 0 0 34px}
-    .hero-copy p{margin:0 0 28px;color:var(--soft);font-size:clamp(1rem,1.6vw,1.25rem);line-height:1.5}
-    .contact-box{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;border:1px solid var(--line);padding:32px;background:#030303}
-    .contact-link{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,2rem);letter-spacing:.08em;text-decoration:none;border-bottom:1px solid var(--magenta2);padding-bottom:5px;width:fit-content}
-    .contact-link:hover{color:var(--cyan);border-color:var(--cyan)}
-    footer{border-top:1px solid var(--line);padding:38px 4vw;color:var(--muted);font-family:var(--serif);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem}
-    .footer-inner{max-width:1500px;margin:0 auto;display:flex;justify-content:space-between;gap:20px}
-    .pulse{color:var(--magenta2)}
-    .album-stack{display:grid;gap:42px}
-    .album-row{position:relative;display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);min-height:420px;border:1px solid var(--line);background:#030303;overflow:hidden;cursor:pointer;text-align:left;color:inherit;font:inherit;padding:0}
-    .album-row:nth-child(even){grid-template-columns:minmax(0,1.28fr) minmax(260px,.72fr)}
-    .album-row:nth-child(even) .album-art{order:2}
-    .album-art{position:relative;min-height:420px;background:#000;overflow:hidden}
-    .album-art img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%) contrast(1.08) brightness(.72);transform:scale(1.02);transition:.55s}
-    .album-row[data-color="true"] .album-art img{filter:contrast(1.05) brightness(.86) saturate(1.1)}
-    .album-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.15),rgba(0,0,0,.72));mix-blend-mode:multiply}
-    .album-row:nth-child(even) .album-art::after{background:linear-gradient(270deg,rgba(0,0,0,.15),rgba(0,0,0,.72))}
-    .album-info{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:42px;min-height:420px}
-    .album-info::before{content:"";position:absolute;top:42px;left:42px;width:56px;height:1px;background:rgba(208,0,102,.75);box-shadow:0 0 14px rgba(208,0,102,.38)}
-    .album-row:hover .album-art img{filter:grayscale(55%) contrast(1.15) brightness(.88);transform:scale(1.07)}
-    .album-row[data-color="true"]:hover .album-art img{filter:contrast(1.12) brightness(.94) saturate(1.28);transform:scale(1.06)}
-    .album-row:hover{border-color:rgba(255,255,255,.22);box-shadow:0 22px 70px rgba(0,0,0,.78),0 0 34px rgba(147,0,67,.16)}
-    .album-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;padding-top:32px}
-    .album-title{margin:0 0 20px;font-family:var(--serif);font-size:clamp(1.7rem,4vw,3.8rem);font-weight:400;letter-spacing:.04em;line-height:1.06;text-transform:uppercase}
-    .album-concept{margin:0 0 20px;color:var(--text);font-size:clamp(1rem,1.5vw,1.22rem);font-style:italic}
-    .album-summary{margin:0;color:var(--soft);font-size:.95rem;line-height:1.55;max-width:760px}
-    .album-action{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:28px}
-    .album-row:hover .album-action{color:var(--text)}
-    .modal{position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;padding:22px}
-    .modal.active{display:flex} .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.84);backdrop-filter:blur(14px)}
-    .modal-panel{position:relative;width:min(1160px,100%);max-height:min(88vh,900px);overflow:auto;background:#040404;border:1px solid rgba(255,255,255,.14);box-shadow:0 0 90px rgba(0,0,0,.9)}
-    .modal-layout{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr)}
-    .modal-art{min-height:100%;background:#000;border-right:1px solid var(--line)}
-    .modal-art img{width:100%;height:100%;min-height:540px;object-fit:cover;filter:grayscale(80%) contrast(1.08) brightness(.78);display:block}
-    .modal[data-color="true"] .modal-art img{filter:contrast(1.05) brightness(.9) saturate(1.18)}
-    .modal-content{padding:clamp(28px,5vw,56px)}
-    .modal-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
-    .modal-title{margin:0 0 16px;font-family:var(--serif);font-size:clamp(1.9rem,4vw,3.35rem);line-height:1.05;font-weight:400;letter-spacing:.06em;text-transform:uppercase}
-    .modal-summary{margin:0 0 34px;color:var(--soft);font-size:1rem;line-height:1.62}
-    .setlist-title{margin:0 0 14px;font-family:var(--mono);color:var(--magenta2);font-size:.78rem;letter-spacing:.25em;text-transform:uppercase}
-    .tracklist{columns:2;column-gap:42px;margin:0;padding-left:22px;color:var(--text);font-size:.95rem;line-height:1.68}
-    .tracklist li{break-inside:avoid;padding-left:4px}
-    .close-modal{position:absolute;top:16px;right:16px;z-index:2;width:42px;height:42px;border:1px solid var(--line2);background:#000;color:var(--text);font-size:1.3rem;cursor:pointer}
-    .close-modal:hover{background:var(--text);color:#000}
-    .quick-strip{border-bottom:1px solid var(--line);background:#030303}
-    .quick-strip-inner{max-width:1500px;margin:0 auto;display:flex;border-left:1px solid var(--line)}
-    .qs-card{flex:1;min-height:80px;padding:18px 22px;border-right:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;justify-content:center;background:rgba(255,255,255,.012);transition:.22s;position:relative;overflow:hidden}
-    .qs-card::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:linear-gradient(90deg,var(--magenta2),var(--cyan),transparent);transform:translateX(-80%);transition:.3s}
-    .qs-card:hover{background:rgba(255,255,255,.04)} .qs-card:hover::after{transform:translateX(0)}
-    .qs-card small{font-family:var(--mono);color:var(--muted);letter-spacing:.2em;text-transform:uppercase;font-size:.6rem}
-    .qs-card strong{font-family:var(--serif);font-weight:400;letter-spacing:.08em;font-size:1rem}
-    .quick-link{border-bottom:1px solid var(--line);background:#030303;padding:0 4vw}
-    .quick-link-inner{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line)}
-    .link-card{min-height:80px;padding:16px 22px;border-right:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;justify-content:center;gap:4px;background:rgba(255,255,255,.012);transition:.24s;position:relative;overflow:hidden}
-    .link-card::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:linear-gradient(90deg,var(--magenta2),var(--cyan),transparent);transform:translateX(-80%);transition:.3s}
-    .link-card:hover{background:rgba(255,255,255,.04)} .link-card:hover::after{transform:translateX(0)}
-    .link-card small{font-family:var(--mono);color:var(--muted);letter-spacing:.2em;text-transform:uppercase;font-size:.58rem}
-    .link-card strong{font-family:var(--serif);font-weight:400;letter-spacing:.08em;font-size:.95rem}
-    .link-card.disabled{opacity:.55;cursor:default} .link-card.disabled:hover{background:rgba(255,255,255,.012)}
-    @media(max-width:1100px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-copy{border-left:0;border-top:1px solid var(--line2);padding:28px 0 0}.album-row,.album-row:nth-child(even){grid-template-columns:1fr}.album-row:nth-child(even) .album-art{order:0}.album-art{min-height:360px}.modal-layout{grid-template-columns:1fr}.modal-art img{min-height:auto;max-height:370px}.contact-box{grid-template-columns:1fr}.section-head{grid-template-columns:1fr}.tracklist{columns:1}.quick-link-inner{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:780px){.nav{padding:15px 4vw}.brand{font-size:1.05rem;letter-spacing:.34em}.menu-toggle{display:inline-flex;position:relative;z-index:2}nav ul{position:fixed;top:0;right:-100%;width:min(84vw,370px);height:100vh;flex-direction:column;align-items:flex-start;justify-content:center;padding:44px;gap:22px;background:rgba(0,0,0,.97);border-left:1px solid var(--line2);transition:right .34s}nav ul.active{right:0}nav a{font-size:.88rem;color:var(--text)}.hero{padding-top:108px}section{padding:74px 4vw}.album-info{padding:32px}.album-info::before{top:32px;left:32px}.album-meta{padding-top:28px}.footer-inner{flex-direction:column}.modal{padding:10px}.modal-content{padding:28px 22px}.quick-link-inner{grid-template-columns:1fr}.link-card{border-left:1px solid var(--line)}}
-
-    .sobre-hero{min-height:46vh;padding:130px 4vw 60px;display:grid;align-items:end;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#000}
-    .sobre-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 5% 90%,rgba(147,0,67,.10),transparent 42%),radial-gradient(circle at 95% 10%,rgba(0,130,147,.07),transparent 38%);pointer-events:none}
-    .neon-bar-m{position:fixed;height:1px;background:var(--magenta2);box-shadow:0 0 4px 1px var(--magenta2),0 0 14px 2px rgba(208,0,102,.4),0 0 30px 4px rgba(147,0,67,.15);pointer-events:none;z-index:3}
-    .neon-bar-c{position:fixed;height:1px;background:var(--cyan);box-shadow:0 0 4px 1px var(--cyan),0 0 14px 2px rgba(0,215,239,.4),0 0 30px 4px rgba(0,130,147,.15);pointer-events:none;z-index:3}
-    .sobre-body{max-width:760px;padding:72px 0}
-    .sobre-body p{font-family:var(--body);font-size:clamp(.95rem,1.5vw,1.18rem);line-height:1.72;color:rgba(242,240,237,.88);margin:0 0 1.5em}
-    .sobre-body p:last-child{margin-bottom:0}
-    .sobre-body em{font-style:italic;color:var(--soft)}
-    .sobre-body .fragment{font-family:var(--serif);font-size:clamp(1rem,1.6vw,1.22rem);letter-spacing:.06em;color:var(--muted);margin:0 0 1.5em}
-    .estados{margin:2.6em 0;display:grid;gap:0}
-    .estado{border-bottom:1px solid var(--line);padding:18px 0;display:grid;grid-template-columns:70px 1fr;gap:0 24px;align-items:baseline;transition:.2s}
-    .estado:first-child{border-top:1px solid var(--line)}
-    .estado:hover .estado-text{color:var(--text)}
-    .estado-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;color:var(--magenta2);text-transform:uppercase}
-    .estado-text{font-family:var(--body);font-size:clamp(.85rem,1.3vw,1rem);color:var(--soft);font-style:italic;line-height:1.5}
-    .sobre-negacao{font-family:var(--body);font-size:clamp(.9rem,1.4vw,1.1rem);font-style:italic;color:var(--muted);line-height:1.75;margin:0 0 1.5em}
-    .lei{font-family:var(--serif);font-size:clamp(1rem,1.7vw,1.3rem);letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin:2.4em 0 0;padding:2em 0 0;border-top:1px solid var(--line)}
-    .lei::before{content:"";display:block;width:28px;height:1px;background:linear-gradient(90deg,var(--magenta2),var(--cyan));box-shadow:0 0 8px rgba(208,0,102,.5);margin-bottom:1.4em}
-    .neon-div{width:100%;height:1px;position:relative;margin:0}
-    .neon-div::after{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--magenta2) 30%,var(--cyan) 70%,transparent);box-shadow:0 0 8px rgba(208,0,102,.35),0 0 18px rgba(0,215,239,.18)}
-</style>
-
+  <meta name="description" content="AMORFA é um projeto musical brasileiro de dark pop, electroclash e pós-industrial.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://amorfa.online/sobre.html">
+  <meta property="og:title" content="Sobre | AMORFA">
+  <meta property="og:description" content="AMORFA é um projeto musical brasileiro de dark pop, electroclash e pós-industrial.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amorfa.online/sobre.html">
+  <meta property="og:image" content="https://amorfa.online/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sobre | AMORFA">
+  <meta name="twitter:description" content="AMORFA é um projeto musical brasileiro de dark pop, electroclash e pós-industrial.">
+  <meta name="twitter:image" content="https://amorfa.online/og-image.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon-32x32.png" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -167,89 +43,406 @@
     },
     {
       "@type": "AboutPage",
-      "@id": "https://amorfa.online/sobre.html",
       "url": "https://amorfa.online/sobre.html",
       "name": "Sobre | AMORFA",
-      "description": "AMORFA é um projeto musical brasileiro de dark pop, electroclash e pós-industrial.",
       "about": {
         "@type": "MusicGroup",
-        "@id": "https://amorfa.online/#artist",
-        "name": "AMORFA",
-        "url": "https://amorfa.online"
-      },
-      "inLanguage": "pt-BR"
+        "@id": "https://amorfa.online/#artist"
+      }
     }
   ]
 }
-  </script>
+</script>
+  <style>
+:root {
+  /* Colors */
+  --black:   #000;
+  --bg:      #030303;
+  --panel:   #080808;
+  --text:    #f2f0ed;
+  --muted:   #6a6460;
+  --soft:    #9e9893;
+  --line:    rgba(255,255,255,.08);
+  --line2:   rgba(255,255,255,.15);
+  --m:       #930043;
+  --m2:      #d00066;
+  --c:       #00d7ef;
+  --c2:      #008293;
+
+  /* Type */
+  --serif: 'Cinzel', 'Times New Roman', serif;
+  --body:  'Cormorant Garamond', Georgia, serif;
+  --mono:  'Courier New', Courier, monospace;
+
+  /* Space scale */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 48px;
+  --s6: 64px;
+  --s7: 96px;
+  --s8: 128px;
+
+  /* Max widths */
+  --mw: 1440px;
+  --mw-text: 720px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--black); color: var(--text); -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--black); font-family: var(--body); overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font: inherit; }
+
+/* CRT scanlines */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background:
+    linear-gradient(rgba(255,255,255,0) 50%, rgba(0,0,0,.18) 50%),
+    linear-gradient(90deg, rgba(147,0,67,.02), rgba(0,130,147,.015));
+  background-size: 100% 4px, 8px 100%;
+  mix-blend-mode: screen; opacity: .4;
+}
+
+/* Film grain */
+body::after {
+  content: ""; position: fixed; inset: -20%; pointer-events: none; z-index: 9998; opacity: .04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.6s steps(3) infinite;
+}
+@keyframes grain {
+  0%   { transform: translate(0,0); }
+  33%  { transform: translate(2%,-1%); }
+  66%  { transform: translate(-1%,2%); }
+  100% { transform: translate(0,0); }
+}
+
+header {
+  position: fixed; inset: 0 0 auto; z-index: 2000;
+  background: rgba(0,0,0,.82); border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+.nav {
+  max-width: var(--mw); margin: 0 auto; padding: 0 4vw;
+  height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px;
+}
+.brand {
+  font-family: var(--serif); font-size: 1.1rem; letter-spacing: .5em;
+  text-transform: uppercase; flex-shrink: 0; position: relative;
+}
+.brand::after {
+  content: ""; position: absolute; left: 0; bottom: -4px;
+  width: 32px; height: 1px; background: var(--m2);
+}
+.nav-links { margin: 0; padding: 0; list-style: none; display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  font-family: var(--serif); font-size: .58rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--muted); transition: color .2s;
+  white-space: nowrap;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+.nav-links a.active { border-bottom: 1px solid var(--m2); padding-bottom: 1px; }
+.menu-toggle {
+  display: none; border: 1px solid var(--line2); background: transparent;
+  color: var(--text); width: 40px; height: 40px; font-size: 1rem; flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: space-between;
+  gap: 12px; min-height: 52px; padding: 12px 20px;
+  border: 1px solid var(--line2); background: rgba(255,255,255,.03);
+  color: var(--text); font-family: var(--serif); font-size: .68rem;
+  letter-spacing: .22em; text-transform: uppercase; transition: .22s;
+  white-space: nowrap;
+}
+.btn:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.28); }
+.btn-icon { font-size: 1rem; flex-shrink: 0; }
+.btn-spotify { border-color: rgba(30,215,96,.25); background: rgba(30,215,96,.04); }
+.btn-spotify:hover { background: rgba(30,215,96,.1); border-color: rgba(30,215,96,.5); }
+.btn-album  { border-color: rgba(208,0,102,.25); background: rgba(208,0,102,.04); }
+.btn-album:hover  { background: rgba(208,0,102,.1); border-color: rgba(208,0,102,.5); }
+.btn-primary { border-color: rgba(208,0,102,.4); }
+
+.wrap { max-width: var(--mw); margin: 0 auto; padding: 0 4vw; }
+.section { padding: var(--s7) 4vw; max-width: var(--mw); margin: 0 auto; }
+.section-sm { padding: var(--s6) 4vw; max-width: var(--mw); margin: 0 auto; }
+
+.section-head {
+  display: grid; grid-template-columns: 1fr max-content; gap: var(--s4);
+  align-items: end; margin-bottom: var(--s6);
+  border-bottom: 1px solid var(--line); padding-bottom: var(--s3);
+}
+.section-title {
+  margin: 0; font-family: var(--serif);
+  font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight: 400;
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.section-note {
+  margin: 0; font-family: var(--mono); font-size: .68rem;
+  letter-spacing: .06em; color: var(--muted); line-height: 1.6; text-align: right;
+}
+
+/* Dividers */
+.divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+
+/* Nav strip */
+.nav-strip { border-bottom: 1px solid var(--line); background: var(--bg); }
+.nav-strip-inner {
+  max-width: var(--mw); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  border-left: 1px solid var(--line);
+}
+.strip-card {
+  padding: var(--s3) var(--s3); border-right: 1px solid var(--line);
+  text-decoration: none; display: flex; flex-direction: column;
+  justify-content: center; gap: 5px; min-height: 76px;
+  background: rgba(255,255,255,.01); transition: background .2s;
+  position: relative; overflow: hidden;
+}
+.strip-card::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px;
+  background: linear-gradient(90deg, var(--m2), var(--c), transparent);
+  transform: translateX(-85%); transition: transform .3s ease;
+}
+.strip-card:hover { background: rgba(255,255,255,.04); }
+.strip-card:hover::after { transform: translateX(0); }
+.strip-label { font-family: var(--mono); font-size: .52rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+.strip-title { font-family: var(--serif); font-size: .9rem; font-weight: 400; letter-spacing: .06em; color: var(--text); }
+
+/* Chip */
+.chip {
+  display: inline-block; border: 1px solid var(--line2); padding: 5px 10px;
+  font-family: var(--mono); font-size: .6rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+.page-hero {
+  min-height: 48vh; padding: 64px 4vw 0;
+  display: flex; align-items: flex-end;
+  border-bottom: 1px solid var(--line); position: relative; overflow: hidden;
+  background: var(--black);
+}
+.page-hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 5% 90%, rgba(147,0,67,.1), transparent 40%),
+    radial-gradient(circle at 92% 12%, rgba(0,130,147,.06), transparent 36%);
+}
+.page-hero-inner {
+  position: relative; z-index: 1;
+  max-width: var(--mw); width: 100%; margin: 0 auto; padding-bottom: var(--s6);
+}
+.page-eyebrow {
+  font-family: var(--mono); color: var(--muted); font-size: .62rem;
+  letter-spacing: .32em; text-transform: uppercase; margin: 0 0 var(--s3);
+  display: flex; align-items: center; gap: 12px;
+}
+.page-eyebrow::before { content: ""; display: block; width: 22px; height: 1px; background: var(--m2); }
+.page-h1 {
+  font-family: var(--serif); font-weight: 400; letter-spacing: .1em;
+  text-transform: uppercase; margin: 0; line-height: .9;
+  font-size: clamp(2.8rem, 8vw, 7.5rem);
+  text-shadow: 2px 0 var(--m), -1px 0 rgba(0,215,239,.4);
+}
+.page-sub {
+  margin: var(--s4) 0 0; font-size: clamp(.92rem, 1.6vw, 1.2rem);
+  font-style: italic; color: var(--soft); line-height: 1.55; max-width: 560px;
+}
+
+footer {
+  border-top: 1px solid var(--line); padding: var(--s5) 4vw;
+  color: var(--muted); font-family: var(--serif);
+  letter-spacing: .25em; text-transform: uppercase; font-size: .65rem;
+}
+.footer-inner { max-width: var(--mw); margin: 0 auto; display: flex; justify-content: space-between; gap: var(--s3); }
+.pulse { color: var(--m2); }
+
+.contact-box {
+  display: grid; grid-template-columns: 1fr auto; gap: var(--s4);
+  align-items: center; border: 1px solid var(--line); padding: var(--s5);
+  background: var(--bg);
+}
+.contact-email {
+  font-family: var(--serif); font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+  letter-spacing: .06em; border-bottom: 1px solid var(--m2); padding-bottom: 4px;
+  width: fit-content; transition: color .2s, border-color .2s;
+}
+.contact-email:hover { color: var(--c); border-color: var(--c); }
+.contact-tag {
+  font-family: var(--mono); color: var(--muted); font-size: .62rem;
+  letter-spacing: .18em; text-transform: uppercase; white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .hero-inner { grid-template-columns: 1fr; gap: var(--s5); padding: var(--s6) 0; }
+  .hero-right { border-left: none; border-top: 1px solid var(--line2); padding: var(--s4) 0 0; }
+  .album-card, .album-card:nth-child(even) { grid-template-columns: 1fr; }
+  .album-card:nth-child(even) .album-art { order: 0; }
+  .album-art { min-height: 320px; }
+  .modal-grid { grid-template-columns: 1fr; }
+  .modal-img img { min-height: auto; max-height: 340px; }
+  .tracklist { columns: 1; }
+  .section-head { grid-template-columns: 1fr; }
+  .section-note { text-align: left; }
+  .contact-box { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 780px) {
+  :root { --s7: 64px; --s6: 48px; }
+  .nav { padding: 0 4vw; height: 56px; }
+  .brand { font-size: .95rem; letter-spacing: .4em; }
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; align-items: center; justify-content: center; }
+  .nav-links.open {
+    display: flex; position: fixed; inset: 0; flex-direction: column;
+    align-items: flex-start; justify-content: center;
+    padding: var(--s6) 4vw; gap: var(--s4);
+    background: rgba(0,0,0,.96); z-index: 1999;
+    border-right: 1px solid var(--line2);
+    width: min(84vw, 360px);
+  }
+  .nav-links.open a { font-size: .82rem; color: var(--text); }
+  .hero { min-height: auto; }
+  .hero-inner { padding: var(--s5) 0; }
+  .section { padding: var(--s6) 4vw; }
+  .section-sm { padding: var(--s5) 4vw; }
+  .page-hero { min-height: auto; padding-bottom: 0; }
+  .page-hero-inner { padding-bottom: var(--s5); }
+  .album-body { padding: var(--s4); }
+  .album-body::before { top: var(--s4); left: var(--s4); }
+  .album-chips { padding-top: var(--s4); }
+  .modal { padding: var(--s2); }
+  .modal-body { padding: var(--s4); }
+  .footer-inner { flex-direction: column; gap: var(--s2); }
+  .nav-strip-inner { grid-template-columns: 1fr 1fr; }
+  .strip-card:nth-child(odd) { border-left: 1px solid var(--line); }
+}
+
+.neon-rail {
+  position: fixed; pointer-events: none; z-index: 3; height: 1px;
+  background: currentColor;
+  box-shadow: 0 0 4px 1px currentColor, 0 0 16px 2px currentColor;
+}
+.about-body { max-width: 720px; }
+.about-body p {
+  font-family: var(--body); font-size: clamp(.95rem,1.6vw,1.2rem);
+  line-height: 1.82; color: rgba(242,240,237,.82); margin: 0 0 1.5em;
+}
+.about-body em { font-style: italic; color: var(--soft); }
+.about-body strong { font-weight: 500; color: var(--text); }
+.about-fragment {
+  font-family: var(--serif); font-size: clamp(.88rem,1.4vw,1.05rem);
+  letter-spacing: .06em; color: var(--muted); margin: 0 0 1.5em;
+  font-style: normal; text-transform: uppercase;
+}
+.estados {
+  margin: var(--s6) 0; border-top: 1px solid var(--line);
+  display: grid; gap: 0;
+}
+.estado {
+  border-bottom: 1px solid var(--line); padding: var(--s3) 0;
+  display: grid; grid-template-columns: 56px 1fr; gap: 0 var(--s3); align-items: baseline;
+  transition: .2s;
+}
+.estado:hover .estado-text { color: var(--text); }
+.estado-num { font-family: var(--mono); font-size: .62rem; letter-spacing: .22em; color: var(--m2); text-transform: uppercase; }
+.estado-text { font-family: var(--body); font-size: clamp(.88rem,1.4vw,1.1rem); color: var(--soft); font-style: italic; line-height: 1.5; }
+.lei {
+  font-family: var(--serif); font-size: clamp(.88rem,1.5vw,1.15rem);
+  letter-spacing: .08em; text-transform: uppercase; color: var(--text);
+  margin: var(--s6) 0 0; padding: var(--s5) 0 0; border-top: 1px solid var(--line);
+}
+.lei::before {
+  content: ""; display: block; width: 24px; height: 1px;
+  background: linear-gradient(90deg, var(--m2), var(--c)); margin-bottom: var(--s4);
+  box-shadow: 0 0 8px rgba(208,0,102,.5);
+}
+</style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="nav">
-        <a class="brand" href="index.html#inicio" aria-label="AMORFA início">AMORFA</a>
-        <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu">☰</button>
-        <nav aria-label="Navegação principal">
-          <ul id="navMenu">
-            <li><a href="index.html#inicio">Início</a></li>
-            <li><a href="ouvir.html">Ouvir</a></li>
-            <li><a href="onde-se-guarda.html">Onde Se Guarda</a></li>
-            <li><a href="ep.html">EP</a></li>
-            <li><a href="transmissoes.html">Transmissões</a></li>
-            <li><a href="sobre.html" class="active">Sobre</a></li>
-            <li><a href="index.html#contato">Contato</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <div class="neon-bar-m" style="top:17vh;left:0;width:18vw;"></div>
-    <div class="neon-bar-c" style="top:25vh;right:0;width:11vw;"></div>
-    <div class="neon-bar-c" style="top:52vh;left:0;width:6vw;"></div>
-    <div class="neon-bar-m" style="top:68vh;right:0;width:15vw;"></div>
-
-    <main>
-      <div class="sobre-hero">
-        <div style="position:relative;z-index:1;max-width:1500px;width:100%;margin:0 auto">
-          <p style="font-family:var(--mono);color:var(--muted);letter-spacing:.35em;text-transform:uppercase;font-size:.78rem;margin:0 0 22px;display:flex;align-items:center;gap:14px"><span style="display:block;width:28px;height:1px;background:var(--magenta)"></span>AMORFA.online // projeto</p>
-          <h1 style="font-family:var(--serif);font-size:clamp(3rem,9vw,7rem);font-weight:400;letter-spacing:.15em;text-transform:uppercase;margin:0;line-height:.92;text-shadow:2px 0 var(--magenta),-1px 0 rgba(0,215,239,.55)">Sobre</h1>
-        </div>
-      </div>
-
-      <div class="neon-div"></div>
-
-      <section>
-        <div class="sobre-body">
-          <p><strong>AMORFA</strong> é um projeto musical brasileiro de dark pop, electroclash e pós-industrial.</p>
-          <p>O nome vem de uma condição: aquilo que não conserva forma fixa. Antes de existir como música, AMORFA existiu como livro — <em>Onde Se Guarda o Que Não Existe Mais</em>, nunca publicado, nunca descartado. O livro desceu. AMORFA é o que voltou do fundo com voz.</p>
-          <p class="fragment">Não voltou inteira.</p>
-          <p>AMORFA canta gente que continua funcionando mesmo quando o corpo já acusa a falha.</p>
-          <p>A discografia é uma sequência de deterioração:</p>
-          <div class="estados">
-            <div class="estado"><span class="estado-num">I</span><span class="estado-text">a superfície que salva e devora</span></div>
-            <div class="estado"><span class="estado-num">II</span><span class="estado-text">o contato que aquece e marca</span></div>
-            <div class="estado"><span class="estado-num">III</span><span class="estado-text">a ausência transformada em culto doméstico</span></div>
-            <div class="estado"><span class="estado-num">IV</span><span class="estado-text">a forma que dissolve</span></div>
-            <div class="estado"><span class="estado-num">V</span><span class="estado-text">o fundo que revela suas entidades</span></div>
-          </div>
-          <p class="sobre-negacao">O som não conserta. A voz não salva.<br>A frequência confirma o que o corpo já sabia.</p>
-          <p>Tela acesa. Vitrine. Carne. Ruído. Cinza.</p>
-          <p>Não é pop solar. Não é rock teatral. Não é confissão polida.</p>
-          <p>É música para quando a superfície começa a devolver o dano.</p>
-          <p class="lei">tudo que salva também devora.</p>
-        </div>
-      </section>
-    </main>
-    <footer><div class="footer-inner"><span>AMORFA.online</span><span class="pulse">sinal ativo</span></div></footer>
+<div class="neon-rail" style="top:18vh;left:0;width:16vw;color:var(--m2)"></div>
+<div class="neon-rail" style="top:26vh;right:0;width:10vw;color:var(--c)"></div>
+<div class="neon-rail" style="top:55vh;left:0;width:5vw;color:var(--c)"></div>
+<div class="neon-rail" style="top:72vh;right:0;width:14vw;color:var(--m2)"></div>
+<header>
+  <nav class="nav" aria-label="Navegação principal">
+    <a class="brand" href="index.html#inicio">AMORFA</a>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="ouvir.html">Ouvir</a></li>
+        <li><a href="onde-se-guarda.html">Onde Se Guarda</a></li>
+        <li><a href="ep.html">EP</a></li>
+        <li><a href="transmissoes.html">Transmissões</a></li>
+        <li><a href="sobre.html" class="active">Sobre</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-label="Abrir menu">☰</button>
+  </nav>
+</header>
+<main>
+  <div class="page-hero" style="min-height:42vh;">
+    <div class="page-hero-inner">
+      <p class="page-eyebrow">projeto</p>
+      <h1 class="page-h1">Sobre</h1>
+    </div>
   </div>
-  <script>
-    const menuBtn=document.getElementById('menuBtn');
-    const navMenu=document.getElementById('navMenu');
-    if(menuBtn&&navMenu){
-      menuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';});
-      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);}));
-      document.addEventListener('click',e=>{if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){navMenu.classList.remove('active');menuBtn.textContent='☰';}});
+  <div class="section">
+    <div class="about-body">
+      <p><strong>AMORFA</strong> é um projeto musical brasileiro de dark pop, electroclash e pós-industrial.</p>
+      <p>O nome vem de uma condição: aquilo que não conserva forma fixa. Antes de existir como música, AMORFA existiu como livro — <em>Onde Se Guarda o Que Não Existe Mais</em>, nunca publicado, nunca descartado. O livro desceu. AMORFA é o que voltou do fundo com voz.</p>
+      <p class="about-fragment">Não voltou inteira.</p>
+      <p>AMORFA canta gente que continua funcionando mesmo quando o corpo já acusa a falha.</p>
+      <p>A discografia é uma sequência de deterioração:</p>
+      <div class="estados">
+        <div class="estado"><span class="estado-num">I</span><span class="estado-text">a superfície que salva e devora</span></div>
+        <div class="estado"><span class="estado-num">II</span><span class="estado-text">o contato que aquece e marca</span></div>
+        <div class="estado"><span class="estado-num">III</span><span class="estado-text">a ausência transformada em culto doméstico</span></div>
+        <div class="estado"><span class="estado-num">IV</span><span class="estado-text">a forma que dissolve</span></div>
+        <div class="estado"><span class="estado-num">V</span><span class="estado-text">o fundo que revela suas entidades</span></div>
+      </div>
+      <p>O som não conserta. A voz não salva. A frequência confirma o que o corpo já sabia.</p>
+      <p>Tela acesa. Vitrine. Carne. Ruído. Cinza.</p>
+      <p class="lei">tudo que salva também devora.</p>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="footer-inner">
+    <span>AMORFA.online</span>
+    <span class="pulse">sinal ativo</span>
+  </div>
+</footer>
+<script>
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  if (!btn || !links) return;
+  btn.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? '✕' : '☰';
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    setTimeout(() => {
+      links.classList.remove('open');
+      btn.textContent = '☰';
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }, 80);
+  }));
+  document.addEventListener('click', e => {
+    if (links.classList.contains('open') && !links.contains(e.target) && e.target !== btn) {
+      links.classList.remove('open');
+      btn.textContent = '☰';
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
-  </script>
+  });
+})();
+</script>
 </body>
 </html>

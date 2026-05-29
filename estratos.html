@@ -1,165 +1,448 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estratos | AMORFA</title>
-  <meta name="description" content="Seis estratos do livro que nunca saiu. O arquivo profundo da AMORFA."/>
-  <meta name="theme-color" content="#000000"/>
-  <link rel="canonical" href="https://amorfa.online/estratos.html"/>
-  <meta property="og:title" content="Estratos | AMORFA"/>
-  <meta property="og:description" content="Seis estratos do livro que nunca saiu. O arquivo profundo da AMORFA."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://amorfa.online/estratos.html"/>
-  <meta property="og:image" content="https://amorfa.online/og-image.jpg"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Estratos | AMORFA"/>
-  <meta name="twitter:description" content="Seis estratos do livro que nunca saiu. O arquivo profundo da AMORFA."/>
-  <meta name="twitter:image" content="https://amorfa.online/og-image.jpg"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon-32x32.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="description" content="Seis estratos do livro que nunca saiu.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://amorfa.online/estratos.html">
+  <meta property="og:title" content="Estratos | AMORFA">
+  <meta property="og:description" content="Seis estratos do livro que nunca saiu.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amorfa.online/estratos.html">
+  <meta property="og:image" content="https://amorfa.online/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Estratos | AMORFA">
+  <meta name="twitter:description" content="Seis estratos do livro que nunca saiu.">
+  <meta name="twitter:image" content="https://amorfa.online/og-image.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/favicon-32x32.png" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  
   <style>
-:root{--m:#930043;--m2:#d00066;--c:#00d7ef;--c2:#008293;--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.18);--text:#f2f0ed;--muted:#77726f;--soft:#aaa29e;--serif:'Cinzel','Times New Roman',serif;--body:'Cormorant Garamond',Georgia,serif;--mono:'Courier New',Courier,monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth;background:#000;color:var(--text)}body{margin:0;background:#000;font-family:var(--body);overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;background:linear-gradient(rgba(255,255,255,0) 50%,rgba(0,0,0,.22) 50%),linear-gradient(90deg,rgba(147,0,67,.025),rgba(0,130,147,.018));background-size:100% 4px,7px 100%;mix-blend-mode:screen;opacity:.36}
-body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:9998;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.4s steps(3) infinite}
-@keyframes grain{0%{transform:translate(0,0)}33%{transform:translate(2%,-1%)}66%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
-a{color:inherit}
-header{position:fixed;inset:0 0 auto;z-index:2000;background:rgba(0,0,0,.74);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
-.nav{max-width:1500px;margin:0 auto;padding:18px 4vw;display:flex;align-items:center;justify-content:space-between;gap:26px}
-.brand{font-family:var(--serif);font-size:1.32rem;letter-spacing:.45em;text-decoration:none}
-.brand::after{content:"";display:block;width:42px;height:1px;background:rgba(208,0,102,.65);margin-top:8px}
-nav ul{margin:0;padding:0;display:flex;list-style:none;gap:22px}
-nav a{font-family:var(--serif);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:.2s}
-nav a:hover,nav a.active{color:var(--text)}nav a.active{border-bottom:1px solid var(--m);padding-bottom:2px}
-.menu-toggle{display:none;border:1px solid var(--line2);background:#000;color:var(--text);padding:10px 13px;font-size:1rem;cursor:pointer}
-footer{border-top:1px solid var(--line);padding:38px 4vw;color:var(--muted);font-family:var(--serif);letter-spacing:.25em;text-transform:uppercase;font-size:.72rem}
-.footer-inner{max-width:1500px;margin:0 auto;display:flex;justify-content:space-between;gap:20px}
-.pulse{color:var(--m2)}
-@media(max-width:780px){.nav{padding:15px 4vw}.brand{font-size:1.05rem;letter-spacing:.34em}.menu-toggle{display:inline-flex;position:relative;z-index:2}nav ul{position:fixed;top:0;right:-100%;width:min(84vw,370px);height:100vh;flex-direction:column;align-items:flex-start;justify-content:center;padding:44px;gap:22px;background:rgba(0,0,0,.97);border-left:1px solid var(--line2);transition:right .34s}nav ul.active{right:0}nav a{font-size:.88rem;color:var(--text)}}
+:root {
+  /* Colors */
+  --black:   #000;
+  --bg:      #030303;
+  --panel:   #080808;
+  --text:    #f2f0ed;
+  --muted:   #6a6460;
+  --soft:    #9e9893;
+  --line:    rgba(255,255,255,.08);
+  --line2:   rgba(255,255,255,.15);
+  --m:       #930043;
+  --m2:      #d00066;
+  --c:       #00d7ef;
+  --c2:      #008293;
 
-section{max-width:1500px;margin:0 auto;padding:80px 4vw}
-.est-hero{min-height:56vh;padding:130px 4vw 60px;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#000}
-.est-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 8% 80%,rgba(147,0,67,.14),transparent 38%),radial-gradient(circle at 92% 15%,rgba(0,130,147,.07),transparent 32%);pointer-events:none}
-.est-inner{position:relative;z-index:1;max-width:1500px;width:100%;margin:0 auto}
-.eyebrow{font-family:var(--mono);color:var(--muted);font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;margin:0 0 24px;display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";display:block;width:26px;height:1px;background:var(--m2)}
-.est-h1{font-family:var(--serif);font-size:clamp(3.5rem,10vw,8rem);font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px;line-height:.9;text-shadow:2px 0 var(--m),-1px 0 rgba(0,215,239,.45)}
-.est-sub{font-size:clamp(1rem,1.8vw,1.3rem);font-style:italic;color:var(--soft);margin:24px 0 0;max-width:540px;line-height:1.55}
-/* Grid of estratos */
-.est-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.est-card{background:#030303;text-decoration:none;padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:.25s;position:relative;overflow:hidden;min-height:200px}
-.est-card::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:linear-gradient(90deg,var(--m2),var(--c),transparent);transform:translateX(-75%);transition:.32s}
-.est-card:hover{background:#060606;transform:translateY(-2px)}
-.est-card:hover::after{transform:translateX(0)}
-.est-card.coda-card::after{background:linear-gradient(90deg,var(--c),var(--m2),transparent)}
-.est-num{font-family:var(--serif);font-size:clamp(2.2rem,4vw,4rem);font-weight:400;letter-spacing:.05em;color:rgba(208,0,102,.22);line-height:1;transition:.25s}
-.est-card:hover .est-num{color:rgba(208,0,102,.45)}
-.est-card.coda-card .est-num{color:rgba(0,130,147,.22)}
-.est-card.coda-card:hover .est-num{color:rgba(0,215,239,.45)}
-.est-nome{font-family:var(--serif);font-size:clamp(1rem,1.8vw,1.35rem);font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:var(--text);margin:0}
-.est-frase{font-family:var(--body);font-style:italic;font-size:clamp(.82rem,1.3vw,.98rem);color:var(--muted);line-height:1.6;margin:0}
-.est-arrow{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;color:#2a2a2a;text-transform:lowercase;margin-top:auto;transition:.22s}
-.est-card:hover .est-arrow{color:var(--muted)}
-@media(max-width:780px){.est-grid{grid-template-columns:1fr}}
+  /* Type */
+  --serif: 'Cinzel', 'Times New Roman', serif;
+  --body:  'Cormorant Garamond', Georgia, serif;
+  --mono:  'Courier New', Courier, monospace;
 
+  /* Space scale */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 48px;
+  --s6: 64px;
+  --s7: 96px;
+  --s8: 128px;
+
+  /* Max widths */
+  --mw: 1440px;
+  --mw-text: 720px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--black); color: var(--text); -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--black); font-family: var(--body); overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font: inherit; }
+
+/* CRT scanlines */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background:
+    linear-gradient(rgba(255,255,255,0) 50%, rgba(0,0,0,.18) 50%),
+    linear-gradient(90deg, rgba(147,0,67,.02), rgba(0,130,147,.015));
+  background-size: 100% 4px, 8px 100%;
+  mix-blend-mode: screen; opacity: .4;
+}
+
+/* Film grain */
+body::after {
+  content: ""; position: fixed; inset: -20%; pointer-events: none; z-index: 9998; opacity: .04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.6s steps(3) infinite;
+}
+@keyframes grain {
+  0%   { transform: translate(0,0); }
+  33%  { transform: translate(2%,-1%); }
+  66%  { transform: translate(-1%,2%); }
+  100% { transform: translate(0,0); }
+}
+
+header {
+  position: fixed; inset: 0 0 auto; z-index: 2000;
+  background: rgba(0,0,0,.82); border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+.nav {
+  max-width: var(--mw); margin: 0 auto; padding: 0 4vw;
+  height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px;
+}
+.brand {
+  font-family: var(--serif); font-size: 1.1rem; letter-spacing: .5em;
+  text-transform: uppercase; flex-shrink: 0; position: relative;
+}
+.brand::after {
+  content: ""; position: absolute; left: 0; bottom: -4px;
+  width: 32px; height: 1px; background: var(--m2);
+}
+.nav-links { margin: 0; padding: 0; list-style: none; display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  font-family: var(--serif); font-size: .58rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--muted); transition: color .2s;
+  white-space: nowrap;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+.nav-links a.active { border-bottom: 1px solid var(--m2); padding-bottom: 1px; }
+.menu-toggle {
+  display: none; border: 1px solid var(--line2); background: transparent;
+  color: var(--text); width: 40px; height: 40px; font-size: 1rem; flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: space-between;
+  gap: 12px; min-height: 52px; padding: 12px 20px;
+  border: 1px solid var(--line2); background: rgba(255,255,255,.03);
+  color: var(--text); font-family: var(--serif); font-size: .68rem;
+  letter-spacing: .22em; text-transform: uppercase; transition: .22s;
+  white-space: nowrap;
+}
+.btn:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.28); }
+.btn-icon { font-size: 1rem; flex-shrink: 0; }
+.btn-spotify { border-color: rgba(30,215,96,.25); background: rgba(30,215,96,.04); }
+.btn-spotify:hover { background: rgba(30,215,96,.1); border-color: rgba(30,215,96,.5); }
+.btn-album  { border-color: rgba(208,0,102,.25); background: rgba(208,0,102,.04); }
+.btn-album:hover  { background: rgba(208,0,102,.1); border-color: rgba(208,0,102,.5); }
+.btn-primary { border-color: rgba(208,0,102,.4); }
+
+.wrap { max-width: var(--mw); margin: 0 auto; padding: 0 4vw; }
+.section { padding: var(--s7) 4vw; max-width: var(--mw); margin: 0 auto; }
+.section-sm { padding: var(--s6) 4vw; max-width: var(--mw); margin: 0 auto; }
+
+.section-head {
+  display: grid; grid-template-columns: 1fr max-content; gap: var(--s4);
+  align-items: end; margin-bottom: var(--s6);
+  border-bottom: 1px solid var(--line); padding-bottom: var(--s3);
+}
+.section-title {
+  margin: 0; font-family: var(--serif);
+  font-size: clamp(1.6rem, 3.2vw, 3rem); font-weight: 400;
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.section-note {
+  margin: 0; font-family: var(--mono); font-size: .68rem;
+  letter-spacing: .06em; color: var(--muted); line-height: 1.6; text-align: right;
+}
+
+/* Dividers */
+.divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+
+/* Nav strip */
+.nav-strip { border-bottom: 1px solid var(--line); background: var(--bg); }
+.nav-strip-inner {
+  max-width: var(--mw); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  border-left: 1px solid var(--line);
+}
+.strip-card {
+  padding: var(--s3) var(--s3); border-right: 1px solid var(--line);
+  text-decoration: none; display: flex; flex-direction: column;
+  justify-content: center; gap: 5px; min-height: 76px;
+  background: rgba(255,255,255,.01); transition: background .2s;
+  position: relative; overflow: hidden;
+}
+.strip-card::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px;
+  background: linear-gradient(90deg, var(--m2), var(--c), transparent);
+  transform: translateX(-85%); transition: transform .3s ease;
+}
+.strip-card:hover { background: rgba(255,255,255,.04); }
+.strip-card:hover::after { transform: translateX(0); }
+.strip-label { font-family: var(--mono); font-size: .52rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+.strip-title { font-family: var(--serif); font-size: .9rem; font-weight: 400; letter-spacing: .06em; color: var(--text); }
+
+/* Chip */
+.chip {
+  display: inline-block; border: 1px solid var(--line2); padding: 5px 10px;
+  font-family: var(--mono); font-size: .6rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+.page-hero {
+  min-height: 48vh; padding: 64px 4vw 0;
+  display: flex; align-items: flex-end;
+  border-bottom: 1px solid var(--line); position: relative; overflow: hidden;
+  background: var(--black);
+}
+.page-hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 5% 90%, rgba(147,0,67,.1), transparent 40%),
+    radial-gradient(circle at 92% 12%, rgba(0,130,147,.06), transparent 36%);
+}
+.page-hero-inner {
+  position: relative; z-index: 1;
+  max-width: var(--mw); width: 100%; margin: 0 auto; padding-bottom: var(--s6);
+}
+.page-eyebrow {
+  font-family: var(--mono); color: var(--muted); font-size: .62rem;
+  letter-spacing: .32em; text-transform: uppercase; margin: 0 0 var(--s3);
+  display: flex; align-items: center; gap: 12px;
+}
+.page-eyebrow::before { content: ""; display: block; width: 22px; height: 1px; background: var(--m2); }
+.page-h1 {
+  font-family: var(--serif); font-weight: 400; letter-spacing: .1em;
+  text-transform: uppercase; margin: 0; line-height: .9;
+  font-size: clamp(2.8rem, 8vw, 7.5rem);
+  text-shadow: 2px 0 var(--m), -1px 0 rgba(0,215,239,.4);
+}
+.page-sub {
+  margin: var(--s4) 0 0; font-size: clamp(.92rem, 1.6vw, 1.2rem);
+  font-style: italic; color: var(--soft); line-height: 1.55; max-width: 560px;
+}
+
+footer {
+  border-top: 1px solid var(--line); padding: var(--s5) 4vw;
+  color: var(--muted); font-family: var(--serif);
+  letter-spacing: .25em; text-transform: uppercase; font-size: .65rem;
+}
+.footer-inner { max-width: var(--mw); margin: 0 auto; display: flex; justify-content: space-between; gap: var(--s3); }
+.pulse { color: var(--m2); }
+
+.contact-box {
+  display: grid; grid-template-columns: 1fr auto; gap: var(--s4);
+  align-items: center; border: 1px solid var(--line); padding: var(--s5);
+  background: var(--bg);
+}
+.contact-email {
+  font-family: var(--serif); font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+  letter-spacing: .06em; border-bottom: 1px solid var(--m2); padding-bottom: 4px;
+  width: fit-content; transition: color .2s, border-color .2s;
+}
+.contact-email:hover { color: var(--c); border-color: var(--c); }
+.contact-tag {
+  font-family: var(--mono); color: var(--muted); font-size: .62rem;
+  letter-spacing: .18em; text-transform: uppercase; white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .hero-inner { grid-template-columns: 1fr; gap: var(--s5); padding: var(--s6) 0; }
+  .hero-right { border-left: none; border-top: 1px solid var(--line2); padding: var(--s4) 0 0; }
+  .album-card, .album-card:nth-child(even) { grid-template-columns: 1fr; }
+  .album-card:nth-child(even) .album-art { order: 0; }
+  .album-art { min-height: 320px; }
+  .modal-grid { grid-template-columns: 1fr; }
+  .modal-img img { min-height: auto; max-height: 340px; }
+  .tracklist { columns: 1; }
+  .section-head { grid-template-columns: 1fr; }
+  .section-note { text-align: left; }
+  .contact-box { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 780px) {
+  :root { --s7: 64px; --s6: 48px; }
+  .nav { padding: 0 4vw; height: 56px; }
+  .brand { font-size: .95rem; letter-spacing: .4em; }
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; align-items: center; justify-content: center; }
+  .nav-links.open {
+    display: flex; position: fixed; inset: 0; flex-direction: column;
+    align-items: flex-start; justify-content: center;
+    padding: var(--s6) 4vw; gap: var(--s4);
+    background: rgba(0,0,0,.96); z-index: 1999;
+    border-right: 1px solid var(--line2);
+    width: min(84vw, 360px);
+  }
+  .nav-links.open a { font-size: .82rem; color: var(--text); }
+  .hero { min-height: auto; }
+  .hero-inner { padding: var(--s5) 0; }
+  .section { padding: var(--s6) 4vw; }
+  .section-sm { padding: var(--s5) 4vw; }
+  .page-hero { min-height: auto; padding-bottom: 0; }
+  .page-hero-inner { padding-bottom: var(--s5); }
+  .album-body { padding: var(--s4); }
+  .album-body::before { top: var(--s4); left: var(--s4); }
+  .album-chips { padding-top: var(--s4); }
+  .modal { padding: var(--s2); }
+  .modal-body { padding: var(--s4); }
+  .footer-inner { flex-direction: column; gap: var(--s2); }
+  .nav-strip-inner { grid-template-columns: 1fr 1fr; }
+  .strip-card:nth-child(odd) { border-left: 1px solid var(--line); }
+}
+
+.cards-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; border: 1px solid var(--line); background: var(--line);
+}
+.grid-card {
+  background: var(--bg); padding: var(--s5) var(--s4);
+  text-decoration: none; display: flex; flex-direction: column;
+  gap: var(--s2); min-height: 220px; position: relative; overflow: hidden;
+  transition: background .24s;
+}
+.grid-card::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px;
+  background: linear-gradient(90deg, var(--m2), var(--c), transparent);
+  transform: translateX(-85%); transition: transform .32s;
+}
+.grid-card:hover { background: #050505; }
+.grid-card:hover::after { transform: translateX(0); }
+.grid-card.coda::after { background: linear-gradient(90deg, var(--c), var(--m2), transparent); }
+.card-num {
+  font-family: var(--serif); font-size: clamp(2.8rem,5vw,5rem); font-weight: 400;
+  letter-spacing: .04em; line-height: 1; color: rgba(208,0,102,.18); transition: color .24s;
+  user-select: none;
+}
+.grid-card:hover .card-num { color: rgba(208,0,102,.38); }
+.grid-card.coda .card-num { color: rgba(0,130,147,.18); }
+.grid-card.coda:hover .card-num { color: rgba(0,215,239,.4); }
+.card-name {
+  font-family: var(--serif); font-size: clamp(.95rem,1.6vw,1.25rem); font-weight: 400;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--text); margin: 0;
+}
+.card-quote {
+  font-family: var(--body); font-style: italic; font-size: clamp(.78rem,1.2vw,.92rem);
+  color: var(--muted); line-height: 1.55; margin: 0;
+}
+.card-enter {
+  font-family: var(--mono); font-size: .54rem; letter-spacing: .18em;
+  color: #282420; margin-top: auto; transition: color .22s;
+}
+.grid-card:hover .card-enter { color: var(--muted); }
+@media(max-width:1100px){ .cards-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:780px){ .cards-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <header>
-  <div class="nav">
-    <a class="brand" href="index.html#inicio" aria-label="AMORFA início">AMORFA</a>
-    <button class="menu-toggle" id="menuBtn" aria-label="Abrir menu">☰</button>
-    <nav aria-label="Navegação principal"><ul id="navMenu">
-            <li><a href="index.html#inicio">Início</a></li>
-            <li><a href="ouvir.html">Ouvir</a></li>
-            <li><a href="onde-se-guarda.html">Onde Se Guarda</a></li>
-            <li><a href="ep.html">EP</a></li>
-            <li><a href="transmissoes.html">Transmissões</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="index.html#contato">Contato</a></li>
-          </ul></nav>
-  </div>
+  <nav class="nav" aria-label="Navegação principal">
+    <a class="brand" href="index.html#inicio">AMORFA</a>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="ouvir.html">Ouvir</a></li>
+        <li><a href="onde-se-guarda.html">Onde Se Guarda</a></li>
+        <li><a href="ep.html">EP</a></li>
+        <li><a href="transmissoes.html">Transmissões</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuBtn" aria-expanded="false" aria-label="Abrir menu">☰</button>
+  </nav>
 </header>
-<div style="position:relative;z-index:1">
-
-<div class="est-hero">
-  <div class="est-inner">
-    <p class="eyebrow">onde se guarda o que não existe mais</p>
-    <h1 class="est-h1">Estratos</h1>
-    <p class="est-sub">Seis modos de guardar o que não podia ficar à luz.<br>O livro que desceu. A voz que voltou.</p>
+<main>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-eyebrow">onde se guarda o que não existe mais</p>
+      <h1 class="page-h1">Estratos</h1>
+      <p class="page-sub">Seis modos de guardar o que não podia ficar à luz.<br>O livro que desceu. A voz que voltou.</p>
+    </div>
   </div>
-</div>
-
-<section>
-  <div class="est-grid">
-    <a class="est-card" href="estrato-0.html">
-      <span class="est-num">0</span>
-      <h2 class="est-nome">O Guardião das Formas</h2>
-      <p class="est-frase">&#8220;onde antes havia face, fica uma trama fria sustentando o que já não encosta.&#8221;</p>
-      <span class="est-arrow">entrar →</span>
-    </a>
-    <a class="est-card" href="estrato-i.html">
-      <span class="est-num">I</span>
-      <h2 class="est-nome">O Legista dos Corpos Transitórios</h2>
-      <p class="est-frase">&#8220;tateamos este brilho azul com a gravidade de quem inaugura o fogo pela segunda vez.&#8221;</p>
-      <span class="est-arrow">entrar →</span>
-    </a>
-    <a class="est-card" href="estrato-ii.html">
-      <span class="est-num">II</span>
-      <h2 class="est-nome">O Operador de Simulacros</h2>
-      <p class="est-frase">&#8220;o oco que era meu respondeu com outra voz. o que eu abria voltava ocupado.&#8221;</p>
-      <span class="est-arrow">entrar →</span>
-    </a>
-    <a class="est-card" href="estrato-iii.html">
-      <span class="est-num">III</span>
-      <h2 class="est-nome">O Devoto do Deus Ausente</h2>
-      <p class="est-frase">&#8220;sussurro teu nome três vezes em frequências decrescentes. o ar responde com pequenas distorções.&#8221;</p>
-      <span class="est-arrow">entrar →</span>
-    </a>
-    <a class="est-card" href="estrato-iv.html">
-      <span class="est-num">IV</span>
-      <h2 class="est-nome">O Arquiteto do Primeiro Colapso</h2>
-      <p class="est-frase">&#8220;eu funcionei. esse foi o erro original.&#8221;</p>
-      <span class="est-arrow">entrar →</span>
-    </a>
-    <a class="est-card" href="estrato-v.html">
-      <span class="est-num">V</span>
-      <h2 class="est-nome">O Escultor de Ídolos de Cerâmica</h2>
-      <p class="est-frase">&#8220;de longe, valor. de perto, verniz, respiração contida, um metal fino sobre barro queimado.&#8221;</p>
-      <span class="est-arrow">entrar →</span>
-    </a>
-    <a class="est-card" href="estrato-vi.html">
-      <span class="est-num">VI</span>
-      <h2 class="est-nome">A Criança-Cripta</h2>
-      <p class="est-frase">&#8220;no fundo, quando a descida cessou, as peças já estavam em posto.&#8221;</p>
-      <span class="est-arrow">entrar →</span>
-    </a>
-    <a class="est-card coda-card" href="estrato-coda.html">
-      <span class="est-num">Coda</span>
-      <h2 class="est-nome">Poemas Avulsos</h2>
-      <p class="est-frase">&#8220;o que não cabe nos estratos ainda pertence ao arquivo.&#8221;</p>
-      <span class="est-arrow">entrar →</span>
-    </a>
+  <div class="section">
+    <div class="cards-grid">
+  <a class="grid-card" href="estrato-0.html">
+    <span class="card-num">0</span>
+    <h2 class="card-name">O Guardião das Formas</h2>
+    <p class="card-quote">"onde antes havia face, fica uma trama fria sustentando o que já não encosta."</p>
+    <span class="card-enter">entrar →</span>
+  </a>
+  <a class="grid-card" href="estrato-i.html">
+    <span class="card-num">I</span>
+    <h2 class="card-name">O Legista dos Corpos Transitórios</h2>
+    <p class="card-quote">"tateamos este brilho azul com a gravidade de quem inaugura o fogo pela segunda vez."</p>
+    <span class="card-enter">entrar →</span>
+  </a>
+  <a class="grid-card" href="estrato-ii.html">
+    <span class="card-num">II</span>
+    <h2 class="card-name">O Operador de Simulacros</h2>
+    <p class="card-quote">"o oco que era meu respondeu com outra voz. o que eu abria voltava ocupado."</p>
+    <span class="card-enter">entrar →</span>
+  </a>
+  <a class="grid-card" href="estrato-iii.html">
+    <span class="card-num">III</span>
+    <h2 class="card-name">O Devoto do Deus Ausente</h2>
+    <p class="card-quote">"sussurro teu nome três vezes em frequências decrescentes. o ar responde com pequenas distorções."</p>
+    <span class="card-enter">entrar →</span>
+  </a>
+  <a class="grid-card" href="estrato-iv.html">
+    <span class="card-num">IV</span>
+    <h2 class="card-name">O Arquiteto do Primeiro Colapso</h2>
+    <p class="card-quote">"eu funcionei. esse foi o erro original."</p>
+    <span class="card-enter">entrar →</span>
+  </a>
+  <a class="grid-card" href="estrato-v.html">
+    <span class="card-num">V</span>
+    <h2 class="card-name">O Escultor de Ídolos de Cerâmica</h2>
+    <p class="card-quote">"de longe, valor. de perto, verniz, respiração contida, um metal fino sobre barro queimado."</p>
+    <span class="card-enter">entrar →</span>
+  </a>
+  <a class="grid-card" href="estrato-vi.html">
+    <span class="card-num">VI</span>
+    <h2 class="card-name">A Criança-Cripta</h2>
+    <p class="card-quote">"no fundo, quando a descida cessou, as peças já estavam em posto."</p>
+    <span class="card-enter">entrar →</span>
+  </a>
+  <a class="grid-card coda" href="estrato-coda.html">
+    <span class="card-num">Coda</span>
+    <h2 class="card-name">Poemas Avulsos</h2>
+    <p class="card-quote">"o que não cabe nos estratos ainda pertence ao arquivo."</p>
+    <span class="card-enter">entrar →</span>
+  </a>
+    </div>
   </div>
-</section>
-
-</div>
-<footer><div class="footer-inner"><span>AMORFA.online</span><span class="pulse">sinal ativo</span></div></footer>
+</main>
+<footer>
+  <div class="footer-inner">
+    <span>AMORFA.online</span>
+    <span class="pulse">sinal ativo</span>
+  </div>
+</footer>
 <script>
-    const menuBtn=document.getElementById('menuBtn');
-    const navMenu=document.getElementById('navMenu');
-    if(menuBtn&&navMenu){
-      menuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');menuBtn.textContent=navMenu.classList.contains('active')?'✕':'☰';});
-      navMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{setTimeout(()=>{navMenu.classList.remove('active');menuBtn.textContent='☰';},80);}));
-      document.addEventListener('click',e=>{if(navMenu.classList.contains('active')&&!navMenu.contains(e.target)&&e.target!==menuBtn){navMenu.classList.remove('active');menuBtn.textContent='☰';}});
-    }</script>
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  if (!btn || !links) return;
+  btn.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? '✕' : '☰';
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    setTimeout(() => {
+      links.classList.remove('open');
+      btn.textContent = '☰';
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }, 80);
+  }));
+  document.addEventListener('click', e => {
+    if (links.classList.contains('open') && !links.contains(e.target) && e.target !== btn) {
+      links.classList.remove('open');
+      btn.textContent = '☰';
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+})();
+</script>
 </body>
 </html>
