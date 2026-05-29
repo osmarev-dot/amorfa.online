@@ -1,22 +1,30 @@
-AMORFA.online — V9
+AMORFA.online — Reestruturação 2026-05-29
 
 Suba/substitua no GitHub:
 - index.html
-- transmissoes.html  ← NOVO
+- onde-se-guarda.html
+- ouvir.html
+- sobre.html
+- ep.html
+- transmissoes.html
+- transmissoes-*.html
+- estratos.html
+- estrato-*.html
+- data.json
+- transmissoes.json
+- estratos.json
+- sitemap.xml
 - assets/
 - CNAME
 - robots.txt
-- sitemap.xml
 
 Depois clique em Commit changes.
 
 Se aparecer versão antiga: Ctrl + F5.
 
-Principais ajustes V9 (em relação à V8):
-- Página Transmissões adicionada (transmissoes.html).
-- Link "Transmissões" no nav do index.html.
-- Design system idêntico: mesmas fontes, cores, CRT, grain.
-- Filtro por tipo: Fragmento / Poema / Verso / Personagem.
-- Para adicionar novo post: abrir transmissoes.html,
-  copiar bloco de template (tem comentário no HTML),
-  colar no topo da lista, atualizar número T-XXX.
+Principais ajustes:
+- Home virou hub do Album I, lançado em 29/05/2026.
+- CSS e JS compartilhados em assets/ para reduzir repetição.
+- Discografia agora carrega data.json.
+- Transmissões viraram arquivo único filtrável.
+- Páginas antigas de categoria redirecionam para transmissoes.html.
