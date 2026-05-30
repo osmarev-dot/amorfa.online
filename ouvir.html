@@ -20,26 +20,46 @@
   <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/site.css?v=5">
+  <link rel="stylesheet" href="assets/site.css?v=6">
   <style>
-    .icon-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 72px);
-      gap: 28px;
-      margin: 48px 0 0 0;
+    .ouvir-center {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 24px !important;
     }
+    .ouvir-title {
+      font-size: clamp(20px,2.4vw,32px);
+      letter-spacing: .22em;
+      color: var(--blue2);
+      text-transform: uppercase;
+      margin: 0 0 56px;
+      text-align: center;
+      font-weight: 400;
+      text-shadow: 0 1px 14px rgba(0,0,0,.9), 0 2px 28px rgba(0,0,0,.7);
+    }
+    .icon-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      margin-bottom: 32px;
+    }
+    .icon-row:last-child { margin-bottom: 0; }
     .icon-link {
       display: flex; align-items: center; justify-content: center;
-      width: 72px; height: 72px;
+      width: 64px; height: 64px;
       text-decoration: none;
-      position: relative;
+      flex-shrink: 0;
     }
     .icon-link img {
       width: 100%; height: 100%;
       object-fit: contain;
       display: block;
-      transition: transform 0.2s ease;
     }
+    .icon-link.icon-sm { width: 44px; height: 44px; }
     @keyframes iconGlitch {
       0%,100% { filter: none; transform: translate(0,0); }
       15% { filter: drop-shadow(-3px 0 rgba(255,0,80,.8)) drop-shadow(3px 0 rgba(0,200,255,.6)); transform: translate(-2px,0); }
@@ -52,15 +72,18 @@
     .icon-link:hover img {
       animation: iconGlitch 0.35s steps(1) 1 forwards;
     }
-    /* separador visual entre streaming e redes */
-    .icon-row-gap { grid-column: 1 / -1; height: 1px; background: rgba(154,190,222,.1); }
     @media (max-width:980px) {
-      .icon-grid { grid-template-columns: repeat(5, 52px); gap: 18px; }
-      .icon-link { width: 52px; height: 52px; }
+      .ouvir-center { min-height: calc(100vh - 80px); padding: 30px 16px !important; }
+      .ouvir-title { margin-bottom: 40px; }
+      .icon-row { gap: 24px; margin-bottom: 24px; }
+      .icon-link { width: 48px; height: 48px; }
+      .icon-link.icon-sm { width: 34px; height: 34px; }
     }
     @media (max-width:560px) {
-      .icon-grid { grid-template-columns: repeat(5, 40px); gap: 14px; }
-      .icon-link { width: 40px; height: 40px; }
+      .ouvir-title { margin-bottom: 32px; font-size: 16px; }
+      .icon-row { gap: 16px; margin-bottom: 20px; }
+      .icon-link { width: 42px; height: 42px; }
+      .icon-link.icon-sm { width: 30px; height: 30px; }
     }
   </style>
 </head>
@@ -73,27 +96,29 @@
       <nav><ul><li><a class="" href="index.html">Início</a></li><li><a class="active" href="ouvir.html">Ouvir</a></li><li><a class="" href="albuns.html">Álbuns</a></li><li><a class="" href="transmissoes.html">Transmissões</a></li><li><a class="" href="arquivo.html">Arquivo</a></li><li><a class="" href="manifesto.html">Manifesto</a></li><li><a class="" href="contato.html">Contato</a></li></ul></nav>
       
     </aside>
-    <main id="conteudo" class="content">
-      <section class="page-head panel narrow">
-        <p class="eyebrow">OUVIR</p>
-        <h1>Ouvir AMORFA</h1>
-        <p class="lead">AMORFA nas plataformas.<br>O som sai daqui.<br>A escuta continua fora.</p>
-      </section>
-      <nav class="icon-grid" aria-label="Plataformas">
+    <main id="conteudo" class="content ouvir-center">
+      <h1 class="ouvir-title">Ouça AMORFA</h1>
+
+      <div class="icon-row" aria-label="Streaming">
         <a class="icon-link" href="https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener" aria-label="Spotify"><img src="assets/logos/spotify.png" alt="Spotify" loading="lazy"></a>
         <a class="icon-link" href="https://music.apple.com/br/artist/amorfa/1896548394" target="_blank" rel="noopener" aria-label="Apple Music"><img src="assets/logos/applemusic.svg" alt="Apple Music" loading="lazy"></a>
         <a class="icon-link" href="https://music.amazon.com.br/artists/B0H24NS7Q1/amorfa" target="_blank" rel="noopener" aria-label="Amazon Music"><img src="assets/logos/amazonmusic.png" alt="Amazon Music" loading="lazy"></a>
         <a class="icon-link" href="https://www.deezer.com/br/artist/391523921" target="_blank" rel="noopener" aria-label="Deezer"><img src="assets/logos/deezer.png" alt="Deezer" loading="lazy"></a>
         <a class="icon-link" href="https://tidal.com/artist/79743124" target="_blank" rel="noopener" aria-label="Tidal"><img src="assets/logos/tidal.png" alt="Tidal" loading="lazy"></a>
-        <div class="icon-row-gap"></div>
+      </div>
+
+      <div class="icon-row" aria-label="Vídeo">
         <a class="icon-link" href="https://music.youtube.com/channel/UCf4NhTyzi2UVOfR83s49V4g" target="_blank" rel="noopener" aria-label="YouTube Music"><img src="assets/logos/youtubemusic.png" alt="YouTube Music" loading="lazy"></a>
         <a class="icon-link" href="https://www.youtube.com/@AMORFA" target="_blank" rel="noopener" aria-label="YouTube"><img src="assets/logos/youtube.png" alt="YouTube" loading="lazy"></a>
-        <a class="icon-link" href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/logos/instagram.png" alt="Instagram" loading="lazy"></a>
+      </div>
+
+      <div class="icon-row" aria-label="Redes">
+        <a class="icon-link icon-sm" href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/logos/instagram.png" alt="Instagram" loading="lazy"></a>
         <a class="icon-link" href="https://www.tiktok.com/@amorfa.wav" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/logos/tiktok.png" alt="TikTok" loading="lazy"></a>
-        <a class="icon-link" href="https://x.com/amorfaonline" target="_blank" rel="noopener" aria-label="X"><img src="assets/logos/x.png" alt="X" loading="lazy"></a>
-      </nav>
+        <a class="icon-link icon-sm" href="https://x.com/amorfaonline" target="_blank" rel="noopener" aria-label="X"><img src="assets/logos/x.png" alt="X" loading="lazy"></a>
+      </div>
     </main>
   </div>
-  <script src="assets/site.js?v=5" defer></script>
+  <script src="assets/site.js?v=6" defer></script>
 </body>
 </html>
