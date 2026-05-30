@@ -119,79 +119,108 @@
       </article>`;
   };
 
-  /* accordion completo — usado na página transmissoes.html */
-  const renderTransmissionDetails = (post, isFirst) => {
-    const fmt     = escapeHtml(post.imagemFormato || "horizontal");
-    const altText = escapeHtml(post.imagemAlt || post.titulo || "Imagem da transmissão AMORFA");
-    const imageHtml = post.imagem
-      ? `<figure class="transmission-media is-${fmt}">
-           <img src="${escapeHtml(post.imagem)}" alt="${altText}" loading="lazy">
-         </figure>`
-      : "";
-    const faixaHtml = post.faixa
-      ? `<p class="transmission-track">↳ ${escapeHtml(post.faixa)}</p>`
-      : "";
-    return `
-      <details class="transmission-item"${isFirst ? " open" : ""}>
-        <summary class="transmission-summary">
-          <span class="transmission-id">${escapeHtml(post.id || "")}</span>
-          <strong class="transmission-title">${escapeHtml(post.titulo || "Sem título")}</strong>
-          <span class="transmission-arrow" aria-hidden="true">↓</span>
-        </summary>
-        <div class="transmission-body">
-          ${imageHtml}
-          <div class="transmission-text">${escapeHtml(post.conteudo || "")}</div>
-          ${faixaHtml}
-        </div>
-      </details>`;
+  /* ── feed de transmissões ── */
+
+  const FEED_COPY = {
+    transmissao: {
+      kicker:      "transmissões públicas",
+      title:       "Voz direta da AMORFA",
+      description: "Registros diretos, anúncios e falas públicas da AMORFA.",
+      label:       "TRANSMISSÃO",
+    },
+    fragmento: {
+      kicker:      "fragmentos",
+      title:       "Cortes do arquivo vivo",
+      description: "Restos líricos, imagens verbais e sinais soltos.",
+      label:       "FRAGMENTO",
+    },
   };
 
-  const postPreview = document.querySelector("[data-post-preview]");
-  const feed        = document.querySelector("[data-feed]");
-  const tabBtns     = document.querySelectorAll("[data-tab]");
-  const tabDesc     = document.getElementById("tab-desc");
-
-  const TAB_DESC = {
-    transmissao: "Voz direta, anúncios, sinais públicos e registros da AMORFA.",
-    fragmento:   "Cortes curtos, restos líricos e imagens verbais.",
-  };
-
-  let allPosts   = [];
-  let activeTab  = "transmissao";
-
-  function renderFeed(tipo) {
-    if (!feed) return;
-    const items = allPosts.filter((p) => p.tipo === tipo);
-    feed.innerHTML = items.length
-      ? items.map((p, i) => renderTransmissionDetails(p, i === 0)).join("")
-      : `<p class="empty">Nenhum registro ainda.</p>`;
-    if (tabDesc) tabDesc.textContent = TAB_DESC[tipo] || "";
+  function normalizeTipo(tipo) {
+    const v = String(tipo || "").toLowerCase();
+    if (v.includes("fragmento") || v.includes("poema") || v.includes("verso") || v.includes("sinal")) return "fragmento";
+    return "transmissao";
   }
 
-  tabBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      tabBtns.forEach((b) => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
-      btn.classList.add("active");
-      btn.setAttribute("aria-selected", "true");
-      activeTab = btn.dataset.tab;
-      renderFeed(activeTab);
+  function sortPosts(posts) {
+    return [...posts].sort((a, b) => {
+      const dA = new Date(a.data || a.date || 0).getTime();
+      const dB = new Date(b.data || b.date || 0).getTime();
+      return dA !== dB ? dB - dA : String(b.id || "").localeCompare(String(a.id || ""));
     });
-  });
+  }
 
-  if (postPreview || feed) {
+  function renderImage(post) {
+    if (!post.imagem) return "";
+    const fmt = post.imagemFormato || "horizontal";
+    const alt = escapeHtml(post.imagemAlt || post.titulo || "Imagem da transmissão AMORFA");
+    return `<figure class="transmission-media is-${fmt}"><img src="${escapeHtml(post.imagem)}" alt="${alt}" loading="lazy"></figure>`;
+  }
+
+  function renderPost(post, index, type) {
+    const metaId  = post.id ? `${escapeHtml(post.id)} · ` : "";
+    const title   = escapeHtml(post.titulo || "Registro sem título");
+    const content = escapeHtml(post.conteudo || "");
+    const open    = index === 0 ? " open" : "";
+    const feat    = index === 0 ? " featured" : "";
+    return `
+      <details class="transmission-item${feat}"${open}>
+        <summary>
+          <span class="post-meta">${metaId}${FEED_COPY[type].label}</span>
+          <strong>${title}</strong>
+        </summary>
+        <div class="post-body">
+          ${renderImage(post)}
+          <div class="post-text">${content}</div>
+        </div>
+      </details>`;
+  }
+
+  function renderFeed(allPosts, type) {
+    const copy    = FEED_COPY[type];
+    const kicker  = document.getElementById("feed-kicker");
+    const titleEl = document.getElementById("feed-title");
+    const descEl  = document.getElementById("feed-description");
+    const latest  = document.getElementById("latest-post");
+    const archive = document.getElementById("archive-posts");
+
+    if (kicker)  kicker.textContent  = copy.kicker;
+    if (titleEl) titleEl.textContent = copy.title;
+    if (descEl)  descEl.textContent  = copy.description;
+
+    document.querySelectorAll(".tab-button").forEach((b) => b.classList.toggle("active", b.dataset.type === type));
+
+    const posts = sortPosts(allPosts.filter((p) => normalizeTipo(p.tipo) === type));
+
+    if (latest)  latest.innerHTML  = posts[0] ? renderPost(posts[0], 0, type) : '<p class="empty">Nenhum registro publicado.</p>';
+    if (archive) archive.innerHTML = posts.slice(1).length ? posts.slice(1).map((p, i) => renderPost(p, i + 1, type)).join("") : "";
+  }
+
+  function setupFeedTabs(allPosts) {
+    const initial = location.hash === "#fragmentos" ? "fragmento" : "transmissao";
+    renderFeed(allPosts, initial);
+    document.querySelectorAll(".tab-button").forEach((btn) => {
+      btn.addEventListener("click", () => renderFeed(allPosts, btn.dataset.type));
+    });
+  }
+
+  const postPreview = document.querySelector("[data-post-preview]");
+  const hasFeed     = document.getElementById("latest-post");
+
+  if (postPreview || hasFeed) {
     loadJson("transmissoes.json")
       .then((data) => {
-        allPosts = Array.isArray(data.posts) ? data.posts : [];
+        const posts = Array.isArray(data.posts) ? data.posts : [];
         if (postPreview) {
-          postPreview.innerHTML = allPosts.slice(0, 3).map(postCard).join("") ||
+          postPreview.innerHTML = posts.slice(0, 3).map(postCard).join("") ||
             '<p class="empty">Nenhuma transmissão ainda.</p>';
         }
-        if (feed) renderFeed(activeTab);
+        if (hasFeed) setupFeedTabs(posts);
       })
       .catch(() => {
         const msg = '<p class="empty">Não foi possível carregar as transmissões.</p>';
         if (postPreview) postPreview.innerHTML = msg;
-        if (feed)        feed.innerHTML        = msg;
+        if (hasFeed)     hasFeed.innerHTML     = msg;
       });
   }
 

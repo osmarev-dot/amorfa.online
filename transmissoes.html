@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=3">
+  <link rel="stylesheet" href="assets/site.css?v=4">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -48,19 +48,21 @@
       </div>
     </section>
 
-    <div class="transmission-tab-bar" role="tablist" aria-label="Categorias">
-      <div class="transmission-tab-nav">
-        <button class="transmission-tab active" type="button" role="tab" aria-selected="true" data-tab="transmissao">Transmissões</button>
-        <button class="transmission-tab" type="button" role="tab" aria-selected="false" data-tab="fragmento">Fragmentos</button>
+    <section class="transmissions-shell" id="transmissoes">
+      <div class="transmission-tabs" role="tablist" aria-label="Arquivo AMORFA">
+        <button class="tab-button active" type="button" data-type="transmissao">Transmissões</button>
+        <button class="tab-button" type="button" data-type="fragmento">Fragmentos</button>
       </div>
-    </div>
-
-    <section class="section">
-      <div class="section-inner">
-        <p class="transmission-tab-desc" id="tab-desc">Voz direta, anúncios, sinais públicos e registros da AMORFA.</p>
-        <div class="transmission-accordion" data-feed>
-          <p class="empty">Carregando.</p>
-        </div>
+      <div class="feed-head">
+        <p class="eyebrow" id="feed-kicker">transmissões públicas</p>
+        <h2 id="feed-title">Voz direta da AMORFA</h2>
+        <p id="feed-description">Registros diretos, anúncios e falas públicas da AMORFA.</p>
+      </div>
+      <div class="feed-block">
+        <p class="archive-label">último registro</p>
+        <div id="latest-post"><p class="empty">Carregando.</p></div>
+        <p class="archive-label">arquivo</p>
+        <div id="archive-posts"></div>
       </div>
     </section>
   </main>
@@ -81,6 +83,6 @@
       <span>A forma falhou. A voz continuou.</span>
     </div>
   </footer>
-  <script src="assets/site.js?v=3" defer></script>
+  <script src="assets/site.js?v=4" defer></script>
 </body>
 </html>
