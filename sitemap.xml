@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://amorfa.online/</loc></url>
-  <url><loc>https://amorfa.online/ouvir.html</loc></url>
-  <url><loc>https://amorfa.online/onde-se-guarda.html</loc></url>
-  <url><loc>https://amorfa.online/ep.html</loc></url>
-  <url><loc>https://amorfa.online/transmissoes.html</loc></url>
-  <url><loc>https://amorfa.online/estratos.html</loc></url>
-  <url><loc>https://amorfa.online/sobre.html</loc></url>
+  <url><loc>https://amorfa.online/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://amorfa.online/ouvir.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/albuns.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/album-uso.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/album-incendios.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/album-teologia.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/album-fantasmogenese.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/album-submundo.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/transmissoes.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/arquivo.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/manifesto.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/contato.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/sobre.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://amorfa.online/ep.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
