@@ -1,30 +1,26 @@
-AMORFA.online — Reestruturação 2026-05-29
+AMORFA.online — pacote final local
 
-Suba/substitua no GitHub:
-- index.html
-- onde-se-guarda.html
-- ouvir.html
-- sobre.html
-- ep.html
-- transmissoes.html
-- transmissoes-*.html
-- estratos.html
-- estrato-*.html
-- data.json
-- transmissoes.json
-- estratos.json
-- sitemap.xml
-- assets/
-- CNAME
-- robots.txt
+Esta pasta é a versão pronta para revisão e upload.
+Nada foi publicado automaticamente.
 
-Depois clique em Commit changes.
+Antes de subir:
+- Abra index.html e confira a home.
+- Abra ouvir.html, onde-se-guarda.html, transmissoes.html, estratos.html, sobre.html e contato.html.
+- Se o navegador mostrar versão antiga, use Ctrl + F5.
 
-Se aparecer versão antiga: Ctrl + F5.
+Para publicar pelo GitHub Desktop:
+1. Copie o conteúdo desta pasta para:
+   C:\Users\loves\Documents\GitHub\amorfa.online
+2. No GitHub Desktop, confira os arquivos alterados.
+3. Commit sugerido:
+   finaliza redesign artistico amorfa
+4. Clique em Push origin.
 
-Principais ajustes:
-- Home virou hub do Album I, lançado em 29/05/2026.
-- CSS e JS compartilhados em assets/ para reduzir repetição.
-- Discografia agora carrega data.json.
-- Transmissões viraram arquivo único filtrável.
-- Páginas antigas de categoria redirecionam para transmissoes.html.
+Principais decisões:
+- Logo oficial sem fundo aplicada na lateral e na home.
+- Imagens azuis incorporadas como atmosfera de página, não como galeria solta.
+- Player falso removido.
+- Módulo NO AR com rotação diária na lateral.
+- Scrollbars visíveis removidas.
+- Textos da home e páginas principais enxugados.
+- Capas dos álbuns mantidas a partir do repositório.

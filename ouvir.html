@@ -3,250 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ouvir AMORFA | Perfis oficiais</title>
-  <meta name="description" content="Ouça e siga AMORFA nos perfis oficiais: Spotify, Apple Music, Amazon Music, Deezer, Tidal, YouTube Music, YouTube, Instagram, TikTok e X.">
-  <meta name="theme-color" content="#000000">
+  <title>Ouvir | AMORFA</title>
+  <meta name="description" content="Links oficiais para ouvir e acompanhar AMORFA.">
+  <meta name="theme-color" content="#02060b">
   <link rel="canonical" href="https://amorfa.online/ouvir.html">
-  <meta property="og:title" content="Ouvir AMORFA | Perfis oficiais">
-  <meta property="og:description" content="Todos os perfis oficiais da AMORFA em um só lugar.">
+  <meta property="og:title" content="Ouvir | AMORFA">
+  <meta property="og:description" content="AMORFA nas plataformas. O som sai daqui. A escuta continua fora.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://amorfa.online/ouvir.html">
-  <meta property="og:image" content="https://amorfa.online/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon-32x32.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:image" content="https://amorfa.online/visual-espelho.webp">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
-
-  <style>
-    /* ── Ouvir page — scoped styles ── */
-
-    .ouvir-main {
-      background: #000;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 5rem 1.5rem 4rem;
-    }
-
-    .ouvir-hero {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .ouvir-eyebrow {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    .ouvir-title {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      font-weight: 400;
-      color: #fff;
-      letter-spacing: 0.05em;
-      margin: 0 0 1rem;
-      line-height: 1.1;
-    }
-
-    .ouvir-subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: #888;
-      margin: 0;
-      font-style: italic;
-    }
-
-    /* ── Icon grid ── */
-
-    .ouvir-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1rem 2rem;
-      max-width: 600px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .ouvir-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 72px;
-      height: 72px;
-      margin: 0 auto;
-      border-radius: 0;
-      padding: 0;
-      background: transparent;
-      border: none;
-      transition:
-        transform 0.22s cubic-bezier(.34,1.56,.64,1),
-        filter 0.22s ease,
-        opacity 0.22s ease;
-      outline-offset: 6px;
-    }
-
-    .ouvir-link:hover,
-    .ouvir-link:focus-visible {
-      transform: translateY(-5px) scale(1.12);
-      filter: brightness(1.15) drop-shadow(0 0 12px rgba(255,255,255,0.18));
-      opacity: 1;
-    }
-
-    .ouvir-link:active {
-      transform: translateY(-1px) scale(1.05);
-      transition-duration: 0.08s;
-    }
-
-    /* Reduz levemente o X para equilibrar com os vizinhos */
-    .ouvir-link--x {
-      width: 58px;
-      height: 58px;
-    }
-
-    /* Quando qualquer ícone do grid tem hover, os outros desvanecem levemente */
-    .ouvir-grid:has(.ouvir-link:hover) .ouvir-link:not(:hover) {
-      opacity: 0.35;
-      filter: none;
-      transform: none;
-    }
-
-    .ouvir-link img,
-    .ouvir-link svg {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* Row divider — espaço visual entre streaming e redes */
-    .ouvir-row-break {
-      grid-column: 1 / -1;
-      height: 1.25rem;
-    }
-
-    /* ── Contact band override ── */
-    .contact-band {
-      background: #000;
-      border-top: 1px solid #1a1a1a;
-    }
-
-    @media (max-width: 540px) {
-      .ouvir-grid {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 0.75rem 1rem;
-        max-width: 340px;
-      }
-
-      .ouvir-link {
-        width: 52px;
-        height: 52px;
-      }
-
-      .ouvir-link--x {
-        width: 42px;
-        height: 42px;
-      }
-
-      .ouvir-row-break {
-        height: 0.75rem;
-      }
-    }
-  </style>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <header class="site-header">
-    <nav class="nav" aria-label="Navegação principal">
-      <a class="brand" href="index.html" aria-label="AMORFA">AMORFA<span>sinal ativo</span></a>
-      <ul class="nav-links" data-nav-links>
+  <div class="site-shell">
+    <aside class="side-nav" aria-label="Navegação principal">
+      <a class="brand-mark" href="index.html" aria-label="AMORFA"><img class="brand-logo" src="logo-amorfa-oficial.png" alt="AMORFA"><span>sinal aberto</span></a>
+      <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
-        <li><a href="lancamentos.html">Lançamentos</a></li>
-        <li><a href="transmissoes.html">Transmissões</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
         <li><a class="active" href="ouvir.html">Ouvir</a></li>
+        <li><a href="onde-se-guarda.html">Álbuns</a></li>
+        <li><a href="transmissoes.html">Transmissões</a></li>
+        <li><a href="estratos.html">Arquivo</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
-      <a class="nav-action" href="https://open.spotify.com/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener">Ouvir agora</a>
-      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menu">Menu</button>
-    </nav>
-  </header>
-
-  <main class="ouvir-main" id="conteudo">
-    <div class="ouvir-hero">
-      <span class="ouvir-eyebrow">perfis oficiais</span>
-      <h1 class="ouvir-title">Ouça AMORFA</h1>
-      <p class="ouvir-subtitle">Todos os canais oficiais da artista em um só lugar.</p>
-    </div>
-
-    <nav class="ouvir-grid" aria-label="Plataformas e redes">
-
-      <!-- Linha 1 — Streaming -->
-      <a class="ouvir-link" href="https://open.spotify.com/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener" aria-label="Spotify">
-        <img src="assets/logos/spotify.png" alt="Spotify" loading="lazy">
-      </a>
-      <a class="ouvir-link" href="https://music.apple.com/br/artist/amorfa/1896548394" target="_blank" rel="noopener" aria-label="Apple Music">
-        <img src="assets/logos/applemusic.svg" alt="Apple Music" loading="lazy">
-      </a>
-      <a class="ouvir-link" href="https://music.amazon.com.br/artists/B0H24NS7Q1/amorfa" target="_blank" rel="noopener" aria-label="Amazon Music">
-        <img src="assets/logos/amazonmusic.png" alt="Amazon Music" loading="lazy">
-      </a>
-      <a class="ouvir-link" href="https://www.deezer.com/br/artist/391523921" target="_blank" rel="noopener" aria-label="Deezer">
-        <img src="assets/logos/deezer.png" alt="Deezer" loading="lazy">
-      </a>
-      <a class="ouvir-link" href="https://tidal.com/artist/79743124" target="_blank" rel="noopener" aria-label="Tidal">
-        <img src="assets/logos/tidal.png" alt="Tidal" loading="lazy">
-      </a>
-
-      <div class="ouvir-row-break" aria-hidden="true"></div>
-
-      <!-- Linha 2 — YouTube + Redes -->
-      <a class="ouvir-link" href="https://music.youtube.com/channel/UCf4NhTyzi2UVOfR83s49V4g" target="_blank" rel="noopener" aria-label="YouTube Music">
-        <img src="assets/logos/youtubemusic.png" alt="YouTube Music" loading="lazy">
-      </a>
-      <a class="ouvir-link" href="https://www.youtube.com/@AMORFA" target="_blank" rel="noopener" aria-label="YouTube">
-        <img src="assets/logos/youtube.png" alt="YouTube" loading="lazy">
-      </a>
-      <a class="ouvir-link" href="https://www.instagram.com/amorfa.online/" target="_blank" rel="noopener" aria-label="Instagram">
-        <img src="assets/logos/instagram.png" alt="Instagram" loading="lazy">
-      </a>
-      <a class="ouvir-link" href="https://www.tiktok.com/@amorfa.wav" target="_blank" rel="noopener" aria-label="TikTok">
-        <img src="assets/logos/tiktok.png" alt="TikTok" loading="lazy">
-      </a>
-      <a class="ouvir-link ouvir-link--x" href="https://x.com/amorfaonline" target="_blank" rel="noopener" aria-label="X">
-        <img src="assets/logos/x.png" alt="X" loading="lazy">
-      </a>
-
-    </nav>
-  </main>
-
-  <section class="contact-band" aria-label="Contato">
-    <div class="contact-grid">
-      <div>
-        <p class="eyebrow">imprensa / booking / colaborações</p>
-        <a class="contact-email" href="mailto:projetoamorfa@gmail.com">projetoamorfa@gmail.com</a>
+      <div class="side-social">
+        <small>redes</small>
+        <a href="https://open.spotify.com/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@AMORFA" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@amorfa.wav" target="_blank" rel="noopener">TikTok</a>
       </div>
-      <a class="btn" href="index.html">Voltar para home</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>AMORFA.online</span>
-      <span>A forma falhou. A voz continuou.</span>
-    </div>
-  </footer>
+      <aside class="daily-signal" id="dailySignal" aria-label="Transmissão do dia">
+        <div class="daily-label">NO AR</div>
+        <img class="daily-cover" src="album-1.webp" alt="">
+        <div class="daily-title">Fusão Nuclear</div>
+        <div class="daily-album">I / SUPERFÍCIE</div>
+        <a class="daily-link" href="https://open.spotify.com/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener">OUVIR →</a>
+      </aside>
+    </aside>
+    <main class="main-panel page-panel" id="conteudo">
+      <section class="page-hero page-hero--listen">
+        <p class="eyebrow">ouvir</p>
+        <h1 class="page-title">Ouvir AMORFA.</h1>
+        <p class="lead compact">AMORFA nas plataformas. O som sai daqui. A escuta continua fora.</p>
+      </section>
+      <section class="section">
+        <article class="terminal-card listen-feature">
+          <img src="album-1.webp" alt="Capa do álbum Tudo Que Eu Uso Me Usa de Volta" loading="lazy">
+          <div>
+            <small>disco em rotação</small>
+            <h2>Tudo Que Eu Uso Me Usa de Volta</h2>
+          </div>
+          <a class="btn" href="https://open.spotify.com/album/1nZDDHw5kjsS11Rg1Y5dBJ" target="_blank" rel="noopener">Abrir no Spotify →</a>
+        </article>
+        <div class="platform-grid">
+          <a class="platform-card" href="https://open.spotify.com/album/1nZDDHw5kjsS11Rg1Y5dBJ" target="_blank" rel="noopener"><small>album I</small><h3>Spotify</h3><p>Tudo Que Eu Uso Me Usa de Volta.</p></a>
+          <a class="platform-card" href="https://open.spotify.com/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener"><small>artista</small><h3>Perfil oficial</h3><p>AMORFA no Spotify.</p></a>
+          <a class="platform-card" href="https://www.youtube.com/@AMORFA" target="_blank" rel="noopener"><small>video</small><h3>YouTube</h3><p>Canal oficial.</p></a>
+          <a class="platform-card" href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener"><small>sinal</small><h3>Instagram</h3><p>@amorfa.online</p></a>
+          <a class="platform-card" href="https://www.tiktok.com/@amorfa.wav" target="_blank" rel="noopener"><small>ruido curto</small><h3>TikTok</h3><p>@amorfa.wav</p></a>
+          <a class="platform-card" href="mailto:projetoamorfa@gmail.com"><small>contato</small><h3>Email</h3><p>projetoamorfa@gmail.com</p></a>
+        </div>
+      </section>
+    </main>
+  </div>
   <script src="assets/site.js" defer></script>
 </body>
 </html>

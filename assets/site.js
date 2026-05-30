@@ -29,12 +29,137 @@
 
   const normalizeId = (value) => String(value ?? "").replace(/\s+/g, "");
   const albumUrl    = "https://open.spotify.com/album/1nZDDHw5kjsS11Rg1Y5dBJ";
+  const artistUrl   = "https://open.spotify.com/artist/6hbGT8M54r38uokc9q09ys";
 
-  const loadJson = (url) =>
-    fetch(url).then((r) => {
+  const dailyTracks = [
+    { title: "Fusão Nuclear", album: "I / SUPERFÍCIE", cover: "album-1.webp", url: artistUrl },
+    { title: "Hematoma", album: "II / CORPO", cover: "album-2.webp", url: artistUrl },
+    { title: "Toque Fantasma", album: "III / AUSÊNCIA", cover: "album-3.webp", url: artistUrl },
+    { title: "Fantasmogênese", album: "IV / FANTASMA", cover: "album-4.webp", url: artistUrl },
+    { title: "O Arranjo do Submundo", album: "V / SUBMUNDO", cover: "album-5.webp", url: artistUrl },
+  ];
+
+  const fallbackData = {
+    "data.json": {
+      albums: [
+        {
+          id: "uso",
+          type: "ÁLBUM I",
+          date: "29 mai 2026",
+          status: "disponível agora",
+          title: "Tudo Que Eu Uso Me Usa de Volta",
+          image: "album-1.webp",
+          concept: "A tela acende. O corpo responde. A superfície cobra.",
+          summary: "Tudo que ajuda a funcionar também aprende a usar.",
+          tracks: ["Versão Consumida", "Fusão Nuclear", "Luz Azul", "Modo Avião", "Só o Que Vende / Livre Pra Quem", "Kouros de Silício", "Corpo-Entulho", "Vênus Aflita", "Você Era Banal", "Placebo", "Glamour Febril", "Cento e Oitenta", "Terminal"],
+        },
+        {
+          id: "incendios",
+          type: "ÁLBUM II",
+          date: "05 jun 2026",
+          status: "em breve",
+          title: "Pequenos Incêndios sob o Ar-Condicionado no Máximo",
+          image: "album-2.webp",
+          concept: "A pele registra. O quarto esfria. A marca fica quente.",
+          summary: "Contato não apaga. Só muda de temperatura.",
+          tracks: ["Erro de Cálculo", "Fidelidade Antiga", "Não Claro", "Amor Com Dentes", "O Devorador", "Mercúrio", "Manutenção Mínima", "Pronta", "Portador da Luz", "Hematoma", "O Corpo Que Eu Tentei Ser", "Mão no Bolso"],
+        },
+        {
+          id: "ep",
+          type: "EP",
+          date: "12 jun 2026",
+          status: "em breve",
+          title: "Dia dos Namorados Macabro",
+          image: "ep-urso-neon-amorfa-v8.webp",
+          color: true,
+          concept: "o amor como produto com péssimo histórico",
+          summary: "Quatro faixas sobre presente, vitrine, casa assombrada, romance vendido e afeto devolvido sem nota fiscal.",
+          tracks: ["Feliz Dia (Que Horror)", "Assombração de Estimação", "Aceito Proposta", "Happy Valentine's (How Ghastly)"],
+        },
+        {
+          id: "teologia",
+          type: "ÁLBUM III",
+          date: "19 jun 2026",
+          status: "em breve",
+          title: "Teologia dos Fracassos Afetivos em Cama de Solteiro",
+          image: "album-3.webp",
+          concept: "A cama vira altar. O sinal vira rito. A ausência cria rotina.",
+          summary: "O quase aprende a ocupar o quarto.",
+          tracks: ["Santo Errado", "Tarde Demais", "O Culto da Carne", "Lockdown (Terror Cult)", "Toque Fantasma", "Fracasso de Estimação", "Não Se Preocupa (Era Bituca)", "Cortesia do Medo", "Vinte e Três", "Quase Verdade", "Matéria Escura", "Para Onde Eu Fui?", "O Reino do Quase"],
+        },
+        {
+          id: "fantasmogenese",
+          type: "ÁLBUM IV",
+          date: "26 jun 2026",
+          status: "em breve",
+          title: "Fantasmogênese",
+          image: "album-4.webp",
+          concept: "O vidro respira. A forma falha. O arquivo ganha voz.",
+          summary: "Nada desaparece inteiro.",
+          tracks: ["Onde Se Guarda", "Frequência Distorcida", "Fantasmogênese", "Campo Nulo", "Baixa Resolução", "Dose de Impulso", "Ritual de Fogo", "Junho, De Novo"],
+        },
+        {
+          id: "submundo",
+          type: "ÁLBUM V",
+          date: "03 jul 2026",
+          status: "em breve",
+          title: "O Arranjo do Submundo",
+          image: "album-5.webp",
+          concept: "A casa abre por baixo. A fome mostra a planta. O mecanismo respira.",
+          summary: "Descer não revela tudo. Só deixa a porta acesa.",
+          tracks: ["LIMIAR", "A Porta Debaixo da Casa", "Organismo Associado", "A Casa Dormia com os Olhos Abertos", "A Ânfora", "A Sutura Invisível", "O Arranjo do Submundo", "O Guardião das Formas", "Erro Original", "Flor de Plástico", "Colapso"],
+        },
+      ],
+    },
+    "transmissoes.json": {
+      posts: [
+        { id: "T-005", tipo: "transmissao", titulo: "001", imagem: "assets/uploads/transmissoes/capa_album_1.jpg", imagemFormato: "quadrada", imagemAlt: "Capa do Álbum I — Tudo Que Eu Uso Me Usa de Volta", conteudo: "TUDO QUE EU USO ME USA DE VOLTA\nestá no Spotify.\n\nTreze faixas.\nUma entrada.\nNenhuma saída limpa.", faixa: "TUDO QUE EU USO ME USA DE VOLTA — AMORFA" },
+        { id: "T-004", tipo: "fragmento", titulo: "Brilhar", conteudo: "Eu brilho até cansar.\nVocê nem sente o calor\ne eu ainda chamo de sinal.", faixa: "Fusão Nuclear — AMORFA" },
+        { id: "T-002", tipo: "fragmento", titulo: "", conteudo: "Posta uma foto.\napaga.\nposta de novo.\nespera.\n\nsem perceber,\no teu corpo inteiro\ncomeça a depender\nde uma luz azul\npra continuar funcionando.", faixa: "Versão Consumida — AMORFA" },
+      ],
+    },
+    "estratos.json": {
+      posts: [
+        { id: "E-001", estrato: "fumaça", titulo: "Fumaça", conteudo: "meus gritos viram fumaça" },
+        { id: "E-002", estrato: "frio", titulo: "Frio físico", conteudo: "esse frio não vem com o vento" },
+        { id: "E-003", estrato: "dentes", titulo: "Língua", conteudo: "sua língua dança atrás dos dentes" },
+        { id: "E-004", estrato: "forma", titulo: "Forma", conteudo: "a forma falha" },
+        { id: "E-005", estrato: "sintoma", titulo: "Antes", conteudo: "antes sintoma" },
+        { id: "E-006", estrato: "sinal", titulo: "Transmissão", conteudo: "a transmissão continua" },
+      ],
+    },
+  };
+
+  const loadJson = (url) => {
+    if (location.protocol === "file:" && fallbackData[url]) {
+      return Promise.resolve(fallbackData[url]);
+    }
+    return fetch(url).then((r) => {
       if (!r.ok) throw new Error(`Falha ao carregar ${url}`);
       return r.json();
     });
+  };
+
+  function initDailySignal() {
+    const box = document.getElementById("dailySignal");
+    if (!box) return;
+
+    const track = dailyTracks[Math.floor(Date.now() / 86400000) % dailyTracks.length];
+    const cover = box.querySelector(".daily-cover");
+    const title = box.querySelector(".daily-title");
+    const album = box.querySelector(".daily-album");
+    const link = box.querySelector(".daily-link");
+
+    if (cover) {
+      cover.src = track.cover;
+      cover.alt = `Capa de ${track.title}`;
+    }
+    if (title) title.textContent = track.title;
+    if (album) album.textContent = track.album;
+    if (link) link.href = track.url;
+  }
+
+  initDailySignal();
 
   /* ── discografia ── */
   const renderReleaseCard = (album) => {
@@ -119,19 +244,35 @@
       </article>`;
   };
 
+  const postFeedCard = (post) => {
+    const title = post.titulo || post.id || "Arquivo aberto";
+    const type = String(post.tipo || normalizeTipo(post.tipo)).toLowerCase();
+    const track = post.faixa
+      ? `<span class="post-track">${escapeHtml(post.faixa)}</span>`
+      : "";
+    return `
+      <article class="post-card" data-post-type="${escapeHtml(type)}">
+        <small>${escapeHtml(normalizeId(post.id))} / ${escapeHtml(post.tipo || type)}</small>
+        <h3>${escapeHtml(title)}</h3>
+        ${renderImage(post)}
+        <p class="post-content">${escapeHtml(post.conteudo || "")}</p>
+        ${track}
+      </article>`;
+  };
+
   /* ── feed de transmissões ── */
 
   const FEED_COPY = {
     transmissao: {
       kicker:      "transmissões públicas",
-      title:       "Voz direta da AMORFA",
-      description: "Registros diretos, anúncios e falas públicas da AMORFA.",
+      title:       "Voz pública",
+      description: "Arquivo aberto. O resto permanece recolhido.",
       label:       "TRANSMISSÃO",
     },
     fragmento: {
       kicker:      "fragmentos",
       title:       "Cortes do arquivo vivo",
-      description: "Restos líricos, imagens verbais e sinais soltos.",
+      description: "Fragmentos. Restos. Sinais sem legenda.",
       label:       "FRAGMENTO",
     },
   };
@@ -204,23 +345,58 @@
     });
   }
 
+  function setupPostGrid(posts) {
+    const feed = document.querySelector("[data-post-feed]");
+    if (!feed) return;
+    const params = new URLSearchParams(location.search);
+    const requested = String(params.get("tipo") || location.hash.replace("#", "") || "todos").toLowerCase();
+    const initialFilter = ["todos", "sinal", "verso", "poema", "fragmento", "transmissao"].includes(requested)
+      ? requested
+      : "todos";
+
+    const render = (filter) => {
+      const visible = filter === "todos"
+        ? posts
+        : posts.filter((post) => String(post.tipo || "").toLowerCase() === filter);
+      feed.innerHTML = visible.length
+        ? visible.map(postFeedCard).join("")
+        : '<p class="empty">Nenhum arquivo aberto.</p>';
+    };
+
+    document.querySelectorAll(".filter-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter-button").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        render(button.dataset.filter || "todos");
+      });
+    });
+
+    document.querySelectorAll(".filter-button").forEach((button) => {
+      button.classList.toggle("active", button.dataset.filter === initialFilter);
+    });
+    render(initialFilter);
+  }
+
   const postPreview = document.querySelector("[data-post-preview]");
   const hasFeed     = document.getElementById("latest-post");
+  const postFeed    = document.querySelector("[data-post-feed]");
 
-  if (postPreview || hasFeed) {
+  if (postPreview || hasFeed || postFeed) {
     loadJson("transmissoes.json")
       .then((data) => {
-        const posts = Array.isArray(data.posts) ? data.posts : [];
+        const posts = sortPosts(Array.isArray(data.posts) ? data.posts : []);
         if (postPreview) {
           postPreview.innerHTML = posts.slice(0, 3).map(postCard).join("") ||
             '<p class="empty">Nenhuma transmissão ainda.</p>';
         }
         if (hasFeed) setupFeedTabs(posts);
+        if (postFeed) setupPostGrid(posts);
       })
       .catch(() => {
         const msg = '<p class="empty">Não foi possível carregar as transmissões.</p>';
         if (postPreview) postPreview.innerHTML = msg;
         if (hasFeed)     hasFeed.innerHTML     = msg;
+        if (postFeed)    postFeed.innerHTML    = msg;
       });
   }
 

@@ -4,85 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transmissões | AMORFA</title>
-  <meta name="description" content="Transmissões e fragmentos da AMORFA — textos diretos e registros soltos.">
-  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Transmissões da AMORFA: voz pública, arquivo aberto e fragmentos recolhidos.">
+  <meta name="theme-color" content="#02060b">
   <link rel="canonical" href="https://amorfa.online/transmissoes.html">
   <meta property="og:title" content="Transmissões | AMORFA">
-  <meta property="og:description" content="A AMORFA fala em falhas, cortes e registros.">
+  <meta property="og:description" content="Voz pública. Arquivo aberto. O resto permanece recolhido.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://amorfa.online/transmissoes.html">
-  <meta property="og:image" content="https://amorfa.online/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon-32x32.png" type="image/png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:image" content="https://amorfa.online/visual-corpo-vidro.webp">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=4">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <header class="site-header">
-    <nav class="nav" aria-label="Navegação principal">
-      <a class="brand" href="index.html" aria-label="AMORFA">AMORFA<span>sinal ativo</span></a>
-      <ul class="nav-links" data-nav-links>
+  <div class="site-shell">
+    <aside class="side-nav" aria-label="Navegação principal">
+      <a class="brand-mark" href="index.html" aria-label="AMORFA"><img class="brand-logo" src="logo-amorfa-oficial.png" alt="AMORFA"><span>sinal aberto</span></a>
+      <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
-        <li><a href="lancamentos.html">Lançamentos</a></li>
-        <li><a class="active" href="transmissoes.html">Transmissões</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
         <li><a href="ouvir.html">Ouvir</a></li>
+        <li><a href="onde-se-guarda.html">Álbuns</a></li>
+        <li><a class="active" href="transmissoes.html">Transmissões</a></li>
+        <li><a href="estratos.html">Arquivo</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
-      <a class="nav-action" href="https://open.spotify.com/album/1nZDDHw5kjsS11Rg1Y5dBJ" target="_blank" rel="noopener">Ouvir agora</a>
-      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menu">Menu</button>
-    </nav>
-  </header>
-
-  <main class="main" id="conteudo">
-    <section class="page-hero">
-      <div class="page-hero-inner">
-        <p class="eyebrow">arquivo vivo</p>
+      <div class="side-social">
+        <small>redes</small>
+        <a href="https://open.spotify.com/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@AMORFA" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@amorfa.wav" target="_blank" rel="noopener">TikTok</a>
+      </div>
+      <aside class="daily-signal" id="dailySignal" aria-label="Transmissão do dia">
+        <div class="daily-label">NO AR</div>
+        <img class="daily-cover" src="album-1.webp" alt="">
+        <div class="daily-title">Fusão Nuclear</div>
+        <div class="daily-album">I / SUPERFÍCIE</div>
+        <a class="daily-link" href="https://open.spotify.com/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener">OUVIR →</a>
+      </aside>
+    </aside>
+    <main class="main-panel page-panel" id="conteudo">
+      <section class="page-hero page-hero--transmissions">
+        <p class="eyebrow">voz pública</p>
         <h1 class="page-title">Transmissões.</h1>
-        <p class="page-copy">A AMORFA fala em falhas, cortes e registros.<br>Transmissões públicas e fragmentos do arquivo vivo.</p>
-      </div>
-    </section>
-
-    <section class="transmissions-shell" id="transmissoes">
-      <div class="transmission-tabs" role="tablist" aria-label="Arquivo AMORFA">
-        <button class="tab-button active" type="button" data-type="transmissao">Transmissões</button>
-        <button class="tab-button" type="button" data-type="fragmento">Fragmentos</button>
-      </div>
-      <div class="feed-head">
-        <p class="eyebrow" id="feed-kicker">transmissões públicas</p>
-        <h2 id="feed-title">Voz direta da AMORFA</h2>
-        <p id="feed-description">Registros diretos, anúncios e falas públicas da AMORFA.</p>
-      </div>
-      <div class="feed-block">
-        <p class="archive-label">último registro</p>
-        <div id="latest-post"><p class="empty">Carregando.</p></div>
-        <p class="archive-label">arquivo</p>
-        <div id="archive-posts"></div>
-      </div>
-    </section>
-  </main>
-
-  <section class="contact-band" aria-label="Contato">
-    <div class="contact-grid">
-      <div>
-        <p class="eyebrow">booking / imprensa / sinal direto</p>
-        <a class="contact-email" href="mailto:projetoamorfa@gmail.com">projetoamorfa@gmail.com</a>
-      </div>
-      <a class="btn" href="ouvir.html">Ver canais</a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>AMORFA.online</span>
-      <span>A forma falhou. A voz continuou.</span>
-    </div>
-  </footer>
-  <script src="assets/site.js?v=4" defer></script>
+        <p class="lead compact">Voz pública. Arquivo aberto. O resto permanece recolhido.</p>
+      </section>
+      <section class="section">
+        <div class="filter-bar" aria-label="Filtros de transmissões">
+          <button class="filter-button active" type="button" data-filter="todos">Todos</button>
+          <button class="filter-button" type="button" data-filter="sinal">Sinais</button>
+          <button class="filter-button" type="button" data-filter="verso">Versos</button>
+          <button class="filter-button" type="button" data-filter="poema">Poemas</button>
+          <button class="filter-button" type="button" data-filter="fragmento">Fragmentos</button>
+        </div>
+        <div class="transmission-feed" data-post-feed>
+          <p class="empty">Carregando transmissões.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/site.js" defer></script>
 </body>
 </html>
