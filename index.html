@@ -240,23 +240,68 @@
     #fadeOut.active { opacity: 1; }
 
     /* ── Mobile ── */
-    @media (max-width: 640px) {
+    @media (max-width: 740px) {
       .vline, .hline { display: none; }
 
+      /* Foto exclusiva mobile, vertical */
+      .bg {
+        background: url('fundo-mobile-home.png') center 25% / cover no-repeat;
+      }
+      .bg::after {
+        background:
+          linear-gradient(180deg, rgba(2,4,6,.7) 0%, rgba(2,4,6,.35) 30%, rgba(2,4,6,.4) 55%, rgba(2,4,6,.85) 100%);
+      }
+
+      /* Logo no topo central, maior */
+      .logo {
+        top: 56px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+      .logo img {
+        width: 180px;
+        filter: drop-shadow(0 0 24px rgba(111,168,216,.45));
+      }
+
+      /* Grid: 4 linhas com tap target adequado, alinhadas no rodapé */
       .grid {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        align-content: end;
+        padding-top: 40vh;
       }
-      .quad { align-items: flex-end !important; justify-content: flex-start !important; padding: 22px 24px; }
+      .quad {
+        padding: 18px 28px !important;
+        min-height: 72px;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        border-top: 1px solid rgba(154,190,222,.08);
+      }
+      .quad:first-child { border-top: 0; }
       .quad::after { display: none; }
-      .label, .label-right { align-items: flex-start; text-align: left; }
-      .logo { top: 20px; left: 20px; }
-      .logo img { width: 120px; }
-      .status { padding: 10px 20px; gap: 12px; }
+      .quad::before { display: none; }
+      .label, .label-right { align-items: flex-start; text-align: left; gap: 4px; }
+
+      .q-num { font-size: 9px; opacity: .55; }
+      .q-name {
+        font-size: 17px !important;
+        letter-spacing: .18em;
+        color: rgba(216,221,228,.95);
+        text-shadow: 0 1px 12px rgba(0,0,0,.8);
+      }
       .q-desc { display: none; }
+
+      /* Status bar mobile */
+      .status {
+        padding: 11px 18px;
+        gap: 8px;
+        font-size: 9px;
+        letter-spacing: .14em;
+        background: rgba(2,4,6,.78);
+      }
     }
 
-    @media (min-width: 641px) and (max-width: 980px) {
+    @media (min-width: 741px) and (max-width: 980px) {
       .q-name { font-size: clamp(14px, 2vw, 20px); }
     }
   </style>
