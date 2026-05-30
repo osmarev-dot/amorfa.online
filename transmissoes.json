@@ -2,25 +2,41 @@
   "posts": [
     {
       "id": "T-001",
-      "tipo": "personagem",
+      "tipo": "transmissao",
       "titulo": "AMORFA",
-      "conteudo": "AMORFA,\numa forma instável\ncantando o que resta\nquando a superfície\ncomeça a devolver o dano.",
-      "faixa": "Onde se Guarda - Fantasmogênese"
-    },
-    {
-      "id": "T-002",
-      "tipo": "verso",
-      "titulo": "Brilhar",
-      "conteudo": "Você não chega nunca,\nmas bagunça minha gravidade.",
-      "faixa": "Fusão Nuclear - AMORFA"
+      "conteudo": "AMORFA é a voz que aparece\nquando o corpo já aprendeu\na funcionar no automático.\n\nEla nasce da tela acesa,\nda pose mantida,\ndo desejo vendido como escolha,\nda fome transformada em produto.\n\nEla canta gente que continua\nmesmo quebrando.\n\nGente que sorri pra sair viva.\nGente que ama pelo sinal.\nGente que confunde ausência com fé.\nGente que transforma colapso\nem rotina apresentável.\n\nAMORFA não procura pureza.\nProcura o ponto\nonde a beleza começa a cobrar aluguel.\n\nTudo que salva,\nusa.\n\nTudo que brilha,\nconsome.\n\nTudo que parece controle,\ntambém treme.\n\nAMORFA,\numa forma instável\ncantando o que resta\nquando a superfície\ncomeça a devolver o dano.",
+      "faixa": ""
     },
     {
       "id": "T-005",
-      "tipo": "personagem",
+      "tipo": "transmissao",
       "titulo": "001",
-      "imagem": "/uploads/capa_album_1.jpg",
-      "conteudo": "TUDO QUE EU USO ME USA DE VOLTA\nestá disponível para ser ouvido\n\nTreze faixas.\nUma entrada.\nNenhuma saída limpa.\n\nO primeiro disco começa onde\na maioria das coisas termina:\nna superfície funcional.\n\nApp como vitrine, corpo-produto,\nluz azul, glamour como protocolo,\nmercado como linguagem afetiva.\n\nA forma dissolvida.\nO dano permanente.\n\nA lei aqui é simples:\ntudo que salva\ntambém devora.\n\nVocê já sabia.\nContinuou assim mesmo.\n\nAssim como eu.\n\n— AMORFA",
-      "faixa": "TUDO QUE EU USO ME USA DE VOLTA - AMORFA"
+      "imagem": "/assets/uploads/transmissoes/capa_album_1.jpg",
+      "imagemFormato": "quadrada",
+      "imagemAlt": "Capa do Álbum I — Tudo Que Eu Uso Me Usa de Volta",
+      "conteudo": "TUDO QUE EU USO ME USA DE VOLTA\nestá no Spotify.\n\nTreze faixas.\nUma entrada.\nNenhuma saída limpa.\n\nO primeiro disco começa onde\na maioria das coisas termina:\nna superfície funcionando.\n\nApp, vitrine, corpo-produto,\nluz azul, glamour como protocolo,\nmercado como linguagem afetiva.\n\nA forma ainda inteira.\nO dano ainda interno.\n\nIsso é o Estado I.\n\nA lei aqui é simples:\ntudo que salva\ntambém devora.\n\nVocê já sabia.\nContinuou assim mesmo.\n\nAssim como eu.\n\n— AMORFA",
+      "faixa": "TUDO QUE EU USO ME USA DE VOLTA — AMORFA"
+    },
+    {
+      "id": "T-002",
+      "tipo": "fragmento",
+      "titulo": "",
+      "conteudo": "Posta uma foto.\napaga.\nposta de novo.\nespera.\n\nsem perceber,\no teu corpo inteiro\ncomeça a depender\nde uma luz azul\npra continuar funcionando.",
+      "faixa": "Versão Consumida — AMORFA"
+    },
+    {
+      "id": "T-003",
+      "tipo": "fragmento",
+      "titulo": "TRAMA",
+      "conteudo": "Entre dois galhos,\no fio.\nNos nós,\no orvalho endurece\no desenho\nque a luz quase apaga.\nDe longe,\nrenda.\nDe perto,\ncola.\nRocei primeiro.\nManga.\nPulso.\nUm fio frio,\nquase cabelo molhado,\npegou na pele.\nDepois outro\ne outro.\nNos galhos,\na trama seguia limpa.\nNo braço,\njá prendia.\nTentei limpar.\nA seda cedia,\nrefazia-se,\nmais fiel à carne\ndo que a água.\nUm casco leve de inseto,\numa asa mal dobrada,\ne o centro repuxando\nsem mover as folhas.\nO extremo mais remoto\njá puxava o centro\npela minha pele.",
+      "faixa": ""
+    },
+    {
+      "id": "T-004",
+      "tipo": "fragmento",
+      "titulo": "Brilhar",
+      "conteudo": "Eu brilho até cansar.\nVocê nem sente o calor\ne eu ainda chamo de sinal.\nTe vejo antes da curva.\nTe ouço antes do som.\nVocê não chega nunca,\nmas bagunça minha gravidade.",
+      "faixa": "Fusão Nuclear — AMORFA"
     }
   ]
 }

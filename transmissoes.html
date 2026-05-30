@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transmissões | AMORFA</title>
-  <meta name="description" content="Arquivo de transmissoes da AMORFA: sinais, versos, poemas, personagens e fragmentos.">
+  <meta name="description" content="Transmissões e fragmentos da AMORFA — textos diretos e registros soltos.">
   <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://amorfa.online/transmissoes.html">
   <meta property="og:title" content="Transmissões | AMORFA">
@@ -23,9 +23,9 @@
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteudo</a>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <header class="site-header">
-    <nav class="nav" aria-label="Navegacao principal">
+    <nav class="nav" aria-label="Navegação principal">
       <a class="brand" href="index.html" aria-label="AMORFA">AMORFA<span>sinal ativo</span></a>
       <ul class="nav-links" data-nav-links>
         <li><a href="index.html">Início</a></li>
@@ -42,24 +42,43 @@
   <main class="main" id="conteudo">
     <section class="page-hero">
       <div class="page-hero-inner">
-        <p class="eyebrow">arquivo paralelo</p>
-        <h1 class="page-title">Transmissoes em um arquivo unico.</h1>
-        <p class="page-copy">Sinais, versos, poemas e personagens deixam de virar paginas repetidas. Tudo fica aqui, filtravel e facil de atualizar pelo CMS.</p>
+        <p class="eyebrow">arquivo vivo</p>
+        <h1 class="page-title">Transmissões</h1>
+        <p class="page-copy">Textos diretos e registros soltos da AMORFA.</p>
       </div>
     </section>
 
-    <section class="section alt">
+    <nav class="transmission-tab-bar" aria-label="Seções">
+      <div class="transmission-tab-nav">
+        <a class="transmission-tab" href="#transmissoes">Transmissões</a>
+        <a class="transmission-tab" href="#fragmentos">Fragmentos</a>
+      </div>
+    </nav>
+
+    <section class="section" id="transmissoes">
       <div class="section-inner">
-        <div class="filter-bar" aria-label="Filtros de transmissoes">
-          <button class="filter-button active" type="button" data-filter="todos">Todos</button>
-          <button class="filter-button" type="button" data-filter="personagem">Personagem</button>
-          <button class="filter-button" type="button" data-filter="verso">Verso</button>
-          <button class="filter-button" type="button" data-filter="poema">Poema</button>
-          <button class="filter-button" type="button" data-filter="fragmento">Fragmento</button>
-          <button class="filter-button" type="button" data-filter="sinal">Sinal</button>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">transmissões</p>
+            <h2 class="section-title">AMORFA fala.</h2>
+          </div>
         </div>
-        <div class="transmission-feed" data-post-feed>
-          <p class="empty">Carregando transmissoes.</p>
+        <div class="transmission-accordion" data-transmissoes>
+          <p class="empty">Carregando transmissões.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="fragmentos">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">fragmentos</p>
+            <h2 class="section-title">Registros soltos.</h2>
+          </div>
+        </div>
+        <div class="transmission-accordion" data-fragmentos>
+          <p class="empty">Carregando fragmentos.</p>
         </div>
       </div>
     </section>

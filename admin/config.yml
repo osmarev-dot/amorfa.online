@@ -5,8 +5,8 @@ backend:
   base_url: https://amorfa-oauth.osmar-ev.workers.dev
   auth_endpoint: auth
 
-media_folder: "uploads"
-public_folder: "/uploads"
+media_folder: "assets/uploads/transmissoes"
+public_folder: "/assets/uploads/transmissoes"
 
 locale: pt
 
@@ -29,12 +29,25 @@ collections:
                 name: "tipo"
                 widget: "select"
                 options:
-                  - {label: "Fragmento", value: "fragmento"}
-                  - {label: "Poema", value: "poema"}
-                  - {label: "Verso", value: "verso"}
-                  - {label: "Personagem", value: "personagem"}
+                  - {label: "Transmissão — AMORFA fala diretamente", value: "transmissao"}
+                  - {label: "Fragmento — frase, trecho ou imagem solta", value: "fragmento"}
               - {label: "Título (opcional)", name: "titulo", widget: "string", required: false, default: ""}
-              - {label: "Imagem (opcional)", name: "imagem", widget: "image", required: false, default: ""}
+              - label: "Imagem (opcional)"
+                name: "imagem"
+                widget: "image"
+                required: false
+                media_folder: "/assets/uploads/transmissoes"
+                public_folder: "/assets/uploads/transmissoes"
+              - label: "Formato da imagem"
+                name: "imagemFormato"
+                widget: "select"
+                required: false
+                default: "horizontal"
+                options:
+                  - {label: "Horizontal (16:9)", value: "horizontal"}
+                  - {label: "Vertical (4:5)", value: "vertical"}
+                  - {label: "Quadrada (1:1)", value: "quadrada"}
+              - {label: "Texto alternativo da imagem", name: "imagemAlt", widget: "string", required: false, default: ""}
               - {label: "Conteúdo", name: "conteudo", widget: "text"}
               - {label: "Faixa relacionada (opcional)", name: "faixa", widget: "string", required: false, default: ""}
 
