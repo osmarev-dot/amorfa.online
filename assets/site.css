@@ -10,5 +10,95 @@
 .page-head h1{animation:pageH1Glitch 8s ease-in-out infinite;}@keyframes pageH1Glitch{0%,82%,100%{filter:none;transform:none}84%{filter:drop-shadow(-2px 0 rgba(255,0,80,.55)) drop-shadow(2px 0 rgba(0,200,255,.45));transform:translateX(-1.5px)}87%{filter:drop-shadow(2px 0 rgba(255,0,80,.4)) drop-shadow(-2px 0 rgba(0,200,255,.55));transform:translateX(2px)}90%{filter:drop-shadow(0 0 18px rgba(111,168,216,.38));transform:translateX(0)}}
 h1,h2,h3,.lead,.eyebrow,p,a,.page-head h1,.manifesto h1{text-shadow:0 1px 14px rgba(0,0,0,.9),0 2px 28px rgba(0,0,0,.7)}
 .site-footer{position:relative;z-index:5;margin-top:60px;padding:22px 24px;border-top:1px solid rgba(154,190,222,.12);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(123,135,150,.5);text-align:center;background:rgba(2,4,6,.45);text-shadow:0 1px 8px rgba(0,0,0,.9)}.discografia-tabs{display:flex;gap:0;margin:0 0 36px;border-bottom:1px solid rgba(154,190,222,.18)}.disc-tab{flex:1;padding:18px 16px;background:transparent;border:none;border-bottom:2px solid transparent;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:12px;cursor:pointer;font-family:var(--font);text-align:left;transition:color .2s,border-color .2s;text-shadow:0 1px 8px rgba(0,0,0,.9)}.disc-tab small{display:block;font-size:9px;letter-spacing:.18em;opacity:.55;margin-bottom:6px}.disc-tab strong{display:block;font-size:14px;font-weight:400;color:var(--blue2);letter-spacing:.16em}.disc-tab.active{border-bottom-color:var(--blue);color:var(--text)}.disc-tab.active strong{color:var(--blue)}.disc-tab:hover{color:var(--text)}.disc-section{display:none}.disc-section.active{display:block}
-@media (max-width:980px){:root{--sidebar:0}.static-bg{background-position:var(--bg-pos-mobile,var(--bg-pos,center center))}.site-shell{display:block;grid-template-columns:none}.side-nav{position:relative;width:100%;height:auto;bottom:auto;padding:16px 18px;border-right:0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start;gap:12px;background:rgba(2,4,6,.92)}.brand{align-self:flex-start}.brand img{width:100px}.side-nav nav{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.side-nav nav ul{display:flex;flex-direction:row;flex-wrap:nowrap;gap:18px;padding-bottom:4px;white-space:nowrap}.side-nav nav ul li{flex-shrink:0}.side-nav a{font-size:11px;letter-spacing:.14em}.daily-signal,.side-social,.side-status{display:none}.content{grid-column:1;padding:24px 16px 48px;max-width:100%}.hero-copy h1,.album-info h1{font-size:clamp(20px,5vw,30px);letter-spacing:.1em;line-height:1.15}.page-head h1,.manifesto h1{font-size:clamp(16px,4.5vw,22px);letter-spacing:.08em;line-height:1.25}.eyebrow{font-size:10px;letter-spacing:.16em;margin-bottom:14px}.lead{font-size:14px;line-height:1.6}.page-head{padding:24px 18px;margin-bottom:18px}.section-grid,.movement-strip{grid-template-columns:repeat(2,1fr);gap:8px}.movement-card{min-height:100px;padding:14px 12px}.movement-card span{font-size:24px}.movement-card strong{font-size:11px}.movement-card em{font-size:10px}.home-bottom,.contact-grid,.album-detail{grid-template-columns:1fr;gap:14px}.platform-grid{grid-template-columns:1fr}.archive-grid{grid-template-columns:1fr}.album-list{gap:8px}.album-row{grid-template-columns:42px 70px minmax(0,1fr);gap:10px;padding:12px;min-height:auto}.album-row b{display:none}.album-row figure{width:68px;height:68px}.album-roman{font-size:24px}.album-row h2{font-size:13px;line-height:1.25;margin:.2rem 0}.album-row small{font-size:10px}.album-row p{font-size:11px;line-height:1.4}.album-detail{grid-template-columns:1fr;padding:18px;gap:18px}.album-cover{max-width:280px;margin:0 auto}.track-panel{padding:18px}.tracklist li{grid-template-columns:36px minmax(0,1fr);gap:12px;padding:10px 0}.tracklist span{font-size:11px}.tracklist strong{font-size:13px}.manifesto{padding:24px 18px}.manifesto p{font-size:14px;line-height:1.65}.post-card summary{grid-template-columns:50px 1fr;padding:14px 16px;gap:10px}.post-card summary em{display:none}.post-card summary span{font-size:10px}.post-card summary strong{font-size:13px}.post-content{padding:16px;font-size:13px;line-height:1.7}.tabs{gap:6px}.tab{padding:8px 12px;font-size:10px}.note-panel{padding:18px}.note-panel p{font-size:12px}}
-@media (max-width:560px){.hero-copy h1,.album-info h1{font-size:22px;letter-spacing:.08em;line-height:1.2}.page-head h1,.manifesto h1{font-size:18px;letter-spacing:.08em}.lead{font-size:13px;line-height:1.6}.eyebrow{font-size:10px}.movement-strip{grid-template-columns:1fr;gap:8px}.movement-card{min-height:80px;padding:12px}.archive-grid{grid-template-columns:1fr}.album-detail,.track-panel,.page-head,.manifesto{padding:18px}.album-row{grid-template-columns:36px 60px minmax(0,1fr);gap:10px;padding:10px;min-height:auto}.album-row figure{width:58px;height:58px}.album-roman{font-size:20px;text-align:center}.album-row h2{font-size:12px;line-height:1.2}.album-row small{font-size:9px}.album-row p{font-size:10px;line-height:1.35}.tracklist li{grid-template-columns:32px 1fr;gap:10px;padding:8px 0}.tracklist span{font-size:10px}.tracklist strong{font-size:12px}.side-nav{padding:12px 14px}.brand img{width:80px}.side-nav nav ul{gap:14px}.side-nav a{font-size:10px;letter-spacing:.12em}.manifesto p{font-size:13px;line-height:1.6}.discografia-tabs{margin-bottom:24px}.disc-tab{padding:12px 8px}.disc-tab small{font-size:8px;margin-bottom:4px}.disc-tab strong{font-size:11px;letter-spacing:.1em}.site-footer{padding:14px 16px;font-size:9px;letter-spacing:.14em}.post-card summary{padding:12px 14px;gap:8px}.post-card summary strong{font-size:11px}.post-content{padding:14px;font-size:12px}.tabs{gap:5px;flex-wrap:wrap}.tab{padding:7px 10px;font-size:9px;letter-spacing:.1em}.contact-grid{padding:0!important}.contact-grid main{padding:30px 14px!important}}
+@media (max-width:980px){
+  :root{--sidebar:0}
+  html{font-size:14px}
+  body{background-attachment:scroll!important;background-position:65% center!important}
+  body::before{background:linear-gradient(180deg,rgba(2,4,6,.78) 0%,rgba(2,4,6,.5) 40%,rgba(2,4,6,.78) 100%)}
+  .site-shell{display:block;grid-template-columns:none}
+  .side-nav{position:sticky;top:0;left:0;right:0;width:100%;height:auto;bottom:auto;padding:10px 14px;border-right:0;border-bottom:1px solid rgba(154,190,222,.15);background:rgba(2,4,6,.94);backdrop-filter:blur(14px);display:flex;flex-direction:row;align-items:center;gap:10px;z-index:50;flex-wrap:nowrap;overflow:visible}
+  .brand{display:block;flex-shrink:0}
+  .brand img{width:60px;height:auto;display:block}
+  .side-nav nav{flex:1;min-width:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .side-nav nav::-webkit-scrollbar{display:none}
+  .side-nav nav ul{display:flex;flex-direction:row;flex-wrap:nowrap;gap:0;margin:0;padding:0;list-style:none;white-space:nowrap}
+  .side-nav nav ul li{flex-shrink:0;padding:0 10px}
+  .side-nav nav ul li:first-child{padding-left:4px}
+  .side-nav a{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .side-nav a.active{color:var(--blue)}
+  .daily-signal,.side-social,.side-status,.terminal-id,.side-logo,.social-links,.nav-links,.side-daily{display:none!important}
+  .content{grid-column:1;padding:28px 16px 60px;max-width:100%;width:100%}
+  .hero-copy h1,.album-info h1{font-size:22px;letter-spacing:.08em;line-height:1.2}
+  .page-head h1,.manifesto h1{font-size:18px;letter-spacing:.08em;line-height:1.25}
+  .eyebrow{font-size:9px;letter-spacing:.16em;margin-bottom:12px}
+  .lead{font-size:13px;line-height:1.6}
+  .page-head{padding:24px 18px;margin-bottom:18px}
+  .section-grid,.movement-strip{grid-template-columns:repeat(2,1fr);gap:8px}
+  .movement-card{min-height:90px;padding:12px 10px}
+  .movement-card span{font-size:22px}
+  .movement-card strong{font-size:10px}
+  .movement-card em{font-size:9px}
+  .home-bottom,.contact-grid,.album-detail{grid-template-columns:1fr;gap:14px}
+  .platform-grid{grid-template-columns:1fr}
+  .archive-grid{grid-template-columns:1fr}
+  .album-list{gap:8px}
+  .album-row{grid-template-columns:36px 64px minmax(0,1fr);gap:10px;padding:10px;min-height:auto;align-items:center}
+  .album-row b{display:none}
+  .album-row figure{width:60px;height:60px;margin:0}
+  .album-roman{font-size:20px;text-align:center}
+  .album-row h2{font-size:12px;line-height:1.25;margin:.2rem 0}
+  .album-row small{font-size:9px;letter-spacing:.08em}
+  .album-row p{font-size:10px;line-height:1.4}
+  .album-detail{grid-template-columns:1fr;padding:18px;gap:18px}
+  .album-cover{max-width:260px;margin:0 auto}
+  .track-panel{padding:18px;margin-top:18px}
+  .tracklist li{grid-template-columns:32px minmax(0,1fr);gap:10px;padding:9px 0}
+  .tracklist span{font-size:10px}
+  .tracklist strong{font-size:12px}
+  .manifesto{padding:24px 18px}
+  .manifesto p{font-size:13px;line-height:1.6}
+  .manifesto .lead{font-size:14px}
+  .post-list{gap:8px}
+  .post-card summary{grid-template-columns:48px 1fr;padding:12px 14px;gap:10px}
+  .post-card summary em{display:none}
+  .post-card summary span{font-size:9px}
+  .post-card summary strong{font-size:12px;letter-spacing:.08em}
+  .post-content{padding:14px;font-size:12px;line-height:1.7}
+  .tabs{gap:5px;flex-wrap:wrap;margin-top:18px}
+  .tab{padding:8px 12px;font-size:9px;letter-spacing:.1em}
+  .discografia-tabs{margin-bottom:22px}
+  .disc-tab{padding:12px 8px}
+  .disc-tab small{font-size:7px;margin-bottom:4px;letter-spacing:.14em}
+  .disc-tab strong{font-size:11px;letter-spacing:.08em}
+  .site-footer{padding:14px 16px;font-size:8px;letter-spacing:.14em;line-height:1.5}
+  .ep-callout{margin-top:20px}
+  .ep-callout h2{font-size:13px}
+  .ep-callout p{font-size:11px}
+}
+@media (max-width:480px){
+  html{font-size:13px}
+  body{background-position:55% center!important}
+  .side-nav{padding:8px 10px;gap:8px}
+  .brand img{width:46px}
+  .side-nav a{font-size:9px;letter-spacing:.1em}
+  .side-nav nav ul li{padding:0 7px}
+  .content{padding:22px 12px 50px}
+  .page-head h1,.manifesto h1{font-size:16px}
+  .hero-copy h1{font-size:18px}
+  .lead{font-size:12px}
+  .album-row{grid-template-columns:30px 56px minmax(0,1fr);gap:8px;padding:8px}
+  .album-row figure{width:52px;height:52px}
+  .album-roman{font-size:16px}
+  .album-row h2{font-size:11px}
+  .album-row small{font-size:8px}
+  .album-row p{font-size:9px;line-height:1.35}
+  .disc-tab{padding:10px 6px}
+  .disc-tab small{font-size:7px}
+  .disc-tab strong{font-size:10px}
+  .post-card summary{padding:10px 12px}
+  .post-card summary strong{font-size:11px}
+  .post-content{padding:12px;font-size:11px}
+  .site-footer{padding:12px 14px;font-size:7px;letter-spacing:.12em}
+  .manifesto{padding:18px 14px}
+  .manifesto p,.manifesto .lead{font-size:12px;line-height:1.55}
+}

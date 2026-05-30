@@ -1,39 +1,94 @@
 ﻿<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arquivo — AMORFA</title>
-  <meta name="description" content="Fragmentos visuais e frases do arquivo AMORFA." />
-  <link rel="canonical" href="https://amorfa.online/arquivo.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="AMORFA.ONLINE" />
-  <meta property="og:title" content="Arquivo — AMORFA" />
-  <meta property="og:description" content="Fragmentos visuais e frases do arquivo AMORFA." />
-  <meta property="og:image" content="https://amorfa.online/og-amorfa-v2.jpg" />
-  <meta property="og:url" content="https://amorfa.online/arquivo.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Arquivo — AMORFA" />
-  <meta name="twitter:description" content="Fragmentos visuais e frases do arquivo AMORFA." />
-  <meta name="twitter:image" content="https://amorfa.online/og-amorfa-v2.jpg" />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
-  <link rel="preload" as="image" href="logo-amorfa-hero.webp" />
-  <link rel="preload" as="image" href="hero-vidro-azul-desktop.webp" media="(min-width: 801px)" />
-  <link rel="stylesheet" href="assets/site.css" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MusicGroup", "name": "AMORFA", "url": "https://amorfa.online/arquivo.html", "image": "https://amorfa.online/og-amorfa-v2.jpg"}</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arquivo | AMORFA</title>
+  <meta name="description" content="Fragmentos visuais e frases do arquivo AMORFA.">
+  <meta name="theme-color" content="#020406">
+  <link rel="canonical" href="https://amorfa.online/arquivo.html">
+  <meta property="og:title" content="Arquivo | AMORFA">
+  <meta property="og:description" content="Fragmentos visuais e frases do arquivo AMORFA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amorfa.online/arquivo.html">
+  <meta property="og:image" content="https://amorfa.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/site.css?v=10">
+  <style>
+    .frag-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .frag-tile {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border: 1px solid rgba(154,190,222,.18);
+      background: rgba(2,6,10,.4);
+      backdrop-filter: blur(6px);
+      transition: border-color .2s, background .2s, transform .2s;
+      cursor: default;
+    }
+    .frag-tile:hover {
+      border-color: rgba(111,168,216,.55);
+      background: rgba(111,168,216,.06);
+      transform: translateY(-2px);
+    }
+    .frag-tile span {
+      font-family: var(--font);
+      font-size: clamp(11px, 1.1vw, 14px);
+      line-height: 1.55;
+      letter-spacing: .04em;
+      text-align: center;
+      color: var(--text);
+      text-shadow: 0 1px 8px rgba(0,0,0,.8);
+    }
+    @media (max-width:980px) {
+      .frag-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 22px; }
+      .frag-tile { padding: 16px; }
+      .frag-tile span { font-size: 11px; line-height: 1.45; }
+    }
+    @media (max-width:480px) {
+      .frag-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+      .frag-tile { padding: 12px; }
+      .frag-tile span { font-size: 10px; }
+    }
+  </style>
 </head>
-<body><aside class="side-nav">
-  <div class="terminal-id">AMORFA.ONLINE</div>
-  <a class="side-logo" href="index.html" aria-label="AMORFA"><img src="logo-amorfa-hero.webp" alt="AMORFA" width="2563" height="651" /></a>
-  <nav class="nav-links" aria-label="Navegação principal"><a class="" href="ouvir.html">Ouvir</a><a class="" href="albuns.html">Discografia</a><a class="" href="transmissoes.html">Transmissões</a><a class="active" href="arquivo.html">Arquivo</a><a class="" href="manifesto.html">Manifesto</a><a class="" href="contato.html">Contato</a></nav>
-  <div class="side-status"><span>SINAL ABERTO</span><span>30.05.2026 — 02:17:23</span></div>
-  <div class="social-links"><a href="https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener">Spotify</a><a href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener">Instagram</a><a href="https://music.youtube.com/channel/UCf4NhTyzi2UVOfR83s49V4g?si=lYU9rdVFBt9uvi1m" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/amorfaonline" target="_blank" rel="noopener">X</a><a href="https://www.tiktok.com/@amorfa.wav" target="_blank" rel="noopener">TikTok</a></div></aside>
-<main class="page-shell">
-<section class="section page-bg" style="--static-bg:url('visual-espelho.webp');--static-pos:center center"><div class="section-inner two-col"><div><div class="page-code">6. ARQUIVO</div><h1 class="page-title">Arquivo</h1><p class="page-kicker">Fragmentos. Restos. Sinais. Sem explicação longa.</p></div><div class="archive-grid"><div class="archive-tile" style="--bg:radial-gradient(circle at 50% 50%, rgba(111,168,216,.28), transparent 42%), linear-gradient(135deg,#071624,#020406)"><span>meus gritos<br>viram fumaça</span></div><div class="archive-tile" style="--bg:radial-gradient(circle at 30% 80%, rgba(111,168,216,.22), transparent 32%), linear-gradient(180deg,#0d2a45,#010204)"><span>esse frio<br>não vem com o vento</span></div><div class="archive-tile" style="--bg:radial-gradient(circle at 50% 50%, rgba(255,255,255,.2), transparent 8%), radial-gradient(circle at 50% 50%, rgba(111,168,216,.24), transparent 48%), #020406"><span>sua língua<br>dançando atrás<br>dos dentes</span></div><div class="archive-tile" style="--bg:radial-gradient(circle at 45% 55%, rgba(111,168,216,.2), transparent 38%), #020406"><span>a forma falha</span></div><div class="archive-tile" style="--bg:radial-gradient(circle at center, rgba(216,221,228,.26), transparent 4%), repeating-radial-gradient(circle at center, rgba(111,168,216,.1) 0 1px, transparent 1px 11px), #020406"><span>a transmissão<br>continua</span></div><div class="archive-tile" style="--bg:radial-gradient(circle at 50% 42%, rgba(0,0,0,.9) 0 8%, transparent 14%), radial-gradient(circle at 50% 50%, rgba(111,168,216,.26), transparent 46%), #020406"><span>antes a cura<br>agora sintoma</span></div><div class="archive-tile" style="--bg:linear-gradient(135deg,#0d2a45,#020406)"><span>um adeus<br>sem olá</span></div><div class="archive-tile" style="--bg:radial-gradient(circle at 70% 30%, rgba(180,74,61,.25), transparent 32%), #020406"><span>eu sou um acidente<br>prestes a acontecer</span></div><div class="archive-tile" style="--bg:linear-gradient(180deg,#06111d,#000)"><span>decorando<br>sepulturas</span></div></div></div></section>
-</main>
-<script src="assets/site.js" defer></script>
+<body style="background: #020406 url('fundo-5.png') center center / cover no-repeat fixed;">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="site-shell">
+    <aside class="side-nav" aria-label="Navegação principal">
+      <a class="brand" href="index.html" aria-label="AMORFA"><img src="logo-amorfa-hero.webp" alt="AMORFA"></a>
+      <nav><ul><li><a class="" href="index.html">Início</a></li><li><a class="" href="ouvir.html">Ouvir</a></li><li><a class="" href="albuns.html">Discografia</a></li><li><a class="" href="transmissoes.html">Transmissões</a></li><li><a class="active" href="arquivo.html">Arquivo</a></li><li><a class="" href="manifesto.html">Manifesto</a></li><li><a class="" href="contato.html">Contato</a></li></ul></nav>
+    </aside>
+    <main id="conteudo" class="content">
+      <p class="eyebrow" style="text-shadow:0 1px 14px rgba(0,0,0,.9)">arquivo</p>
+      <h1 style="font-size:clamp(18px,2vw,32px);letter-spacing:.1em;line-height:1.2;color:var(--blue2);text-shadow:0 1px 14px rgba(0,0,0,.9);margin:0">Fragmentos. Restos. Sinais.</h1>
+      <p class="lead" style="margin:1.2rem 0 0;text-shadow:0 1px 14px rgba(0,0,0,.85);max-width:560px">Pedaços que não viraram música. Frases que sobraram do caderno. Imagens verbais soltas no ar.</p>
+
+      <div class="frag-grid">
+        <div class="frag-tile"><span>meus gritos<br>viram fumaça</span></div>
+        <div class="frag-tile"><span>esse frio<br>não vem com o vento</span></div>
+        <div class="frag-tile"><span>sua língua<br>dançando atrás<br>dos dentes</span></div>
+        <div class="frag-tile"><span>a forma falha</span></div>
+        <div class="frag-tile"><span>a transmissão<br>continua</span></div>
+        <div class="frag-tile"><span>antes a cura<br>agora sintoma</span></div>
+        <div class="frag-tile"><span>um adeus<br>sem olá</span></div>
+        <div class="frag-tile"><span>eu sou um acidente<br>prestes a acontecer</span></div>
+        <div class="frag-tile"><span>decorando<br>sepulturas</span></div>
+      </div>
+    </main>
+  </div>
+  <script src="assets/site.js?v=10" defer></script>
 
   <footer class="site-footer" aria-hidden="true">AMORFA &copy; 2026 &middot; projetoamorfa@gmail.com</footer>
 </body>
