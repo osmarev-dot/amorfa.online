@@ -645,11 +645,6 @@ input {
   background-position: center;
 }
 
-.page-hero--contact {
-  --page-image: url("../visual-rosto-circular.webp");
-  background-position: center right;
-}
-
 .page-hero--ep {
   --page-image: url("../visual-rosto-circular.webp");
   background-position: center right;
@@ -1051,10 +1046,6 @@ summary {
   font-family: var(--serif);
   font-size: 1.5rem;
   letter-spacing: 0.08em;
-}
-
-.contact-platform-grid {
-  margin-top: 38px;
 }
 
 .footer {
