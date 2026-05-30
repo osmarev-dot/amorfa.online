@@ -37,7 +37,7 @@
 
     .ouvir-hero {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
 
     .ouvir-eyebrow {
@@ -74,8 +74,8 @@
     .ouvir-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 2rem 2.5rem;
-      max-width: 680px;
+      gap: 1rem 2rem;
+      max-width: 600px;
       width: 100%;
       margin: 0 auto;
     }
@@ -84,33 +84,43 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      aspect-ratio: 1;
-      max-width: 96px;
+      width: 72px;
+      height: 72px;
       margin: 0 auto;
-      border-radius: 20px;
-      padding: 16px;
-      background: #111;
-      border: 1px solid #1e1e1e;
+      border-radius: 0;
+      padding: 0;
+      background: transparent;
+      border: none;
       transition:
         transform 0.22s cubic-bezier(.34,1.56,.64,1),
-        background 0.18s ease,
-        border-color 0.18s ease,
-        box-shadow 0.22s ease;
-      outline-offset: 4px;
+        filter 0.22s ease,
+        opacity 0.22s ease;
+      outline-offset: 6px;
     }
 
     .ouvir-link:hover,
     .ouvir-link:focus-visible {
-      transform: translateY(-6px) scale(1.08);
-      background: #1a1a1a;
-      border-color: #333;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.6), 0 2px 8px rgba(255,255,255,0.04);
+      transform: translateY(-5px) scale(1.12);
+      filter: brightness(1.15) drop-shadow(0 0 12px rgba(255,255,255,0.18));
+      opacity: 1;
     }
 
     .ouvir-link:active {
-      transform: translateY(-2px) scale(1.03);
+      transform: translateY(-1px) scale(1.05);
       transition-duration: 0.08s;
+    }
+
+    /* Reduz levemente o X para equilibrar com os vizinhos */
+    .ouvir-link--x {
+      width: 58px;
+      height: 58px;
+    }
+
+    /* Quando qualquer ícone do grid tem hover, os outros desvanecem levemente */
+    .ouvir-grid:has(.ouvir-link:hover) .ouvir-link:not(:hover) {
+      opacity: 0.35;
+      filter: none;
+      transform: none;
     }
 
     .ouvir-link img,
@@ -119,45 +129,39 @@
       height: 100%;
       object-fit: contain;
       display: block;
-      /* SVG override for apple music dark */
-      filter: none;
     }
 
-    /* Row divider — invisible gap between streaming row and social row */
+    /* Row divider — espaço visual entre streaming e redes */
     .ouvir-row-break {
       grid-column: 1 / -1;
-      height: 0.5rem;
+      height: 1.25rem;
     }
 
     /* ── Contact band override ── */
     .contact-band {
       background: #000;
-      border-top: 1px solid #1e1e1e;
+      border-top: 1px solid #1a1a1a;
     }
 
     @media (max-width: 540px) {
       .ouvir-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem 1.5rem;
-        max-width: 260px;
-      }
-
-      .ouvir-row-break {
-        display: none;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.75rem 1rem;
+        max-width: 340px;
       }
 
       .ouvir-link {
-        max-width: 108px;
-        border-radius: 18px;
-        padding: 14px;
+        width: 52px;
+        height: 52px;
       }
-    }
 
-    @media (min-width: 541px) and (max-width: 720px) {
-      .ouvir-grid {
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1.5rem 1.75rem;
-        max-width: 560px;
+      .ouvir-link--x {
+        width: 42px;
+        height: 42px;
+      }
+
+      .ouvir-row-break {
+        height: 0.75rem;
       }
     }
   </style>
@@ -220,7 +224,7 @@
       <a class="ouvir-link" href="https://www.tiktok.com/@amorfa.wav" target="_blank" rel="noopener" aria-label="TikTok">
         <img src="assets/logos/tiktok.png" alt="TikTok" loading="lazy">
       </a>
-      <a class="ouvir-link" href="https://x.com/amorfaonline" target="_blank" rel="noopener" aria-label="X">
+      <a class="ouvir-link ouvir-link--x" href="https://x.com/amorfaonline" target="_blank" rel="noopener" aria-label="X">
         <img src="assets/logos/x.png" alt="X" loading="lazy">
       </a>
 
