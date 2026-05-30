@@ -1,65 +1,348 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AMORFA.ONLINE — Onde Se Guarda O Que Não Existe Mais</title>
-  <meta name="description" content="AMORFA: cinco álbuns em transmissão. Superfície, corpo, ausência, fantasma e submundo." />
-  <link rel="canonical" href="https://amorfa.online/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="AMORFA.ONLINE" />
-  <meta property="og:title" content="AMORFA.ONLINE — Onde Se Guarda O Que Não Existe Mais" />
-  <meta property="og:description" content="AMORFA: cinco álbuns em transmissão. Superfície, corpo, ausência, fantasma e submundo." />
-  <meta property="og:image" content="https://amorfa.online/og-amorfa-v2.jpg" />
-  <meta property="og:url" content="https://amorfa.online/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AMORFA.ONLINE — Onde Se Guarda O Que Não Existe Mais" />
-  <meta name="twitter:description" content="AMORFA: cinco álbuns em transmissão. Superfície, corpo, ausência, fantasma e submundo." />
-  <meta name="twitter:image" content="https://amorfa.online/og-amorfa-v2.jpg" />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
-  <link rel="preload" as="image" href="logo-amorfa-hero.webp" />
-  <link rel="preload" as="image" href="hero-vidro-azul-desktop.webp" media="(min-width: 801px)" />
-  <link rel="stylesheet" href="assets/site.css" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MusicGroup", "name": "AMORFA", "url": "https://amorfa.online/", "image": "https://amorfa.online/og-amorfa-v2.jpg", "sameAs": ["https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys", "https://music.apple.com/br/artist/amorfa/1896548394", "https://music.youtube.com/channel/UCf4NhTyzi2UVOfR83s49V4g?si=lYU9rdVFBt9uvi1m", "https://music.amazon.com.br/artists/B0H24NS7Q1/amorfa", "https://tidal.com/artist/79743124", "https://www.instagram.com/amorfa.online", "https://www.tiktok.com/@amorfa.wav", "https://x.com/amorfaonline"]}</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMORFA</title>
+  <meta name="description" content="AMORFA — cinco álbuns, um mês, uma transmissão que não fecha.">
+  <meta name="theme-color" content="#020406">
+  <link rel="canonical" href="https://amorfa.online/">
+  <meta property="og:title" content="AMORFA">
+  <meta property="og:description" content="Cinco álbuns. Um mês. A transmissão não fecha.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amorfa.online/">
+  <meta property="og:image" content="https://amorfa.online/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" as="image" href="visual-mao-vidro.webp">
+  <link rel="preload" as="image" href="logo-amorfa-hero.webp">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: #020406;
+      font-family: "IBM Plex Mono", "JetBrains Mono", "Courier New", monospace;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Background photo ── */
+    .bg {
+      position: fixed; inset: 0; z-index: 0;
+      background: url('visual-mao-vidro.webp') center center / cover no-repeat;
+    }
+    .bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(110deg, rgba(2,4,6,.82) 0%, rgba(2,4,6,.54) 48%, rgba(2,4,6,.38) 100%),
+        linear-gradient(180deg, rgba(2,4,6,.45) 0%, rgba(2,4,6,.72) 100%);
+    }
+
+    /* ── Scanlines ── */
+    .scanlines {
+      position: fixed; inset: 0; z-index: 1; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px);
+      background-size: 100% 4px;
+      opacity: 0.35;
+    }
+
+    /* ── Logo top-left ── */
+    .logo {
+      position: fixed; top: 32px; left: 36px; z-index: 20;
+      pointer-events: none;
+    }
+    .logo img {
+      width: clamp(110px, 13vw, 200px);
+      height: auto;
+      filter: drop-shadow(0 0 22px rgba(111,168,216,.25));
+    }
+
+    /* ── Cross dividers ── */
+    .vline, .hline {
+      position: fixed; z-index: 3; pointer-events: none;
+      background: rgba(154,190,222,.13);
+    }
+    .vline { left: 50%; top: 0; bottom: 0; width: 1px; }
+    .hline { top: 50%; left: 0; right: 0; height: 1px; }
+
+    /* ── Navigation grid (4 quadrants) ── */
+    .grid {
+      position: fixed; inset: 0; z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .quad {
+      position: relative;
+      display: flex;
+      padding: clamp(28px, 5vw, 64px);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      transition: background 0.28s ease;
+    }
+
+    /* Corner positioning */
+    .quad-tl { align-items: flex-start; justify-content: flex-start; padding-top: clamp(80px, 10vh, 140px); }
+    .quad-tr { align-items: flex-start; justify-content: flex-end;  padding-top: clamp(80px, 10vh, 140px); }
+    .quad-bl { align-items: flex-end;   justify-content: flex-start; }
+    .quad-br { align-items: flex-end;   justify-content: flex-end; }
+
+    /* Hover area glow */
+    .quad::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at var(--ox, 50%) var(--oy, 50%), rgba(111,168,216,.09), transparent 68%);
+      opacity: 0;
+      transition: opacity 0.32s ease;
+    }
+    .quad:hover::before { opacity: 1; }
+    .quad:hover { background: rgba(111,168,216,.03); }
+
+    /* Corner border on hover */
+    .quad::after {
+      content: '';
+      position: absolute;
+      width: 28px; height: 28px;
+      border-color: rgba(154,190,222,.5);
+      border-style: solid;
+      opacity: 0;
+      transition: opacity 0.25s ease, width 0.25s ease, height 0.25s ease;
+    }
+    .quad-tl::after { top: 0; left: 0; border-width: 1px 0 0 1px; }
+    .quad-tr::after { top: 0; right: 0; border-width: 1px 1px 0 0; }
+    .quad-bl::after { bottom: 0; left: 0; border-width: 0 0 1px 1px; }
+    .quad-br::after { bottom: 0; right: 0; border-width: 0 1px 1px 0; }
+    .quad:hover::after { opacity: 1; width: 44px; height: 44px; }
+
+    /* Label block */
+    .label {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; gap: 7px;
+    }
+    .label-right { align-items: flex-end; text-align: right; }
+
+    .q-num {
+      font-size: clamp(9px, 0.9vw, 11px);
+      color: rgba(111,168,216,.45);
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    .q-name {
+      font-size: clamp(15px, 2.2vw, 28px);
+      color: rgba(216,221,228,.68);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-weight: 400;
+      line-height: 1;
+      transition: color 0.25s, text-shadow 0.25s;
+    }
+    .quad:hover .q-name {
+      color: rgba(216,221,228,1);
+      text-shadow: 0 0 32px rgba(111,168,216,.55);
+    }
+
+    .q-desc {
+      font-size: clamp(9px, 0.9vw, 11px);
+      color: rgba(123,135,150,.5);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      line-height: 1.55;
+      transition: color 0.25s;
+      max-width: 200px;
+    }
+    .quad:hover .q-desc { color: rgba(123,135,150,.85); }
+
+    /* ── Status bar ── */
+    .status {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+      display: flex; align-items: center; gap: 18px;
+      padding: 13px 36px;
+      font-size: clamp(9px, 0.85vw, 11px);
+      letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(111,168,216,.4);
+      border-top: 1px solid rgba(154,190,222,.1);
+      background: rgba(2,4,6,.52);
+      backdrop-filter: blur(12px);
+    }
+    .status-dot {
+      width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0;
+      background: #b44a3d;
+      box-shadow: 0 0 7px #b44a3d;
+      animation: blink 2s ease-in-out infinite;
+    }
+    .status-sep { opacity: .25; }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.28} }
+
+    /* ── Glitch flash overlay ── */
+    #flash {
+      position: fixed; inset: 0; z-index: 200;
+      pointer-events: none; opacity: 0;
+    }
+
+    /* ── Fade-out to black ── */
+    #fadeOut {
+      position: fixed; inset: 0; z-index: 199;
+      background: #020406;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.38s ease;
+    }
+    #fadeOut.active { opacity: 1; }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      .vline, .hline { display: none; }
+
+      .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
+      .quad { align-items: flex-end !important; justify-content: flex-start !important; padding: 22px 24px; }
+      .quad::after { display: none; }
+      .label, .label-right { align-items: flex-start; text-align: left; }
+      .logo { top: 20px; left: 20px; }
+      .logo img { width: 120px; }
+      .status { padding: 10px 20px; gap: 12px; }
+      .q-desc { display: none; }
+    }
+
+    @media (min-width: 641px) and (max-width: 980px) {
+      .q-name { font-size: clamp(14px, 2vw, 20px); }
+    }
+  </style>
 </head>
-<body><aside class="side-nav">
-  <div class="terminal-id">AMORFA.ONLINE</div>
-  <a class="side-logo" href="index.html" aria-label="AMORFA"><img src="logo-amorfa-hero.webp" alt="AMORFA" width="2563" height="651" /></a>
-  <nav class="nav-links" aria-label="Navegação principal"><a class="" href="ouvir.html">Ouvir</a><a class="" href="albuns.html">Álbuns</a><a class="" href="transmissoes.html">Transmissões</a><a class="" href="arquivo.html">Arquivo</a><a class="" href="manifesto.html">Manifesto</a><a class="" href="contato.html">Contato</a></nav>
-  <div class="side-status"><span>SINAL ABERTO</span><span>30.05.2026 — 02:17:23</span></div>
-  <div class="social-links"><a href="https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener">Spotify</a><a href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener">Instagram</a><a href="https://music.youtube.com/channel/UCf4NhTyzi2UVOfR83s49V4g?si=lYU9rdVFBt9uvi1m" target="_blank" rel="noopener">YouTube</a><a href="https://x.com/amorfaonline" target="_blank" rel="noopener">X</a><a href="https://www.tiktok.com/@amorfa.wav" target="_blank" rel="noopener">TikTok</a></div>
-  <div class="side-daily" aria-label="Transmissão do dia">
-    <div class="daily-label">NO AR</div>
-    <img class="daily-cover" src="album-1.webp" alt="Capa da transmissão do dia" width="1024" height="1024" loading="lazy" decoding="async">
-    <div class="daily-title">Fusão Nuclear</div>
-    <div class="daily-album">I / SUPERFÍCIE</div>
-    <a class="daily-link" href="ouvir.html">OUVIR →</a>
-  </div>
-</aside>
-<main class="page-shell">
+<body>
 
-<section class="section home-section">
-  <div class="section-inner">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <img class="hero-logo" src="logo-amorfa-hero.webp" alt="AMORFA" width="2563" height="651" />
-        <h1 class="hero-title">Onde se guarda<br>o que não existe mais</h1>
-        <div class="divider"></div>
-        <p class="hero-text">Cinco álbuns.<br>Um mês.<br>A mesma forma perdendo borda.</p>
-        <div class="actions"><a class="btn" href="ouvir.html">▥ Ouvir</a><a class="btn" href="albuns.html">☰ Álbuns</a><a class="btn" href="transmissoes.html">Transmissões →</a><a class="btn" href="arquivo.html">Arquivo →</a></div>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <div class="vline" aria-hidden="true"></div>
+  <div class="hline" aria-hidden="true"></div>
+
+  <div class="logo" aria-hidden="true">
+    <img src="logo-amorfa-hero.webp" alt="AMORFA">
+  </div>
+
+  <div id="flash" aria-hidden="true"></div>
+  <div id="fadeOut" aria-hidden="true"></div>
+
+  <nav class="grid" aria-label="Navegação principal">
+
+    <a class="quad quad-tl" href="albuns.html">
+      <div class="label">
+        <span class="q-num">01</span>
+        <span class="q-name">Discografia</span>
+        <span class="q-desc">Cinco álbuns.<br>Um mês.</span>
       </div>
-      <div class="hero-visual" role="img" aria-label="AMORFA atrás de vidro azul molhado"></div>
-    </div>
-    <div class="home-lower">
-      <div><div class="block-title">Cinco movimentos</div><div class="movements"><a class="movement-card" href="album-uso.html" style="--bg:radial-gradient(circle at 40% 35%, rgba(111,168,216,.28), transparent 44%), linear-gradient(135deg, #0d2a45, #020406)"><span class="roman">I</span><strong>SUPERFÍCIE</strong><span>MÁSCARA DE USO</span></a><a class="movement-card" href="album-incendios.html" style="--bg:radial-gradient(circle at 52% 48%, rgba(180,74,61,.28), transparent 36%), linear-gradient(135deg, #081624, #020406)"><span class="roman">II</span><strong>CORPO</strong><span>QUEIMADURA FRIA</span></a><a class="movement-card" href="album-teologia.html" style="--bg:radial-gradient(circle at 52% 38%, rgba(111,168,216,.34), transparent 34%), linear-gradient(135deg, #06111d, #020406)"><span class="roman">III</span><strong>AUSÊNCIA</strong><span>ALTAR DOMÉSTICO</span></a><a class="movement-card" href="album-fantasmogenese.html" style="--bg:radial-gradient(circle at 50% 50%, rgba(216,221,228,.18), transparent 32%), linear-gradient(135deg, #081522, #010204)"><span class="roman">IV</span><strong>FANTASMA</strong><span>FORMA SEM FORMA</span></a><a class="movement-card" href="album-submundo.html" style="--bg:radial-gradient(circle at 50% 88%, rgba(111,168,216,.18), transparent 38%), linear-gradient(180deg, #06111d, #000)"><span class="roman">V</span><strong>SUBMUNDO</strong><span>PORTA DEBAIXO DA CASA</span></a></div></div>
-      <div><div class="block-title">Última transmissão</div><article class="last-transmission"><div class="thumb"><img src="assets/uploads/transmissoes/capa_album_1.jpg" alt="Capa do Álbum I — Tudo Que Eu Uso Me Usa de Volta" width="1024" height="1024" loading="lazy" decoding="async"></div><div class="trans-copy"><div class="trans-meta"><span>T-005</span><span>arquivo aberto</span></div>TUDO QUE EU USO ME USA DE VOLTA<br>está no Spotify.<br><br>Treze faixas.<br><a class="trans-link" href="transmissoes.html">Ler →</a></div></article></div>
-    </div>
-  </div>
-</section>
+    </a>
 
-</main>
-<script src="assets/site.js" defer></script>
+    <a class="quad quad-tr" href="transmissoes.html">
+      <div class="label label-right">
+        <span class="q-num">02</span>
+        <span class="q-name">Transmissões</span>
+        <span class="q-desc">Arquivo vivo.<br>O resto permanece recolhido.</span>
+      </div>
+    </a>
+
+    <a class="quad quad-bl" href="manifesto.html">
+      <div class="label">
+        <span class="q-num">03</span>
+        <span class="q-name">Manifesto</span>
+        <span class="q-desc">A forma falha.<br>A transmissão continua.</span>
+      </div>
+    </a>
+
+    <a class="quad quad-br" href="contato.html">
+      <div class="label label-right">
+        <span class="q-num">04</span>
+        <span class="q-name">Contato</span>
+        <span class="q-desc">Imprensa.<br>Colaboração.<br>Sinal direto.</span>
+      </div>
+    </a>
+
+  </nav>
+
+  <div class="status" aria-hidden="true">
+    <span class="status-dot"></span>
+    <span>SINAL ABERTO</span>
+    <span class="status-sep">—</span>
+    <span id="statusDate"></span>
+    <span class="status-sep">—</span>
+    <span id="statusTime"></span>
+  </div>
+
+  <script>
+    // ── Live clock
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function tick() {
+      const now = new Date();
+      const d = [pad(now.getDate()), pad(now.getMonth() + 1), now.getFullYear()].join('.');
+      const t = [pad(now.getHours()), pad(now.getMinutes()), pad(now.getSeconds())].join(':');
+      document.getElementById('statusDate').textContent = d;
+      document.getElementById('statusTime').textContent = t;
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // ── Glitch-flash → fade-to-black → navigate
+    const flash   = document.getElementById('flash');
+    const fadeOut = document.getElementById('fadeOut');
+
+    function glitchNavigate(dest) {
+      // Sequence: 3 white flickers then black fade
+      const seq = [
+        { opacity: 0.22, delay: 0 },
+        { opacity: 0,    delay: 55 },
+        { opacity: 0.14, delay: 90 },
+        { opacity: 0,    delay: 130 },
+        { opacity: 0.08, delay: 160 },
+        { opacity: 0,    delay: 195 },
+      ];
+
+      flash.style.background = '#fff';
+      flash.style.mixBlendMode = 'screen';
+
+      let step = 0;
+      function next() {
+        if (step >= seq.length) {
+          fadeOut.classList.add('active');
+          setTimeout(() => { window.location.href = dest; }, 400);
+          return;
+        }
+        const s = seq[step++];
+        flash.style.opacity = s.opacity;
+        setTimeout(next, s.delay || 40);
+      }
+      next();
+    }
+
+    // Intercept clicks for effect
+    document.querySelectorAll('.quad').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        glitchNavigate(this.getAttribute('href'));
+      });
+
+      // Radial glow follows cursor inside quadrant
+      link.addEventListener('mousemove', function(e) {
+        const r = this.getBoundingClientRect();
+        const ox = ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%';
+        const oy = ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%';
+        this.style.setProperty('--ox', ox);
+        this.style.setProperty('--oy', oy);
+      });
+    });
+  </script>
+
 </body>
 </html>
