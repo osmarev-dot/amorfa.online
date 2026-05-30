@@ -21,6 +21,48 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="assets/site.css?v=4">
+  <style>
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 72px);
+      gap: 28px;
+      margin: 48px 0 0 0;
+    }
+    .icon-link {
+      display: flex; align-items: center; justify-content: center;
+      width: 72px; height: 72px;
+      text-decoration: none;
+      position: relative;
+    }
+    .icon-link img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    @keyframes iconGlitch {
+      0%,100% { filter: none; transform: translate(0,0); }
+      15% { filter: drop-shadow(-3px 0 rgba(255,0,80,.8)) drop-shadow(3px 0 rgba(0,200,255,.6)); transform: translate(-2px,0); }
+      30% { filter: drop-shadow(3px 0 rgba(255,0,80,.6)) drop-shadow(-2px 0 rgba(0,200,255,.8)); transform: translate(2px,1px); }
+      45% { filter: none; transform: translate(0,0); }
+      55% { filter: drop-shadow(-2px 0 rgba(255,0,80,.4)) drop-shadow(2px 0 rgba(0,200,255,.4)); transform: translate(-1px,0); }
+      70% { filter: drop-shadow(0 0 16px rgba(111,168,216,.5)); transform: translate(1px,0); }
+      85% { filter: none; transform: translate(0,0); }
+    }
+    .icon-link:hover img {
+      animation: iconGlitch 0.35s steps(1) 1 forwards;
+    }
+    /* separador visual entre streaming e redes */
+    .icon-row-gap { grid-column: 1 / -1; height: 1px; background: rgba(154,190,222,.1); }
+    @media (max-width:980px) {
+      .icon-grid { grid-template-columns: repeat(5, 52px); gap: 18px; }
+      .icon-link { width: 52px; height: 52px; }
+    }
+    @media (max-width:560px) {
+      .icon-grid { grid-template-columns: repeat(5, 40px); gap: 14px; }
+      .icon-link { width: 40px; height: 40px; }
+    }
+  </style>
 </head>
 <body style="--bg-url: url('visual-ombro-vidro.png'); --bg-pos: center center; --bg-pos-mobile: 56% center;">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
