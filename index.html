@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
@@ -17,7 +17,7 @@
   <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" as="image" href="visual-mao-vidro.webp">
+  <link rel="preload" as="image" href="visual-vidro-rosto.webp">
   <link rel="preload" as="image" href="logo-amorfa-hero.webp">
 
   <style>
@@ -34,7 +34,7 @@
     /* ── Background photo ── */
     .bg {
       position: fixed; inset: 0; z-index: 0;
-      background: url('visual-mao-vidro.webp') center center / cover no-repeat;
+      background: url('visual-vidro-rosto.webp') 62% center / cover no-repeat;
     }
     .bg::after {
       content: '';
@@ -52,24 +52,21 @@
       opacity: 0.35;
     }
 
-    /* ── Logo top-left ── */
+    /* ── Logo centrado ── */
     .logo {
-      position: fixed; top: 32px; left: 36px; z-index: 20;
-      pointer-events: none;
+      position: fixed; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 20; pointer-events: none;
+      text-align: center;
     }
     .logo img {
-      width: clamp(110px, 13vw, 200px);
+      width: clamp(160px, 18vw, 280px);
       height: auto;
-      filter: drop-shadow(0 0 22px rgba(111,168,216,.25));
+      filter: drop-shadow(0 0 32px rgba(111,168,216,.28));
     }
 
-    /* ── Cross dividers ── */
-    .vline, .hline {
-      position: fixed; z-index: 3; pointer-events: none;
-      background: rgba(154,190,222,.13);
-    }
-    .vline { left: 50%; top: 0; bottom: 0; width: 1px; }
-    .hline { top: 50%; left: 0; right: 0; height: 1px; }
+    /* ── Cross dividers — invisible ── */
+    .vline, .hline { display: none; }
 
     /* ── Navigation grid (4 quadrants) ── */
     .grid {
