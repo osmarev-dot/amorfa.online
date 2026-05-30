@@ -20,64 +20,94 @@
   <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/site.css?v=6">
+  <link rel="stylesheet" href="assets/site.css?v=7">
 </head>
-<body style="--bg-url: url('visual-mao-vidro-b.png'); --bg-pos: 40% center; --bg-pos-mobile: 38% center;">
+<body style="--bg-url: url('fundo-2.png'); --bg-pos: center center; --bg-pos-mobile: center center;">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div class="static-bg" aria-hidden="true"></div>
   <div class="site-shell">
     <aside class="side-nav" aria-label="Navegação principal">
       <a class="brand" href="index.html" aria-label="AMORFA"><img src="logo-amorfa-hero.webp" alt="AMORFA"></a>
-      <nav><ul><li><a class="" href="index.html">Início</a></li><li><a class="" href="ouvir.html">Ouvir</a></li><li><a class="active" href="albuns.html">Álbuns</a></li><li><a class="" href="transmissoes.html">Transmissões</a></li><li><a class="" href="arquivo.html">Arquivo</a></li><li><a class="" href="manifesto.html">Manifesto</a></li><li><a class="" href="contato.html">Contato</a></li></ul></nav>
+      <nav><ul><li><a class="" href="index.html">Início</a></li><li><a class="" href="ouvir.html">Ouvir</a></li><li><a class="active" href="albuns.html">Discografia</a></li><li><a class="" href="transmissoes.html">Transmissões</a></li><li><a class="" href="arquivo.html">Arquivo</a></li><li><a class="" href="manifesto.html">Manifesto</a></li><li><a class="" href="contato.html">Contato</a></li></ul></nav>
       
     </aside>
     <main id="conteudo" class="content">
-      <section class="page-head panel narrow">
-        <p class="eyebrow">DISCOGRAFIA</p>
-        <h1 style="font-size:clamp(18px,2vw,32px);letter-spacing:.1em;line-height:1.2">Cinco discos. Uma anatomia da aparição.</h1>
-        <p class="lead" style="margin-top:1.6rem">AMORFA nasce de um processo de escrita que virou escavação psicológica: frase por frase, camada por camada, até que alguma coisa subisse do fundo com voz própria.</p>
-        <p style="margin-top:1.2rem;opacity:.65;font-size:14px;line-height:1.9;color:var(--muted)">A discografia acompanha essa deformação.<br>Uso. Contato. Devoção. Dissolução. Submundo.<br>Cada álbum abre uma falha diferente. No conjunto, elas formam AMORFA.</p>
+
+      <div class="discografia-tabs" role="tablist">
+        <button class="disc-tab active" data-tab="projeto" type="button">
+          <small>PROJETO</small><strong>Onde se Guarda</strong>
+        </button>
+        <button class="disc-tab" data-tab="lista" type="button">
+          <small>SEQUÊNCIA</small><strong>Discografia</strong>
+        </button>
+      </div>
+
+      <!-- ABA 1: PROJETO ONDE SE GUARDA -->
+      <section class="disc-section active" data-section="projeto">
+        <p class="eyebrow">o projeto</p>
+        <h1 style="font-size:clamp(18px,2vw,32px);letter-spacing:.1em;line-height:1.2;color:var(--blue2);text-shadow:0 1px 14px rgba(0,0,0,.9)">Onde se guarda o que não existe mais.</h1>
+        <p class="lead" style="margin-top:1.6rem;text-shadow:0 1px 14px rgba(0,0,0,.85)">Cinco discos. Uma anatomia da aparição.<br>AMORFA nasce de um processo de escrita que virou escavação psicológica: frase por frase, camada por camada, até que alguma coisa subisse do fundo com voz própria.</p>
+        <p style="margin-top:1.4rem;opacity:.78;font-size:14px;line-height:1.9;color:var(--text);text-shadow:0 1px 14px rgba(0,0,0,.85)">A discografia acompanha essa deformação.<br>Uso. Contato. Devoção. Dissolução. Submundo.<br>Cada álbum abre uma falha diferente. No conjunto, elas formam AMORFA.</p>
+        <section class="mini-panel ep-callout" style="margin-top:36px">
+          <p class="eyebrow">fora dos cinco movimentos</p>
+          <h2 style="font-size:16px;color:var(--blue2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">Dia dos Namorados Macabro</h2>
+          <p style="font-size:13px;line-height:1.7">EP separado. Não contamina a sequência principal dos álbuns.</p>
+          <a href="ep.html" style="display:inline-block;margin-top:14px;font-size:11px;color:var(--blue);letter-spacing:.16em;text-transform:uppercase">Abrir EP →</a>
+        </section>
       </section>
-      <section class="album-list">
-        <a class="album-row" href="album-uso.html">
-          <span class="album-roman">I</span>
-          <figure><img src="album-1.webp" alt="Capa de Tudo Que Eu Uso Me Usa de Volta" width="1024" height="1024" loading="lazy"></figure>
-          <div><small>SUPERFÍCIE / Máscara de uso</small><h2>Tudo Que Eu Uso Me Usa de Volta</h2><p>A tela acende. O corpo responde. A superfície cobra.</p></div>
-          <b>→</b>
-        </a>
-        <a class="album-row" href="album-incendios.html">
-          <span class="album-roman">II</span>
-          <figure><img src="album-2.webp" alt="Capa de Pequenos Incêndios sob o Ar-Condicionado no Máximo" width="1024" height="1024" loading="lazy"></figure>
-          <div><small>CORPO / Queimadura fria</small><h2>Pequenos Incêndios sob o Ar-Condicionado no Máximo</h2><p>A pele registra. O quarto esfria. A marca fica quente.</p></div>
-          <b>→</b>
-        </a>
-        <a class="album-row" href="album-teologia.html">
-          <span class="album-roman">III</span>
-          <figure><img src="album-3.webp" alt="Capa de Teologia dos Fracassos Afetivos em Cama de Solteiro" width="1024" height="1024" loading="lazy"></figure>
-          <div><small>AUSÊNCIA / Altar doméstico</small><h2>Teologia dos Fracassos Afetivos em Cama de Solteiro</h2><p>A cama vira altar. O sinal vira rito. A ausência cria rotina.</p></div>
-          <b>→</b>
-        </a>
-        <a class="album-row" href="album-fantasmogenese.html">
-          <span class="album-roman">IV</span>
-          <figure><img src="album-4.webp" alt="Capa de Fantasmogênese" width="1024" height="1024" loading="lazy"></figure>
-          <div><small>FANTASMA / Forma sem forma</small><h2>Fantasmogênese</h2><p>O vidro respira. A forma falha. O arquivo ganha voz.</p></div>
-          <b>→</b>
-        </a>
-        <a class="album-row" href="album-submundo.html">
-          <span class="album-roman">V</span>
-          <figure><img src="album-5.webp" alt="Capa de O Arranjo do Submundo" width="1024" height="1024" loading="lazy"></figure>
-          <div><small>SUBMUNDO / Porta debaixo da casa</small><h2>O Arranjo do Submundo</h2><p>A casa abre por baixo. A fome mostra a planta. O mecanismo respira.</p></div>
-          <b>→</b>
-        </a>
+
+      <!-- ABA 2: LISTA DOS ÁLBUNS -->
+      <section class="disc-section" data-section="lista">
+        <section class="album-list">
+          <a class="album-row" href="album-uso.html">
+            <span class="album-roman">I</span>
+            <figure><img src="album-1.webp" alt="Capa de Tudo Que Eu Uso Me Usa de Volta" width="1024" height="1024" loading="lazy"></figure>
+            <div><small>SUPERFÍCIE / Máscara de uso</small><h2>Tudo Que Eu Uso Me Usa de Volta</h2><p>A tela acende. O corpo responde. A superfície cobra.</p></div>
+            <b>→</b>
+          </a>
+          <a class="album-row" href="album-incendios.html">
+            <span class="album-roman">II</span>
+            <figure><img src="album-2.webp" alt="Capa de Pequenos Incêndios sob o Ar-Condicionado no Máximo" width="1024" height="1024" loading="lazy"></figure>
+            <div><small>CORPO / Queimadura fria</small><h2>Pequenos Incêndios sob o Ar-Condicionado no Máximo</h2><p>A pele registra. O quarto esfria. A marca fica quente.</p></div>
+            <b>→</b>
+          </a>
+          <a class="album-row" href="album-teologia.html">
+            <span class="album-roman">III</span>
+            <figure><img src="album-3.webp" alt="Capa de Teologia dos Fracassos Afetivos em Cama de Solteiro" width="1024" height="1024" loading="lazy"></figure>
+            <div><small>AUSÊNCIA / Altar doméstico</small><h2>Teologia dos Fracassos Afetivos em Cama de Solteiro</h2><p>A cama vira altar. O sinal vira rito. A ausência cria rotina.</p></div>
+            <b>→</b>
+          </a>
+          <a class="album-row" href="album-fantasmogenese.html">
+            <span class="album-roman">IV</span>
+            <figure><img src="album-4.webp" alt="Capa de Fantasmogênese" width="1024" height="1024" loading="lazy"></figure>
+            <div><small>FANTASMA / Forma sem forma</small><h2>Fantasmogênese</h2><p>O vidro respira. A forma falha. O arquivo ganha voz.</p></div>
+            <b>→</b>
+          </a>
+          <a class="album-row" href="album-submundo.html">
+            <span class="album-roman">V</span>
+            <figure><img src="album-5.webp" alt="Capa de O Arranjo do Submundo" width="1024" height="1024" loading="lazy"></figure>
+            <div><small>SUBMUNDO / Porta debaixo da casa</small><h2>O Arranjo do Submundo</h2><p>A casa abre por baixo. A fome mostra a planta. O mecanismo respira.</p></div>
+            <b>→</b>
+          </a>
+        </section>
       </section>
-      <section class="mini-panel ep-callout">
-        <p class="eyebrow">fora dos cinco movimentos</p>
-        <h2>Dia dos Namorados Macabro</h2>
-        <p>EP separado. Não contamina a sequência principal dos álbuns.</p>
-        <a href="ep.html">Abrir EP →</a>
-      </section>
+
+      <script>
+        document.querySelectorAll('.disc-tab').forEach(t=>{
+          t.addEventListener('click',()=>{
+            document.querySelectorAll('.disc-tab').forEach(b=>b.classList.remove('active'));
+            t.classList.add('active');
+            const tab=t.dataset.tab;
+            document.querySelectorAll('.disc-section').forEach(s=>{
+              s.classList.toggle('active', s.dataset.section===tab);
+            });
+          });
+        });
+      </script>
     </main>
   </div>
-  <script src="assets/site.js?v=6" defer></script>
+  <script src="assets/site.js?v=7" defer></script>
+
+  <footer class="site-footer" aria-hidden="true">AMORFA &copy; 2026 &middot; projetoamorfa@gmail.com</footer>
 </body>
 </html>
