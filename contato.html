@@ -20,7 +20,16 @@
   <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/site.css?v=7">
+  <link rel="stylesheet" href="assets/site.css?v=8">
+  <style>
+    @media (max-width:980px){
+      .content[id="conteudo"]{min-height:auto!important;padding:32px 16px!important}
+      .content[id="conteudo"] h1{font-size:18px!important;letter-spacing:.16em!important;margin-bottom:24px!important}
+      .content[id="conteudo"] a[href^="mailto"]{font-size:14px!important;margin-bottom:36px!important}
+      .content[id="conteudo"] > div{gap:18px!important}
+      .content[id="conteudo"] > div a{font-size:11px!important}
+    }
+  </style>
 </head>
 <body style="--bg-url: url('fundo-6.png'); --bg-pos: center center; --bg-pos-mobile: center center;">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -53,7 +62,7 @@
       </div>
     </main>
   </div>
-  <script src="assets/site.js?v=7" defer></script>
+  <script src="assets/site.js?v=8" defer></script>
 
   <footer class="site-footer" aria-hidden="true">AMORFA &copy; 2026 &middot; projetoamorfa@gmail.com</footer>
 </body>
