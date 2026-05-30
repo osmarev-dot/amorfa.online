@@ -20,9 +20,9 @@
   <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/site.css?v=8">
+  <link rel="stylesheet" href="assets/site.css?v=9">
 </head>
-<body style="--bg-url: url('fundo-2.png'); --bg-pos: center center; --bg-pos-mobile: center center;">
+<body style="background: #020406 url('fundo-2.png') center center / cover no-repeat fixed;">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div class="static-bg" aria-hidden="true"></div>
   <div class="site-shell">
@@ -37,28 +37,18 @@
         <button class="disc-tab active" data-tab="projeto" type="button">
           <small>PROJETO</small><strong>Onde se Guarda</strong>
         </button>
-        <button class="disc-tab" data-tab="lista" type="button">
-          <small>SEQUÊNCIA</small><strong>Discografia</strong>
+        <button class="disc-tab" data-tab="outros" type="button">
+          <small>FORA DA SEQUÊNCIA</small><strong>Outros</strong>
         </button>
       </div>
 
-      <!-- ABA 1: PROJETO ONDE SE GUARDA -->
+      <!-- ABA 1: ONDE SE GUARDA — os 5 álbuns que SÃO o projeto -->
       <section class="disc-section active" data-section="projeto">
-        <p class="eyebrow">o projeto</p>
-        <h1 style="font-size:clamp(18px,2vw,32px);letter-spacing:.1em;line-height:1.2;color:var(--blue2);text-shadow:0 1px 14px rgba(0,0,0,.9)">Onde se guarda o que não existe mais.</h1>
-        <p class="lead" style="margin-top:1.6rem;text-shadow:0 1px 14px rgba(0,0,0,.85)">Cinco discos. Uma anatomia da aparição.<br>AMORFA nasce de um processo de escrita que virou escavação psicológica: frase por frase, camada por camada, até que alguma coisa subisse do fundo com voz própria.</p>
-        <p style="margin-top:1.4rem;opacity:.78;font-size:14px;line-height:1.9;color:var(--text);text-shadow:0 1px 14px rgba(0,0,0,.85)">A discografia acompanha essa deformação.<br>Uso. Contato. Devoção. Dissolução. Submundo.<br>Cada álbum abre uma falha diferente. No conjunto, elas formam AMORFA.</p>
-        <section class="mini-panel ep-callout" style="margin-top:36px">
-          <p class="eyebrow">fora dos cinco movimentos</p>
-          <h2 style="font-size:16px;color:var(--blue2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">Dia dos Namorados Macabro</h2>
-          <p style="font-size:13px;line-height:1.7">EP separado. Não contamina a sequência principal dos álbuns.</p>
-          <a href="ep.html" style="display:inline-block;margin-top:14px;font-size:11px;color:var(--blue);letter-spacing:.16em;text-transform:uppercase">Abrir EP →</a>
-        </section>
-      </section>
+        <p class="eyebrow" style="text-shadow:0 1px 14px rgba(0,0,0,.9)">o projeto</p>
+        <h1 style="font-size:clamp(18px,2vw,32px);letter-spacing:.1em;line-height:1.2;color:var(--blue2);text-shadow:0 1px 14px rgba(0,0,0,.9);margin:0">Onde se Guarda o que Não Existe Mais.</h1>
+        <p class="lead" style="margin:1.4rem 0 0;text-shadow:0 1px 14px rgba(0,0,0,.85)">Cinco discos. Uma anatomia da aparição.<br>Cada álbum abre uma falha diferente. No conjunto, eles formam AMORFA.</p>
 
-      <!-- ABA 2: LISTA DOS ÁLBUNS -->
-      <section class="disc-section" data-section="lista">
-        <section class="album-list">
+        <section class="album-list" style="margin-top:32px">
           <a class="album-row" href="album-uso.html">
             <span class="album-roman">I</span>
             <figure><img src="album-1.webp" alt="Capa de Tudo Que Eu Uso Me Usa de Volta" width="1024" height="1024" loading="lazy"></figure>
@@ -92,6 +82,24 @@
         </section>
       </section>
 
+      <!-- ABA 2: OUTROS — EP e lançamentos avulsos -->
+      <section class="disc-section" data-section="outros">
+        <p class="eyebrow" style="text-shadow:0 1px 14px rgba(0,0,0,.9)">fora do projeto</p>
+        <h1 style="font-size:clamp(18px,2vw,32px);letter-spacing:.1em;line-height:1.2;color:var(--blue2);text-shadow:0 1px 14px rgba(0,0,0,.9);margin:0">EPs e lançamentos avulsos.</h1>
+        <p class="lead" style="margin:1.4rem 0 32px;text-shadow:0 1px 14px rgba(0,0,0,.85);opacity:.85">Trabalhos que existem fora da sequência principal de Onde se Guarda.</p>
+
+        <section class="album-list">
+          <a class="album-row" href="ep.html">
+            <span class="album-roman" style="font-size:18px;letter-spacing:.1em">EP</span>
+            <figure><img src="ep-dia-dos-namorados.webp" alt="Capa de Dia dos Namorados Macabro" loading="lazy" onerror="this.src='album-1.webp'"></figure>
+            <div><small>EP / Cor como veneno</small><h2>Dia dos Namorados Macabro</h2><p>Romance como produto com defeito. Neon rosa tóxico.</p></div>
+            <b>→</b>
+          </a>
+        </section>
+
+        <p style="margin-top:36px;opacity:.5;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-shadow:0 1px 14px rgba(0,0,0,.9)">Outros lançamentos em breve.</p>
+      </section>
+
       <script>
         document.querySelectorAll('.disc-tab').forEach(t=>{
           t.addEventListener('click',()=>{
@@ -104,9 +112,15 @@
           });
         });
       </script>
+
+      <style>
+        /* Garante que so a aba ativa aparece */
+        .disc-section { display: none; }
+        .disc-section.active { display: block; }
+      </style>
     </main>
   </div>
-  <script src="assets/site.js?v=8" defer></script>
+  <script src="assets/site.js?v=9" defer></script>
 
   <footer class="site-footer" aria-hidden="true">AMORFA &copy; 2026 &middot; projetoamorfa@gmail.com</footer>
 </body>
