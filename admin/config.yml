@@ -1,0 +1,82 @@
+backend:
+  name: github
+  repo: osmarev-dot/amorfa.online
+  branch: main
+  base_url: https://amorfa-oauth.osmar-ev.workers.dev
+  auth_endpoint: auth
+
+media_folder: "assets/uploads/transmissoes"
+public_folder: "/assets/uploads/transmissoes"
+
+locale: pt
+
+collections:
+  - name: "transmissoes"
+    label: "Transmissões"
+    files:
+      - name: "posts"
+        label: "Todas as Transmissões"
+        file: "transmissoes.json"
+        fields:
+          - name: posts
+            label: Transmissões
+            label_singular: Transmissão
+            widget: list
+            summary: "{{fields.id}} — {{fields.tipo}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string", hint: "Ex: T-008, T-009..."}
+              - label: "Tipo"
+                name: "tipo"
+                widget: "select"
+                options:
+                  - {label: "Transmissão — AMORFA fala diretamente", value: "transmissao"}
+                  - {label: "Fragmento — frase, trecho ou imagem solta", value: "fragmento"}
+              - {label: "Título (opcional)", name: "titulo", widget: "string", required: false, default: ""}
+              - label: "Imagem (opcional)"
+                name: "imagem"
+                widget: "image"
+                required: false
+                media_folder: "/assets/uploads/transmissoes"
+                public_folder: "/assets/uploads/transmissoes"
+              - label: "Formato da imagem"
+                name: "imagemFormato"
+                widget: "select"
+                required: false
+                default: "horizontal"
+                options:
+                  - {label: "Horizontal (16:9)", value: "horizontal"}
+                  - {label: "Vertical (4:5)", value: "vertical"}
+                  - {label: "Quadrada (1:1)", value: "quadrada"}
+              - {label: "Texto alternativo da imagem", name: "imagemAlt", widget: "string", required: false, default: ""}
+              - {label: "Conteúdo", name: "conteudo", widget: "text"}
+              - {label: "Faixa relacionada (opcional)", name: "faixa", widget: "string", required: false, default: ""}
+
+  - name: "estratos"
+    label: "Estratos — Poemas"
+    files:
+      - name: "posts"
+        label: "Todos os Poemas dos Estratos"
+        file: "estratos.json"
+        fields:
+          - name: posts
+            label: Poemas
+            label_singular: Poema
+            widget: list
+            summary: "{{fields.id}} — {{fields.estrato}} — {{fields.titulo}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string", hint: "Ex: E-001, E-002..."}
+              - label: "Estrato"
+                name: "estrato"
+                widget: "select"
+                hint: "Em qual estrato esse poema vai aparecer"
+                options:
+                  - {label: "Estrato 0 — O Guardião das Formas", value: "0"}
+                  - {label: "Estrato I — O Legista dos Corpos Transitórios", value: "I"}
+                  - {label: "Estrato II — O Operador de Simulacros", value: "II"}
+                  - {label: "Estrato III — O Devoto do Deus Ausente", value: "III"}
+                  - {label: "Estrato IV — O Arquiteto do Primeiro Colapso", value: "IV"}
+                  - {label: "Estrato V — O Escultor de Ídolos de Cerâmica", value: "V"}
+                  - {label: "Estrato VI — A Criança-Cripta", value: "VI"}
+                  - {label: "Coda — Poemas Avulsos", value: "coda"}
+              - {label: "Título (opcional)", name: "titulo", widget: "string", required: false, default: ""}
+              - {label: "Conteúdo", name: "conteudo", widget: "text"}
