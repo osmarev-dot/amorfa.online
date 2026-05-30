@@ -1291,6 +1291,15 @@ summary {
   max-width: 680px;
 }
 
+.transmission-tab-desc {
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .transmission-track {
   display: block;
   margin-top: 22px;

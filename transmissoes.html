@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#000000">
   <link rel="canonical" href="https://amorfa.online/transmissoes.html">
   <meta property="og:title" content="Transmissões | AMORFA">
-  <meta property="og:description" content="Arquivo vivo da AMORFA.">
+  <meta property="og:description" content="A AMORFA fala em falhas, cortes e registros.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://amorfa.online/transmissoes.html">
   <meta property="og:image" content="https://amorfa.online/og-image.jpg">
@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=2">
+  <link rel="stylesheet" href="assets/site.css?v=3">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -48,37 +48,18 @@
       </div>
     </section>
 
-    <nav class="transmission-tab-bar" aria-label="Seções">
+    <div class="transmission-tab-bar" role="tablist" aria-label="Categorias">
       <div class="transmission-tab-nav">
-        <a class="transmission-tab" href="#transmissoes">Transmissões</a>
-        <a class="transmission-tab" href="#fragmentos">Fragmentos</a>
+        <button class="transmission-tab active" type="button" role="tab" aria-selected="true" data-tab="transmissao">Transmissões</button>
+        <button class="transmission-tab" type="button" role="tab" aria-selected="false" data-tab="fragmento">Fragmentos</button>
       </div>
-    </nav>
+    </div>
 
-    <section class="section" id="transmissoes">
+    <section class="section">
       <div class="section-inner">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">transmissões</p>
-            <h2 class="section-title">AMORFA fala.</h2>
-          </div>
-        </div>
-        <div class="transmission-accordion" data-transmissoes>
-          <p class="empty">Carregando transmissões.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="fragmentos">
-      <div class="section-inner">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">fragmentos</p>
-            <h2 class="section-title">Registros soltos.</h2>
-          </div>
-        </div>
-        <div class="transmission-accordion" data-fragmentos>
-          <p class="empty">Carregando fragmentos.</p>
+        <p class="transmission-tab-desc" id="tab-desc">Voz direta, anúncios, sinais públicos e registros da AMORFA.</p>
+        <div class="transmission-accordion" data-feed>
+          <p class="empty">Carregando.</p>
         </div>
       </div>
     </section>
@@ -100,6 +81,6 @@
       <span>A forma falhou. A voz continuou.</span>
     </div>
   </footer>
-  <script src="assets/site.js?v=2" defer></script>
+  <script src="assets/site.js?v=3" defer></script>
 </body>
 </html>

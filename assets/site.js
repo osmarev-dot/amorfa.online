@@ -146,41 +146,52 @@
       </details>`;
   };
 
-  const postPreview         = document.querySelector("[data-post-preview]");
-  const transmisoesContainer = document.querySelector("[data-transmissoes]");
-  const fragmentosContainer  = document.querySelector("[data-fragmentos]");
+  const postPreview = document.querySelector("[data-post-preview]");
+  const feed        = document.querySelector("[data-feed]");
+  const tabBtns     = document.querySelectorAll("[data-tab]");
+  const tabDesc     = document.getElementById("tab-desc");
 
-  if (postPreview || transmisoesContainer || fragmentosContainer) {
+  const TAB_DESC = {
+    transmissao: "Voz direta, anúncios, sinais públicos e registros da AMORFA.",
+    fragmento:   "Cortes curtos, restos líricos e imagens verbais.",
+  };
+
+  let allPosts   = [];
+  let activeTab  = "transmissao";
+
+  function renderFeed(tipo) {
+    if (!feed) return;
+    const items = allPosts.filter((p) => p.tipo === tipo);
+    feed.innerHTML = items.length
+      ? items.map((p, i) => renderTransmissionDetails(p, i === 0)).join("")
+      : `<p class="empty">Nenhum registro ainda.</p>`;
+    if (tabDesc) tabDesc.textContent = TAB_DESC[tipo] || "";
+  }
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      tabBtns.forEach((b) => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      activeTab = btn.dataset.tab;
+      renderFeed(activeTab);
+    });
+  });
+
+  if (postPreview || feed) {
     loadJson("transmissoes.json")
       .then((data) => {
-        const posts = Array.isArray(data.posts) ? data.posts : [];
-
-        /* home preview — 3 cards compactos */
+        allPosts = Array.isArray(data.posts) ? data.posts : [];
         if (postPreview) {
-          postPreview.innerHTML = posts.slice(0, 3).map(postCard).join("") ||
+          postPreview.innerHTML = allPosts.slice(0, 3).map(postCard).join("") ||
             '<p class="empty">Nenhuma transmissão ainda.</p>';
         }
-
-        /* página transmissoes — accordion por tipo */
-        if (transmisoesContainer) {
-          const items = posts.filter((p) => p.tipo === "transmissao");
-          transmisoesContainer.innerHTML = items.length
-            ? items.map((p, i) => renderTransmissionDetails(p, i === 0)).join("")
-            : '<p class="empty">Nenhuma transmissão ainda.</p>';
-        }
-
-        if (fragmentosContainer) {
-          const items = posts.filter((p) => p.tipo === "fragmento");
-          fragmentosContainer.innerHTML = items.length
-            ? items.map((p, i) => renderTransmissionDetails(p, i === 0)).join("")
-            : '<p class="empty">Nenhum fragmento ainda.</p>';
-        }
+        if (feed) renderFeed(activeTab);
       })
       .catch(() => {
         const msg = '<p class="empty">Não foi possível carregar as transmissões.</p>';
-        if (postPreview)          postPreview.innerHTML          = msg;
-        if (transmisoesContainer) transmisoesContainer.innerHTML = msg;
-        if (fragmentosContainer)  fragmentosContainer.innerHTML  = msg;
+        if (postPreview) postPreview.innerHTML = msg;
+        if (feed)        feed.innerHTML        = msg;
       });
   }
 
@@ -202,19 +213,4 @@
       });
   }
 
-  /* ── tab bar scroll spy ── */
-  const tabLinks = document.querySelectorAll(".transmission-tab");
-  if (tabLinks.length) {
-    const sections = [...tabLinks].map((a) => document.querySelector(a.getAttribute("href")));
-    const onScroll = () => {
-      const scrollY = window.scrollY + 140;
-      sections.forEach((sec, i) => {
-        if (!sec) return;
-        const active = sec.offsetTop <= scrollY && sec.offsetTop + sec.offsetHeight > scrollY;
-        tabLinks[i].classList.toggle("active", active);
-      });
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
 })();
