@@ -1,17 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://amorfa.online/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://amorfa.online/ouvir.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/albuns.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/album-uso.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/album-incendios.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/album-teologia.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/album-fantasmogenese.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/album-submundo.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/transmissoes.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/arquivo.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/manifesto.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/contato.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/sobre.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/ep.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://amorfa.online/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://amorfa.online/og-image.jpg</image:loc>
+      <image:title>AMORFA — A forma que a falta produz.</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/ouvir.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/albuns.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/album-uso.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://amorfa.online/album-1.webp</image:loc>
+      <image:title>Tudo Que Eu Uso Me Usa de Volta — AMORFA</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/album-incendios.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://amorfa.online/album-2.webp</image:loc>
+      <image:title>Pequenos Incêndios sob o Ar-Condicionado no Máximo — AMORFA</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/album-teologia.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://amorfa.online/album-3.webp</image:loc>
+      <image:title>Teologia dos Fracassos Afetivos em Cama de Solteiro — AMORFA</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/album-fantasmogenese.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://amorfa.online/album-4.webp</image:loc>
+      <image:title>Fantasmogênese — AMORFA</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/album-submundo.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://amorfa.online/album-5.webp</image:loc>
+      <image:title>O Arranjo do Submundo — AMORFA</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/ep.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/transmissoes.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/arquivo.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/manifesto.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://amorfa.online/contato.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
