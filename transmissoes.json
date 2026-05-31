@@ -1,28 +1,19 @@
 {
   "posts": [
     {
-      "id": "T-001",
+      "id": "TX-001 // A01.F07 // PLACEBO",
       "tipo": "transmissao",
-      "titulo": "AMORFA",
-      "data": "",
+      "titulo": "FLECHAS VENCIDAS",
+      "data": "2026-05-30",
+      "imagem": "/assets/uploads/transmissoes/82024033-98d1-43b7-ad86-9c996f85a8da.png",
+      "imagemFormato": "quadrada",
+      "imagemAlinhamento": "centro",
+      "imagemTamanho": "pequena",
       "imagemLegenda": "",
       "imagemAlt": "",
-      "conteudo": "AMORFA é a voz que aparece\nquando o corpo já aprendeu\na funcionar no automático.\n\nEla nasce da tela acesa,\nda pose mantida,\ndo desejo vendido como escolha,\nda fome transformada em produto.\n\nEla canta gente que continua\nmesmo quebrando.\n\nGente que sorri pra sair viva.\nGente que ama pelo sinal.\nGente que confunde ausência com fé.\nGente que transforma colapso\nem rotina apresentável.\n\nAMORFA não procura pureza.\nProcura o ponto\nonde a beleza começa a cobrar aluguel.\n\nTudo que salva,\nusa.\n\nTudo que brilha,\nconsome.\n\nTudo que parece controle,\ntambém treme.\n\nAMORFA,\numa forma instável\ncantando o que resta\nquando a superfície\ncomeça a devolver o dano.",
+      "conteudo": "“Placebo” retoma Cupido, mas sem mitologia limpa.\n\nAqui ele não tem asa.\nNão brilha.\nNão salva ninguém.\n\nÉ só um prestador de serviço ruim, desses que chegam atrasados, erram o pedido e ainda deixam a cobrança na porta. Entrega três flechas vencidas. Nenhuma atravessa direito. Mesmo assim, alguma coisa em você obedece.\n\nA queda não vem da força do amor.\nVem do treino.\n\nO corpo já conhece o gesto.\nA boca já sabe justificar.\nA ferida não fecha, mas por alguns minutos para de latejar. E esse intervalo vira abrigo. Vira costume. Vira casa.\n\n“Placebo” é isso: a confusão entre alívio e cura.\n\nA faixa dança suja. Baixo elástico, estalos secos, sarcasmo no quadril. Tudo parece funcionar enquanto apodrece por baixo. No final, a música cresce até virar um caos controlado — como se o remédio falso finalmente mostrasse o efeito colateral.",
       "faixa": "",
-      "playerUrl": ""
-    },
-    {
-      "id": "T-005",
-      "tipo": "transmissao",
-      "titulo": "001",
-      "data": "",
-      "imagem": "/assets/uploads/transmissoes/capa_album_1.jpg",
-      "imagemFormato": "quadrada",
-      "imagemLegenda": "",
-      "imagemAlt": "Capa do Álbum I — Tudo Que Eu Uso Me Usa de Volta",
-      "conteudo": "TUDO QUE EU USO ME USA DE VOLTA\nestá no Spotify.\n\nTreze faixas.\nUma entrada.\nNenhuma saída limpa.\n\nO primeiro disco começa onde\na maioria das coisas termina:\nna superfície funcionando.\n\nApp, vitrine, corpo-produto,\nluz azul, glamour como protocolo,\nmercado como linguagem afetiva.\n\nA forma ainda inteira.\nO dano ainda interno.\n\nIsso é o Estado I.\n\nA lei aqui é simples:\ntudo que salva\ntambém devora.\n\nVocê já sabia.\nContinuou assim mesmo.\n\nAssim como eu.\n\n— AMORFA",
-      "faixa": "TUDO QUE EU USO ME USA DE VOLTA — AMORFA",
-      "playerUrl": ""
+      "playerUrl": "https://open.spotify.com/intl-pt/track/1H8oxLgkTyckOWeQdeDHAG?si=cf7db507c900450c"
     }
   ]
 }
