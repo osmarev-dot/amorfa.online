@@ -14,7 +14,7 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/site.css?v=14">
+  <link rel="stylesheet" href="assets/site.css?v=15">
   <style>
     .tx-list { display: flex; flex-direction: column; gap: 12px; margin-top: 36px; max-width: 900px; }
     .tx-post {
@@ -115,6 +115,58 @@
     .tx-media.align-esquerda { float: left; margin-right: 24px; margin-top: 4px; margin-bottom: 12px; }
     .tx-media.align-direita { float: right; margin-left: 24px; margin-top: 4px; margin-bottom: 12px; }
 
+    /* Player de música compacto */
+    .tx-player-wrap {
+      margin-top: 22px;
+      clear: both;
+      max-width: 560px;
+    }
+    .tx-player-label {
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tx-player-label::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--blue);
+      border-radius: 50%;
+      animation: blink 1.8s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    .tx-player-iframe {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(154,190,222,.12);
+      overflow: hidden;
+    }
+    .tx-player-iframe.sp { height: 80px; }
+    .tx-player-iframe.yt { aspect-ratio: 16/9; height: auto; }
+    .tx-player-iframe.am { height: 175px; }
+
+    .tx-player-link {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid rgba(154,190,222,.22);
+      font-size: 10px;
+      color: var(--blue);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color .15s, background .15s;
+    }
+    .tx-player-link:hover {
+      border-color: var(--blue);
+      background: rgba(111,168,216,.08);
+    }
+
     @media (max-width:980px) {
       .tx-summary { grid-template-columns: 60px minmax(0,1fr); gap: 10px; padding: 14px 16px; }
       .tx-summary em { display: none; }
@@ -153,6 +205,43 @@
       return m ? (m[3] + '.' + m[2] + '.' + m[1]) : s;
     }
 
+    /* Detecta plataforma e gera player compacto */
+    function buildPlayer(url) {
+      if (!url) return '';
+      url = String(url).trim();
+
+      var sp = url.match(/spotify\.com\/(?:intl-[a-z-]+\/)?(track|album|episode|playlist|artist)\/([A-Za-z0-9]+)/);
+      if (sp) {
+        var src = 'https://open.spotify.com/embed/' + sp[1] + '/' + sp[2] + '?utm_source=generator&theme=0';
+        return wrapPlayer('Spotify',
+          '<iframe class="tx-player-iframe sp" src="' + src + '" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>');
+      }
+
+      var yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([A-Za-z0-9_-]+)/);
+      if (yt) {
+        return wrapPlayer('YouTube',
+          '<iframe class="tx-player-iframe yt" src="https://www.youtube.com/embed/' + yt[1] + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
+      }
+
+      var am = url.match(/music\.apple\.com\/([a-z]{2})\/album\/[^/]+\/(\d+)(?:\?i=(\d+))?/);
+      if (am) {
+        var amSrc = 'https://embed.music.apple.com/' + am[1] + '/album/' + am[2] + (am[3] ? '?i=' + am[3] : '');
+        return wrapPlayer('Apple Music',
+          '<iframe class="tx-player-iframe am" src="' + amSrc + '" loading="lazy" allow="autoplay *; encrypted-media *;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"></iframe>');
+      }
+
+      /* Fallback: link discreto */
+      return wrapPlayer('Ouvir',
+        '<a class="tx-player-link" href="' + escapeHtml(url) + '" target="_blank" rel="noopener">↗ Abrir link</a>');
+    }
+
+    function wrapPlayer(label, inner) {
+      return '<div class="tx-player-wrap">' +
+        '<div class="tx-player-label">' + escapeHtml(label) + '</div>' +
+        inner +
+      '</div>';
+    }
+
     fetch('transmissoes.json?v=' + Date.now())
       .then(r => r.json())
       .then(data => {
@@ -187,6 +276,7 @@
           const faixaHtml = p.faixa
             ? '<div class="tx-faixa">↳ ' + escapeHtml(p.faixa) + '</div>'
             : '';
+          const playerHtml = buildPlayer(p.playerUrl);
           const isOpen = idx === 0 ? ' open' : '';
 
           return '<details class="tx-post"' + isOpen + '>' +
@@ -198,6 +288,7 @@
             '<div class="tx-body">' +
               mediaHtml +
               '<div class="tx-content">' + escapeHtml(p.conteudo || '') + '</div>' +
+              playerHtml +
               faixaHtml +
             '</div>' +
           '</details>';
@@ -210,7 +301,7 @@
       });
   </script>
 
-  <script src="assets/site.js?v=14" defer></script>
+  <script src="assets/site.js?v=15" defer></script>
 
   <footer class="site-footer" aria-hidden="true">AMORFA &copy; 2026 &middot; projetoamorfa@gmail.com</footer>
 </body>

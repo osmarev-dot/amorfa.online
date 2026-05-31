@@ -85,7 +85,8 @@ collections:
               - {label: "Texto alternativo (acessibilidade)", name: "imagemAlt", widget: "string", required: false, default: ""}
 
               - {label: "✍ Conteúdo", name: "conteudo", widget: "text", hint: "O texto da transmissão. Quebra de linha simples = nova linha. Linha em branco = parágrafo."}
-              - {label: "Faixa relacionada (opcional)", name: "faixa", widget: "string", required: false, default: "", hint: "Aparece ao final do post"}
+              - {label: "Faixa relacionada (opcional)", name: "faixa", widget: "string", required: false, default: "", hint: "Nome da faixa, aparece ao final do post"}
+              - {label: "🎵 Player — link da música (opcional)", name: "playerUrl", widget: "string", required: false, default: "", hint: "Cole o link do Spotify, YouTube ou Apple Music. Aparece como player compacto no final do post."}
 
   # ────────────────────────────────────────
   # FRAGMENTOS — cards pequenos (era Arquivo)
