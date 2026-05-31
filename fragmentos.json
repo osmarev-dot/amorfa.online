@@ -43,23 +43,24 @@
     {
       "id": "F-006",
       "modo": "texto",
-      "texto": "antes a cura\nagora sintoma",
-      "tom": "vermelho",
+      "texto": "um adeus\nsem olá",
+      "imagem": "/assets/uploads/fragmentos/10.png",
+      "tom": "neutro",
       "tamanho": "medio",
       "data": ""
     },
     {
       "id": "F-007",
       "modo": "texto",
-      "texto": "um adeus\nsem olá",
-      "tom": "neutro",
+      "texto": "antes a cura\nagora sintoma",
+      "tom": "vermelho",
       "tamanho": "medio",
       "data": ""
     },
     {
       "id": "F-008",
-      "modo": "texto",
-      "texto": "eu sou um acidente\nprestes a acontecer",
+      "modo": "imagem",
+      "texto": "",
       "tom": "vermelho",
       "tamanho": "medio",
       "data": ""
