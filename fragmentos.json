@@ -1,0 +1,13 @@
+{
+  "items": [
+    { "id": "F-001", "modo": "texto", "texto": "meus gritos\nviram fumaça", "tom": "neutro", "tamanho": "medio" },
+    { "id": "F-002", "modo": "texto", "texto": "esse frio\nnão vem com o vento", "tom": "azul", "tamanho": "medio" },
+    { "id": "F-003", "modo": "texto", "texto": "sua língua\ndançando atrás\ndos dentes", "tom": "neutro", "tamanho": "medio" },
+    { "id": "F-004", "modo": "texto", "texto": "a forma falha", "tom": "neutro", "tamanho": "grande" },
+    { "id": "F-005", "modo": "texto", "texto": "a transmissão\ncontinua", "tom": "azul", "tamanho": "medio" },
+    { "id": "F-006", "modo": "texto", "texto": "antes a cura\nagora sintoma", "tom": "vermelho", "tamanho": "medio" },
+    { "id": "F-007", "modo": "texto", "texto": "um adeus\nsem olá", "tom": "neutro", "tamanho": "medio" },
+    { "id": "F-008", "modo": "texto", "texto": "eu sou um acidente\nprestes a acontecer", "tom": "vermelho", "tamanho": "medio" },
+    { "id": "F-009", "modo": "texto", "texto": "decorando\nsepulturas", "tom": "neutro", "tamanho": "medio" }
+  ]
+}

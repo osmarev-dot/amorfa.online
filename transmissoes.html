@@ -4,65 +4,213 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Transmissões | AMORFA</title>
-  <meta name="description" content="Voz pública e fragmentos do arquivo AMORFA.">
+  <meta name="description" content="Transmissões públicas da AMORFA — textos diretos e posts longos.">
   <meta name="theme-color" content="#020406">
   <link rel="canonical" href="https://amorfa.online/transmissoes.html">
   <meta property="og:title" content="Transmissões | AMORFA">
-  <meta property="og:description" content="Voz pública e fragmentos do arquivo AMORFA.">
+  <meta property="og:description" content="Voz pública da AMORFA.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://amorfa.online/transmissoes.html">
   <meta property="og:image" content="https://amorfa.online/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Transmissões | AMORFA">
-  <meta name="twitter:description" content="Voz pública e fragmentos do arquivo AMORFA.">
-  <meta name="twitter:image" content="https://amorfa.online/og-image.jpg">
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/site.css?v=13">
+  <link rel="stylesheet" href="assets/site.css?v=14">
+  <style>
+    .tx-list { display: flex; flex-direction: column; gap: 12px; margin-top: 36px; max-width: 900px; }
+    .tx-post {
+      border: 1px solid rgba(154,190,222,.18);
+      background: rgba(2,6,10,.55);
+      backdrop-filter: blur(8px);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color .2s, background .2s;
+    }
+    .tx-post[open] { border-color: rgba(111,168,216,.4); background: rgba(13,42,69,.42); }
+    .tx-post:not([open]):hover { border-color: rgba(154,190,222,.35); }
+
+    .tx-summary {
+      display: grid;
+      grid-template-columns: 80px minmax(0,1fr) 120px;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px;
+      cursor: pointer;
+      list-style: none;
+    }
+    .tx-summary::-webkit-details-marker { display: none; }
+    .tx-summary span.id {
+      color: var(--blue);
+      font-size: 11px;
+      letter-spacing: .14em;
+      font-variant-numeric: tabular-nums;
+      text-shadow: 0 1px 8px rgba(0,0,0,.7);
+    }
+    .tx-summary strong {
+      color: var(--blue2);
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-shadow: 0 1px 8px rgba(0,0,0,.7);
+    }
+    .tx-summary em {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-style: normal;
+      text-align: right;
+      text-shadow: 0 1px 8px rgba(0,0,0,.7);
+    }
+
+    .tx-body { padding: 0 22px 26px; border-top: 1px solid rgba(154,190,222,.08); }
+    .tx-body::after { content: ''; display: block; clear: both; }
+    .tx-body .tx-content {
+      margin-top: 22px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.85;
+      white-space: pre-wrap;
+      text-shadow: 0 1px 8px rgba(0,0,0,.7);
+      max-width: 720px;
+    }
+    .tx-body .tx-faixa {
+      margin-top: 22px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(154,190,222,.08);
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      clear: both;
+    }
+
+    .tx-media {
+      margin: 22px 0;
+      overflow: hidden;
+      border: 1px solid rgba(154,190,222,.12);
+      background: rgba(0,0,0,.4);
+    }
+    .tx-media img { width: 100%; height: auto; display: block; }
+    .tx-media-caption {
+      padding: 8px 12px;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: rgba(2,4,6,.5);
+      border-top: 1px solid rgba(154,190,222,.08);
+    }
+
+    .tx-media.fmt-horizontal img { aspect-ratio: 16/9; object-fit: cover; }
+    .tx-media.fmt-vertical img { aspect-ratio: 4/5; object-fit: cover; }
+    .tx-media.fmt-quadrada img { aspect-ratio: 1/1; object-fit: cover; }
+
+    .tx-media.tam-pequena { max-width: 380px; }
+    .tx-media.tam-media { max-width: 560px; }
+    .tx-media.tam-grande { max-width: 760px; }
+
+    .tx-media.align-centro { margin-left: auto; margin-right: auto; }
+    .tx-media.align-largo { max-width: none; }
+    .tx-media.align-esquerda { float: left; margin-right: 24px; margin-top: 4px; margin-bottom: 12px; }
+    .tx-media.align-direita { float: right; margin-left: 24px; margin-top: 4px; margin-bottom: 12px; }
+
+    @media (max-width:980px) {
+      .tx-summary { grid-template-columns: 60px minmax(0,1fr); gap: 10px; padding: 14px 16px; }
+      .tx-summary em { display: none; }
+      .tx-summary strong { font-size: 12px; }
+      .tx-body { padding: 0 16px 18px; }
+      .tx-body .tx-content { font-size: 13px; line-height: 1.7; }
+      .tx-media.align-esquerda, .tx-media.align-direita { float: none; margin: 22px 0; }
+      .tx-media { max-width: 100% !important; }
+    }
+  </style>
 </head>
 <body style="background: #020406 url('fundo-3.png') center center / cover no-repeat fixed;">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <div class="static-bg" aria-hidden="true"></div>
   <div class="site-shell">
     <aside class="side-nav" aria-label="Navegação principal">
       <a class="brand" href="index.html" aria-label="AMORFA"><img src="logo-amorfa-hero.webp" alt="AMORFA"></a>
-      <nav><ul><li><a class="" href="index.html">Início</a></li><li><a class="" href="ouvir.html">Ouvir</a></li><li><a class="" href="albuns.html">Discografia</a></li><li><a class="active" href="transmissoes.html">Transmissões</a></li><li><a class="" href="arquivo.html">Arquivo</a></li><li><a class="" href="manifesto.html">Manifesto</a></li><li><a class="" href="contato.html">Contato</a></li></ul></nav>
-      
+      <nav><ul><li><a class="" href="index.html">Início</a></li><li><a class="" href="ouvir.html">Ouvir</a></li><li><a class="" href="albuns.html">Discografia</a></li><li><a class="active" href="transmissoes.html">Transmissões</a></li><li><a class="" href="arquivo.html">Fragmentos</a></li><li><a class="" href="manifesto.html">Manifesto</a></li><li><a class="" href="contato.html">Contato</a></li></ul></nav>
     </aside>
     <main id="conteudo" class="content">
-      <section class="page-head panel narrow">
-        <p class="eyebrow">TRANSMISSÕES</p>
-        <h1>Transmissões</h1>
-        <p class="lead">Voz pública.<br>Arquivo aberto.<br>O resto permanece recolhido.</p>
-        <div class="tabs" role="tablist" aria-label="Filtro de transmissões"><button class="tab active" data-filter="all">Todas</button><button class="tab" data-filter="transmissao">Transmissões</button><button class="tab" data-filter="fragmento">Fragmentos</button></div>
-      </section>
-      <section class="post-list">
-        <details class="post-card panel" data-post-type="transmissao" open>
-          <summary><span>T-001</span><strong>AMORFA</strong><em>transmissao</em></summary>
-          <div class="post-content"><p>AMORFA é a voz que aparece<br>quando o corpo já aprendeu<br>a funcionar no automático.<br><br>Ela nasce da tela acesa,<br>da pose mantida,<br>do desejo vendido como escolha,<br>da fome transformada em produto.<br><br>Ela canta gente que continua<br>mesmo quebrando.<br><br>Gente que sorri pra sair viva.<br>Gente que ama pelo sinal.<br>Gente que confunde ausência com fé.<br>Gente que transforma colapso<br>em rotina apresentável.<br><br>AMORFA não procura pureza.<br>Procura o ponto<br>onde a beleza começa a cobrar aluguel.<br><br>Tudo que salva,<br>usa.<br><br>Tudo que brilha,<br>consome.<br><br>Tudo que parece controle,<br>também treme.<br><br>AMORFA,<br>uma forma instável<br>cantando o que resta<br>quando a superfície<br>começa a devolver o dano.</p></div>
-        </details>
-        <details class="post-card panel" data-post-type="transmissao">
-          <summary><span>T-005</span><strong>001</strong><em>transmissao</em></summary>
-          <div class="post-content"><p>TUDO QUE EU USO ME USA DE VOLTA<br>está no Spotify.<br><br>Treze faixas.<br>Uma entrada.<br>Nenhuma saída limpa.<br><br>O primeiro disco começa onde<br>a maioria das coisas termina:<br>na superfície funcionando.<br><br>App, vitrine, corpo-produto,<br>luz azul, glamour como protocolo,<br>mercado como linguagem afetiva.<br><br>A forma ainda inteira.<br>O dano ainda interno.<br><br>Isso é o Estado I.<br><br>A lei aqui é simples:<br>tudo que salva<br>também devora.<br><br>Você já sabia.<br>Continuou assim mesmo.<br><br>Assim como eu.<br><br>— AMORFA</p></div>
-        </details>
-        <details class="post-card panel" data-post-type="fragmento">
-          <summary><span>T-002</span><strong></strong><em>fragmento</em></summary>
-          <div class="post-content"><p>Posta uma foto.<br>apaga.<br>posta de novo.<br>espera.<br><br>sem perceber,<br>o teu corpo inteiro<br>começa a depender<br>de uma luz azul<br>pra continuar funcionando.</p></div>
-        </details>
-        <details class="post-card panel" data-post-type="fragmento">
-          <summary><span>T-003</span><strong>TRAMA</strong><em>fragmento</em></summary>
-          <div class="post-content"><p>Entre dois galhos,<br>o fio.<br>Nos nós,<br>o orvalho endurece<br>o desenho<br>que a luz quase apaga.<br>De longe,<br>renda.<br>De perto,<br>cola.<br>Rocei primeiro.<br>Manga.<br>Pulso.<br>Um fio frio,<br>quase cabelo molhado,<br>pegou na pele.<br>Depois outro<br>e outro.<br>Nos galhos,<br>a trama seguia limpa.<br>No braço,<br>já prendia.<br>Tentei limpar.<br>A seda cedia,<br>refazia-se,<br>mais fiel à carne<br>do que a água.<br>Um casco leve de inseto,<br>uma asa mal dobrada,<br>e o centro repuxando<br>sem mover as folhas.<br>O extremo mais remoto<br>já puxava o centro<br>pela minha pele.</p></div>
-        </details>
-        <details class="post-card panel" data-post-type="fragmento">
-          <summary><span>T-004</span><strong>Brilhar</strong><em>fragmento</em></summary>
-          <div class="post-content"><p>Eu brilho até cansar.<br>Você nem sente o calor<br>e eu ainda chamo de sinal.<br>Te vejo antes da curva.<br>Te ouço antes do som.<br>Você não chega nunca,<br>mas bagunça minha gravidade.</p></div>
-        </details>
-      </section>
+      <p class="eyebrow" style="text-shadow:0 1px 14px rgba(0,0,0,.9)">transmissões</p>
+      <h1 style="font-size:clamp(18px,2vw,32px);letter-spacing:.1em;line-height:1.2;color:var(--blue2);text-shadow:0 1px 14px rgba(0,0,0,.9);margin:0">Voz pública.</h1>
+      <p class="lead" style="margin:1.2rem 0 0;text-shadow:0 1px 14px rgba(0,0,0,.85);max-width:560px">Posts longos da AMORFA. Anúncios. Falas diretas ao público.</p>
+
+      <div class="tx-list" id="txList">
+        <div style="text-align:center;padding:40px;color:var(--muted);font-size:12px">Carregando transmissões...</div>
+      </div>
     </main>
   </div>
-  <script src="assets/site.js?v=13" defer></script>
+
+  <script>
+    function escapeHtml(s) {
+      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function formatDate(s) {
+      const m = String(s).match(/^(\d{4})-(\d{2})-(\d{2})/);
+      return m ? (m[3] + '.' + m[2] + '.' + m[1]) : s;
+    }
+
+    fetch('transmissoes.json?v=' + Date.now())
+      .then(r => r.json())
+      .then(data => {
+        const list = document.getElementById('txList');
+        const all = data.posts || [];
+        const items = all.filter(p => p.tipo === 'transmissao' || !p.tipo).slice().reverse();
+        if (!items.length) {
+          list.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted);font-size:12px">Nenhuma transmissão ainda.</div>';
+          return;
+        }
+        list.innerHTML = items.map(function(p, idx) {
+          const id = p.id || ('T-' + String(idx + 1).padStart(3, '0'));
+          const titulo = p.titulo || '—';
+          const dt = p.data ? formatDate(p.data) : '';
+
+          var mediaHtml = '';
+          if (p.imagem) {
+            const fmt = p.imagemFormato || 'horizontal';
+            const tam = p.imagemTamanho || 'media';
+            const ali = p.imagemAlinhamento || 'centro';
+            const alt = (p.imagemAlt || titulo).replace(/"/g, '&quot;');
+            const cap = p.imagemLegenda
+              ? '<div class="tx-media-caption">' + escapeHtml(p.imagemLegenda) + '</div>'
+              : '';
+            mediaHtml =
+              '<figure class="tx-media fmt-' + fmt + ' tam-' + tam + ' align-' + ali + '">' +
+                '<img src="' + p.imagem + '" alt="' + alt + '" loading="lazy">' +
+                cap +
+              '</figure>';
+          }
+
+          const faixaHtml = p.faixa
+            ? '<div class="tx-faixa">↳ ' + escapeHtml(p.faixa) + '</div>'
+            : '';
+          const isOpen = idx === 0 ? ' open' : '';
+
+          return '<details class="tx-post"' + isOpen + '>' +
+            '<summary class="tx-summary">' +
+              '<span class="id">' + escapeHtml(id) + '</span>' +
+              '<strong>' + escapeHtml(titulo) + '</strong>' +
+              '<em>' + escapeHtml(dt) + '</em>' +
+            '</summary>' +
+            '<div class="tx-body">' +
+              mediaHtml +
+              '<div class="tx-content">' + escapeHtml(p.conteudo || '') + '</div>' +
+              faixaHtml +
+            '</div>' +
+          '</details>';
+        }).join('');
+      })
+      .catch(function(err) {
+        document.getElementById('txList').innerHTML =
+          '<div style="text-align:center;padding:40px;color:var(--muted);font-size:12px">Erro ao carregar transmissões.</div>';
+        console.error(err);
+      });
+  </script>
+
+  <script src="assets/site.js?v=14" defer></script>
 
   <footer class="site-footer" aria-hidden="true">AMORFA &copy; 2026 &middot; projetoamorfa@gmail.com</footer>
 </body>
