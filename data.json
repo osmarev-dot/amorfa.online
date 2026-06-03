@@ -6,7 +6,7 @@
       "date": "29 mai 2026",
       "status": "disponível agora",
       "title": "Tudo Que Eu Uso Me Usa de Volta",
-      "image": "album-1.webp",
+      "image": "assets/images/album-1-uso-face-crack.webp",
       "concept": "A tela acende. O corpo responde. A superfície cobra.",
       "summary": "Tudo que ajuda a funcionar também aprende a usar.",
       "tracks": [
@@ -31,7 +31,7 @@
       "date": "05 jun 2026",
       "status": "em breve",
       "title": "Pequenos Incêndios sob o Ar-Condicionado no Máximo",
-      "image": "album-2.webp",
+      "image": "assets/images/album-2-incendios-candle.webp",
       "concept": "A pele registra. O quarto esfria. A marca fica quente.",
       "summary": "Contato não apaga. Só muda de temperatura.",
       "tracks": [
@@ -72,7 +72,7 @@
       "date": "19 jun 2026",
       "status": "em breve",
       "title": "Teologia dos Fracassos Afetivos em Cama de Solteiro",
-      "image": "album-3.webp",
+      "image": "assets/images/album-3-teologia-circle.webp",
       "concept": "A cama vira altar. O sinal vira rito. A ausência cria rotina.",
       "summary": "O quase aprende a ocupar o quarto.",
       "tracks": [
@@ -97,7 +97,7 @@
       "date": "26 jun 2026",
       "status": "em breve",
       "title": "Fantasmogênese",
-      "image": "album-4.webp",
+      "image": "assets/images/album-4-fantasmogenese-ectoplasm.webp",
       "concept": "O vidro respira. A forma falha. O arquivo ganha voz.",
       "summary": "Nada desaparece inteiro.",
       "tracks": [
@@ -117,7 +117,7 @@
       "date": "03 jul 2026",
       "status": "em breve",
       "title": "O Arranjo do Submundo",
-      "image": "album-5.webp",
+      "image": "assets/images/album-5-submundo-amphora.webp",
       "concept": "A casa abre por baixo. A fome mostra a planta. O mecanismo respira.",
       "summary": "Descer não revela tudo. Só deixa a porta acesa.",
       "tracks": [

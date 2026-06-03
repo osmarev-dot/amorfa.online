@@ -32,11 +32,11 @@
   const artistUrl   = "https://open.spotify.com/artist/6hbGT8M54r38uokc9q09ys";
 
   const dailyTracks = [
-    { title: "Fusão Nuclear", album: "I / SUPERFÍCIE", cover: "album-1.webp", url: artistUrl },
-    { title: "Hematoma", album: "II / CORPO", cover: "album-2.webp", url: artistUrl },
-    { title: "Toque Fantasma", album: "III / AUSÊNCIA", cover: "album-3.webp", url: artistUrl },
-    { title: "Fantasmogênese", album: "IV / FANTASMA", cover: "album-4.webp", url: artistUrl },
-    { title: "O Arranjo do Submundo", album: "V / SUBMUNDO", cover: "album-5.webp", url: artistUrl },
+    { title: "Fusão Nuclear", album: "I / SUPERFÍCIE", cover: "assets/images/album-1-uso-face-crack.webp", url: artistUrl },
+    { title: "Hematoma", album: "II / CORPO", cover: "assets/images/album-2-incendios-candle.webp", url: artistUrl },
+    { title: "Toque Fantasma", album: "III / AUSÊNCIA", cover: "assets/images/album-3-teologia-circle.webp", url: artistUrl },
+    { title: "Fantasmogênese", album: "IV / FANTASMA", cover: "assets/images/album-4-fantasmogenese-ectoplasm.webp", url: artistUrl },
+    { title: "O Arranjo do Submundo", album: "V / SUBMUNDO", cover: "assets/images/album-5-submundo-amphora.webp", url: artistUrl },
   ];
 
   const fallbackData = {
@@ -48,7 +48,7 @@
           date: "29 mai 2026",
           status: "disponível agora",
           title: "Tudo Que Eu Uso Me Usa de Volta",
-          image: "album-1.webp",
+          image: "assets/images/album-1-uso-face-crack.webp",
           concept: "A tela acende. O corpo responde. A superfície cobra.",
           summary: "Tudo que ajuda a funcionar também aprende a usar.",
           tracks: ["Versão Consumida", "Fusão Nuclear", "Luz Azul", "Modo Avião", "Só o Que Vende / Livre Pra Quem", "Kouros de Silício", "Corpo-Entulho", "Vênus Aflita", "Você Era Banal", "Placebo", "Glamour Febril", "Cento e Oitenta", "Terminal"],
@@ -59,7 +59,7 @@
           date: "05 jun 2026",
           status: "em breve",
           title: "Pequenos Incêndios sob o Ar-Condicionado no Máximo",
-          image: "album-2.webp",
+          image: "assets/images/album-2-incendios-candle.webp",
           concept: "A pele registra. O quarto esfria. A marca fica quente.",
           summary: "Contato não apaga. Só muda de temperatura.",
           tracks: ["Erro de Cálculo", "Fidelidade Antiga", "Não Claro", "Amor Com Dentes", "O Devorador", "Mercúrio", "Manutenção Mínima", "Pronta", "Portador da Luz", "Hematoma", "O Corpo Que Eu Tentei Ser", "Mão no Bolso"],
@@ -82,7 +82,7 @@
           date: "19 jun 2026",
           status: "em breve",
           title: "Teologia dos Fracassos Afetivos em Cama de Solteiro",
-          image: "album-3.webp",
+          image: "assets/images/album-3-teologia-circle.webp",
           concept: "A cama vira altar. O sinal vira rito. A ausência cria rotina.",
           summary: "O quase aprende a ocupar o quarto.",
           tracks: ["Santo Errado", "Tarde Demais", "O Culto da Carne", "Lockdown (Terror Cult)", "Toque Fantasma", "Fracasso de Estimação", "Não Se Preocupa (Era Bituca)", "Cortesia do Medo", "Vinte e Três", "Quase Verdade", "Matéria Escura", "Para Onde Eu Fui?", "O Reino do Quase"],
@@ -93,7 +93,7 @@
           date: "26 jun 2026",
           status: "em breve",
           title: "Fantasmogênese",
-          image: "album-4.webp",
+          image: "assets/images/album-4-fantasmogenese-ectoplasm.webp",
           concept: "O vidro respira. A forma falha. O arquivo ganha voz.",
           summary: "Nada desaparece inteiro.",
           tracks: ["Onde Se Guarda", "Frequência Distorcida", "Fantasmogênese", "Campo Nulo", "Baixa Resolução", "Dose de Impulso", "Ritual de Fogo", "Junho, De Novo"],
@@ -104,7 +104,7 @@
           date: "03 jul 2026",
           status: "em breve",
           title: "O Arranjo do Submundo",
-          image: "album-5.webp",
+          image: "assets/images/album-5-submundo-amphora.webp",
           concept: "A casa abre por baixo. A fome mostra a planta. O mecanismo respira.",
           summary: "Descer não revela tudo. Só deixa a porta acesa.",
           tracks: ["LIMIAR", "A Porta Debaixo da Casa", "Organismo Associado", "A Casa Dormia com os Olhos Abertos", "A Ânfora", "A Sutura Invisível", "O Arranjo do Submundo", "O Guardião das Formas", "Erro Original", "Flor de Plástico", "Colapso"],
