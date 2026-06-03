@@ -5,7 +5,7 @@ Nada foi publicado automaticamente.
 
 Antes de subir:
 - Abra index.html e confira a home.
-- Abra ouvir.html, onde-se-guarda.html, transmissoes.html, estratos.html e sobre.html.
+- Abra ouvir.html, onde-se-guarda.html, transmissoes.html, estratos.html, sobre.html e contato.html.
 - Se o navegador mostrar versão antiga, use Ctrl + F5.
 
 Para publicar pelo GitHub Desktop:

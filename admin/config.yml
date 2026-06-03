@@ -5,19 +5,14 @@ backend:
   base_url: https://amorfa-oauth.osmar-ev.workers.dev
   auth_endpoint: auth
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "assets/uploads/transmissoes"
+public_folder: "/assets/uploads/transmissoes"
 
 locale: pt
 
 collections:
-
-  # ────────────────────────────────────────
-  # TRANSMISSÕES — posts longos da AMORFA
-  # ────────────────────────────────────────
   - name: "transmissoes"
-    label: "📡 Transmissões"
-    description: "Posts longos onde a AMORFA fala diretamente."
+    label: "Transmissões"
     files:
       - name: "posts"
         label: "Todas as Transmissões"
@@ -27,131 +22,37 @@ collections:
             label: Transmissões
             label_singular: Transmissão
             widget: list
-            summary: "{{fields.id}} — {{fields.titulo}}"
+            summary: "{{fields.id}} — {{fields.tipo}}"
             fields:
               - {label: "ID", name: "id", widget: "string", hint: "Ex: T-008, T-009..."}
               - label: "Tipo"
                 name: "tipo"
-                widget: "hidden"
-                default: "transmissao"
-              - {label: "Título", name: "titulo", widget: "string", required: false, default: "", hint: "Curto, em maiúsculas. Ex: AMORFA, 001, BAIXA RESOLUÇÃO"}
-              - label: "Data (opcional)"
-                name: "data"
-                widget: "datetime"
-                required: false
-                format: "YYYY-MM-DD"
-                date_format: "DD.MM.YYYY"
-                time_format: false
-
-              - label: "📷 Imagem (opcional)"
+                widget: "select"
+                options:
+                  - {label: "Transmissão — AMORFA fala diretamente", value: "transmissao"}
+                  - {label: "Fragmento — frase, trecho ou imagem solta", value: "fragmento"}
+              - {label: "Título (opcional)", name: "titulo", widget: "string", required: false, default: ""}
+              - label: "Imagem (opcional)"
                 name: "imagem"
                 widget: "image"
                 required: false
                 media_folder: "/assets/uploads/transmissoes"
                 public_folder: "/assets/uploads/transmissoes"
-
               - label: "Formato da imagem"
                 name: "imagemFormato"
                 widget: "select"
                 required: false
                 default: "horizontal"
                 options:
-                  - {label: "Horizontal (16:9) — paisagem", value: "horizontal"}
-                  - {label: "Vertical (4:5) — retrato", value: "vertical"}
-                  - {label: "Quadrada (1:1) — capa", value: "quadrada"}
+                  - {label: "Horizontal (16:9)", value: "horizontal"}
+                  - {label: "Vertical (4:5)", value: "vertical"}
+                  - {label: "Quadrada (1:1)", value: "quadrada"}
+              - {label: "Texto alternativo da imagem", name: "imagemAlt", widget: "string", required: false, default: ""}
+              - {label: "Conteúdo", name: "conteudo", widget: "text"}
+              - {label: "Faixa relacionada (opcional)", name: "faixa", widget: "string", required: false, default: ""}
 
-              - label: "Alinhamento da imagem"
-                name: "imagemAlinhamento"
-                widget: "select"
-                required: false
-                default: "centro"
-                options:
-                  - {label: "Centralizada", value: "centro"}
-                  - {label: "Esquerda — texto à direita", value: "esquerda"}
-                  - {label: "Direita — texto à esquerda", value: "direita"}
-                  - {label: "Topo, largura total", value: "largo"}
-
-              - label: "Tamanho da imagem"
-                name: "imagemTamanho"
-                widget: "select"
-                required: false
-                default: "media"
-                options:
-                  - {label: "Pequena (380px)", value: "pequena"}
-                  - {label: "Média (560px)", value: "media"}
-                  - {label: "Grande (760px)", value: "grande"}
-
-              - {label: "Legenda da imagem", name: "imagemLegenda", widget: "string", required: false, default: "", hint: "Aparece abaixo da imagem"}
-              - {label: "Texto alternativo (acessibilidade)", name: "imagemAlt", widget: "string", required: false, default: ""}
-
-              - {label: "✍ Conteúdo", name: "conteudo", widget: "text", hint: "O texto da transmissão. Quebra de linha simples = nova linha. Linha em branco = parágrafo."}
-              - {label: "Faixa relacionada (opcional)", name: "faixa", widget: "string", required: false, default: "", hint: "Nome da faixa, aparece ao final do post"}
-              - {label: "🎵 Player — link da música (opcional)", name: "playerUrl", widget: "string", required: false, default: "", hint: "Cole o link do Spotify, YouTube ou Apple Music. Aparece como player compacto no final do post."}
-
-  # ────────────────────────────────────────
-  # FRAGMENTOS — cards pequenos (era Arquivo)
-  # ────────────────────────────────────────
-  - name: "fragmentos"
-    label: "🧩 Fragmentos"
-    description: "Frases curtas, versos, restos visuais. Aparecem como cards na página /arquivo."
-    files:
-      - name: "items"
-        label: "Todos os Fragmentos"
-        file: "fragmentos.json"
-        fields:
-          - name: items
-            label: Fragmentos
-            label_singular: Fragmento
-            widget: list
-            summary: "{{fields.id}} — {{fields.texto | truncate(40)}}"
-            fields:
-              - {label: "ID", name: "id", widget: "string", hint: "Ex: F-001, F-002...", required: false, default: ""}
-              - label: "Conteúdo do card"
-                name: "modo"
-                widget: "select"
-                default: "texto"
-                hint: "O que esse card mostra?"
-                options:
-                  - {label: "Só texto", value: "texto"}
-                  - {label: "Só imagem", value: "imagem"}
-                  - {label: "Imagem + texto sobreposto", value: "ambos"}
-
-              - {label: "Texto / verso", name: "texto", widget: "text", required: false, default: "", hint: "Frase curta. Quebra de linha = nova linha visual."}
-
-              - label: "Imagem (opcional)"
-                name: "imagem"
-                widget: "image"
-                required: false
-                media_folder: "/assets/uploads/fragmentos"
-                public_folder: "/assets/uploads/fragmentos"
-
-              - label: "Tom do card"
-                name: "tom"
-                widget: "select"
-                required: false
-                default: "neutro"
-                options:
-                  - {label: "Neutro — fundo escuro", value: "neutro"}
-                  - {label: "Azul — fundo azulado", value: "azul"}
-                  - {label: "Vermelho — destaque/alerta", value: "vermelho"}
-
-              - label: "Tamanho do texto"
-                name: "tamanho"
-                widget: "select"
-                required: false
-                default: "medio"
-                options:
-                  - {label: "Pequeno (10px)", value: "pequeno"}
-                  - {label: "Médio (12px)", value: "medio"}
-                  - {label: "Grande (15px)", value: "grande"}
-
-              - {label: "Data (opcional)", name: "data", widget: "datetime", required: false, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false}
-
-  # ────────────────────────────────────────
-  # ESTRATOS — poemas dos livros
-  # ────────────────────────────────────────
   - name: "estratos"
-    label: "📚 Estratos — Poemas"
+    label: "Estratos — Poemas"
     files:
       - name: "posts"
         label: "Todos os Poemas dos Estratos"
@@ -167,6 +68,7 @@ collections:
               - label: "Estrato"
                 name: "estrato"
                 widget: "select"
+                hint: "Em qual estrato esse poema vai aparecer"
                 options:
                   - {label: "Estrato 0 — O Guardião das Formas", value: "0"}
                   - {label: "Estrato I — O Legista dos Corpos Transitórios", value: "I"}
