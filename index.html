@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
@@ -130,7 +130,7 @@
   <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preload" as="image" href="visual-header-azul.png">
+  <link rel="preload" as="image" href="hero-antologia-onde-se-guarda.png">
   <link rel="preload" as="image" href="logo-amorfa-hero.webp">
 
   <style>
@@ -147,7 +147,7 @@
     /* ── Background photo ── */
     .bg {
       position: fixed; inset: 0; z-index: 0;
-      background: url('visual-header-azul.png') 50% 35% / cover no-repeat;
+      background: url('hero-antologia-onde-se-guarda.png') 50% 35% / cover no-repeat;
     }
     .bg::after {
       content: '';
@@ -175,7 +175,7 @@
     .logo img {
       width: clamp(160px, 18vw, 280px);
       height: auto;
-      filter: drop-shadow(0 0 32px rgba(111,168,216,.28));
+      filter: drop-shadow(0 0 32px rgba(184,170,143,.28));
     }
 
     /* ── Cross dividers — invisible ── */
@@ -210,19 +210,19 @@
     .quad::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(circle at var(--ox, 50%) var(--oy, 50%), rgba(111,168,216,.09), transparent 68%);
+      background: radial-gradient(circle at var(--ox, 50%) var(--oy, 50%), rgba(184,170,143,.09), transparent 68%);
       opacity: 0;
       transition: opacity 0.32s ease;
     }
     .quad:hover::before { opacity: 1; }
-    .quad:hover { background: rgba(111,168,216,.03); }
+    .quad:hover { background: rgba(184,170,143,.03); }
 
     /* Corner border on hover */
     .quad::after {
       content: '';
       position: absolute;
       width: 28px; height: 28px;
-      border-color: rgba(154,190,222,.5);
+      border-color: rgba(216,203,178,.5);
       border-style: solid;
       opacity: 0;
       transition: opacity 0.25s ease, width 0.25s ease, height 0.25s ease;
@@ -242,7 +242,7 @@
 
     .q-num {
       font-size: clamp(9px, 0.9vw, 11px);
-      color: rgba(111,168,216,.45);
+      color: rgba(184,170,143,.45);
       letter-spacing: .24em;
       text-transform: uppercase;
     }
@@ -258,19 +258,19 @@
     }
     .quad:hover .q-name {
       color: rgba(216,221,228,1);
-      text-shadow: 0 0 32px rgba(111,168,216,.55);
+      text-shadow: 0 0 32px rgba(184,170,143,.55);
     }
 
     .q-desc {
       font-size: clamp(9px, 0.9vw, 11px);
-      color: rgba(123,135,150,.5);
+      color: rgba(157,148,132,.5);
       letter-spacing: .12em;
       text-transform: uppercase;
       line-height: 1.55;
       transition: color 0.25s;
       max-width: 200px;
     }
-    .quad:hover .q-desc { color: rgba(123,135,150,.85); }
+    .quad:hover .q-desc { color: rgba(157,148,132,.85); }
 
     /* ── Status bar ── */
     .status {
@@ -279,8 +279,8 @@
       padding: 13px 36px;
       font-size: clamp(9px, 0.85vw, 11px);
       letter-spacing: .18em; text-transform: uppercase;
-      color: rgba(111,168,216,.4);
-      border-top: 1px solid rgba(154,190,222,.1);
+      color: rgba(184,170,143,.4);
+      border-top: 1px solid rgba(216,203,178,.1);
       background: rgba(2,4,6,.52);
       backdrop-filter: blur(12px);
     }
@@ -296,15 +296,15 @@
 
     /* ── Glitch: logo chromatic aberration ── */
     @keyframes logoGlitch {
-      0%   { filter: drop-shadow(0 0 32px rgba(111,168,216,.28)); transform: translate(0,0) scaleX(1); }
-      10%  { filter: drop-shadow(-4px 0 rgba(255,0,80,.8)) drop-shadow(4px 0 rgba(0,200,255,.6)); transform: translate(-3px,0) scaleX(1.005); }
-      20%  { filter: drop-shadow(4px 0 rgba(255,0,80,.6)) drop-shadow(-3px 0 rgba(0,200,255,.8)); transform: translate(3px,1px) scaleX(.998); }
-      30%  { filter: drop-shadow(0 0 28px rgba(111,168,216,.18)); transform: translate(0,0); }
-      40%  { filter: drop-shadow(-2px 0 rgba(255,0,80,.5)) drop-shadow(2px 0 rgba(0,200,255,.5)); transform: translate(-1.5px,-.5px); }
-      50%  { filter: drop-shadow(0 0 44px rgba(111,168,216,.42)) drop-shadow(0 0 6px rgba(255,255,255,.18)); transform: translate(1px,.5px); }
-      60%  { filter: drop-shadow(-3px 0 rgba(255,0,80,.35)) drop-shadow(3px 0 rgba(0,200,255,.35)); transform: translate(-1px,0); }
-      70%  { filter: drop-shadow(0 0 32px rgba(111,168,216,.28)); transform: translate(0,0); }
-      100% { filter: drop-shadow(0 0 32px rgba(111,168,216,.28)); transform: translate(0,0); }
+      0%   { filter: drop-shadow(0 0 32px rgba(184,170,143,.28)); transform: translate(0,0) scaleX(1); }
+      10%  { filter: drop-shadow(-4px 0 rgba(255,0,80,.8)) drop-shadow(4px 0 rgba(226,218,200,.6)); transform: translate(-3px,0) scaleX(1.005); }
+      20%  { filter: drop-shadow(4px 0 rgba(255,0,80,.6)) drop-shadow(-3px 0 rgba(226,218,200,.8)); transform: translate(3px,1px) scaleX(.998); }
+      30%  { filter: drop-shadow(0 0 28px rgba(184,170,143,.18)); transform: translate(0,0); }
+      40%  { filter: drop-shadow(-2px 0 rgba(255,0,80,.5)) drop-shadow(2px 0 rgba(226,218,200,.5)); transform: translate(-1.5px,-.5px); }
+      50%  { filter: drop-shadow(0 0 44px rgba(184,170,143,.42)) drop-shadow(0 0 6px rgba(255,255,255,.18)); transform: translate(1px,.5px); }
+      60%  { filter: drop-shadow(-3px 0 rgba(255,0,80,.35)) drop-shadow(3px 0 rgba(226,218,200,.35)); transform: translate(-1px,0); }
+      70%  { filter: drop-shadow(0 0 32px rgba(184,170,143,.28)); transform: translate(0,0); }
+      100% { filter: drop-shadow(0 0 32px rgba(184,170,143,.28)); transform: translate(0,0); }
     }
     .logo.glitch img {
       animation: logoGlitch 0.55s steps(1) 1 forwards;
@@ -323,7 +323,7 @@
     }
     .quad:hover .q-name {
       color: rgba(216,221,228,1);
-      text-shadow: 0 0 32px rgba(111,168,216,.55);
+      text-shadow: 0 0 32px rgba(184,170,143,.55);
       animation: nameTremor 0.11s steps(1) infinite;
     }
     /* q-desc subtle fade-in tremor */
@@ -333,7 +333,7 @@
       66%     { transform: translate(1px,.5px); opacity:.9; }
     }
     .quad:hover .q-desc {
-      color: rgba(123,135,150,.85);
+      color: rgba(157,148,132,.85);
       animation: descTremor 0.18s steps(1) infinite;
     }
 
@@ -358,7 +358,7 @@
 
       /* Foto exclusiva mobile, vertical */
       .bg {
-        background: url('fundo-mobile-home.png') center 25% / cover no-repeat;
+        background: url('hero-antologia-onde-se-guarda.png') center 25% / cover no-repeat;
       }
       .bg::after {
         background:
@@ -373,7 +373,7 @@
       }
       .logo img {
         width: 180px;
-        filter: drop-shadow(0 0 24px rgba(111,168,216,.45));
+        filter: drop-shadow(0 0 24px rgba(184,170,143,.45));
       }
 
       /* Grid: 4 linhas com tap target adequado, alinhadas no rodapé */
@@ -388,7 +388,7 @@
         min-height: 72px;
         align-items: center !important;
         justify-content: flex-start !important;
-        border-top: 1px solid rgba(154,190,222,.08);
+        border-top: 1px solid rgba(216,203,178,.08);
       }
       .quad:first-child { border-top: 0; }
       .quad::after { display: none; }
