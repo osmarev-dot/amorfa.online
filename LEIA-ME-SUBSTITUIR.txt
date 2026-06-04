@@ -1,6 +1,6 @@
-AMORFA — reestruturação da Discografia
+AMORFA — Discografia limpa / paleta quente
 
-Substitua estes arquivos na raiz do repositório/site:
+Substitua estes arquivos na raiz do site:
 
 - albuns.html
 - onde-se-guarda.html
@@ -12,11 +12,11 @@ Substitua estes arquivos na raiz do repositório/site:
 - album-fantasmogenese.html
 - album-submundo.html
 
-O que foi corrigido:
-1. albuns.html virou HUB da discografia.
-2. onde-se-guarda.html deixou de ser redirect e virou página da antologia.
-3. lancamentos.html deixou de ser redirect e virou página de EPs/paralelos.
-4. cada álbum agora tem uma página isolada, sem concatenação/rolagem porca.
-5. ep.html foi reclassificado como EP paralelo, não “fora do projeto”.
+Mudanças:
+- Antologia agora mostra só os títulos principais dos cinco álbuns.
+- Removidos subtítulos/imprecisões psicológicas visíveis.
+- Azul trocado por paleta quente de pedra/cinza/âmbar envelhecido.
+- Legibilidade reforçada com overlay escuro.
+- Fundos dos álbuns trocados para artes conceituais do novo sistema visual.
 
-Depois de subir: commit/push e aguardar o deploy do GitHub Pages.
+Não precisa substituir imagens: este pacote usa arquivos que já existem no site atual.
