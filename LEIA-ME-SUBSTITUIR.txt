@@ -1,0 +1,22 @@
+AMORFA — reestruturação da Discografia
+
+Substitua estes arquivos na raiz do repositório/site:
+
+- albuns.html
+- onde-se-guarda.html
+- lancamentos.html
+- ep.html
+- album-uso.html
+- album-incendios.html
+- album-teologia.html
+- album-fantasmogenese.html
+- album-submundo.html
+
+O que foi corrigido:
+1. albuns.html virou HUB da discografia.
+2. onde-se-guarda.html deixou de ser redirect e virou página da antologia.
+3. lancamentos.html deixou de ser redirect e virou página de EPs/paralelos.
+4. cada álbum agora tem uma página isolada, sem concatenação/rolagem porca.
+5. ep.html foi reclassificado como EP paralelo, não “fora do projeto”.
+
+Depois de subir: commit/push e aguardar o deploy do GitHub Pages.
