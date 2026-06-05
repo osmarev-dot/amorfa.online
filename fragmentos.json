@@ -51,8 +51,9 @@
     },
     {
       "id": "F-007",
-      "modo": "texto",
-      "texto": "antes a cura\nagora sintoma",
+      "modo": "imagem",
+      "texto": "",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_36_14.png",
       "tom": "vermelho",
       "tamanho": "medio",
       "data": ""
@@ -61,6 +62,7 @@
       "id": "F-008",
       "modo": "imagem",
       "texto": "",
+      "imagem": "/assets/uploads/fragmentos/10.png",
       "tom": "vermelho",
       "tamanho": "medio",
       "data": ""
