@@ -1,15 +1,26 @@
-AMORFA.ONLINE v2.2 — FOTOS ESTÁTICAS NO FUNDO
+AMORFA.ONLINE — PACOTE FINAL HERMES
+Data: 2026-06-05
 
 Correções aplicadas:
-- Player grande removido.
-- Módulo lateral NO AR adicionado com rotação diária.
-- Fotos estáticas de fundo por página.
-- Capas dos álbuns com object-fit: contain para não cortar.
-- Tracklists alinhadas sem coluna inútil de duração.
-- Página Ouvir restaurada com Spotify, Apple Music, Amazon Music, Deezer, Tidal, YouTube Music, YouTube, Instagram, TikTok e X.
-- Imagens de fundo copiadas da versão visual que funcionou.
+- TikTok padronizado para https://www.tiktok.com/@amorfa.online.
+- Álbum I com CTA direto para Spotify: https://open.spotify.com/album/1nZDDHw5kjsS11Rg1Y5dBJ.
+- Álbum II com CTA direto para Spotify: https://open.spotify.com/intl-pt/album/0cDt4KcXIVqzIiCv9DEtpm.
+- Home recebeu CTA direto para “Ouvir Álbum II” e “Todas as plataformas”.
+- Página Ouvir recebeu bloco de lançamento atual para o Álbum II.
+- URLs do Spotify foram limpas, sem parâmetro ?si.
+- SEO da home recalibrado para entidade musical sintética brasileira / alternative dark synthetic pop / rock alternativo / synth-pop sombrio.
+- Botões de lançamentos futuros agora dizem “Seguir AMORFA no Spotify”, sem prometer link de álbum ainda não publicado.
+- Cache bust atualizado para site.css?v=22 e site.js?v=22.
+- Sitemap atualizado com lastmod 2026-06-05.
+- 404.html criado para páginas recolhidas.
 
 Subir:
 git add .
-git commit -m "fix: fotos estaticas de fundo e links oficiais"
+git commit -m "fix: atualiza tiktok spotify album ii e ctas"
 git push origin main
+
+Testar depois da publicação:
+- https://amorfa.online/
+- https://amorfa.online/ouvir.html
+- https://amorfa.online/album-incendios.html
+- https://amorfa.online/sitemap.xml

@@ -23,13 +23,15 @@
         "Glamour Febril",
         "Cento e Oitenta",
         "Terminal"
-      ]
+      ],
+      "spotifyUrl": "https://open.spotify.com/album/1nZDDHw5kjsS11Rg1Y5dBJ",
+      "current": false
     },
     {
       "id": "incendios",
       "type": "ÁLBUM II",
       "date": "05 jun 2026",
-      "status": "em breve",
+      "status": "disponível agora",
       "title": "Pequenos Incêndios sob o Ar-Condicionado no Máximo",
       "image": "album-2.webp",
       "concept": "o corpo queima sob refrigeração",
@@ -47,7 +49,9 @@
         "Hematoma",
         "O Corpo Que Eu Tentei Ser",
         "Mão no Bolso"
-      ]
+      ],
+      "spotifyUrl": "https://open.spotify.com/intl-pt/album/0cDt4KcXIVqzIiCv9DEtpm",
+      "current": true
     },
     {
       "id": "ep",
@@ -64,7 +68,10 @@
         "Assombração de Estimação",
         "Aceito Proposta",
         "Happy Valentine's (How Ghastly)"
-      ]
+      ],
+      "spotifyUrl": "https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys",
+      "spotifyNote": "fallback para perfil; trocar pelo link exato do lançamento quando disponível.",
+      "current": false
     },
     {
       "id": "teologia",
@@ -89,7 +96,10 @@
         "Matéria Escura",
         "Para Onde Eu Fui?",
         "O Reino do Quase"
-      ]
+      ],
+      "spotifyUrl": "https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys",
+      "spotifyNote": "fallback para perfil; trocar pelo link exato do lançamento quando disponível.",
+      "current": false
     },
     {
       "id": "fantasmogenese",
@@ -109,7 +119,10 @@
         "Dose de Impulso",
         "Ritual de Fogo",
         "Junho, De Novo"
-      ]
+      ],
+      "spotifyUrl": "https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys",
+      "spotifyNote": "fallback para perfil; trocar pelo link exato do lançamento quando disponível.",
+      "current": false
     },
     {
       "id": "submundo",
@@ -132,7 +145,10 @@
         "Erro Original",
         "Flor de Plástico",
         "Colapso"
-      ]
+      ],
+      "spotifyUrl": "https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys",
+      "spotifyNote": "fallback para perfil; trocar pelo link exato do lançamento quando disponível.",
+      "current": false
     }
   ]
 }

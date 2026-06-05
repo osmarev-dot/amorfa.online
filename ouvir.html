@@ -4,23 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ouvir AMORFA — Spotify, Apple Music, YouTube Music</title>
-  <meta name="description" content="Ouça AMORFA em todas as plataformas: Spotify, Apple Music, Amazon Music, Deezer, Tidal, YouTube Music.">
+  <meta name="description" content="Ouça AMORFA no Spotify, Apple Music, YouTube Music, Amazon Music, Deezer e Tidal. Álbum II disponível agora no Spotify.">
   <meta name="theme-color" content="#020406">
   <link rel="canonical" href="https://amorfa.online/ouvir.html">
   <meta property="og:title" content="Ouvir AMORFA — Spotify, Apple Music, YouTube Music">
-  <meta property="og:description" content="Ouça AMORFA em todas as plataformas: Spotify, Apple Music, Amazon Music, Deezer, Tidal, YouTube Music.">
+  <meta property="og:description" content="Álbum II disponível agora. Ouça AMORFA no Spotify e nas plataformas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://amorfa.online/ouvir.html">
-  <meta property="og:image" content="https://amorfa.online/album-1.webp">
+  <meta property="og:image" content="https://amorfa.online/album-2.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ouvir AMORFA — Spotify, Apple Music, YouTube Music">
-  <meta name="twitter:description" content="Ouça AMORFA em todas as plataformas: Spotify, Apple Music, Amazon Music, Deezer, Tidal, YouTube Music.">
-  <meta name="twitter:image" content="https://amorfa.online/album-1.webp">
+  <meta name="twitter:description" content="Álbum II disponível agora. Ouça AMORFA no Spotify e nas plataformas.">
+  <meta name="twitter:image" content="https://amorfa.online/album-2.webp">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon-32x32.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/site.css?v=20">
+  <link rel="stylesheet" href="assets/site.css?v=22">
   <style>
     .ouvir-center {
       display: flex !important;
@@ -86,6 +86,16 @@
       .icon-link.icon-sm { width: 30px; height: 30px; }
     }
   </style>
+
+  <style>
+    .release-feature{width:min(760px,100%);margin:0 auto 28px;padding:16px;display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:center;border:1px solid rgba(216,203,178,.18);background:rgba(0,0,0,.42);backdrop-filter:blur(7px)}
+    .release-feature img{width:96px;height:96px;object-fit:cover;border:1px solid rgba(216,203,178,.16);background:#000}
+    .release-feature small{display:block;color:var(--red);text-transform:uppercase;letter-spacing:.18em;font-size:9px;margin-bottom:6px}
+    .release-feature strong{display:block;color:var(--blue2);text-transform:uppercase;letter-spacing:.08em;font-weight:400;line-height:1.25;font-size:clamp(13px,1.5vw,20px)}
+    .release-feature p{margin:6px 0 14px;color:var(--muted);font-size:12px;line-height:1.55;letter-spacing:.04em}
+    .release-actions{display:flex;gap:10px;flex-wrap:wrap}.release-actions .btn{min-height:38px;font-size:10px;padding:0 14px}.release-actions .btn.primary{border-color:rgba(180,74,61,.62);background:rgba(180,74,61,.14)}
+    @media(max-width:560px){.release-feature{grid-template-columns:74px minmax(0,1fr);gap:12px;padding:12px}.release-feature img{width:74px;height:74px}.release-feature p{display:none}.release-actions .btn{width:100%}}
+  </style>
 </head>
 <body style="background: #020406 url('bg-web-form.png') center center / cover no-repeat fixed;">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -98,6 +108,20 @@
     </aside>
     <main id="conteudo" class="content ouvir-center">
       <h1 class="ouvir-title">Ouça AMORFA</h1>
+
+      <section class="release-feature" aria-label="Lançamento atual">
+        <img src="album-2.webp" alt="Capa de Pequenos Incêndios sob o Ar-Condicionado no Máximo" loading="lazy">
+        <div>
+          <small>Lançamento atual</small>
+          <strong>Pequenos Incêndios sob o Ar-Condicionado no Máximo</strong>
+          <p>O corpo queima sob refrigeração. Álbum II disponível agora.</p>
+          <div class="release-actions">
+            <a class="btn primary" href="https://open.spotify.com/intl-pt/album/0cDt4KcXIVqzIiCv9DEtpm" target="_blank" rel="noopener">Ouvir no Spotify</a>
+            <a class="btn" href="album-incendios.html">Abrir página do álbum</a>
+          </div>
+        </div>
+      </section>
+
 
       <div class="icon-row" aria-label="Streaming">
         <a class="icon-link" href="https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener" aria-label="Spotify"><img src="assets/logos/spotify.png" alt="Spotify" loading="lazy"></a>
@@ -114,12 +138,12 @@
 
       <div class="icon-row" aria-label="Redes">
         <a class="icon-link icon-sm" href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/logos/instagram.png" alt="Instagram" loading="lazy"></a>
-        <a class="icon-link" href="https://www.tiktok.com/@amorfa.wav" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/logos/tiktok.png" alt="TikTok" loading="lazy"></a>
+        <a class="icon-link" href="https://www.tiktok.com/@amorfa.online" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/logos/tiktok.png" alt="TikTok" loading="lazy"></a>
         <a class="icon-link icon-sm" href="https://x.com/amorfaonline" target="_blank" rel="noopener" aria-label="X"><img src="assets/logos/x.png" alt="X" loading="lazy"></a>
       </div>
     </main>
   </div>
-  <script src="assets/site.js?v=20" defer></script>
+  <script src="assets/site.js?v=22" defer></script>
 
   <footer class="site-footer">
     <div class="ft-brand">AMORFA</div>

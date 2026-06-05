@@ -2,40 +2,45 @@
   "items": [
     {
       "id": "F-001",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "Corpo-entulho. O que sobra depois que a pose morre. O que ninguém posta.",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_35_59.png",
       "tom": "neutro",
       "tamanho": "medio",
       "data": "2026-05-30"
     },
     {
       "id": "F-002",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "esse frio\nnão vem com o vento",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_35_54.png",
       "tom": "azul",
       "tamanho": "medio",
-      "data": ""
+      "data": "2026-06-04"
     },
     {
       "id": "F-003",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "sua língua\ndançando atrás\ndos dentes",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_35_44.png",
       "tom": "neutro",
       "tamanho": "medio",
       "data": ""
     },
     {
       "id": "F-004",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "a forma falha",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_35_49.png",
       "tom": "neutro",
-      "tamanho": "grande",
+      "tamanho": "medio",
       "data": ""
     },
     {
       "id": "F-005",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "a transmissão\ncontinua",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 11_20_57.png",
       "tom": "azul",
       "tamanho": "medio",
       "data": ""
@@ -45,14 +50,15 @@
       "modo": "texto",
       "texto": "um adeus\nsem olá",
       "imagem": "/assets/uploads/fragmentos/10.png",
-      "tom": "neutro",
+      "tom": "azul",
       "tamanho": "medio",
       "data": ""
     },
     {
       "id": "F-007",
-      "modo": "texto",
-      "texto": "antes a cura\nagora sintoma",
+      "modo": "imagem",
+      "texto": "",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_36_14.png",
       "tom": "vermelho",
       "tamanho": "medio",
       "data": ""
@@ -61,6 +67,7 @@
       "id": "F-008",
       "modo": "imagem",
       "texto": "",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_36_47.png",
       "tom": "vermelho",
       "tamanho": "medio",
       "data": ""
@@ -69,7 +76,7 @@
       "id": "F-009",
       "modo": "imagem",
       "texto": "",
-      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 29 de mai. de 2026, 23_30_02.png",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_38_19.png",
       "tom": "azul",
       "tamanho": "medio",
       "data": "2026-05-30"
