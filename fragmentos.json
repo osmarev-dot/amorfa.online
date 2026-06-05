@@ -29,7 +29,7 @@
     },
     {
       "id": "F-004",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "a forma falha",
       "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_35_49.png",
       "tom": "neutro",
@@ -38,7 +38,7 @@
     },
     {
       "id": "F-005",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "a transmissão\ncontinua",
       "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 11_20_57.png",
       "tom": "azul",
@@ -67,7 +67,7 @@
       "id": "F-008",
       "modo": "imagem",
       "texto": "",
-      "imagem": "/assets/uploads/fragmentos/10.png",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_36_47.png",
       "tom": "vermelho",
       "tamanho": "medio",
       "data": ""
