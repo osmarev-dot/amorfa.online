@@ -2,8 +2,9 @@
   "items": [
     {
       "id": "F-001",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "Corpo-entulho. O que sobra depois que a pose morre. O que ninguém posta.",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_35_59.png",
       "tom": "neutro",
       "tamanho": "medio",
       "data": "2026-05-30"
@@ -19,8 +20,9 @@
     },
     {
       "id": "F-003",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "sua língua\ndançando atrás\ndos dentes",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_35_44.png",
       "tom": "neutro",
       "tamanho": "medio",
       "data": ""
@@ -29,14 +31,16 @@
       "id": "F-004",
       "modo": "texto",
       "texto": "a forma falha",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_35_49.png",
       "tom": "neutro",
-      "tamanho": "grande",
+      "tamanho": "medio",
       "data": ""
     },
     {
       "id": "F-005",
       "modo": "texto",
       "texto": "a transmissão\ncontinua",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 11_20_57.png",
       "tom": "azul",
       "tamanho": "medio",
       "data": ""
