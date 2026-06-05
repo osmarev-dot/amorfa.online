@@ -10,11 +10,12 @@
     },
     {
       "id": "F-002",
-      "modo": "texto",
+      "modo": "imagem",
       "texto": "esse frio\nnão vem com o vento",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_35_54.png",
       "tom": "azul",
       "tamanho": "medio",
-      "data": ""
+      "data": "2026-06-04"
     },
     {
       "id": "F-003",
@@ -71,7 +72,7 @@
       "id": "F-009",
       "modo": "imagem",
       "texto": "",
-      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 29 de mai. de 2026, 23_30_02.png",
+      "imagem": "/assets/uploads/fragmentos/ChatGPT Image 4 de jun. de 2026, 20_38_19.png",
       "tom": "azul",
       "tamanho": "medio",
       "data": "2026-05-30"
