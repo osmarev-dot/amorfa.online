@@ -1,16 +1,28 @@
-AMORFA ZERO V18 — AJUSTE DE HOME E DISCOGRAFIA
+AMORFA ZERO V19 — UPLOAD CORRETO NO GITHUB PAGES
 
-Correções:
-- Logo oficial usada como marca principal na Home.
-- Hero mais compacto para reduzir rolagem e vazio na primeira tela.
-- Antologia agora fica compacta no painel lateral.
-- Último lançamento menor e mais proporcional.
-- EPs usam o mesmo sistema visual dos álbuns na Discografia.
-- Admin, Transmissões, páginas dos álbuns e EP preservados.
+ERRO CORRIGIDO:
+A versão anterior estava zipada com uma pasta externa.
+Esta versão está FLAT: index.html está na raiz do zip.
 
-Teste:
-- index.html
-- discografia.html
-- album-pequenos-incendios.html
-- ep-dia-dos-namorados-macabro.html
-- admin/index.html
+Para upar:
+1. Abra este zip.
+2. Suba TODO O CONTEÚDO que aparece dentro dele direto na raiz do repositório.
+3. Não suba a pasta-mãe. Suba os arquivos:
+   - index.html
+   - discografia.html
+   - admin/
+   - assets/
+   - CNAME
+   - .nojekyll
+   - etc.
+
+GitHub Pages:
+- Source: Deploy from a branch
+- Branch: main
+- Folder: /root
+- Custom domain: amorfa.online
+
+Preserve se já tiver conteúdo real:
+- transmissoes.json
+- fragmentos.json
+- assets/uploads/
