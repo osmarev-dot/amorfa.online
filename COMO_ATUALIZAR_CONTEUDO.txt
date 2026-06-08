@@ -1,0 +1,56 @@
+AMORFA — COMO ATUALIZAR O SITE
+
+1) Adicionar álbum, EP ou single
+Arquivo:
+assets/data/releases.json
+
+Copie um bloco e altere:
+{
+  "id": "meu-novo-single",
+  "category": "single",
+  "collection": "avulso",
+  "type": "SINGLE",
+  "state": "SINAL",
+  "title": "Título do Single",
+  "axis": "Frase curta do lançamento.",
+  "description": "Texto curto do lançamento.",
+  "image": "capa-do-single.png",
+  "date": "2026-07-10",
+  "status": "disponível",
+  "stream_url": "LINK_DO_SPOTIFY",
+  "page": "",
+  "tracks": ["Título do Single"]
+}
+
+Depois coloque a imagem em:
+assets/img/capa-do-single.png
+
+Se "page" ficar vazio, o site abre automaticamente:
+release.html?id=meu-novo-single
+
+2) Adicionar transmissão
+Arquivo:
+assets/data/transmissoes.json
+
+Formato:
+[
+  {
+    "data": "2026-06-08",
+    "titulo": "Título da transmissão",
+    "texto": "Texto completo. Na home aparece só o começo. Ao clicar, abre completo."
+  }
+]
+
+3) Alterar último lançamento da home
+Arquivo:
+index.html
+
+Procure:
+último lançamento
+
+Ou peça para Hermes atualizar pelo lançamento correto.
+
+4) Regra visual
+Não colocar texto fake.
+Não preencher EPs/singles sem lançamento real.
+Não transformar a home em depósito.

@@ -1,0 +1,16 @@
+AMORFA ZERO V18 — AJUSTE DE HOME E DISCOGRAFIA
+
+Correções:
+- Logo oficial usada como marca principal na Home.
+- Hero mais compacto para reduzir rolagem e vazio na primeira tela.
+- Antologia agora fica compacta no painel lateral.
+- Último lançamento menor e mais proporcional.
+- EPs usam o mesmo sistema visual dos álbuns na Discografia.
+- Admin, Transmissões, páginas dos álbuns e EP preservados.
+
+Teste:
+- index.html
+- discografia.html
+- album-pequenos-incendios.html
+- ep-dia-dos-namorados-macabro.html
+- admin/index.html

@@ -1,0 +1,17 @@
+AMORFA ZERO V14 — MOBILE 10/10
+
+Ajustes finais:
+- Header mobile mais baixo e mais limpo.
+- Ícones organizados em grid no celular.
+- Menu mobile com painel compacto.
+- Hero usando 100svh para mobile moderno.
+- Títulos responsivos com clamp.
+- Cards da discografia compactos.
+- Página de álbum/EP em coluna única com capa centralizada.
+- Tracklist em uma coluna.
+- Poeira e scanline reduzidos no mobile.
+- Small phones abaixo de 390px tratados.
+- Foco acessível em links/botões.
+- Conteúdo continua editável via admin.
+- Discografia continua alimentada por assets/data/releases.json.
+- Transmissões continuam alimentadas por transmissoes.json.
