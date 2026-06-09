@@ -786,3 +786,217 @@ h1{
   display:grid;
   grid-template-columns:1fr;
 }
+
+
+/* ============================
+   V31 — correção visual final solicitada
+   - imagens coloridas
+   - bordas invisíveis
+   - home sem card "agora em transmissão"
+   - logo oficial maior
+   - fragmentos limpos
+   - mobile revisto
+   ============================ */
+
+/* bordas / contornos praticamente invisíveis */
+.frame{display:none!important}
+.release-card,
+.lower-catalog>div,
+.release-cover,
+.release-info,
+.fragment-view,
+.transmission-card,
+.now-card,
+.empty-mini,
+.empty-state{
+  border:0!important;
+  box-shadow:none!important;
+}
+.site-header{
+  border-bottom:1px solid rgba(233,226,212,.045)!important;
+}
+.site-footer{
+  border:0!important;
+}
+
+/* imagens em cor: não converter para preto e branco */
+.page-bg,
+.release-card img,
+.small-release img,
+.release-cover img,
+.now-card img,
+.fragment-card img{
+  filter:none!important;
+}
+
+/* ainda mantém a leitura escura por overlay, não por grayscale */
+.page-bg{
+  opacity:.88!important;
+}
+.page-bg::after,
+.page-bg.dark::after,
+.page-bg.deep::after{
+  background:
+    radial-gradient(circle at 62% 42%, rgba(0,0,0,.08), transparent 30%),
+    linear-gradient(90deg, rgba(3,3,3,.86), rgba(3,3,3,.46) 51%, rgba(3,3,3,.78)),
+    linear-gradient(180deg, rgba(3,3,3,.08), rgba(3,3,3,.80))!important;
+}
+
+/* home: sem card lateral, composição mais limpa */
+.home-screen{
+  grid-template-columns:minmax(0, 740px) 1fr!important;
+  align-items:center!important;
+}
+.home-copy{
+  align-self:center!important;
+  transform:translateY(-1.5vh);
+}
+.hero-logo-v31,
+.hero-logo-official{
+  width:min(780px,52vw)!important;
+  max-height:210px!important;
+  margin:0 0 18px!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+}
+.home-copy h1{
+  font-size:clamp(34px,4.4vw,78px)!important;
+  letter-spacing:.18em!important;
+  max-width:820px!important;
+}
+.home-copy .lead{
+  max-width:670px!important;
+  font-size:clamp(23px,2.15vw,36px)!important;
+}
+.micro{
+  font-size:13px!important;
+  opacity:.72!important;
+}
+.now-card{
+  display:none!important;
+}
+
+/* nav e ícones menos miúdos no desktop */
+.brand img{
+  width:128px!important;
+  max-height:36px!important;
+}
+.stream-icons{
+  gap:12px!important;
+}
+.stream-icons a,
+.social-icons a{
+  opacity:.82!important;
+}
+.stream-icons svg,
+.social-icons svg{
+  width:17px!important;
+  height:17px!important;
+}
+
+/* discografia: capas coloridas, respiro, sem moldura dura */
+.disc-screen{
+  grid-template-rows:112px minmax(0,1fr) 88px!important;
+}
+.release-card{
+  background:rgba(3,3,3,.30)!important;
+  padding:8px!important;
+}
+.release-card img{
+  border-radius:0!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+.lower-catalog>div{
+  background:rgba(3,3,3,.24)!important;
+}
+
+/* fragmentos: se vazio, sem setas e sem botão; se cheio, card sem linhas laterais visíveis */
+.fragment-stage.is-empty .arrow,
+.fragment-stage.is-empty .pause{
+  display:none!important;
+}
+.fragment-stage.is-empty{
+  grid-template-columns:1fr!important;
+  grid-template-rows:1fr!important;
+}
+.fragment-stage.is-empty #fragment-view{
+  grid-column:1!important;
+}
+.fragment-view{
+  background:rgba(3,3,3,.18)!important;
+}
+.arrow,.pause{
+  background:transparent!important;
+  border:0!important;
+}
+
+/* transmissões: sem box grosseiro no card */
+.transmission-card{
+  background:rgba(3,3,3,.28)!important;
+}
+
+/* páginas de lançamento: capa melhor posicionada */
+.release-screen{
+  grid-template-columns:minmax(300px,420px) minmax(0,1fr)!important;
+  gap:clamp(26px,4vw,58px)!important;
+}
+.release-cover{
+  padding:0!important;
+  background:transparent!important;
+}
+.release-cover img{
+  width:100%!important;
+  aspect-ratio:1/1!important;
+  object-fit:cover!important;
+}
+.release-info{
+  background:rgba(3,3,3,.32)!important;
+  padding:clamp(22px,3vw,38px)!important;
+}
+
+/* empty state: linguagem pública e visual sem cara de sistema */
+.empty-state{
+  background:rgba(3,3,3,.20)!important;
+}
+.empty-state strong{
+  text-transform:uppercase!important;
+}
+
+/* Mobile: sem quebrar header; logo maior mas cabendo */
+@media(max-width:920px){
+  .site-header{
+    padding:9px 14px!important;
+  }
+  .home-screen{
+    grid-template-columns:1fr!important;
+    grid-template-rows:1fr!important;
+  }
+  .home-copy{
+    transform:none!important;
+    align-self:center!important;
+  }
+  .hero-logo-v31,
+  .hero-logo-official{
+    width:min(92vw,520px)!important;
+    max-height:118px!important;
+  }
+  .home-copy h1{
+    font-size:clamp(27px,8.2vw,46px)!important;
+  }
+  .home-copy .lead{
+    font-size:clamp(19px,5.2vw,27px)!important;
+  }
+  .stream-icons{
+    grid-template-columns:repeat(6,1fr)!important;
+  }
+  .disc-screen{
+    grid-template-rows:112px minmax(0,1fr) 72px!important;
+  }
+  .release-screen{
+    grid-template-columns:1fr!important;
+  }
+  .release-cover{
+    display:none!important;
+  }
+}

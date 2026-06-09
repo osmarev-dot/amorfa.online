@@ -1,16 +1,16 @@
-AMORFA SITE V30.1 — AUDITORIA FINAL DE TEXTO PÚBLICO
+AMORFA SITE V31 — AJUSTE VISUAL
 
-Correções:
-- Removidas frases internas/de produção do site público.
-- Fragmentos não diz mais “alimentadas pelo painel”.
-- Estados vazios deixam de dizer “sem publicados”.
-- Singles agora usa “nenhum sinal isolado”.
-- Setas e pausar ficam ocultos quando não há fragmentos.
-- Transmissões usa linguagem pública da entidade.
-- Auditoria linha por linha incluída em AUDITORIA_LINHA_A_LINHA_V30_1.txt.
-- Links locais auditados: nenhum ausente.
-- Termos públicos suspeitos: nenhum.
+Aplicado:
+- imagens coloridas, sem grayscale;
+- bordas/molduras visíveis removidas;
+- card “agora em transmissão” removido da home;
+- logo oficial maior na inicial;
+- capas preservadas;
+- fragmentos sem texto de bastidor;
+- setas/pausar ocultos quando não há fragmentos;
+- redes no rodapé e streamings no topo mantidos;
+- SEO e schema preservados.
 
 Upload:
-- Suba o conteúdo interno do ZIP na raiz do GitHub.
-- Teste com /?v=301.
+- Subir o conteúdo interno do ZIP na raiz do repositório.
+- Testar com https://amorfa.online/?v=31
