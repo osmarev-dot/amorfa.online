@@ -1,311 +1,52 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Transmissões | AMORFA fala</title>
-  <meta name="description" content="Posts oficiais, anúncios e falas diretas da AMORFA ao público.">
-  <meta name="theme-color" content="#020406">
-  <link rel="canonical" href="https://amorfa.online/transmissoes.html">
-  <meta property="og:title" content="Transmissões | AMORFA fala">
-  <meta property="og:description" content="Posts oficiais, anúncios e falas diretas da AMORFA ao público.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://amorfa.online/og-image.jpg">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/site.css?v=22">
-  <style>
-    .tx-list { display: flex; flex-direction: column; gap: 12px; margin-top: 36px; max-width: 900px; }
-    .tx-post {
-      border: 1px solid rgba(216,203,178,.18);
-      background: rgba(2,6,10,.55);
-      backdrop-filter: blur(8px);
-      border-radius: 4px;
-      overflow: hidden;
-      transition: border-color .2s, background .2s;
-    }
-    .tx-post[open] { border-color: rgba(184,170,143,.4); background: rgba(13,42,69,.42); }
-    .tx-post:not([open]):hover { border-color: rgba(216,203,178,.35); }
-
-    .tx-summary {
-      display: grid;
-      grid-template-columns: 80px minmax(0,1fr) 120px;
-      align-items: center;
-      gap: 16px;
-      padding: 18px 22px;
-      cursor: pointer;
-      list-style: none;
-    }
-    .tx-summary::-webkit-details-marker { display: none; }
-    .tx-summary span.id {
-      color: var(--blue);
-      font-size: 11px;
-      letter-spacing: .14em;
-      font-variant-numeric: tabular-nums;
-      text-shadow: 0 1px 8px rgba(0,0,0,.7);
-    }
-    .tx-summary strong {
-      color: var(--blue2);
-      font-weight: 400;
-      font-size: 14px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      text-shadow: 0 1px 8px rgba(0,0,0,.7);
-    }
-    .tx-summary em {
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-style: normal;
-      text-align: right;
-      text-shadow: 0 1px 8px rgba(0,0,0,.7);
-    }
-
-    .tx-body { padding: 0 22px 26px; border-top: 1px solid rgba(216,203,178,.08); }
-    .tx-body::after { content: ''; display: block; clear: both; }
-    .tx-body .tx-content {
-      margin-top: 22px;
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.85;
-      white-space: pre-wrap;
-      text-shadow: 0 1px 8px rgba(0,0,0,.7);
-      max-width: 720px;
-    }
-    .tx-body .tx-faixa {
-      margin-top: 22px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(216,203,178,.08);
-      color: var(--muted);
-      font-size: 11px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      clear: both;
-    }
-
-    .tx-media {
-      margin: 22px 0;
-      overflow: hidden;
-      border: 1px solid rgba(216,203,178,.12);
-      background: rgba(0,0,0,.4);
-    }
-    .tx-media img { width: 100%; height: auto; display: block; }
-    .tx-media-caption {
-      padding: 8px 12px;
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      background: rgba(2,4,6,.5);
-      border-top: 1px solid rgba(216,203,178,.08);
-    }
-
-    .tx-media.fmt-horizontal img { aspect-ratio: 16/9; object-fit: cover; }
-    .tx-media.fmt-vertical img { aspect-ratio: 4/5; object-fit: cover; }
-    .tx-media.fmt-quadrada img { aspect-ratio: 1/1; object-fit: cover; }
-
-    .tx-media.tam-pequena { max-width: 380px; }
-    .tx-media.tam-media { max-width: 560px; }
-    .tx-media.tam-grande { max-width: 760px; }
-
-    .tx-media.align-centro { margin-left: auto; margin-right: auto; }
-    .tx-media.align-largo { max-width: none; }
-    .tx-media.align-esquerda { float: left; margin-right: 24px; margin-top: 4px; margin-bottom: 12px; }
-    .tx-media.align-direita { float: right; margin-left: 24px; margin-top: 4px; margin-bottom: 12px; }
-
-    /* Player de música compacto */
-    .tx-player-wrap {
-      margin-top: 22px;
-      clear: both;
-      max-width: 560px;
-    }
-    .tx-player-label {
-      font-size: 9px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .tx-player-label::before {
-      content: '';
-      width: 4px; height: 4px;
-      background: var(--blue);
-      border-radius: 50%;
-      animation: blink 1.8s ease-in-out infinite;
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.4} }
-
-    .tx-player-iframe {
-      display: block;
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid rgba(216,203,178,.12);
-      overflow: hidden;
-    }
-    .tx-player-iframe.sp { height: 80px; }
-    .tx-player-iframe.yt { aspect-ratio: 16/9; height: auto; }
-    .tx-player-iframe.am { height: 175px; }
-
-    .tx-player-link {
-      display: inline-block;
-      padding: 10px 14px;
-      border: 1px solid rgba(216,203,178,.22);
-      font-size: 10px;
-      color: var(--blue);
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: border-color .15s, background .15s;
-    }
-    .tx-player-link:hover {
-      border-color: var(--blue);
-      background: rgba(184,170,143,.08);
-    }
-
-    @media (max-width:980px) {
-      .tx-summary { grid-template-columns: 60px minmax(0,1fr); gap: 10px; padding: 14px 16px; }
-      .tx-summary em { display: none; }
-      .tx-summary strong { font-size: 12px; }
-      .tx-body { padding: 0 16px 18px; }
-      .tx-body .tx-content { font-size: 13px; line-height: 1.7; }
-      .tx-media.align-esquerda, .tx-media.align-direita { float: none; margin: 22px 0; }
-      .tx-media { max-width: 100% !important; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transmissões | AMORFA</title>
+<meta name="description" content="Arquivo vivo de transmissões da AMORFA.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#030303">
+<meta property="og:title" content="Transmissões | AMORFA">
+<meta property="og:description" content="Arquivo vivo de transmissões da AMORFA.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/site/hero_guardia.png">
+<link rel="canonical" href="https://amorfa.online/transmissoes.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body style="background: #020406 url('bg-web-form.png') center center / cover no-repeat fixed;">
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <div class="site-shell">
-    <aside class="side-nav" aria-label="Navegação principal">
-      <a class="brand" href="index.html" aria-label="AMORFA"><img src="logo-amorfa-hero.webp" alt="AMORFA"></a>
-      <nav><ul><li><a class="" href="index.html">Início</a></li><li><a class="" href="ouvir.html">Ouvir</a></li><li><a class="" href="albuns.html">Discografia</a></li><li><a class="active" href="transmissoes.html">Transmissões</a></li><li><a class="" href="arquivo.html">Fragmentos</a></li><li><a class="" href="manifesto.html">Manifesto</a></li><li><a class="" href="contato.html">Contato</a></li></ul></nav>
-    </aside>
-    <main id="conteudo" class="content">
-      <p class="eyebrow" style="text-shadow:0 1px 14px rgba(0,0,0,.9)">transmissões</p>
-      <h1 style="font-size:clamp(20px,2.4vw,36px);letter-spacing:.12em;line-height:1.2;color:var(--blue2);text-shadow:0 1px 14px rgba(0,0,0,.9);margin:0">AMORFA fala.</h1>
-
-      <div class="tx-list" id="txList">
-        <div style="text-align:center;padding:40px;color:var(--muted);font-size:12px">Carregando transmissões...</div>
-      </div>
-    </main>
+<body>
+<div class="frame" aria-hidden="true"></div>
+<div class="page-bg deep" style="background-image:url('assets/img/site/celular_luz.png')"></div>
+<div class="grain" aria-hidden="true"></div>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="AMORFA"><img src="assets/img/logo.png" alt="AMORFA"></a>
+  <button class="menu-toggle" type="button" aria-label="Abrir menu">menu</button>
+  <nav class="main-nav"><a class="" href="index.html">Início</a><a class="" href="discografia.html">Discografia</a><a class="" href="fragmentos.html">Fragmentos</a><a class="active" href="transmissoes.html">Transmissões</a></nav>
+  <div class="stream-icons"><a href="https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener" title="Spotify" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.45 14.25a.74.74 0 0 1-1.02.24 9.8 9.8 0 0 0-6.34-.78.75.75 0 0 1-.32-1.46 11.3 11.3 0 0 1 7.45.92.75.75 0 0 1 .23 1.08Zm1.16-2.64a.9.9 0 0 1-1.21.36 12.4 12.4 0 0 0-7.8-.94.9.9 0 0 1-.38-1.76 14.4 14.4 0 0 1 8.95 1.08.9.9 0 0 1 .44 1.26Zm.12-2.9a15.4 15.4 0 0 0-9.62-.96A1.05 1.05 0 0 1 7.66 7.7a17.5 17.5 0 0 1 10.95 1.1 1.05 1.05 0 1 1-.88 1.9Z"/></svg></a><a href="https://music.apple.com/br/artist/amorfa/1896548394" target="_blank" rel="noopener" title="Apple Music" aria-label="Apple Music"><svg viewBox="0 0 24 24"><path d="M17.6 13.2c0-2.45 2.08-3.63 2.18-3.69a4.75 4.75 0 0 0-3.72-2.02c-1.58-.16-3.08.93-3.9.93-.82 0-2.07-.9-3.4-.88a5.06 5.06 0 0 0-4.27 2.58c-1.82 3.14-.46 7.8 1.3 10.35.86 1.25 1.9 2.64 3.26 2.6 1.3-.05 1.8-.84 3.38-.84 1.57 0 2.02.84 3.4.8 1.4-.02 2.3-1.26 3.15-2.5a10.9 10.9 0 0 0 1.43-2.96 4.55 4.55 0 0 1-2.81-4.37ZM15 5.65A4.48 4.48 0 0 0 16.04 2a4.68 4.68 0 0 0-3.11 1.67 4.3 4.3 0 0 0-1.07 3.33A3.94 3.94 0 0 0 15 5.65Z"/></svg></a><a href="https://music.youtube.com/channel/UCf4NhTyzi2UVOfR83s49V4g" target="_blank" rel="noopener" title="YouTube Music" aria-label="YouTube Music"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 15.2a6.2 6.2 0 1 1 0-12.4 6.2 6.2 0 0 1 0 12.4Zm-2-9.2 5.1 3-5.1 3V9Z"/></svg></a><a href="https://music.amazon.com.br/artists/B0H24NS7Q1/amorfa" target="_blank" rel="noopener" title="Amazon Music" aria-label="Amazon Music"><span>amz</span></a><a href="https://tidal.com/artist/79743124" target="_blank" rel="noopener" title="Tidal" aria-label="Tidal"><svg viewBox="0 0 24 24"><path d="m12 3.5 3.9 3.9-3.9 3.9-3.9-3.9L12 3.5ZM4.2 11.3l3.9-3.9 3.9 3.9-3.9 3.9-3.9-3.9Zm15.6 0-3.9-3.9-3.9 3.9 3.9 3.9 3.9-3.9ZM12 15.2l3.9-3.9 3.9 3.9-3.9 3.9-3.9-3.9Z"/></svg></a></div>
+</header>
+<main class="page transmissions-page">
+  <section class="title-block compact">
+    <p class="eyebrow">transmissões</p>
+    <h1>Arquivo vivo</h1>
+    <p class="lead">Publicações diretas da AMORFA.</p>
+  </section>
+  <section id="transmission-list" class="transmission-list"><div class="empty-mini">sem transmissões publicadas</div></section>
+</main>
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button type="button" id="modal-close">×</button>
+    <p class="eyebrow" id="modal-date"></p>
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
   </div>
-
-  <script>
-    function escapeHtml(s) {
-      return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-    }
-    function formatDate(s) {
-      const m = String(s).match(/^(\d{4})-(\d{2})-(\d{2})/);
-      return m ? (m[3] + '.' + m[2] + '.' + m[1]) : s;
-    }
-
-    /* Detecta plataforma e gera player compacto */
-    function buildPlayer(url) {
-      if (!url) return '';
-      url = String(url).trim();
-
-      var sp = url.match(/spotify\.com\/(?:intl-[a-z-]+\/)?(track|album|episode|playlist|artist)\/([A-Za-z0-9]+)/);
-      if (sp) {
-        var src = 'https://open.spotify.com/embed/' + sp[1] + '/' + sp[2] + '?utm_source=generator&theme=0';
-        return wrapPlayer('Spotify',
-          '<iframe class="tx-player-iframe sp" src="' + src + '" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>');
-      }
-
-      var yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([A-Za-z0-9_-]+)/);
-      if (yt) {
-        return wrapPlayer('YouTube',
-          '<iframe class="tx-player-iframe yt" src="https://www.youtube.com/embed/' + yt[1] + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>');
-      }
-
-      var am = url.match(/music\.apple\.com\/([a-z]{2})\/album\/[^/]+\/(\d+)(?:\?i=(\d+))?/);
-      if (am) {
-        var amSrc = 'https://embed.music.apple.com/' + am[1] + '/album/' + am[2] + (am[3] ? '?i=' + am[3] : '');
-        return wrapPlayer('Apple Music',
-          '<iframe class="tx-player-iframe am" src="' + amSrc + '" loading="lazy" allow="autoplay *; encrypted-media *;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"></iframe>');
-      }
-
-      /* Fallback: link discreto */
-      return wrapPlayer('Ouvir',
-        '<a class="tx-player-link" href="' + escapeHtml(url) + '" target="_blank" rel="noopener">↗ Abrir link</a>');
-    }
-
-    function wrapPlayer(label, inner) {
-      return '<div class="tx-player-wrap">' +
-        '<div class="tx-player-label">' + escapeHtml(label) + '</div>' +
-        inner +
-      '</div>';
-    }
-
-    fetch('transmissoes.json?v=' + Date.now())
-      .then(r => r.json())
-      .then(data => {
-        const list = document.getElementById('txList');
-        const all = data.posts || [];
-        const items = all.filter(p => p.tipo === 'transmissao' || !p.tipo).slice().reverse();
-        if (!items.length) {
-          list.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted);font-size:12px">Nenhuma transmissão ainda.</div>';
-          return;
-        }
-        list.innerHTML = items.map(function(p, idx) {
-          const id = p.id || ('T-' + String(idx + 1).padStart(3, '0'));
-          const titulo = p.titulo || '—';
-          const dt = p.data ? formatDate(p.data) : '';
-
-          var mediaHtml = '';
-          if (p.imagem) {
-            const fmt = p.imagemFormato || 'horizontal';
-            const tam = p.imagemTamanho || 'media';
-            const ali = p.imagemAlinhamento || 'centro';
-            const alt = (p.imagemAlt || titulo).replace(/"/g, '&quot;');
-            const cap = p.imagemLegenda
-              ? '<div class="tx-media-caption">' + escapeHtml(p.imagemLegenda) + '</div>'
-              : '';
-            mediaHtml =
-              '<figure class="tx-media fmt-' + fmt + ' tam-' + tam + ' align-' + ali + '">' +
-                '<img src="' + p.imagem + '" alt="' + alt + '" loading="lazy">' +
-                cap +
-              '</figure>';
-          }
-
-          const faixaHtml = p.faixa
-            ? '<div class="tx-faixa">↳ ' + escapeHtml(p.faixa) + '</div>'
-            : '';
-          const playerHtml = buildPlayer(p.playerUrl);
-          const isOpen = idx === 0 ? ' open' : '';
-
-          return '<details class="tx-post"' + isOpen + '>' +
-            '<summary class="tx-summary">' +
-              '<span class="id">' + escapeHtml(id) + '</span>' +
-              '<strong>' + escapeHtml(titulo) + '</strong>' +
-              '<em>' + escapeHtml(dt) + '</em>' +
-            '</summary>' +
-            '<div class="tx-body">' +
-              mediaHtml +
-              '<div class="tx-content">' + escapeHtml(p.conteudo || '') + '</div>' +
-              playerHtml +
-              faixaHtml +
-            '</div>' +
-          '</details>';
-        }).join('');
-      })
-      .catch(function(err) {
-        document.getElementById('txList').innerHTML =
-          '<div style="text-align:center;padding:40px;color:var(--muted);font-size:12px">Erro ao carregar transmissões.</div>';
-        console.error(err);
-      });
-  </script>
-
-  <script src="assets/site.js?v=22" defer></script>
-
-  <footer class="site-footer">
-    <div class="ft-brand">AMORFA</div>
-    <div class="ft-rights">&copy; 2026 &middot; Todos os direitos reservados</div>
-    <a class="ft-email" href="mailto:projetoamorfa@gmail.com">projetoamorfa@gmail.com</a>
-  </footer>
-</body>
-</html>
+</div>
+<footer class="site-footer">
+  <span>AMORFA</span>
+  <span>A Guardiã das Formas</span>
+  <div class="social-icons"><a href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7.4A4.6 4.6 0 1 1 12 16.6 4.6 4.6 0 0 1 12 7.4Zm5.05-2.05a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a><a href="https://www.tiktok.com/@amorfa.online" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M15.5 2c.3 2.2 1.55 3.75 3.95 4.15v3.1a7.3 7.3 0 0 1-3.85-1.12v6.35a6.15 6.15 0 1 1-6.15-6.15c.4 0 .8.04 1.18.12v3.15a2.78 2.78 0 1 0 1.88 2.63V2h2.99Z"/></svg></a><a href="https://x.com/amorfaonline" target="_blank" rel="noopener" title="X" aria-label="X"><span>𝕏</span></a><a href="https://www.youtube.com/@AMORFA" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 12s0-3.5-.45-5.08a2.85 2.85 0 0 0-2-2.02C17.8 4.45 12 4.45 12 4.45s-5.8 0-7.55.45a2.85 2.85 0 0 0-2 2.02C2 8.5 2 12 2 12s0 3.5.45 5.08a2.85 2.85 0 0 0 2 2.02c1.75.45 7.55.45 7.55.45s5.8 0 7.55-.45a2.85 2.85 0 0 0 2-2.02C22 15.5 22 12 22 12Zm-12 3.35v-6.7L15.8 12 10 15.35Z"/></svg></a></div>
+</footer>
+<script src="assets/site.js"></script>
+</body></html>

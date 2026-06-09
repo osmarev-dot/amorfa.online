@@ -1,12 +1,20 @@
-AMORFA PRO V22
+AMORFA SITE V28 — ANTOLOGIA DENTRO DA DISCOGRAFIA
 
-Site refeita do zero visual:
-- Home apresenta AMORFA primeiro.
-- Antologia como projeto, não como entrada bruta.
-- Discografia funcional e renderizada em HTML.
-- Fragmentos em carrossel automático funcional.
-- Transmissões funcionais.
-- Admin preservado em /admin.
-- Arquivo flat: index.html está na raiz.
+Decisão:
+- Antologia não é mais aba principal.
+- Antologia agora é o núcleo conceitual dentro de Discografia.
+- antologia.html foi mantida apenas como redirect/noindex para discografia.html, evitando link quebrado.
+
+Menu público:
+- Início
+- Discografia
+- Fragmentos
+- Transmissões
+
+Discografia:
+- Cabe em uma tela.
+- Explica a Antologia.
+- Mostra os cinco álbuns, EPs e Singles.
+- Capas originais preservadas.
 
 Suba o conteúdo do ZIP direto na raiz do repositório.
