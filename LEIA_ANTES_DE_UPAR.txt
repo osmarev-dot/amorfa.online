@@ -1,10 +1,17 @@
-AMORFA SITE V35 — HIERARQUIA DE DISCOGRAFIA
+AMORFA SITE V36 — DISCOGRAFIA COMO ENTRADA REAL
+
+Correção:
+- discografia.html NÃO É MAIS REDIRECT.
+- discografia.html agora mostra as três escolhas:
+  Álbuns / EPs / Singles.
+- /discografia/ também mostra as três escolhas.
+- Dentro de Álbuns fica Antologia.
+- Dentro de Antologia ficam os cinco álbuns.
 
 Suba o conteúdo interno do ZIP na raiz do repositório.
 
 Teste:
-https://amorfa.online/discografia/
-https://amorfa.online/discografia/albuns/
-https://amorfa.online/discografia/albuns/antologia/
-https://amorfa.online/discografia/eps/
-https://amorfa.online/discografia/singles/
+https://amorfa.online/discografia.html?v=36
+https://amorfa.online/discografia/?v=36
+https://amorfa.online/discografia/albuns/?v=36
+https://amorfa.online/discografia/albuns/antologia/?v=36

@@ -1,0 +1,23 @@
+AMORFA SITE V36 — ROTAS DE DISCOGRAFIA
+
+A rota antiga agora também é a entrada correta:
+- /discografia.html
+
+A rota nova também existe:
+- /discografia/
+
+Fluxo real:
+- /discografia.html ou /discografia/
+  -> Álbuns
+  -> EPs
+  -> Singles
+
+- /discografia/albuns/
+  -> Antologia
+
+- /discografia/albuns/antologia/
+  -> Álbum I
+  -> Álbum II
+  -> Álbum III
+  -> Álbum IV
+  -> Álbum V

@@ -3973,3 +3973,132 @@ body:has(.disc-screen-v33) .page-bg::after{
     font-size:clamp(25px,7.5vw,40px)!important;
   }
 }
+
+
+/* ============================
+   V36 — discografia.html é ENTRADA REAL, não redirect.
+   Regra: Discografia -> Álbuns / EPs / Singles.
+   Álbuns -> Antologia.
+   Antologia -> cinco álbuns.
+   ============================ */
+
+body:has(.taxonomy-root) .page-bg{
+  opacity:.62!important;
+  filter:none!important;
+}
+body:has(.taxonomy-root) .page-bg::after{
+  background:
+    linear-gradient(90deg,rgba(3,3,3,.90),rgba(3,3,3,.58) 54%,rgba(3,3,3,.88)),
+    linear-gradient(180deg,rgba(3,3,3,.18),rgba(3,3,3,.82))!important;
+}
+
+.taxonomy-root{
+  display:grid!important;
+  grid-template-columns:360px minmax(0,1fr)!important;
+  grid-template-rows:1fr!important;
+  gap:72px!important;
+  align-items:center!important;
+  width:min(1280px,calc(100vw - 112px))!important;
+  height:100%!important;
+}
+
+.taxonomy-root .taxonomy-title{
+  align-self:center!important;
+}
+
+.taxonomy-root .taxonomy-title h1{
+  font-size:clamp(56px,6vw,110px)!important;
+  line-height:.86!important;
+  letter-spacing:.10em!important;
+  text-transform:uppercase!important;
+}
+
+.taxonomy-root .taxonomy-title .lead{
+  display:block!important;
+  max-width:390px!important;
+  font-size:clamp(22px,1.9vw,34px)!important;
+  line-height:1.08!important;
+}
+
+.taxonomy-root .taxonomy-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:20px!important;
+  height:min(440px,58vh)!important;
+  align-items:stretch!important;
+}
+
+.taxonomy-root .taxonomy-card{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-end!important;
+  min-height:0!important;
+  padding:24px!important;
+  background:rgba(3,3,3,.28)!important;
+  overflow:hidden!important;
+  border:0!important;
+}
+
+.taxonomy-root .taxonomy-card.major{
+  background:rgba(3,3,3,.42)!important;
+}
+
+.taxonomy-root .taxonomy-card span{
+  color:var(--red)!important;
+  font-family:"JetBrains Mono",monospace!important;
+  font-size:11px!important;
+  letter-spacing:.2em!important;
+  text-transform:uppercase!important;
+}
+
+.taxonomy-root .taxonomy-card h2{
+  margin:14px 0 12px!important;
+  font-size:clamp(36px,4vw,68px)!important;
+  line-height:.9!important;
+  letter-spacing:.04em!important;
+  text-transform:uppercase!important;
+}
+
+.taxonomy-root .taxonomy-card p{
+  max-width:260px!important;
+  margin:0!important;
+  color:rgba(233,226,212,.68)!important;
+  font-size:13px!important;
+  line-height:1.45!important;
+}
+
+/* Garantia: se alguém abrir discografia.html antigo, o grid velho não aparece */
+body:has(.taxonomy-root) .disc-screen-v33,
+body:has(.taxonomy-root) .disc-screen-v32,
+body:has(.taxonomy-root) .disc-page-v28,
+body:has(.taxonomy-root) .release-grid-v32,
+body:has(.taxonomy-root) .lower-catalog-v32{
+  display:none!important;
+}
+
+@media(max-width:920px){
+  .taxonomy-root{
+    width:calc(100vw - 28px)!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto minmax(0,1fr)!important;
+    gap:14px!important;
+  }
+  .taxonomy-root .taxonomy-title h1{
+    font-size:clamp(34px,10vw,56px)!important;
+  }
+  .taxonomy-root .taxonomy-title .lead{
+    display:none!important;
+  }
+  .taxonomy-root .taxonomy-grid{
+    grid-template-columns:1fr!important;
+    height:auto!important;
+    gap:10px!important;
+  }
+  .taxonomy-root .taxonomy-card{
+    min-height:112px!important;
+    padding:16px!important;
+  }
+  .taxonomy-root .taxonomy-card h2{
+    font-size:clamp(32px,9vw,48px)!important;
+  }
+}
