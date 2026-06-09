@@ -1,16 +1,4 @@
-AMORFA SITE V31 — AJUSTE VISUAL
+AMORFA SITE V32 — PROPORÇÕES
 
-Aplicado:
-- imagens coloridas, sem grayscale;
-- bordas/molduras visíveis removidas;
-- card “agora em transmissão” removido da home;
-- logo oficial maior na inicial;
-- capas preservadas;
-- fragmentos sem texto de bastidor;
-- setas/pausar ocultos quando não há fragmentos;
-- redes no rodapé e streamings no topo mantidos;
-- SEO e schema preservados.
-
-Upload:
-- Subir o conteúdo interno do ZIP na raiz do repositório.
-- Testar com https://amorfa.online/?v=31
+Suba o conteúdo interno do ZIP na raiz do repositório.
+Teste com https://amorfa.online/?v=32
