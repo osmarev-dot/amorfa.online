@@ -1,28 +1,10 @@
-AMORFA ZERO V19 — UPLOAD CORRETO NO GITHUB PAGES
+AMORFA ZERO V20 — FRAGMENTOS NA HOME
 
-ERRO CORRIGIDO:
-A versão anterior estava zipada com uma pasta externa.
-Esta versão está FLAT: index.html está na raiz do zip.
+Adicionado:
+- Fragmentos na Home.
+- Carrossel editorial automático com pausa/anterior/próximo.
+- Pausa no hover/foco para leitura.
+- Alimentado por fragmentos.json / admin → 🧩 Fragmentos.
+- Aceita só texto, só imagem ou imagem + texto.
 
-Para upar:
-1. Abra este zip.
-2. Suba TODO O CONTEÚDO que aparece dentro dele direto na raiz do repositório.
-3. Não suba a pasta-mãe. Suba os arquivos:
-   - index.html
-   - discografia.html
-   - admin/
-   - assets/
-   - CNAME
-   - .nojekyll
-   - etc.
-
-GitHub Pages:
-- Source: Deploy from a branch
-- Branch: main
-- Folder: /root
-- Custom domain: amorfa.online
-
-Preserve se já tiver conteúdo real:
-- transmissoes.json
-- fragmentos.json
-- assets/uploads/
+Suba o conteúdo deste ZIP na raiz do repositório.

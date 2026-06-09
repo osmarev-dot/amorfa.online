@@ -88,7 +88,7 @@ collections:
 
   - name: "fragmentos"
     label: "🧩 Fragmentos"
-    description: "Arquivo preservado do site anterior. Ainda não aparece na navegação principal."
+    description: "Fragmentos alimentam o carrossel da Home: imagem, frase ou imagem + frase."
     files:
       - name: "items"
         label: "Todos os Fragmentos"

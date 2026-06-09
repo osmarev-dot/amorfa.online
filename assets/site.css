@@ -475,3 +475,20 @@ body.is-glitch .hero:after,body.is-glitch .manifest:after,body.is-glitch .transm
     max-height:86px;
   }
 }
+
+/* v20 — fragmentos carousel */
+.fragments-section{position:relative;min-height:82vh;padding:90px 0 70px;background-size:cover;background-position:center;background-attachment:fixed;display:flex;align-items:center}
+.fragments-section:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 68% 38%,rgba(238,231,216,.07),transparent 30%),linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.70) 52%,rgba(0,0,0,.90)),linear-gradient(180deg,rgba(0,0,0,.20),rgba(0,0,0,.88))}
+.fragments-section:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:100% 4px}
+.fragments-layout{display:grid;grid-template-columns:minmax(260px,.62fr) minmax(0,1.38fr);gap:28px;align-items:center}
+.fragments-copy{position:relative;z-index:2}.fragments-copy h2{font-size:clamp(33px,4vw,56px)}.fragments-copy p{max-width:420px}
+.fragment-controls{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.mini-btn{min-height:34px;padding:0 10px;border:1px solid rgba(238,231,216,.20);background:rgba(0,0,0,.32);color:var(--ink);font-family:"Courier New",ui-monospace,monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}.mini-btn:hover{border-color:rgba(238,231,216,.42)}
+.fragment-carousel{position:relative;z-index:2;overflow:hidden;border:1px solid var(--line);background:rgba(0,0,0,.36);min-height:390px;backdrop-filter:blur(2px)}
+.fragment-track{position:relative;min-height:390px}.fragment-slide{position:absolute;inset:0;display:grid;grid-template-columns:minmax(240px,.84fr) minmax(0,1.16fr);opacity:0;transform:translateX(18px);pointer-events:none;transition:opacity .42s ease,transform .42s ease}
+.fragment-slide.active{opacity:1;transform:translateX(0);pointer-events:auto}.fragment-image{min-height:390px;background:#050505;border-right:1px solid rgba(238,231,216,.12)}.fragment-image img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06) brightness(.84)}
+.fragment-image.empty-fragment-image{display:flex;align-items:center;justify-content:center}.fragment-image.empty-fragment-image:before{content:"AMORFA";color:rgba(238,231,216,.12);font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,6vw,92px);letter-spacing:.18em}
+.fragment-text{display:flex;min-height:390px;flex-direction:column;justify-content:center;padding:28px}.fragment-text .eyebrow{margin-bottom:18px}.fragment-text blockquote{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(29px,3.5vw,54px);line-height:1.05;color:var(--ink)}.fragment-text p{margin:18px 0 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(238,231,216,.50)}
+.fragment-dots{position:absolute;z-index:3;left:28px;bottom:18px;display:flex;gap:6px}.fragment-dots button{width:22px;height:2px;padding:0;border:0;background:rgba(238,231,216,.24);cursor:pointer}.fragment-dots button.active{background:var(--ink)}
+body.is-glitch .fragments-section:after{animation:scanroll .20s steps(3,end) 1}
+@media(max-width:980px){.fragments-layout{grid-template-columns:1fr}}
+@media(max-width:760px){.fragments-section{min-height:auto;padding-top:90px;padding-bottom:50px;background-attachment:scroll}.fragment-carousel,.fragment-track{min-height:520px}.fragment-slide{grid-template-columns:1fr;grid-template-rows:230px 1fr}.fragment-image{min-height:230px;border-right:0;border-bottom:1px solid rgba(238,231,216,.12)}.fragment-text{min-height:290px;padding:22px}.fragment-text blockquote{font-size:clamp(28px,9vw,42px)}.fragment-dots{left:22px;bottom:14px}}
