@@ -1,0 +1,6 @@
+AMORFA SITE V34 — MODAL SEM BARRA LATERAL
+
+- Removida a barra de rolagem visual do modal de transmissões.
+- A leitura continua por wheel/touch, mas sem a barra branca aparente.
+- Modal ajustado para parecer editorial, não caixa de sistema.
+- Mobile preservado.

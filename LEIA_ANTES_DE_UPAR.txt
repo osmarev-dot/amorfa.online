@@ -1,4 +1,10 @@
-AMORFA SITE V32 — PROPORÇÕES
+AMORFA SITE V35 — HIERARQUIA DE DISCOGRAFIA
 
 Suba o conteúdo interno do ZIP na raiz do repositório.
-Teste com https://amorfa.online/?v=32
+
+Teste:
+https://amorfa.online/discografia/
+https://amorfa.online/discografia/albuns/
+https://amorfa.online/discografia/albuns/antologia/
+https://amorfa.online/discografia/eps/
+https://amorfa.online/discografia/singles/

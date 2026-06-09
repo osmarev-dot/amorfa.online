@@ -10,7 +10,7 @@
       "description": "A matéria inicial. A forma que aprende a cobrar.",
       "image": "assets/img/albums/album_i.jpg",
       "stream_url": "https://open.spotify.com/album/1nZDDHw5kjsS11Rg1Y5dBJ",
-      "page": "album-i.html",
+      "page": "discografia/albuns/antologia/album-i.html",
       "tracks": [
         "Versão Consumida",
         "Fusão Nuclear",
@@ -37,7 +37,7 @@
       "description": "A pele exige prova: marca, temperatura, contrato, relevo.",
       "image": "assets/img/albums/album_ii.jpg",
       "stream_url": "https://open.spotify.com/intl-pt/album/0cDt4KcXIVqzIiCv9DEtpm",
-      "page": "album-ii.html",
+      "page": "discografia/albuns/antologia/album-ii.html",
       "tracks": [
         "Erro de Cálculo",
         "Fidelidade Antiga",
@@ -63,7 +63,7 @@
       "description": "A ausência ganhou altar. A demora aprendeu liturgia.",
       "image": "assets/img/albums/album_iii.jpg",
       "stream_url": "https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys",
-      "page": "album-iii.html",
+      "page": "discografia/albuns/antologia/album-iii.html",
       "tracks": [
         "Santo Errado",
         "Tarde Demais",
@@ -90,7 +90,7 @@
       "description": "A presença perde corpo. O arquivo continua emitindo.",
       "image": "assets/img/albums/album_iv.jpg",
       "stream_url": "https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys",
-      "page": "album-iv.html",
+      "page": "discografia/albuns/antologia/album-iv.html",
       "tracks": [
         "Onde Se Guarda",
         "Frequência Distorcida",
@@ -112,7 +112,7 @@
       "description": "O submundo é a psique. Descer é reabrir o que parecia fechado.",
       "image": "assets/img/albums/album_v.jpg",
       "stream_url": "https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys",
-      "page": "album-v.html",
+      "page": "discografia/albuns/antologia/album-v.html",
       "tracks": [
         "LIMIAR",
         "A Porta Debaixo da Casa",
@@ -137,7 +137,7 @@
       "description": "Presente, vitrine, promessa e devolução sem nota fiscal.",
       "image": "assets/img/albums/ep_dia_dos_namorados_macabro.png",
       "stream_url": "https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys",
-      "page": "ep-dia-dos-namorados-macabro.html",
+      "page": "discografia/eps/dia-dos-namorados-macabro.html",
       "tracks": [
         "Feliz Dia (Que Horror)",
         "Assombração de Estimação",
