@@ -7,13 +7,11 @@ backend:
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
-
 locale: pt
 
 collections:
   - name: "transmissoes"
     label: "📡 Transmissões"
-    description: "Posts longos da AMORFA. Aparecem na Home como título + início do texto; clique abre completo."
     files:
       - name: "posts"
         label: "Todas as Transmissões"
@@ -21,12 +19,10 @@ collections:
         fields:
           - name: "posts"
             label: "Transmissões"
-            label_singular: "Transmissão"
             widget: "list"
-            summary: "{{fields.id}} — {{fields.titulo}}"
+            summary: "{{fields.titulo}}"
             fields:
               - {label: "ID", name: "id", widget: "string", required: false, default: ""}
-              - {label: "Tipo", name: "tipo", widget: "hidden", default: "transmissao"}
               - {label: "Título", name: "titulo", widget: "string", required: true}
               - {label: "Data", name: "data", widget: "datetime", required: false, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false}
               - label: "Imagem opcional"
@@ -35,60 +31,13 @@ collections:
                 required: false
                 media_folder: "/assets/uploads/transmissoes"
                 public_folder: "/assets/uploads/transmissoes"
-              - {label: "Legenda da imagem", name: "imagemLegenda", widget: "string", required: false, default: ""}
-              - {label: "Texto alternativo", name: "imagemAlt", widget: "string", required: false, default: ""}
               - {label: "Conteúdo", name: "conteudo", widget: "text", required: true}
               - {label: "Faixa relacionada", name: "faixa", widget: "string", required: false, default: ""}
-              - {label: "Player / link da música", name: "playerUrl", widget: "string", required: false, default: ""}
-
-  - name: "lancamentos"
-    label: "💿 Discografia"
-    description: "Álbuns, EPs e singles. A Discografia é gerada a partir deste arquivo."
-    files:
-      - name: "releases"
-        label: "Todos os lançamentos"
-        file: "assets/data/releases.json"
-        fields:
-          - name: "items"
-            label: "Lançamentos"
-            label_singular: "Lançamento"
-            widget: "list"
-            summary: "{{fields.category}} — {{fields.title}}"
-            fields:
-              - {label: "ID técnico", name: "id", widget: "string", hint: "sem espaços. Ex: novo-single"}
-              - label: "Categoria"
-                name: "category"
-                widget: "select"
-                options:
-                  - {label: "Álbum", value: "album"}
-                  - {label: "EP", value: "ep"}
-                  - {label: "Single", value: "single"}
-              - {label: "Coleção / projeto", name: "collection", widget: "string", required: false, default: "avulso"}
-              - {label: "Tipo público", name: "type", widget: "string", required: false, default: "SINGLE", hint: "ÁLBUM I, EP, SINGLE..."}
-              - {label: "Estado / eixo", name: "state", widget: "string", required: false, default: ""}
-              - {label: "Título", name: "title", widget: "string", required: true}
-              - {label: "Frase-eixo", name: "axis", widget: "string", required: false, default: ""}
-              - {label: "Descrição curta", name: "description", widget: "text", required: false, default: ""}
-              - label: "Capa"
-                name: "image"
-                widget: "image"
-                required: false
-                media_folder: "/assets/uploads/releases"
-                public_folder: "/assets/uploads/releases"
-                hint: "Para capas já existentes, pode manter nomes como i.png, ii.png etc."
-              - {label: "Data", name: "date", widget: "datetime", required: false, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false}
-              - {label: "Status", name: "status", widget: "string", required: false, default: "disponível"}
-              - {label: "Link para ouvir", name: "stream_url", widget: "string", required: false, default: ""}
-              - {label: "Página própria", name: "page", widget: "string", required: false, default: "", hint: "Opcional. Se vazio, abre automaticamente release.html?id=ID"}
-              - label: "Faixas"
-                name: "tracks"
-                widget: "list"
-                required: false
-                field: {label: "Faixa", name: "track", widget: "string"}
+              - {label: "Player/link", name: "playerUrl", widget: "string", required: false, default: ""}
 
   - name: "fragmentos"
     label: "🧩 Fragmentos"
-    description: "Fragmentos alimentam o carrossel da Home: imagem, frase ou imagem + frase."
+    description: "Alimenta o carrossel automático da Home."
     files:
       - name: "items"
         label: "Todos os Fragmentos"
@@ -96,26 +45,56 @@ collections:
         fields:
           - name: "items"
             label: "Fragmentos"
-            label_singular: "Fragmento"
             widget: "list"
-            summary: "{{fields.id}} — {{fields.texto}}"
+            summary: "{{fields.texto}}"
             fields:
               - {label: "ID", name: "id", widget: "string", required: false, default: ""}
-              - label: "Conteúdo do card"
-                name: "modo"
-                widget: "select"
-                default: "texto"
-                options:
-                  - {label: "Só texto", value: "texto"}
-                  - {label: "Só imagem", value: "imagem"}
-                  - {label: "Imagem + texto", value: "ambos"}
-              - {label: "Texto / verso", name: "texto", widget: "text", required: false, default: ""}
+              - {label: "Texto / frase", name: "texto", widget: "text", required: false, default: ""}
               - label: "Imagem"
                 name: "imagem"
                 widget: "image"
                 required: false
                 media_folder: "/assets/uploads/fragmentos"
                 public_folder: "/assets/uploads/fragmentos"
-              - {label: "Tom", name: "tom", widget: "string", required: false, default: "neutro"}
-              - {label: "Tamanho", name: "tamanho", widget: "string", required: false, default: "medio"}
+              - {label: "Tom", name: "tom", widget: "string", required: false, default: "fragmento"}
               - {label: "Data", name: "data", widget: "datetime", required: false, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false}
+
+  - name: "lancamentos"
+    label: "💿 Discografia"
+    files:
+      - name: "releases"
+        label: "Todos os lançamentos"
+        file: "assets/data/releases.json"
+        fields:
+          - name: "items"
+            label: "Lançamentos"
+            widget: "list"
+            summary: "{{fields.category}} — {{fields.title}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - label: "Categoria"
+                name: "category"
+                widget: "select"
+                options:
+                  - {label: "Álbum", value: "album"}
+                  - {label: "EP", value: "ep"}
+                  - {label: "Single", value: "single"}
+              - {label: "Coleção/projeto", name: "collection", widget: "string", required: false, default: "avulso"}
+              - {label: "Tipo público", name: "type", widget: "string", required: false, default: "SINGLE"}
+              - {label: "Estado/eixo", name: "state", widget: "string", required: false, default: ""}
+              - {label: "Título", name: "title", widget: "string", required: true}
+              - {label: "Frase-eixo", name: "axis", widget: "string", required: false, default: ""}
+              - {label: "Descrição", name: "description", widget: "text", required: false, default: ""}
+              - label: "Capa"
+                name: "image"
+                widget: "image"
+                required: false
+                media_folder: "/assets/uploads/releases"
+                public_folder: "/assets/uploads/releases"
+              - {label: "Link para ouvir", name: "stream_url", widget: "string", required: false, default: ""}
+              - {label: "Página própria", name: "page", widget: "string", required: false, default: ""}
+              - label: "Faixas"
+                name: "tracks"
+                widget: "list"
+                required: false
+                field: {label: "Faixa", name: "track", widget: "string"}

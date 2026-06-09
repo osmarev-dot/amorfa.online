@@ -1,41 +1,12 @@
 
-const $=(s,r=document)=>r.querySelector(s);
-const $$=(s,r=document)=>[...r.querySelectorAll(s)];
-let glitchLock=false;
-function pulseGlitch(){if(glitchLock)return;glitchLock=true;document.body.classList.add('is-glitch');setTimeout(()=>document.body.classList.remove('is-glitch'),210);setTimeout(()=>glitchLock=false,520)}
-document.addEventListener('pointerover',e=>{if(e.target.closest('a,button,.release-card,.transmission-card'))pulseGlitch()});
-document.addEventListener('click',e=>{if(e.target.closest('a,button,.release-card,.transmission-card'))pulseGlitch()});
-async function loadJSON(path,fallback=[]){try{const r=await fetch(path,{cache:'no-store'});if(!r.ok)return fallback;return await r.json()}catch(e){return fallback}}
-function list(data){if(Array.isArray(data))return data;if(data&&Array.isArray(data.posts))return data.posts;if(data&&Array.isArray(data.items))return data.items;return[]}
-function escapeHTML(str=''){return String(str).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-async function renderTransmissions(){
- const root=$('#transmission-list'); if(!root)return;
- let data=await loadJSON('transmissoes.json',null); if(!data)data=await loadJSON('assets/data/transmissoes.json',[]);
- const posts=list(data); if(!posts.length)return;
- root.className='transmission-list';
- root.innerHTML=posts.map((p,i)=>{const text=(p.conteudo||p.texto||'').trim();const excerpt=text.length>150?text.slice(0,150).trim()+'…':text;return `<article class="transmission-card" data-index="${i}"><span>${escapeHTML(p.data||'')}</span><h3>${escapeHTML(p.titulo||'Transmissão')}</h3><p>${escapeHTML(excerpt)}</p></article>`}).join('');
- const modal=$('#modal'); const close=$('.modal-close'); if(close)close.addEventListener('click',()=>modal.classList.remove('open')); if(modal)modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
- $$('.transmission-card',root).forEach(card=>card.addEventListener('click',()=>{const p=posts[Number(card.dataset.index)];$('#modal-date').textContent=p.data||'';$('#modal-title').textContent=p.titulo||'Transmissão';$('#modal-text').textContent=p.conteudo||p.texto||'';modal.classList.add('open');pulseGlitch()}));
-}
-renderTransmissions();
-
-async function renderFragments(){
- const carousel=$('#fragment-carousel'), track=$('#fragment-track'); if(!carousel||!track)return;
- const data=await loadJSON('fragmentos.json',null); const items=list(data).filter(item=>((item.texto||item.conteudo||'').trim()||(item.imagem||item.image||'').trim()));
- if(!items.length)return;
- let current=0, paused=false, timer=null;
- const imgPath=src=>!src?'':(src.startsWith('http')||src.startsWith('/')||src.startsWith('assets/')?src.replace(/^\//,''):`assets/uploads/fragmentos/${src}`);
- function slideHTML(item,i){
-   const text=escapeHTML(item.texto||item.conteudo||''), img=imgPath(item.imagem||item.image||''), alt=escapeHTML(item.imagemAlt||item.alt||item.texto||'Fragmento AMORFA'), date=escapeHTML(item.data||''), tone=escapeHTML(item.tom||'fragmento');
-   const imageHTML=img?`<div class="fragment-image"><img src="${img}" alt="${alt}"></div>`:`<div class="fragment-image empty-fragment-image" aria-hidden="true"></div>`;
-   const textHTML=text?`<blockquote>${text}</blockquote>`:`<blockquote>fragmento visual</blockquote>`;
-   return `<article class="fragment-slide ${i===0?'active':''}" aria-hidden="${i===0?'false':'true'}">${imageHTML}<div class="fragment-text"><span class="eyebrow">${tone}</span>${textHTML}<p>${date}</p></div></article>`;
- }
- track.innerHTML=items.map(slideHTML).join('')+`<div class="fragment-dots" aria-label="Selecionar fragmento">${items.map((_,i)=>`<button type="button" data-slide="${i}" class="${i===0?'active':''}" aria-label="Fragmento ${i+1}"></button>`).join('')}</div>`;
- const slides=$$('.fragment-slide',track), dots=$$('.fragment-dots button',track);
- function show(n){current=(n+slides.length)%slides.length;slides.forEach((s,i)=>{s.classList.toggle('active',i===current);s.setAttribute('aria-hidden',i===current?'false':'true')});dots.forEach((d,i)=>d.classList.toggle('active',i===current));pulseGlitch()}
- function next(){show(current+1)} function prev(){show(current-1)} function start(){clearInterval(timer); if(!paused&&items.length>1)timer=setInterval(next,5200)} function stop(){clearInterval(timer)}
- $('#fragment-next')?.addEventListener('click',()=>{next();start()}); $('#fragment-prev')?.addEventListener('click',()=>{prev();start()}); $('#fragment-pause')?.addEventListener('click',e=>{paused=!paused;e.target.textContent=paused?'retomar':'pausar';paused?stop():start()}); dots.forEach(d=>d.addEventListener('click',()=>{show(Number(d.dataset.slide));start()}));
- carousel.addEventListener('mouseenter',stop); carousel.addEventListener('mouseleave',start); carousel.addEventListener('focusin',stop); carousel.addEventListener('focusout',start); start();
-}
-renderFragments();
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+$('.menu')?.addEventListener('click',()=>document.body.classList.toggle('menu-open'));
+let lock=false;function glitch(){if(lock)return;lock=true;document.body.classList.add('is-glitch');setTimeout(()=>document.body.classList.remove('is-glitch'),180);setTimeout(()=>lock=false,520)}
+document.addEventListener('pointerover',e=>{if(e.target.closest('a,button,.frag-card,.transmission-card'))glitch()});
+async function loadJSON(path,fallback){try{const r=await fetch(path,{cache:'no-store'});if(!r.ok)return fallback;return await r.json()}catch(e){return fallback}}
+function list(d){if(Array.isArray(d))return d;if(d?.items)return d.items;if(d?.posts)return d.posts;return[]}
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function upath(src,type='fragmentos'){if(!src)return '';if(src.startsWith('http')||src.startsWith('/')||src.startsWith('assets/'))return src.replace(/^\//,'');return `assets/uploads/${type}/${src}`}
+async function renderFragments(){const sec=$('#fragmentos'), view=$('#fragment-view');if(!sec||!view)return;const items=list(await loadJSON('fragmentos.json',null)).filter(x=>(x.texto||x.conteudo||'').trim()||(x.imagem||x.image||'').trim()).slice(0,12);if(!items.length){sec.hidden=true;return}sec.hidden=false;let cur=0,paused=false,timer;view.innerHTML=items.map((it,i)=>{const img=upath(it.imagem||it.image||''),text=esc(it.texto||it.conteudo||''),tone=esc(it.tom||'fragmento'),date=esc(it.data||'');return `<article class="frag-card ${i==0?'active':''}">${img?`<img src="${img}" alt="${esc(it.imagemAlt||it.texto||'Fragmento AMORFA')}">`:''}<div class="frag-text"><span>${tone}</span><blockquote>${text||'fragmento visual'}</blockquote><p>${date}</p></div></article>`}).join('');const cards=$$('.frag-card',view);function show(n){cur=(n+cards.length)%cards.length;cards.forEach((c,i)=>{const d=Math.abs(i-cur);c.classList.toggle('active',i==cur||(innerWidth>900&&d<=1))});glitch()}function start(){clearInterval(timer);if(!paused&&items.length>1)timer=setInterval(()=>show(cur+1),5200)}$('#frag-next')?.addEventListener('click',()=>{show(cur+1);start()});$('#frag-prev')?.addEventListener('click',()=>{show(cur-1);start()});$('#frag-pause')?.addEventListener('click',e=>{paused=!paused;e.target.textContent=paused?'retomar':'pausar';paused?clearInterval(timer):start()});view.addEventListener('mouseenter',()=>clearInterval(timer));view.addEventListener('mouseleave',start);start()}
+async function renderTrans(){const root=$('#transmission-list');if(!root)return;const posts=list(await loadJSON('transmissoes.json',null));if(!posts.length)return;root.className='';root.innerHTML=posts.map((p,i)=>{const t=(p.conteudo||p.texto||'').trim(),ex=t.length>150?t.slice(0,150)+'…':t;return `<article class="transmission-card" data-i="${i}"><span class="kicker">${esc(p.data||'')}</span><h3>${esc(p.titulo||'Transmissão')}</h3><p>${esc(ex)}</p></article>`}).join('');const modal=$('#modal');$('#modal-close')?.addEventListener('click',()=>modal.classList.remove('open'));modal?.addEventListener('click',e=>{if(e.target==modal)modal.classList.remove('open')});$$('.transmission-card').forEach(c=>c.addEventListener('click',()=>{const p=posts[+c.dataset.i];$('#modal-date').textContent=p.data||'';$('#modal-title').textContent=p.titulo||'Transmissão';$('#modal-text').textContent=p.conteudo||p.texto||'';modal.classList.add('open')}))}
+renderFragments();renderTrans();

@@ -1,10 +1,12 @@
-AMORFA ZERO V20 — FRAGMENTOS NA HOME
+AMORFA PRO V22
 
-Adicionado:
-- Fragmentos na Home.
-- Carrossel editorial automático com pausa/anterior/próximo.
-- Pausa no hover/foco para leitura.
-- Alimentado por fragmentos.json / admin → 🧩 Fragmentos.
-- Aceita só texto, só imagem ou imagem + texto.
+Site refeita do zero visual:
+- Home apresenta AMORFA primeiro.
+- Antologia como projeto, não como entrada bruta.
+- Discografia funcional e renderizada em HTML.
+- Fragmentos em carrossel automático funcional.
+- Transmissões funcionais.
+- Admin preservado em /admin.
+- Arquivo flat: index.html está na raiz.
 
-Suba o conteúdo deste ZIP na raiz do repositório.
+Suba o conteúdo do ZIP direto na raiz do repositório.
