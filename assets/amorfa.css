@@ -41,7 +41,7 @@ img { display: block; max-width: 100%; height: auto; }
 ::selection { background: var(--red); color: #fff; }
 .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 100; padding: .7rem 1rem; border-radius: 999px; background: var(--ink); color: #000; }
 .skip-link:focus { top: 1rem; }
-.page-bg { position: fixed; inset: 0; z-index: 0; background-image: var(--bg-desktop); background-size: cover; background-position: center; opacity: var(--bg-opacity,.42); filter: grayscale(1) contrast(1.05) brightness(.86); pointer-events: none; transform: scale(1.01); }
+.page-bg { position: fixed; inset: 0; z-index: 0; background-image: var(--bg-desktop); background-size: cover; background-position: center; opacity: var(--bg-opacity,.42); filter: saturate(1.08) contrast(1.06) brightness(.94); pointer-events: none; transform: scale(1.01); }
 .page-overlay { position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(circle at 70% 35%, rgba(255,255,255,.08), transparent 34%), linear-gradient(90deg, rgba(0,0,0,.84), rgba(0,0,0,.44) 48%, rgba(0,0,0,.58)); }
 .grain { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .045; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 100% 3px; mix-blend-mode: screen; }
 .page-home { --bg-opacity: .46; }
@@ -187,4 +187,302 @@ h3 { margin-bottom: .55rem; font-family: var(--sans); font-size: var(--fs-h3); l
   .timeline-body { grid-column: 1 / -1; }
   .closing-band, .final-note { padding: 1.1rem; }
   .album-object { max-width: 360px; }
+}
+
+
+/* HERMES V4.4 — refino estético: cor, profundidade e hierarquia editorial */
+:root {
+  --bg: #020304;
+  --ink: #f2eadf;
+  --ink-2: #ddd1c4;
+  --muted: #b6aa9d;
+  --dim: #81766a;
+  --line: rgba(242,234,223,.18);
+  --line-strong: rgba(242,234,223,.34);
+  --panel: rgba(6,8,10,.54);
+  --panel-soft: rgba(242,234,223,.055);
+  --red: #b34a42;
+  --blue: #7da4d9;
+  --pink: #c66086;
+  --amber: #b8946d;
+  --fs-hero: clamp(3.05rem, 5.9vw, 5.35rem);
+  --fs-h1: clamp(2.35rem, 4.4vw, 4.25rem);
+  --fs-h2: clamp(1.75rem, 2.85vw, 2.65rem);
+  --fs-h3: clamp(1.12rem, 1.55vw, 1.42rem);
+}
+
+html,
+body {
+  background: #020304;
+}
+
+.page-bg {
+  opacity: var(--bg-opacity, .72);
+  filter: saturate(1.08) contrast(1.06) brightness(.94);
+  transform: scale(1.018);
+}
+
+.page-overlay {
+  background:
+    radial-gradient(circle at 74% 32%, rgba(125,164,217,.15), transparent 33%),
+    radial-gradient(circle at 22% 20%, rgba(179,74,66,.10), transparent 32%),
+    linear-gradient(90deg, rgba(0,0,0,.90) 0%, rgba(0,0,0,.66) 31%, rgba(0,0,0,.30) 64%, rgba(0,0,0,.62) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.68) 100%);
+}
+
+.grain {
+  opacity: .032;
+  background-image:
+    linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(255,255,255,.025), transparent 35%);
+  background-size: 100% 3px, 140px 140px;
+}
+
+.page-home { --bg-opacity: .78; }
+.page-antologia { --bg-opacity: .76; }
+.page-discografia { --bg-opacity: .68; }
+.page-ouvir { --bg-opacity: .58; }
+.page-sobre { --bg-opacity: .66; }
+.page-fragmentos { --bg-opacity: .66; }
+.page-transmissoes { --bg-opacity: .70; }
+.page-album { --bg-opacity: .68; }
+.page-ep { --bg-opacity: .74; }
+
+.site-header {
+  min-height: 64px;
+  background:
+    linear-gradient(180deg, rgba(2,3,4,.92), rgba(2,3,4,.70));
+  border-bottom: 1px solid rgba(242,234,223,.13);
+  box-shadow: 0 16px 60px rgba(0,0,0,.28);
+}
+
+.brand img {
+  width: 126px;
+  opacity: .88;
+}
+
+.main-nav {
+  color: rgba(242,234,223,.70);
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+  color: #fff6e7;
+  border-color: var(--red);
+}
+
+.site-main {
+  padding: clamp(3.6rem, 5.4vw, 5.8rem) 0;
+}
+
+.hero-home {
+  min-height: clamp(520px, 68vh, 700px);
+}
+
+.hero-copy {
+  padding: clamp(3.2rem, 6vw, 5.2rem) 0;
+}
+
+h1 {
+  letter-spacing: -.048em;
+  line-height: .97;
+  text-shadow: 0 18px 70px rgba(0,0,0,.48);
+}
+
+h2 {
+  letter-spacing: -.03em;
+  line-height: 1.02;
+}
+
+.lead,
+.prose {
+  color: rgba(242,234,223,.84);
+}
+
+.eyebrow,
+.timeline-index {
+  color: #d45e55;
+}
+
+.campaign-line,
+.closing-band,
+.final-note,
+.state-chip,
+.timeline-card,
+.release-card,
+.album-panel,
+.track-section,
+.single-empty,
+.fragment-card,
+.transmission-card,
+.platform-grid a {
+  background:
+    linear-gradient(135deg, rgba(12,15,18,.66), rgba(4,5,6,.58) 58%, rgba(88,42,48,.18));
+  border-color: rgba(242,234,223,.20);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.045),
+    0 18px 55px rgba(0,0,0,.20);
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 760px);
+  gap: .4rem;
+  align-items: start;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(242,234,223,.18);
+}
+
+.section-head.compact h2 {
+  margin-bottom: 0;
+}
+
+.section-head p {
+  max-width: var(--measure);
+}
+
+.state-chip,
+.release-card,
+.timeline-card,
+.platform-grid a,
+.fragment-card,
+.transmission-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.state-chip::before,
+.release-card::before,
+.timeline-card::before,
+.platform-grid a::before,
+.fragment-card::before,
+.transmission-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212,94,85,.78), rgba(125,164,217,.34), transparent);
+  opacity: .72;
+}
+
+.state-chip:nth-child(2n)::before,
+.release-card:nth-child(2n)::before,
+.timeline-card:nth-child(2n)::before {
+  background: linear-gradient(90deg, rgba(125,164,217,.74), rgba(198,96,134,.34), transparent);
+}
+
+.state-chip {
+  min-height: 142px;
+  backdrop-filter: blur(14px);
+}
+
+.state-chip strong,
+.release-copy h3,
+.timeline-body h2 {
+  color: #fff3e4;
+}
+
+.state-chip em,
+.timeline-body p:not(.state-label):not(.public-line),
+.release-copy .public-line {
+  color: rgba(242,234,223,.76);
+}
+
+.timeline-card {
+  grid-template-columns: 58px 112px minmax(0,1fr);
+  gap: 1rem;
+  padding: .92rem;
+}
+
+.timeline-cover img {
+  width: 112px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.25);
+}
+
+.release-grid {
+  gap: 1.1rem;
+}
+
+.release-card {
+  backdrop-filter: blur(14px);
+}
+
+.release-cover img,
+.album-object img,
+.timeline-cover img,
+.fragment-card img {
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.album-layout {
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.album-object img {
+  border: 1px solid rgba(242,234,223,.18);
+  box-shadow: 0 30px 100px rgba(0,0,0,.40);
+}
+
+.tracklist li {
+  border-bottom-color: rgba(242,234,223,.12);
+}
+
+.btn {
+  background: rgba(242,234,223,.065);
+  border-color: rgba(242,234,223,.28);
+}
+
+.btn.primary {
+  background: #f0e5d5;
+  color: #050505;
+  border-color: #f0e5d5;
+}
+
+.btn.ghost:hover,
+.btn:hover {
+  background: rgba(179,74,66,.16);
+  border-color: rgba(212,94,85,.68);
+}
+
+.site-footer {
+  background: linear-gradient(180deg, rgba(2,3,4,.72), rgba(2,3,4,.94));
+}
+
+@media (max-width: 980px) {
+  .section-head,
+  .closing-band,
+  .final-note,
+  .album-layout,
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-bg {
+    opacity: var(--bg-opacity,.70);
+    filter: saturate(1.05) contrast(1.04) brightness(.88);
+  }
+  .page-overlay {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.78), rgba(0,0,0,.46) 40%, rgba(0,0,0,.88)),
+      radial-gradient(circle at 50% 20%, rgba(125,164,217,.14), transparent 44%);
+  }
+  .site-main {
+    width: min(var(--container), calc(100vw - 1.2rem));
+    padding: 2.8rem 0;
+  }
+  .page-home h1 {
+    font-size: clamp(2.55rem, 12.3vw, 4rem);
+  }
+  h1 {
+    font-size: clamp(2.2rem, 10vw, 3.55rem);
+  }
+  .timeline-card {
+    grid-template-columns: 48px minmax(0,1fr);
+  }
+  .timeline-cover {
+    max-width: 200px;
+  }
 }
