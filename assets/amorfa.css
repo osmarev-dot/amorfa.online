@@ -41,18 +41,18 @@ img { display: block; max-width: 100%; height: auto; }
 ::selection { background: var(--red); color: #fff; }
 .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 100; padding: .7rem 1rem; border-radius: 999px; background: var(--ink); color: #000; }
 .skip-link:focus { top: 1rem; }
-.page-bg { position: fixed; inset: 0; z-index: 0; background-image: var(--bg-desktop); background-size: cover; background-position: center; opacity: var(--bg-opacity,.34); filter: grayscale(1) contrast(1.04) brightness(.72); pointer-events: none; transform: scale(1.01); }
-.page-overlay { position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(circle at 70% 35%, rgba(255,255,255,.08), transparent 34%), linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.54) 48%, rgba(0,0,0,.78)); }
+.page-bg { position: fixed; inset: 0; z-index: 0; background-image: var(--bg-desktop); background-size: cover; background-position: center; opacity: var(--bg-opacity,.42); filter: grayscale(1) contrast(1.05) brightness(.86); pointer-events: none; transform: scale(1.01); }
+.page-overlay { position: fixed; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(circle at 70% 35%, rgba(255,255,255,.08), transparent 34%), linear-gradient(90deg, rgba(0,0,0,.84), rgba(0,0,0,.44) 48%, rgba(0,0,0,.58)); }
 .grain { position: fixed; inset: 0; z-index: 2; pointer-events: none; opacity: .045; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 100% 3px; mix-blend-mode: screen; }
-.page-home { --bg-opacity: .42; }
-.page-antologia { --bg-opacity: .36; }
-.page-discografia { --bg-opacity: .28; }
-.page-ouvir { --bg-opacity: .22; }
-.page-sobre { --bg-opacity: .24; }
-.page-fragmentos { --bg-opacity: .24; }
-.page-transmissoes { --bg-opacity: .28; }
-.page-album { --bg-opacity: .30; }
-.page-ep { --bg-opacity: .32; }
+.page-home { --bg-opacity: .46; }
+.page-antologia { --bg-opacity: .52; }
+.page-discografia { --bg-opacity: .38; }
+.page-ouvir { --bg-opacity: .30; }
+.page-sobre { --bg-opacity: .34; }
+.page-fragmentos { --bg-opacity: .34; }
+.page-transmissoes { --bg-opacity: .38; }
+.page-album { --bg-opacity: .40; }
+.page-ep { --bg-opacity: .42; }
 .site-header, .site-main, .site-footer { position: relative; z-index: 3; }
 .site-header { position: sticky; top: 0; z-index: 20; display: grid; grid-template-columns: 170px 1fr auto; gap: 1rem; align-items: center; min-height: 68px; padding: 0 clamp(1rem, 4vw, 3rem); border-bottom: 1px solid rgba(238,232,220,.12); background: linear-gradient(180deg, rgba(3,3,3,.86), rgba(3,3,3,.52)); backdrop-filter: blur(18px); }
 .brand { display: inline-flex; align-items: center; width: max-content; }
@@ -173,7 +173,7 @@ h3 { margin-bottom: .55rem; font-family: var(--sans); font-size: var(--fs-h3); l
 }
 @media (max-width: 760px) {
   .page-bg { background-image: var(--bg-mobile); background-position: center top; opacity: var(--bg-opacity,.32); }
-  .page-overlay { background: linear-gradient(180deg, rgba(0,0,0,.82), rgba(0,0,0,.58) 44%, rgba(0,0,0,.9)); }
+  .page-overlay { background: linear-gradient(180deg, rgba(0,0,0,.76), rgba(0,0,0,.50) 44%, rgba(0,0,0,.86)); }
   .site-main { width: min(var(--container), calc(100vw - 1rem)); padding: 3.2rem 0; }
   .brand img { width: 116px; }
   .hero-home { min-height: auto; }
