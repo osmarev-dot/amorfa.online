@@ -3,147 +3,129 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Discografia | AMORFA</title>
-<meta name="description" content="Discografia oficial da AMORFA: álbuns, EPs e singles.">
+<title>Discografia — AMORFA</title>
+<meta name="description" content="Discografia oficial da AMORFA: álbuns da Antologia, EPs e ciclos musicais. Dark synthetic pop brasileiro, rock alternativo e synth-pop sombrio.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#030303">
-<meta property="og:title" content="Discografia | AMORFA">
-<meta property="og:description" content="Discografia oficial da AMORFA: álbuns, EPs e singles.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/site/grupo_manequins.png">
 <link rel="canonical" href="https://amorfa.online/discografia.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Discografia AMORFA">
+<meta property="og:description" content="Álbuns, EPs e ciclos oficiais da entidade musical sintética brasileira AMORFA.">
+<meta property="og:url" content="https://amorfa.online/discografia.html">
+<meta property="og:image" content="https://amorfa.online/assets/img/og/discografia-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Discografia AMORFA">
+<meta name="twitter:description" content="Álbuns, EPs e ciclos oficiais da entidade musical sintética brasileira AMORFA.">
+<meta name="twitter:image" content="https://amorfa.online/assets/img/og/discografia-og.jpg">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
-
-<style>
-/* PATCH V37 — discografia.html raiz corrigido sem depender das versões antigas */
-*{box-sizing:border-box;font-weight:400!important}
-html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#030303;color:#e9e2d4}
-body{display:grid;grid-template-rows:68px minmax(0,1fr) 34px;font-family:Inter,system-ui,sans-serif}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-
-.page-bg{position:fixed;inset:0;z-index:0;background-image:url("assets/img/site/grupo_manequins.png");background-size:cover;background-position:center;opacity:.58}
-.page-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,3,3,.92),rgba(3,3,3,.62) 52%,rgba(3,3,3,.90)),linear-gradient(180deg,rgba(3,3,3,.12),rgba(3,3,3,.86))}
-.grain{position:fixed;inset:0;z-index:4;pointer-events:none;opacity:.055;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px);background-size:100% 3px}
-
-.site-header{position:relative;z-index:30;height:68px;display:grid;grid-template-columns:170px minmax(0,1fr) auto;align-items:center;gap:24px;padding:0 42px;background:linear-gradient(180deg,rgba(0,0,0,.82),rgba(0,0,0,.22));backdrop-filter:blur(12px)}
-.brand{display:flex;align-items:center;width:160px;height:42px}
-.brand img{width:136px;height:auto;max-height:40px;object-fit:contain;object-position:left center}
-.menu-toggle{display:none}
-.main-nav{display:flex;align-items:center;justify-content:center;gap:clamp(20px,2.4vw,40px);font-family:"JetBrains Mono",monospace;font-size:11px;line-height:1;letter-spacing:.15em;text-transform:uppercase;color:rgba(233,226,212,.68);white-space:nowrap}
-.main-nav a{padding:8px 0;border-bottom:1px solid transparent}
-.main-nav a.active,.main-nav a:hover{color:#e9e2d4;border-color:#8f3934}
-.stream-icons{display:flex;align-items:center;gap:14px}
-.stream-icons a{width:30px;height:30px;display:grid;place-items:center;opacity:.88}
-.stream-icons svg{width:20px;height:20px;fill:currentColor}
-.stream-icons span{font-family:"JetBrains Mono",monospace;font-size:11px;text-transform:uppercase}
-
-.site-footer{position:relative;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:0 42px 12px;color:rgba(233,226,212,.42);font-family:"JetBrains Mono",monospace;font-size:10px;line-height:1;letter-spacing:.16em;text-transform:uppercase}
-.social-icons{display:flex;align-items:center;justify-content:flex-end;gap:15px;min-width:160px}
-.social-icons a{width:30px;height:30px;display:grid;place-items:center;opacity:.88}
-.social-icons svg{width:20px;height:20px;fill:currentColor}
-.social-icons span{font-size:11px}
-
-.discografia-root{position:relative;z-index:20;width:min(1280px,calc(100vw - 112px));height:100%;margin:0 auto;display:grid;grid-template-columns:360px minmax(0,1fr);grid-template-rows:1fr;gap:72px;align-items:center;overflow:hidden}
-.disc-title h1{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(56px,6vw,110px);line-height:.86;letter-spacing:.10em;text-transform:uppercase}
-.eyebrow{margin:0 0 12px;color:#8f3934;font-family:"JetBrains Mono",monospace;font-size:11px;line-height:1.25;letter-spacing:.22em;text-transform:uppercase}
-.lead{margin:22px 0 0;max-width:390px;color:#e9e2d4;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(22px,1.9vw,34px);line-height:1.08}
-.taxonomy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;height:min(440px,58vh);align-items:stretch}
-.taxonomy-card{display:flex;flex-direction:column;justify-content:flex-end;min-height:0;padding:24px;background:rgba(3,3,3,.30);overflow:hidden;transition:background .16s ease,transform .16s ease}
-.taxonomy-card:hover{background:rgba(3,3,3,.46);transform:translateY(-2px)}
-.taxonomy-card.major{background:rgba(3,3,3,.44)}
-.taxonomy-card span{color:#8f3934;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
-.taxonomy-card h2{margin:14px 0 12px;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(36px,4vw,68px);line-height:.9;letter-spacing:.04em;text-transform:uppercase}
-.taxonomy-card p{max-width:260px;margin:0;color:rgba(233,226,212,.68);font-size:13px;line-height:1.45}
-
-@media(max-width:920px){
-  body{grid-template-rows:auto minmax(0,1fr) 38px}
-  .site-header{min-height:64px;height:auto;grid-template-columns:1fr auto;padding:10px 14px;gap:8px}
-  .brand img{width:126px;max-height:36px}
-  .menu-toggle{display:block;height:34px;border:0;background:rgba(0,0,0,.25);color:#e9e2d4;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-  .main-nav{display:none;grid-column:1/-1;flex-direction:column;align-items:flex-start;gap:0;padding:10px 0;background:rgba(3,3,3,.96)}
-  body.menu-open .main-nav{display:flex}
-  .stream-icons{grid-column:1/-1;display:grid;grid-template-columns:repeat(6,1fr);gap:5px;width:100%;padding-top:8px;border-top:1px solid rgba(233,226,212,.08)}
-  .stream-icons a{width:100%;height:34px}
-  .discografia-root{width:calc(100vw - 28px);grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:14px}
-  .disc-title h1{font-size:clamp(34px,10vw,56px)}
-  .disc-title .lead{display:none}
-  .taxonomy-grid{grid-template-columns:1fr;height:auto;gap:10px}
-  .taxonomy-card{min-height:112px;padding:16px}
-  .taxonomy-card h2{font-size:clamp(32px,9vw,48px)}
-  .site-footer{padding:0 14px 9px}
-  .site-footer>span:nth-child(2){display:none}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/amorfa.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"AMORFA","url":"https://amorfa.online","description":"Entidade musical sintética brasileira entre dark synthetic pop, rock alternativo e synth-pop sombrio.","genre":["Dark synthetic pop","Rock alternativo","Synth-pop sombrio"],"sameAs":["https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys","https://music.apple.com/br/artist/amorfa/1896548394","https://music.youtube.com/channel/UCf4NhTyzi2UVOfR83s49V4g","https://music.amazon.com.br/artists/B0H24NS7Q1/amorfa","https://www.deezer.com/br/artist/391523921","https://tidal.com/artist/79743124","https://www.instagram.com/amorfa.online","https://www.tiktok.com/@amorfa.online","https://x.com/amorfaonline","https://www.youtube.com/@AMORFA"]}</script>
 </head>
-
-<body>
-<div class="page-bg"></div>
+<body class="page-discografia">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="page-bg" style="--bg-desktop: url('assets/img/backgrounds/discografia_desktop.webp'); --bg-mobile: url('assets/img/backgrounds/discografia_desktop.webp');" aria-hidden="true"></div>
+<div class="page-overlay" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
-
 <header class="site-header">
-  <a class="brand" href="index.html" aria-label="AMORFA"><img src="assets/img/logo.png" alt="AMORFA"></a>
-  <button class="menu-toggle" type="button" aria-label="Abrir menu">menu</button>
-  <nav class="main-nav">
-    <a href="index.html">Início</a>
-    <a class="active" href="discografia.html">Discografia</a>
-    <a href="fragmentos.html">Fragmentos</a>
-    <a href="transmissoes.html">Transmissões</a>
-  </nav>
-  <div class="stream-icons">
-    <a href="https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener" title="Spotify" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.45 14.25a.74.74 0 0 1-1.02.24 9.8 9.8 0 0 0-6.34-.78.75.75 0 0 1-.32-1.46 11.3 11.3 0 0 1 7.45.92.75.75 0 0 1 .23 1.08Zm1.16-2.64a.9.9 0 0 1-1.21.36 12.4 12.4 0 0 0-7.8-.94.9.9 0 0 1-.38-1.76 14.4 14.4 0 0 1 8.95 1.08.9.9 0 0 1 .44 1.26Zm.12-2.9a15.4 15.4 0 0 0-9.62-.96A1.05 1.05 0 0 1 7.66 7.7a17.5 17.5 0 0 1 10.95 1.1 1.05 1.05 0 1 1-.88 1.9Z"/></svg></a>
-    <a href="https://music.apple.com/br/artist/amorfa/1896548394" target="_blank" rel="noopener" title="Apple Music" aria-label="Apple Music"><span></span></a>
-    <a href="https://music.youtube.com/channel/UCf4NhTyzi2UVOfR83s49V4g" target="_blank" rel="noopener" title="YouTube Music" aria-label="YouTube Music"><span>▶</span></a>
-    <a href="https://music.amazon.com.br/artists/B0H24NS7Q1/amorfa" target="_blank" rel="noopener" title="Amazon Music" aria-label="Amazon Music"><span>amz</span></a>
-    <a href="https://www.deezer.com/br/artist/391523921" target="_blank" rel="noopener" title="Deezer" aria-label="Deezer"><span>dzr</span></a>
-    <a href="https://tidal.com/artist/79743124" target="_blank" rel="noopener" title="Tidal" aria-label="Tidal"><span>◆</span></a>
-  </div>
+  <a class="brand" href="index.html" aria-label="AMORFA — início"><img src="assets/img/logo.png" alt="AMORFA"></a>
+  <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">menu</button>
+  <nav class="main-nav" aria-label="Navegação principal"><a href="antologia.html">Antologia</a><a href="discografia.html" aria-current="page">Discografia</a><a href="ouvir.html">Ouvir</a></nav>
+  <nav class="mobile-secondary-nav" aria-label="Navegação secundária"><a href="sobre.html">Sobre</a><a href="fragmentos.html">Fragmentos</a><a href="transmissoes.html">Transmissões</a></nav>
 </header>
+<main id="conteudo" class="site-main">
 
-<main class="discografia-root">
-  <section class="disc-title">
-    <p class="eyebrow">discografia</p>
-    <h1>Catálogo</h1>
-    <p class="lead">A obra pública da AMORFA organizada por forma de lançamento.</p>
-  </section>
-
-  <section class="taxonomy-grid" aria-label="Categorias da discografia">
-    <a class="taxonomy-card major" href="discografia/albuns/index.html">
-      <span>01</span>
-      <h2>Álbuns</h2>
-      <p>Obras longas. Dentro delas, a Antologia.</p>
-    </a>
-
-    <a class="taxonomy-card" href="discografia/eps/index.html">
-      <span>02</span>
-      <h2>EPs</h2>
-      <p>Campanhas, desvios e transmissões curtas.</p>
-    </a>
-
-    <a class="taxonomy-card" href="discografia/singles/index.html">
-      <span>03</span>
-      <h2>Singles</h2>
-      <p>Sinais isolados.</p>
-    </a>
-  </section>
+<section class="hero hero-internal narrow-hero">
+  <p class="eyebrow">arquivo oficial</p>
+  <h1>Discografia</h1>
+  <p class="lead">Álbuns, EPs e ciclos oficiais da AMORFA.</p>
+</section>
+<section id="albuns" class="release-section">
+  <div class="section-head compact"><p class="eyebrow">Álbuns oficiais</p><h2>Antologia AMORFA</h2><p>A Antologia atravessa seis estados da forma: superfície, contato, devoção, dissolução, submundo e arquivo final.</p></div>
+  <div class="release-grid"><article class="release-card" id="album-i">
+  <a class="release-cover" href="discografia/albuns/antologia/album-i.html" aria-label="Abrir Tudo Que Eu Uso Me Usa de Volta"><img src="assets/img/optimized/albums/album_i-480.webp" alt="Capa de Tudo Que Eu Uso Me Usa de Volta." loading="lazy" decoding="async"></a>
+  <div class="release-copy">
+    <p class="state-label">I — Superfície</p>
+    <h3><a href="discografia/albuns/antologia/album-i.html">Tudo Que Eu Uso Me Usa de Volta</a></h3>
+    <p class="public-line">A imagem salva e devora.</p>
+    <p class="status-badge">disponível</p>
+  </div>
+</article>
+<article class="release-card" id="album-ii">
+  <a class="release-cover" href="discografia/albuns/antologia/album-ii.html" aria-label="Abrir Pequenos Incêndios sob o Ar-Condicionado no Máximo"><img src="assets/img/optimized/albums/album_ii-480.webp" alt="Capa de Pequenos Incêndios sob o Ar-Condicionado no Máximo." loading="lazy" decoding="async"></a>
+  <div class="release-copy">
+    <p class="state-label">II — Contato</p>
+    <h3><a href="discografia/albuns/antologia/album-ii.html">Pequenos Incêndios sob o Ar-Condicionado no Máximo</a></h3>
+    <p class="public-line">O corpo queima sob contenção fria.</p>
+    <p class="status-badge">disponível</p>
+  </div>
+</article>
+<article class="release-card" id="album-iii">
+  <a class="release-cover" href="discografia/albuns/antologia/album-iii.html" aria-label="Abrir Teologia dos Fracassos Afetivos em Cama de Solteiro"><img src="assets/img/optimized/albums/album_iii-480.webp" alt="Capa de Teologia dos Fracassos Afetivos em Cama de Solteiro." loading="lazy" decoding="async"></a>
+  <div class="release-copy">
+    <p class="state-label">III — Devoção</p>
+    <h3><a href="discografia/albuns/antologia/album-iii.html">Teologia dos Fracassos Afetivos em Cama de Solteiro</a></h3>
+    <p class="public-line">A ausência vira religião doméstica.</p>
+    <p class="status-badge">em breve</p>
+  </div>
+</article>
+<article class="release-card" id="album-iv">
+  <a class="release-cover" href="discografia/albuns/antologia/album-iv.html" aria-label="Abrir Fantasmogênese"><img src="assets/img/optimized/albums/album_iv-480.webp" alt="Capa de Fantasmogênese." loading="lazy" decoding="async"></a>
+  <div class="release-copy">
+    <p class="state-label">IV — Dissolução</p>
+    <h3><a href="discografia/albuns/antologia/album-iv.html">Fantasmogênese</a></h3>
+    <p class="public-line">A forma falha e começa a nascer outra.</p>
+    <p class="status-badge">em breve</p>
+  </div>
+</article>
+<article class="release-card" id="album-v">
+  <a class="release-cover" href="discografia/albuns/antologia/album-v.html" aria-label="Abrir O Arranjo do Submundo"><img src="assets/img/optimized/albums/album_v-480.webp" alt="Capa de O Arranjo do Submundo." loading="lazy" decoding="async"></a>
+  <div class="release-copy">
+    <p class="state-label">V — Submundo</p>
+    <h3><a href="discografia/albuns/antologia/album-v.html">O Arranjo do Submundo</a></h3>
+    <p class="public-line">O fundo psíquico revela suas entidades.</p>
+    <p class="status-badge">em breve</p>
+  </div>
+</article>
+<article class="release-card" id="album-vi">
+  <a class="release-cover" href="discografia/albuns/antologia/album-vi.html" aria-label="Abrir Epílogo: Onde Se Guarda o Que Não Existe Mais"><img src="assets/img/optimized/albums/album_vi-480.webp" alt="Capa de Epílogo: Onde Se Guarda o Que Não Existe Mais." loading="lazy" decoding="async"></a>
+  <div class="release-copy">
+    <p class="state-label">VI — Arquivo final</p>
+    <h3><a href="discografia/albuns/antologia/album-vi.html">Epílogo: Onde Se Guarda o Que Não Existe Mais</a></h3>
+    <p class="public-line">O que não voltou inteiro encontra uma forma de permanecer.</p>
+    <p class="status-badge">em breve</p>
+  </div>
+</article></div>
+</section>
+<section id="eps" class="release-section">
+  <div class="section-head compact"><p class="eyebrow">EPs</p><h2>Ciclos paralelos</h2><p>Recortes, transmissões e campanhas específicas fora da sequência principal da Antologia.</p></div>
+  <div class="release-grid ep-grid"><article class="release-card" id="dia-dos-namorados-macabro">
+  <a class="release-cover" href="discografia/eps/dia-dos-namorados-macabro.html" aria-label="Abrir Dia dos Namorados Macabro"><img src="assets/img/optimized/albums/ep_dia_dos_namorados_macabro-480.webp" alt="Capa de Dia dos Namorados Macabro." loading="lazy" decoding="async"></a>
+  <div class="release-copy">
+    <p class="state-label">EP — Ciclo paralelo</p>
+    <h3><a href="discografia/eps/dia-dos-namorados-macabro.html">Dia dos Namorados Macabro</a></h3>
+    <p class="public-line">O amor como produto com péssimo histórico.</p>
+    <p class="status-badge">disponível</p>
+  </div>
+</article></div>
+</section>
+<section id="singles" class="release-section single-empty">
+  <p class="eyebrow">Singles</p>
+  <p>Nenhum single isolado publicado no momento. O arquivo principal da AMORFA está organizado em álbuns e ciclos.</p>
+</section>
 </main>
-
 <footer class="site-footer">
-  <span>AMORFA</span>
-  <span>A Guardiã das Formas</span>
-  <div class="social-icons">
-    <a href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><span>◎</span></a>
-    <a href="https://www.tiktok.com/@amorfa.online" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok"><span>♪</span></a>
-    <a href="https://x.com/amorfaonline" target="_blank" rel="noopener" title="X" aria-label="X"><span>𝕏</span></a>
-    <a href="https://www.youtube.com/@AMORFA" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><span>▶</span></a>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand">AMORFA — entidade musical sintética brasileira.</p>
+      <p>Dark synthetic pop. Rock alternativo. Synth-pop sombrio. A forma que a falta produz.</p>
+    </div>
+    <nav class="footer-links" aria-label="Rotas secundárias"><a href="sobre.html">Sobre</a><a href="fragmentos.html">Fragmentos</a><a href="transmissoes.html">Transmissões</a></nav>
+    <nav class="footer-links social-links" aria-label="Links sociais"><a href="https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener">Spotify</a><a href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener">Instagram</a><a href="https://www.tiktok.com/@amorfa.online" target="_blank" rel="noopener">TikTok</a><a href="https://x.com/amorfaonline" target="_blank" rel="noopener">X</a><a href="https://www.youtube.com/@AMORFA" target="_blank" rel="noopener">YouTube</a></nav>
   </div>
 </footer>
-
-<script>
-document.querySelector('.menu-toggle')?.addEventListener('click',()=>document.body.classList.toggle('menu-open'));
-</script>
+<script src="assets/amorfa.js" defer></script>
 </body>
 </html>

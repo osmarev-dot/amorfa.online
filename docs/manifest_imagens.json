@@ -1,0 +1,182 @@
+[
+  {
+    "final": "home_desktop.webp",
+    "source": "HOME_desktop.png",
+    "usage": "Home desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 74612
+  },
+  {
+    "final": "antologia_desktop.webp",
+    "source": "antologia_desktop.png",
+    "usage": "Página Antologia desktop",
+    "status": "aprovado/usar como versão principal",
+    "width": 1672,
+    "height": 941,
+    "bytes": 66784
+  },
+  {
+    "final": "album_vi_arquivo_final_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_25 (1).png",
+    "usage": "Álbum VI desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 30906
+  },
+  {
+    "final": "discografia_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_25 (2).png",
+    "usage": "Discografia desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 58984
+  },
+  {
+    "final": "ouvir_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_26 (3).png",
+    "usage": "Ouvir desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 20152
+  },
+  {
+    "final": "sobre_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_26 (4).png",
+    "usage": "Sobre desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 23048
+  },
+  {
+    "final": "album_i_superficie_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_26 (5).png",
+    "usage": "Álbum I — Superfície desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 27966
+  },
+  {
+    "final": "album_ii_contato_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_26 (6).png",
+    "usage": "Álbum II — Contato desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 68100
+  },
+  {
+    "final": "album_iii_devocao_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_27 (7).png",
+    "usage": "Álbum III — Devoção desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 31988
+  },
+  {
+    "final": "album_iv_dissolucao_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_27 (8).png",
+    "usage": "Álbum IV — Dissolução desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 156420
+  },
+  {
+    "final": "album_v_submundo_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_27 (9).png",
+    "usage": "Álbum V — Submundo desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 66254
+  },
+  {
+    "final": "ep_dia_dos_namorados_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_16_28 (10).png",
+    "usage": "EP Dia dos Namorados Macabro desktop",
+    "status": "aprovado",
+    "width": 1672,
+    "height": 941,
+    "bytes": 62756
+  },
+  {
+    "final": "fragmentos_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 13_56_05.png",
+    "usage": "Fragmentos desktop",
+    "status": "usar como arquivo lateral/vestígio",
+    "width": 1672,
+    "height": 941,
+    "bytes": 53042
+  },
+  {
+    "final": "transmissoes_desktop.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 13_44_22.png",
+    "usage": "Transmissões desktop",
+    "status": "usar como sinal/reflexo",
+    "width": 1672,
+    "height": 941,
+    "bytes": 39204
+  },
+  {
+    "final": "home_mobile.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 13_47_12.png",
+    "usage": "Home mobile",
+    "status": "aprovado",
+    "width": 941,
+    "height": 1672,
+    "bytes": 46092
+  },
+  {
+    "final": "antologia_mobile.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 13_16_59.png",
+    "usage": "Antologia mobile",
+    "status": "base disponível",
+    "width": 941,
+    "height": 1672,
+    "bytes": 44120
+  },
+  {
+    "final": "album_vi_arquivo_final_mobile.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_06_12.png",
+    "usage": "Álbum VI mobile",
+    "status": "base disponível",
+    "width": 941,
+    "height": 1672,
+    "bytes": 31114
+  },
+  {
+    "final": "sobre_mobile.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 13_51_15.png",
+    "usage": "Sobre mobile",
+    "status": "base disponível",
+    "width": 941,
+    "height": 1672,
+    "bytes": 46092
+  },
+  {
+    "final": "album_v_submundo_mobile.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 13_30_39.png",
+    "usage": "Álbum V mobile / alternativa escura",
+    "status": "base disponível",
+    "width": 941,
+    "height": 1672,
+    "bytes": 67146
+  },
+  {
+    "final": "transmissoes_mobile.webp",
+    "source": "ChatGPT Image 12 de jun. de 2026, 14_10_06.png",
+    "usage": "Transmissões mobile / alternativa escura",
+    "status": "base disponível",
+    "width": 941,
+    "height": 1672,
+    "bytes": 72746
+  }
+]
