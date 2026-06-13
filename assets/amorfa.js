@@ -30,17 +30,19 @@ const AMORFA = (() => {
           return;
         }
 
-        const imageSizes = ['frag-wide', 'frag-tall', 'frag-small', 'frag-large', 'frag-square'];
+        const imageSizes = ['frag-wide', 'frag-mini', 'frag-tall', 'frag-small', 'frag-square', 'frag-medium'];
         const quoteSizes = ['frag-quote-small', 'frag-quote-wide', 'frag-quote-tall'];
-
         const cards = [];
+
         items.forEach((item, index) => {
           const texto = item.texto || '';
           const img = normalizeAsset(item.imagem);
           const modo = String(item.modo || (img ? 'imagem' : 'texto')).toLowerCase();
-          const alt = item.imagemAlt || texto || item.id || 'Fragmento AMORFA';
+          const alt = item.imagemAlt || 'Fragmento visual AMORFA';
 
-          // Regra pública: ou é imagem, ou é frase. Nunca legenda + imagem no mesmo card.
+          // Regra pública definitiva:
+          // modo imagem = só imagem, sem frase, sem tom, sem ID;
+          // modo texto = só frase, sem imagem.
           if (modo === 'texto' || !img) {
             if (texto) {
               const size = quoteSizes[index % quoteSizes.length];
@@ -58,8 +60,9 @@ const AMORFA = (() => {
           return;
         }
 
-        const lanes = [[], [], []];
-        cards.forEach((card, index) => lanes[index % lanes.length].push(card));
+        const laneCount = cards.length > 12 ? 4 : 3;
+        const lanes = Array.from({ length: laneCount }, () => []);
+        cards.forEach((card, index) => lanes[index % laneCount].push(card));
         mount.innerHTML = `<div class="fragment-drift">${lanes.map((lane, index) => {
           const laneCards = lane.length ? lane : cards;
           const repeated = [...laneCards, ...laneCards, ...laneCards].join('');

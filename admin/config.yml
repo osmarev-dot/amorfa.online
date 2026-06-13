@@ -17,7 +17,7 @@ locale: pt
 collections:
   - name: "fragmentos"
     label: "🧩 Fragmentos"
-    description: "Arquivo lateral da AMORFA. Edite texto, tom e imagem; a página /fragmentos.html lê este JSON automaticamente."
+    description: "Arquivo lateral da AMORFA. A página pública mostra imagem sozinha ou frase sozinha; ID/tom não aparecem no site."
     files:
       - name: "items"
         label: "Todos os Fragmentos"
@@ -29,27 +29,27 @@ collections:
             label_singular: "Fragmento"
             widget: "list"
             collapsed: true
-            summary: "{{fields.id}} — {{fields.texto}}"
+            summary: "{{fields.modo}} — {{fields.texto}}"
             fields:
-              - label: "ID"
+              - label: "Código interno"
                 name: "id"
                 widget: "string"
-                required: true
-                hint: "Ex.: F-010. Mantém a ordem e evita item sem nome."
+                required: false
+                hint: "Opcional. Não aparece no site."
               - label: "Modo"
                 name: "modo"
                 widget: "select"
                 required: true
                 default: "imagem"
                 options:
-                  - { label: "Imagem + texto", value: "imagem" }
-                  - { label: "Só texto", value: "texto" }
+                  - { label: "Imagem — só a imagem aparece", value: "imagem" }
+                  - { label: "Frase — só o texto aparece", value: "texto" }
               - label: "Texto / frase"
                 name: "texto"
                 widget: "text"
                 required: false
                 default: ""
-                hint: "Texto exibido no card. Pode usar quebra de linha."
+                hint: "Use quando o modo for Frase. Se o modo for Imagem, este texto não aparece no site público."
               - label: "Imagem"
                 name: "imagem"
                 widget: "image"
@@ -57,33 +57,7 @@ collections:
                 media_folder: "assets/uploads/fragmentos"
                 public_folder: "/assets/uploads/fragmentos"
                 choose_url: false
-                hint: "Clique em Replace para abrir a biblioteca com miniaturas. Use WebP/JPG/PNG leve."
-              - label: "Tom"
-                name: "tom"
-                widget: "select"
-                required: false
-                default: "neutro"
-                options:
-                  - { label: "Neutro", value: "neutro" }
-                  - { label: "Azul", value: "azul" }
-                  - { label: "Vermelho", value: "vermelho" }
-                  - { label: "Arquivo", value: "arquivo" }
-              - label: "Tamanho"
-                name: "tamanho"
-                widget: "select"
-                required: false
-                default: "medio"
-                options:
-                  - { label: "Pequeno", value: "pequeno" }
-                  - { label: "Médio", value: "medio" }
-                  - { label: "Grande", value: "grande" }
-              - label: "Data"
-                name: "data"
-                widget: "datetime"
-                required: false
-                format: "YYYY-MM-DD"
-                date_format: "DD/MM/YYYY"
-                time_format: false
+                hint: "Use quando o modo for Imagem. No site público, a imagem aparece sem legenda e abre em tamanho original."
 
   - name: "transmissoes"
     label: "📡 Transmissões"

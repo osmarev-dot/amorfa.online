@@ -1388,52 +1388,45 @@ h3,
   .page-fragmentos .fragment-grid { columns: 1; }
 }
 
-
-/* HERMES V5.0 — Fragmentos reconfigurado: ou imagem, ou frase; rotação automática; sem labels públicos */
+/* HERMES V5.1 — Fragmentos compacto: mais imagens simultâneas, ou imagem ou frase, sem metadados públicos */
+.page-fragmentos { --bg-opacity: .42; }
 .page-fragmentos .intro-prose {
-  margin-bottom: clamp(1.2rem, 3vw, 2.2rem);
+  margin-bottom: clamp(1rem, 2.4vw, 1.8rem);
+  max-width: 760px;
 }
 
 .fragment-carousel {
-  width: min(1440px, calc(100vw - 1rem));
+  width: min(1500px, calc(100vw - 1rem));
   margin-left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
-  padding: .6rem 0 clamp(3rem, 5vw, 5rem);
+  padding: .4rem 0 clamp(2.6rem, 4vw, 4.2rem);
 }
 
 .fragment-drift {
   display: grid;
-  gap: clamp(.8rem, 1.6vw, 1.3rem);
+  gap: clamp(.55rem, 1vw, .9rem);
 }
 
 .fragment-lane {
   overflow: hidden;
   width: 100%;
-  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
 
 .fragment-track {
   display: flex;
   align-items: center;
-  gap: clamp(.8rem, 1.4vw, 1.2rem);
+  gap: clamp(.55rem, .9vw, .85rem);
   width: max-content;
-  animation: amorfa-fragment-drift 62s linear infinite;
+  animation: amorfa-fragment-drift 58s linear infinite;
   will-change: transform;
 }
 
-.fragment-lane.lane-2 .fragment-track {
-  animation-duration: 76s;
-  animation-direction: reverse;
-}
-
-.fragment-lane.lane-3 .fragment-track {
-  animation-duration: 88s;
-}
-
-.fragment-carousel:hover .fragment-track {
-  animation-play-state: paused;
-}
+.fragment-lane.lane-2 .fragment-track { animation-duration: 72s; animation-direction: reverse; }
+.fragment-lane.lane-3 .fragment-track { animation-duration: 84s; }
+.fragment-lane.lane-4 .fragment-track { animation-duration: 96s; animation-direction: reverse; }
+.fragment-carousel:hover .fragment-track { animation-play-state: paused; }
 
 @keyframes amorfa-fragment-drift {
   from { transform: translateX(0); }
@@ -1442,9 +1435,9 @@ h3,
 
 .page-fragmentos .fragment-item {
   flex: 0 0 auto;
-  border: 1px solid rgba(242,234,223,.16);
-  background: rgba(4,4,5,.68);
-  box-shadow: 0 24px 80px rgba(0,0,0,.32);
+  border: 1px solid rgba(242,234,223,.13);
+  background: rgba(4,4,5,.66);
+  box-shadow: 0 18px 54px rgba(0,0,0,.28);
   overflow: hidden;
 }
 
@@ -1453,85 +1446,85 @@ h3,
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: transform .28s ease, border-color .28s ease, filter .28s ease;
+  transition: transform .24s ease, border-color .24s ease, filter .24s ease;
 }
 
 .page-fragmentos .fragment-image:hover {
-  transform: translateY(-2px) scale(1.012);
-  border-color: rgba(224,106,98,.55);
-  filter: brightness(1.06);
+  transform: translateY(-2px) scale(1.018);
+  border-color: rgba(224,106,98,.5);
+  filter: brightness(1.08);
 }
 
 .page-fragmentos .fragment-image img {
   display: block;
   width: auto;
-  max-width: min(62vw, 620px);
-  height: clamp(190px, 25vw, 355px);
+  max-width: min(42vw, 400px);
+  height: clamp(105px, 14vw, 220px);
   object-fit: contain;
   background: #020202;
 }
 
-.page-fragmentos .frag-small img { height: clamp(145px, 18vw, 250px); }
-.page-fragmentos .frag-large img { height: clamp(240px, 31vw, 440px); }
-.page-fragmentos .frag-tall img { height: clamp(260px, 34vw, 500px); }
-.page-fragmentos .frag-wide img { height: clamp(170px, 22vw, 315px); }
-.page-fragmentos .frag-square img { height: clamp(205px, 25vw, 360px); }
+.page-fragmentos .frag-mini img { height: clamp(86px, 10vw, 160px); max-width: min(30vw, 270px); }
+.page-fragmentos .frag-small img { height: clamp(100px, 12vw, 190px); max-width: min(34vw, 320px); }
+.page-fragmentos .frag-medium img { height: clamp(118px, 15vw, 230px); max-width: min(42vw, 400px); }
+.page-fragmentos .frag-wide img { height: clamp(96px, 12vw, 185px); max-width: min(50vw, 480px); }
+.page-fragmentos .frag-tall img { height: clamp(150px, 20vw, 310px); max-width: min(34vw, 320px); }
+.page-fragmentos .frag-square img { height: clamp(125px, 16vw, 255px); max-width: min(36vw, 340px); }
 
 .page-fragmentos .fragment-quote {
   display: grid;
   place-items: center;
-  min-height: clamp(170px, 20vw, 280px);
-  width: clamp(230px, 24vw, 360px);
-  padding: clamp(1.1rem, 2.2vw, 2rem);
+  min-height: clamp(112px, 14vw, 215px);
+  width: clamp(190px, 20vw, 330px);
+  padding: clamp(.9rem, 1.8vw, 1.5rem);
   background:
-    radial-gradient(circle at 18% 20%, rgba(224,106,98,.16), transparent 36%),
-    linear-gradient(145deg, rgba(10,10,12,.88), rgba(20,8,10,.58));
+    radial-gradient(circle at 18% 20%, rgba(224,106,98,.14), transparent 34%),
+    linear-gradient(145deg, rgba(10,10,12,.9), rgba(20,8,10,.58));
 }
 
 .page-fragmentos .fragment-quote blockquote {
   margin: 0;
   padding: 0;
-  color: rgba(242,234,223,.9);
+  color: rgba(242,234,223,.92);
   font-family: var(--serif);
-  font-size: clamp(1.45rem, 2.4vw, 2.45rem);
-  line-height: 1.02;
-  letter-spacing: -.035em;
+  font-size: clamp(1.05rem, 1.55vw, 1.78rem);
+  line-height: 1.04;
+  letter-spacing: -.03em;
   text-align: left;
   white-space: pre-wrap;
 }
 
-.page-fragmentos .frag-quote-wide { width: clamp(310px, 34vw, 520px); }
-.page-fragmentos .frag-quote-tall { min-height: clamp(240px, 29vw, 410px); width: clamp(230px, 24vw, 340px); }
+.page-fragmentos .frag-quote-small { width: clamp(170px, 16vw, 260px); min-height: clamp(92px, 11vw, 170px); }
+.page-fragmentos .frag-quote-wide { width: clamp(250px, 28vw, 430px); }
+.page-fragmentos .frag-quote-tall { min-height: clamp(150px, 20vw, 285px); width: clamp(180px, 18vw, 285px); }
 
-/* neutraliza versões antigas de fragmentos que exibiam F-000/tom/tamanho/legenda */
-.page-fragmentos .fragment-card,
+/* Se CSS antigo/JS antigo insistirem em gerar cards com ID/tom, esconder metadados públicos. */
 .page-fragmentos .fragment-card .state-label,
-.page-fragmentos .fragment-card blockquote {
-  all: unset;
+.page-fragmentos .fragment-card .fragment-meta,
+.page-fragmentos .fragment-card .image-caption { display: none !important; }
+.page-fragmentos .fragment-card blockquote:empty { display: none !important; }
+
+@media (max-width: 900px) {
+  .fragment-lane.lane-4 { display: none; }
+  .fragment-carousel { width: min(100vw, 100%); margin-left: 0; transform: none; }
 }
 
 @media (max-width: 760px) {
-  .fragment-carousel {
-    width: min(100vw, 100%);
-    margin-left: 0;
-    transform: none;
-    padding-inline: 0;
-  }
-  .fragment-drift { gap: .85rem; }
-  .fragment-track { gap: .85rem; animation-duration: 44s; }
-  .fragment-lane.lane-2 .fragment-track { animation-duration: 56s; }
+  .fragment-drift { gap: .7rem; }
+  .fragment-track { gap: .7rem; animation-duration: 48s; }
   .fragment-lane.lane-3 { display: none; }
-  .page-fragmentos .fragment-image img {
-    max-width: 82vw;
-    height: clamp(160px, 52vw, 290px);
-  }
-  .page-fragmentos .fragment-quote {
-    width: min(76vw, 320px);
-    min-height: 170px;
-  }
+  .page-fragmentos .fragment-image img { max-width: 68vw; height: clamp(118px, 38vw, 230px); }
+  .page-fragmentos .fragment-quote { width: min(64vw, 270px); min-height: 132px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .fragment-track { animation: none; }
   .fragment-lane { overflow-x: auto; mask-image: none; }
+}
+
+/* Defesa contra cache: se JS antigo renderizar fragment-card, público não exibe ID/tom/frase em foto. */
+.page-fragmentos .fragment-card .state-label,
+.page-fragmentos .fragment-card blockquote,
+.page-fragmentos .fragment-card .image-caption {
+  display: none !important;
 }
