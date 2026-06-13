@@ -68,6 +68,12 @@ const AMORFA = (() => {
           const repeated = [...laneCards, ...laneCards, ...laneCards].join('');
           return `<div class="fragment-lane lane-${index + 1}" aria-hidden="${index > 0 ? 'true' : 'false'}"><div class="fragment-track">${repeated}</div></div>`;
         }).join('')}</div>`;
+        mount.querySelectorAll('.fragment-track').forEach((track) => {
+          track.style.animationPlayState = 'running';
+          ['mouseenter','mouseover','mousemove','pointerenter','pointerover','touchstart','focusin'].forEach((eventName) => {
+            track.addEventListener(eventName, () => { track.style.animationPlayState = 'running'; }, { passive: true });
+          });
+        });
       })
       .catch(() => {
         mount.innerHTML = '<p class="cms-empty">Não foi possível carregar os fragmentos.</p>';

@@ -1388,7 +1388,7 @@ h3,
   .page-fragmentos .fragment-grid { columns: 1; }
 }
 
-/* HERMES V5.1 — Fragmentos compacto: mais imagens simultâneas, ou imagem ou frase, sem metadados públicos */
+/* HERMES V5.2 — Fragmentos sem pausa no hover: carrossel contínuo */
 .page-fragmentos { --bg-opacity: .42; }
 .page-fragmentos .intro-prose {
   margin-bottom: clamp(1rem, 2.4vw, 1.8rem);
@@ -1426,7 +1426,6 @@ h3,
 .fragment-lane.lane-2 .fragment-track { animation-duration: 72s; animation-direction: reverse; }
 .fragment-lane.lane-3 .fragment-track { animation-duration: 84s; }
 .fragment-lane.lane-4 .fragment-track { animation-duration: 96s; animation-direction: reverse; }
-.fragment-carousel:hover .fragment-track { animation-play-state: paused; }
 
 @keyframes amorfa-fragment-drift {
   from { transform: translateX(0); }
@@ -1450,9 +1449,9 @@ h3,
 }
 
 .page-fragmentos .fragment-image:hover {
-  transform: translateY(-2px) scale(1.018);
-  border-color: rgba(224,106,98,.5);
-  filter: brightness(1.08);
+  transform: none !important;
+  border-color: rgba(242,234,223,.13);
+  filter: none !important;
 }
 
 .page-fragmentos .fragment-image img {
@@ -1527,4 +1526,37 @@ h3,
 .page-fragmentos .fragment-card blockquote,
 .page-fragmentos .fragment-card .image-caption {
   display: none !important;
+}
+
+
+/* HERMES V5.3 — carrossel contínuo blindado: hover nunca pausa */
+.fragment-carousel,
+.fragment-drift,
+.fragment-lane,
+.fragment-track,
+.fragment-item,
+.fragment-image,
+.fragment-image:hover,
+.fragment-image:focus,
+.fragment-image:active {
+  animation-play-state: running !important;
+}
+.fragment-carousel:hover .fragment-track,
+.fragment-drift:hover .fragment-track,
+.fragment-lane:hover .fragment-track,
+.fragment-track:hover,
+.fragment-track:hover *,
+.fragment-item:hover,
+.fragment-image:hover {
+  animation-play-state: running !important;
+}
+.page-fragmentos .fragment-image,
+.page-fragmentos .fragment-image:hover,
+.page-fragmentos .fragment-image:focus,
+.page-fragmentos .fragment-image:active {
+  transform: none !important;
+  filter: none !important;
+}
+.page-fragmentos .fragment-image {
+  cursor: zoom-in;
 }
