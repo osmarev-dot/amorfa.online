@@ -1560,3 +1560,131 @@ h3,
 .page-fragmentos .fragment-image {
   cursor: zoom-in;
 }
+
+
+/* HERMES V5.4 — footer terminal compacto, sem barra fixa */
+.site-footer {
+  position: relative !important;
+  inset: auto !important;
+  margin-top: clamp(2rem, 4vw, 3.25rem) !important;
+  padding: clamp(.85rem, 1.35vw, 1.15rem) clamp(1rem, 4vw, 3rem) !important;
+  min-height: 0 !important;
+  border-top: 1px solid rgba(242,234,223,.13) !important;
+  background: linear-gradient(180deg, rgba(2,3,4,.78), rgba(2,3,4,.94)) !important;
+  backdrop-filter: blur(18px);
+}
+
+.footer-inner {
+  width: min(92vw, 1280px) !important;
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(260px, 1fr) auto auto !important;
+  align-items: center !important;
+  gap: clamp(1rem, 2.5vw, 2.25rem) !important;
+}
+
+.footer-about {
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: .18rem !important;
+}
+
+.footer-brand {
+  margin: 0 !important;
+  font-size: clamp(.78rem, .9vw, .9rem) !important;
+  line-height: 1.25 !important;
+  font-weight: 500 !important;
+  letter-spacing: .035em !important;
+  color: rgba(242,234,223,.86) !important;
+}
+
+.footer-kicker {
+  margin: 0 !important;
+  max-width: 560px !important;
+  font-size: clamp(.68rem, .78vw, .78rem) !important;
+  line-height: 1.32 !important;
+  color: rgba(242,234,223,.58) !important;
+}
+
+.footer-links {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(.7rem, 1.45vw, 1.15rem) !important;
+  font-size: clamp(.72rem, .82vw, .82rem) !important;
+  line-height: 1 !important;
+  letter-spacing: .18em !important;
+  white-space: nowrap !important;
+}
+
+.footer-links a {
+  opacity: .76;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--accent) !important;
+}
+
+.footer-social {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: .42rem !important;
+}
+
+.footer-social .social-icon,
+.social-icon {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  border-color: rgba(242,234,223,.18) !important;
+  background: rgba(0,0,0,.18) !important;
+}
+
+.footer-social .social-icon svg,
+.social-icon svg {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+@media (max-width: 980px) {
+  .site-footer {
+    padding-block: 1.15rem !important;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: .85rem !important;
+    text-align: center !important;
+  }
+  .footer-about {
+    align-items: center !important;
+  }
+  .footer-kicker {
+    max-width: 620px !important;
+  }
+  .footer-links,
+  .footer-social {
+    justify-content: center !important;
+  }
+  .footer-links {
+    flex-wrap: wrap !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-links {
+    gap: .55rem .85rem !important;
+    letter-spacing: .14em !important;
+  }
+  .footer-social .social-icon,
+  .social-icon {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
