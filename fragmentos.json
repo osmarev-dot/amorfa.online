@@ -3,83 +3,83 @@
     {
       "id": "F-001",
       "modo": "imagem",
-      "texto": "Corpo-entulho. O que sobra depois que a pose morre. O que ninguém posta.",
-      "imagem": "/assets/uploads/fragmentos/f-001-corpo-entulho-o-que-sobra-depois-que-a.webp",
-      "tom": "neutro",
+      "texto": "",
+      "imagem": "assets/uploads/fragmentos/FOTOS DIVULGAÇÂO E SITE (17).png",
+      "data": "2026-05-30",
       "tamanho": "medio",
-      "data": "2026-05-30"
+      "tom": "neutro"
     },
     {
       "id": "F-002",
       "modo": "imagem",
       "texto": "esse frio\nnão vem com o vento",
       "imagem": "/assets/uploads/fragmentos/f-002-esse-frio.webp",
-      "tom": "azul",
+      "data": "2026-06-04",
       "tamanho": "medio",
-      "data": "2026-06-04"
+      "tom": "azul"
     },
     {
       "id": "F-003",
       "modo": "imagem",
       "texto": "sua língua\ndançando atrás\ndos dentes",
       "imagem": "/assets/uploads/fragmentos/f-003-sua-lingua.webp",
-      "tom": "neutro",
+      "data": "",
       "tamanho": "medio",
-      "data": ""
+      "tom": "neutro"
     },
     {
       "id": "F-004",
       "modo": "imagem",
       "texto": "a forma falha",
       "imagem": "/assets/uploads/fragmentos/f-004-a-forma-falha.webp",
-      "tom": "neutro",
+      "data": "",
       "tamanho": "medio",
-      "data": ""
+      "tom": "neutro"
     },
     {
       "id": "F-005",
       "modo": "imagem",
       "texto": "a transmissão\ncontinua",
       "imagem": "/assets/uploads/fragmentos/f-005-a-transmissao.webp",
-      "tom": "azul",
+      "data": "",
       "tamanho": "medio",
-      "data": ""
+      "tom": "azul"
     },
     {
       "id": "F-006",
       "modo": "texto",
       "texto": "um adeus\nsem olá",
       "imagem": "/assets/uploads/fragmentos/f-006-um-adeus.webp",
-      "tom": "azul",
+      "data": "",
       "tamanho": "medio",
-      "data": ""
+      "tom": "azul"
     },
     {
       "id": "F-007",
       "modo": "imagem",
       "texto": "",
-      "imagem": "/assets/uploads/fragmentos/f-007-f-007.webp",
-      "tom": "vermelho",
+      "imagem": "assets/uploads/fragmentos/FOTOS DIVULGAÇÂO E SITE (15).png",
+      "data": "",
       "tamanho": "medio",
-      "data": ""
+      "tom": "vermelho"
     },
     {
       "id": "F-008",
       "modo": "imagem",
       "texto": "",
       "imagem": "/assets/uploads/fragmentos/f-008-f-008.webp",
-      "tom": "vermelho",
+      "data": "",
       "tamanho": "medio",
-      "data": ""
+      "tom": "vermelho"
     },
     {
       "id": "F-009",
       "modo": "imagem",
       "texto": "",
-      "imagem": "/assets/uploads/fragmentos/f-009-f-009.webp",
-      "tom": "azul",
+      "imagem": "assets/uploads/fragmentos/FOTOS DIVULGAÇÂO E SITE (19).png",
+      "data": "2026-05-30",
       "tamanho": "medio",
-      "data": "2026-05-30"
+      "tom": "azul"
     }
   ]
 }
