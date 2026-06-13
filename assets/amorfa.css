@@ -2032,3 +2032,130 @@ h3,
   .timeline-body .public-line { font-size: .92rem !important; }
   .inline-actions { gap: .45rem .7rem !important; }
 }
+
+
+/* =========================================================
+   V5.6 — correção real das páginas de álbum
+   Tracklist deixa de parecer tabela/painel solto.
+   ========================================================= */
+.page-album .track-section,
+.page-ep .track-section {
+  width: min(880px, 100%) !important;
+  max-width: 880px !important;
+  margin: clamp(1.6rem, 3.2vw, 2.8rem) auto clamp(2.4rem, 5vw, 4rem) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.page-album .track-section .section-head,
+.page-ep .track-section .section-head {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  gap: 1.2rem !important;
+  margin: 0 0 .45rem !important;
+  padding: 0 0 .65rem !important;
+  border-bottom: 1px solid rgba(242,234,223,.16) !important;
+}
+
+.page-album .track-section .section-head .eyebrow,
+.page-ep .track-section .section-head .eyebrow {
+  order: 2 !important;
+  margin: 0 !important;
+  color: rgba(242,234,223,.46) !important;
+  font-family: var(--serif) !important;
+  font-size: clamp(.72rem, .95vw, .9rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: .22em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+.page-album .track-section h2,
+.page-ep .track-section h2 {
+  order: 1 !important;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-family: var(--serif) !important;
+  font-size: clamp(2rem, 3.4vw, 3.1rem) !important;
+  font-weight: 400 !important;
+  line-height: .95 !important;
+  letter-spacing: -.035em !important;
+}
+
+.page-album .tracklist,
+.page-ep .tracklist {
+  columns: unset !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: .15rem 0 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0 clamp(1.5rem, 3.2vw, 3rem) !important;
+  background: transparent !important;
+}
+
+.page-album .tracklist li,
+.page-ep .tracklist li {
+  break-inside: avoid !important;
+  display: grid !important;
+  grid-template-columns: 2.6rem minmax(0, 1fr) !important;
+  align-items: baseline !important;
+  gap: .85rem !important;
+  min-height: 0 !important;
+  padding: .52rem 0 .58rem !important;
+  border-bottom: 1px solid rgba(242,234,223,.105) !important;
+  color: rgba(242,234,223,.9) !important;
+  font-family: var(--serif) !important;
+  font-size: clamp(1.02rem, 1.2vw, 1.18rem) !important;
+  line-height: 1.18 !important;
+  font-weight: 500 !important;
+}
+
+.page-album .tracklist li:hover,
+.page-ep .tracklist li:hover {
+  color: #fff !important;
+  border-bottom-color: rgba(157,63,56,.38) !important;
+}
+
+.page-album .tracklist span,
+.page-ep .tracklist span {
+  min-width: 0 !important;
+  color: rgba(242,234,223,.42) !important;
+  font-family: var(--serif) !important;
+  font-size: .82rem !important;
+  line-height: 1 !important;
+  letter-spacing: .08em !important;
+  text-align: left !important;
+}
+
+@media (max-width: 760px) {
+  .page-album .track-section,
+  .page-ep .track-section {
+    width: 100% !important;
+    margin: 1.4rem auto 2.4rem !important;
+    padding: 0 !important;
+  }
+  .page-album .track-section .section-head,
+  .page-ep .track-section .section-head {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: .25rem !important;
+    padding-bottom: .55rem !important;
+  }
+  .page-album .track-section .section-head .eyebrow,
+  .page-ep .track-section .section-head .eyebrow {
+    order: 1 !important;
+    font-size: .78rem !important;
+  }
+  .page-album .track-section h2,
+  .page-ep .track-section h2 { order: 2 !important; }
+  .page-album .tracklist,
+  .page-ep .tracklist { grid-template-columns: 1fr !important; gap: 0 !important; }
+  .page-album .tracklist li,
+  .page-ep .tracklist li { grid-template-columns: 2.35rem 1fr !important; padding: .62rem 0 !important; }
+}
