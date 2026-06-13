@@ -904,3 +904,224 @@ h2 {
   color: var(--dim);
   font-size: var(--fs-small);
 }
+
+
+/* HERMES V4.8 — ajuste fino: Antologia alinhada, Fragmentos masonry e correções de respiro */
+:root {
+  --card-radius: 0px;
+}
+
+/* Header: mantém logo legível sem comer a área de navegação */
+.site-header {
+  grid-template-columns: minmax(300px, 380px) minmax(0, 1fr) minmax(300px, 380px);
+  min-height: 92px;
+}
+.brand img {
+  width: clamp(270px, 19vw, 360px);
+}
+@media (max-width: 1180px) {
+  .site-header {
+    grid-template-columns: minmax(250px, 320px) minmax(0, 1fr) minmax(250px, 320px);
+  }
+  .brand img { width: clamp(230px, 24vw, 305px); }
+}
+@media (max-width: 980px) {
+  .site-header { grid-template-columns: 1fr auto; min-height: 78px; }
+  .brand img { width: clamp(205px, 38vw, 285px); }
+}
+@media (max-width: 760px) {
+  .site-header { min-height: 72px; }
+  .brand img { width: 188px; }
+}
+
+/* Antologia: grid rígido. Numeral, capa e conteúdo param de flutuar. */
+.timeline {
+  max-width: 1280px;
+  margin-inline: auto;
+  gap: 1rem;
+}
+.timeline-card {
+  display: grid;
+  grid-template-columns: 112px 216px minmax(0, 1fr);
+  gap: 1.55rem;
+  align-items: stretch;
+  min-height: 258px;
+  padding: 0;
+  overflow: hidden;
+}
+.timeline-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  min-height: 100%;
+  padding: 1.25rem .8rem;
+  border-right: 1px solid rgba(242,234,223,.13);
+  font-size: clamp(1.7rem, 2.55vw, 2.45rem);
+  line-height: 1;
+  letter-spacing: .12em;
+  text-align: center;
+  color: #d45e55;
+}
+.timeline-cover {
+  align-self: center;
+  justify-self: center;
+  width: 216px;
+  margin: 0;
+}
+.timeline-cover img {
+  width: 216px;
+  min-width: 216px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.timeline-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 1.35rem 1.65rem 1.35rem 0;
+}
+.timeline-body h2 {
+  max-width: 820px;
+  margin-bottom: .45rem;
+  font-size: clamp(1.55rem, 2.18vw, 2.1rem);
+}
+.timeline-body .state-label {
+  margin-bottom: .45rem;
+}
+.timeline-body p:not(.state-label):not(.public-line) {
+  max-width: 760px;
+}
+.inline-actions {
+  min-height: 1.35rem;
+  align-items: baseline;
+}
+.inline-actions span {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+@media (max-width: 1120px) {
+  .timeline-card {
+    grid-template-columns: 88px 178px minmax(0, 1fr);
+    gap: 1.2rem;
+    min-height: 224px;
+  }
+  .timeline-index { min-width: 88px; }
+  .timeline-cover { width: 178px; }
+  .timeline-cover img { width: 178px; min-width: 178px; }
+  .timeline-body { padding-right: 1.2rem; }
+}
+@media (max-width: 860px) {
+  .timeline-card {
+    grid-template-columns: 72px minmax(132px, 170px) minmax(0, 1fr);
+    gap: 1rem;
+    min-height: 200px;
+  }
+  .timeline-index { min-width: 72px; font-size: 1.55rem; }
+  .timeline-cover { width: 150px; }
+  .timeline-cover img { width: 150px; min-width: 150px; }
+  .timeline-body { padding: 1rem 1rem 1rem 0; }
+}
+@media (max-width: 640px) {
+  .timeline-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 1rem;
+    gap: .85rem;
+  }
+  .timeline-index {
+    justify-content: flex-start;
+    min-width: 0;
+    min-height: auto;
+    padding: 0 0 .65rem;
+    border-right: 0;
+    border-bottom: 1px solid rgba(242,234,223,.13);
+    font-size: 1.45rem;
+  }
+  .timeline-cover { justify-self: start; width: min(56vw, 190px); }
+  .timeline-cover img { width: 100%; min-width: 0; }
+  .timeline-body { padding: 0; }
+}
+
+/* Discografia: cards iguais, sem rodapé pulando */
+.release-card { display: flex; flex-direction: column; min-height: 100%; }
+.release-copy { display: flex; flex-direction: column; flex: 1; }
+.release-copy .status-badge { margin-top: auto; }
+.release-copy .public-line { min-height: 0; }
+
+/* Ouvir: blocos de plataforma visualmente alinhados */
+.platform-grid a { align-items: center; }
+.platform-grid em { text-align: right; }
+@media (max-width: 640px) {
+  .platform-grid a { align-items: flex-start; flex-direction: column; }
+  .platform-grid em { text-align: left; }
+}
+
+/* Fragmentos: galeria viva, não grade quadrada. Cada imagem mantém proporção e abre original. */
+.fragment-grid {
+  display: block;
+  columns: 3 260px;
+  column-gap: 1rem;
+}
+.fragment-card {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1rem;
+  break-inside: avoid;
+  overflow: hidden;
+  vertical-align: top;
+}
+.fragment-card::before {
+  display: none;
+}
+.fragment-media {
+  display: block;
+  border-bottom: 1px solid rgba(242,234,223,.14);
+  background: rgba(0,0,0,.32);
+}
+.fragment-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+}
+.fragment-card .state-label {
+  padding: .85rem 1rem 0;
+}
+.fragment-card blockquote {
+  padding: .85rem 1rem 1rem;
+  font-size: .96rem;
+  line-height: 1.48;
+}
+.fragment-card.size-pequeno {
+  max-width: 100%;
+}
+.fragment-card.size-grande blockquote {
+  font-size: 1.02rem;
+}
+.fragment-card.mode-texto {
+  padding-top: .2rem;
+}
+.fragment-card.mode-texto blockquote {
+  font-size: clamp(1.15rem, 2vw, 1.7rem);
+  font-family: var(--serif);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+@media (max-width: 900px) {
+  .fragment-grid { columns: 2 240px; }
+}
+@media (max-width: 560px) {
+  .fragment-grid { columns: 1; }
+}
+
+/* Preview administrativo dos fragmentos herda a ideia de masonry no site público. */
+.cms-empty,
+.cms-loading { width: 100%; }
+
+/* Micro-respiro geral: blocos ficam menos grudados no topo após header fixo. */
+.hero-internal { padding-top: .35rem; }
+.content-band:first-of-type { margin-top: 2.5rem; }

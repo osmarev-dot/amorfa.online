@@ -33,10 +33,10 @@ const AMORFA = (() => {
           const texto = item.texto || '';
           const img = normalizeAsset(item.imagem);
           const alt = texto || item.id || 'Fragmento AMORFA';
-          return `<article class="fragment-card tone-${escapeHTML(item.tom || 'neutro')} size-${escapeHTML(item.tamanho || 'medio')}">
-            ${img ? `<img src="${escapeHTML(img)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async">` : ''}
+          return `<article class="fragment-card tone-${escapeHTML(item.tom || 'neutro')} size-${escapeHTML(item.tamanho || 'medio')} mode-${escapeHTML(item.modo || 'imagem')}">
+            ${img ? `<a class="fragment-media" href="${escapeHTML(img)}" target="_blank" rel="noopener" aria-label="Abrir imagem original de ${escapeHTML(item.id || 'fragmento')}"><img src="${escapeHTML(img)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async"></a>` : ''}
             <p class="state-label">${escapeHTML(item.id || '')}${item.tom ? ` · ${escapeHTML(item.tom)}` : ''}</p>
-            <blockquote>${texto ? nl2br(texto) : 'sem legenda'}</blockquote>
+            ${texto ? `<blockquote>${nl2br(texto)}</blockquote>` : ''}
           </article>`;
         }).join('');
       })
