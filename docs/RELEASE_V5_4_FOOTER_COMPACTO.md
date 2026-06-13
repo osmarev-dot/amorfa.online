@@ -8,4 +8,4 @@ Ajuste Hermes:
 - Desktop em linha única: texto institucional / rotas secundárias / ícones sociais.
 - Mobile empilhado em três linhas curtas.
 - Ícones sociais reduzidos e alinhados.
-- Cache bump para `amorfa.css?v=5.4` e `amorfa.js?v=5.4`.
+- Cache bump para `amorfa.css?v=5.5` e `amorfa.js?v=5.5`.
