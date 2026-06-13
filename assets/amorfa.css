@@ -873,3 +873,34 @@ h2 {
   .site-header { min-height: 72px; }
   .brand img { width: 188px; }
 }
+
+
+/* HERMES V4.7 — CMS: fragmentos/transmissões com imagens visíveis e cards estáveis */
+.cms-loading,
+.cms-empty {
+  grid-column: 1 / -1;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  background: rgba(6,6,7,.50);
+  color: var(--muted);
+}
+.fragment-card.tone-azul { border-color: rgba(125,164,217,.30); }
+.fragment-card.tone-vermelho { border-color: rgba(179,74,66,.34); }
+.fragment-card.tone-arquivo { border-color: rgba(184,148,109,.34); }
+.transmission-image {
+  width: 100%;
+  margin: .65rem 0 1rem;
+  border: 1px solid var(--line);
+  object-fit: cover;
+  background: rgba(0,0,0,.35);
+}
+.image-horizontal .transmission-image { aspect-ratio: 16 / 9; }
+.image-quadrada .transmission-image { aspect-ratio: 1 / 1; }
+.image-vertical .transmission-image { aspect-ratio: 4 / 5; max-height: 620px; object-position: center top; }
+.image-pequena .transmission-image { max-width: 420px; }
+.image-grande .transmission-image { max-width: 100%; }
+.image-caption {
+  margin: -.35rem 0 1rem;
+  color: var(--dim);
+  font-size: var(--fs-small);
+}

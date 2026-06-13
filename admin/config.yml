@@ -5,6 +5,11 @@ backend:
   base_url: https://amorfa-oauth.osmar-ev.workers.dev
   auth_endpoint: auth
 
+site_url: https://amorfa.online
+display_url: https://amorfa.online
+logo_url: /assets/img/logo.png
+show_preview_links: true
+
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 locale: pt
@@ -12,45 +17,137 @@ locale: pt
 collections:
   - name: "fragmentos"
     label: "🧩 Fragmentos"
-    description: "Alimenta a página estática Fragmentos com carrossel automático."
+    description: "Arquivo lateral da AMORFA. Edite texto, tom e imagem; a página /fragmentos.html lê este JSON automaticamente."
     files:
       - name: "items"
         label: "Todos os Fragmentos"
         file: "fragmentos.json"
+        preview_path: "fragmentos.html"
         fields:
           - name: "items"
             label: "Fragmentos"
+            label_singular: "Fragmento"
             widget: "list"
-            summary: "{{fields.texto}}"
+            collapsed: true
+            summary: "{{fields.id}} — {{fields.texto}}"
             fields:
-              - {label: "Texto / frase", name: "texto", widget: "text", required: false, default: ""}
+              - label: "ID"
+                name: "id"
+                widget: "string"
+                required: true
+                hint: "Ex.: F-010. Mantém a ordem e evita item sem nome."
+              - label: "Modo"
+                name: "modo"
+                widget: "select"
+                required: true
+                default: "imagem"
+                options:
+                  - { label: "Imagem + texto", value: "imagem" }
+                  - { label: "Só texto", value: "texto" }
+              - label: "Texto / frase"
+                name: "texto"
+                widget: "text"
+                required: false
+                default: ""
+                hint: "Texto exibido no card. Pode usar quebra de linha."
               - label: "Imagem"
                 name: "imagem"
                 widget: "image"
                 required: false
-                media_folder: "/assets/uploads/fragmentos"
+                media_folder: "assets/uploads/fragmentos"
                 public_folder: "/assets/uploads/fragmentos"
-              - {label: "Tom", name: "tom", widget: "string", required: false, default: "fragmento"}
-              - {label: "Data", name: "data", widget: "datetime", required: false, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false}
+                choose_url: false
+                hint: "Clique em Replace para abrir a biblioteca com miniaturas. Use WebP/JPG/PNG leve."
+              - label: "Tom"
+                name: "tom"
+                widget: "select"
+                required: false
+                default: "neutro"
+                options:
+                  - { label: "Neutro", value: "neutro" }
+                  - { label: "Azul", value: "azul" }
+                  - { label: "Vermelho", value: "vermelho" }
+                  - { label: "Arquivo", value: "arquivo" }
+              - label: "Tamanho"
+                name: "tamanho"
+                widget: "select"
+                required: false
+                default: "medio"
+                options:
+                  - { label: "Pequeno", value: "pequeno" }
+                  - { label: "Médio", value: "medio" }
+                  - { label: "Grande", value: "grande" }
+              - label: "Data"
+                name: "data"
+                widget: "datetime"
+                required: false
+                format: "YYYY-MM-DD"
+                date_format: "DD/MM/YYYY"
+                time_format: false
 
   - name: "transmissoes"
     label: "📡 Transmissões"
+    description: "Textos longos, comunicados e sinais oficiais. A página /transmissoes.html lê este JSON automaticamente."
     files:
       - name: "posts"
         label: "Todas as Transmissões"
         file: "transmissoes.json"
+        preview_path: "transmissoes.html"
         fields:
           - name: "posts"
             label: "Transmissões"
+            label_singular: "Transmissão"
             widget: "list"
-            summary: "{{fields.titulo}}"
+            collapsed: true
+            summary: "{{fields.data}} — {{fields.titulo}}"
             fields:
-              - {label: "Título", name: "titulo", widget: "string", required: true}
-              - {label: "Data", name: "data", widget: "datetime", required: false, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false}
-              - {label: "Conteúdo", name: "conteudo", widget: "text", required: true}
+              - { label: "ID", name: "id", widget: "string", required: false, hint: "Ex.: AL-002 // A02" }
+              - { label: "Tipo", name: "tipo", widget: "string", required: false, default: "transmissao" }
+              - { label: "Título", name: "titulo", widget: "string", required: true }
+              - label: "Data"
+                name: "data"
+                widget: "datetime"
+                required: false
+                format: "YYYY-MM-DD"
+                date_format: "DD/MM/YYYY"
+                time_format: false
               - label: "Imagem opcional"
                 name: "imagem"
                 widget: "image"
                 required: false
-                media_folder: "/assets/uploads/transmissoes"
+                media_folder: "assets/uploads/transmissoes"
                 public_folder: "/assets/uploads/transmissoes"
+                choose_url: false
+                hint: "Clique em Replace para abrir a biblioteca com miniaturas."
+              - label: "Formato da imagem"
+                name: "imagemFormato"
+                widget: "select"
+                required: false
+                default: "horizontal"
+                options:
+                  - { label: "Horizontal", value: "horizontal" }
+                  - { label: "Quadrada", value: "quadrada" }
+                  - { label: "Vertical", value: "vertical" }
+              - label: "Alinhamento da imagem"
+                name: "imagemAlinhamento"
+                widget: "select"
+                required: false
+                default: "centro"
+                options:
+                  - { label: "Centro", value: "centro" }
+                  - { label: "Topo", value: "topo" }
+                  - { label: "Base", value: "base" }
+              - label: "Tamanho da imagem"
+                name: "imagemTamanho"
+                widget: "select"
+                required: false
+                default: "media"
+                options:
+                  - { label: "Pequena", value: "pequena" }
+                  - { label: "Média", value: "media" }
+                  - { label: "Grande", value: "grande" }
+              - { label: "Legenda da imagem", name: "imagemLegenda", widget: "string", required: false }
+              - { label: "Texto alternativo", name: "imagemAlt", widget: "string", required: false }
+              - { label: "Conteúdo", name: "conteudo", widget: "text", required: true }
+              - { label: "Faixa relacionada", name: "faixa", widget: "string", required: false }
+              - { label: "Player / link", name: "playerUrl", widget: "string", required: false }
