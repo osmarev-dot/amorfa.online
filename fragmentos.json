@@ -22,7 +22,7 @@
       "id": "F-003",
       "modo": "imagem",
       "texto": "sua língua\ndançando atrás\ndos dentes",
-      "imagem": "/assets/uploads/fragmentos/f-003-sua-lingua.webp",
+      "imagem": "",
       "data": "",
       "tamanho": "medio",
       "tom": "neutro"
@@ -49,7 +49,7 @@
       "id": "F-006",
       "modo": "texto",
       "texto": "um adeus\nsem olá",
-      "imagem": "/assets/uploads/fragmentos/f-006-um-adeus.webp",
+      "imagem": "",
       "data": "",
       "tamanho": "medio",
       "tom": "azul"
@@ -80,6 +80,24 @@
       "data": "2026-05-30",
       "tamanho": "medio",
       "tom": "azul"
+    },
+    {
+      "id": "",
+      "modo": "imagem",
+      "texto": "",
+      "imagem": "assets/uploads/fragmentos/FOTOS DIVULGAÇÂO E SITE (11)-1.png"
+    },
+    {
+      "id": "",
+      "modo": "imagem",
+      "texto": "",
+      "imagem": "assets/uploads/fragmentos/FOTOS DIVULGAÇÂO E SITE (14).png"
+    },
+    {
+      "id": "",
+      "modo": "imagem",
+      "texto": "",
+      "imagem": ""
     }
   ]
 }
