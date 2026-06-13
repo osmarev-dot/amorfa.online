@@ -13,7 +13,7 @@
       "id": "F-002",
       "modo": "imagem",
       "texto": "esse frio\nnão vem com o vento",
-      "imagem": "/assets/uploads/fragmentos/f-002-esse-frio.webp",
+      "imagem": "assets/uploads/fragmentos/Imagens amorfa PB (10).png",
       "data": "2026-06-04",
       "tamanho": "medio",
       "tom": "azul"
@@ -94,10 +94,10 @@
       "imagem": "assets/uploads/fragmentos/FOTOS DIVULGAÇÂO E SITE (14).png"
     },
     {
-      "id": "",
+      "id": "f-010",
       "modo": "imagem",
       "texto": "",
-      "imagem": ""
+      "imagem": "/assets/uploads/Imagens amorfa PB (22).png"
     }
   ]
 }
