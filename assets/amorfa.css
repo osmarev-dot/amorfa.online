@@ -30,7 +30,7 @@
   --fs-micro: .68rem;
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --mono: "Cormorant Garamond", Georgia, serif;
 }
 * { box-sizing: border-box; }
 html { min-height: 100%; background: var(--bg); scroll-behavior: smooth; }
@@ -1125,3 +1125,413 @@ h2 {
 /* Micro-respiro geral: blocos ficam menos grudados no topo após header fixo. */
 .hero-internal { padding-top: .35rem; }
 .content-band:first-of-type { margin-top: 2.5rem; }
+
+
+/* HERMES V4.9 — ajuste fino: tipografia serifada, romanos estáveis, fragmentos sem cache */
+:root {
+  --sans: "Cormorant Garamond", Georgia, serif;
+  --mono: "Cormorant Garamond", Georgia, serif;
+  --fs-body: 1.08rem;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--serif);
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.50;
+}
+
+.main-nav,
+.mobile-secondary-nav,
+.eyebrow,
+.state-label,
+.status-badge,
+.album-meta,
+.inline-actions,
+.campaign-line span,
+.footer-links,
+.btn,
+.platform-grid em,
+.tracklist span {
+  font-family: var(--serif);
+  letter-spacing: .12em;
+  font-weight: 500;
+}
+
+h3,
+.timeline-body h2,
+.release-copy h3,
+.state-chip strong,
+.platform-grid span,
+.album-copy h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -.026em;
+}
+
+.lead,
+.prose,
+.timeline-body p,
+.release-copy .public-line,
+.platform-grid span,
+.platform-grid em,
+.fragment-card blockquote,
+.transmission-card p {
+  font-size: 1.08rem;
+}
+
+.main-nav {
+  font-size: .95rem;
+  letter-spacing: .15em;
+}
+
+.btn,
+.inline-actions,
+.state-label,
+.album-meta,
+.status-badge {
+  font-size: .88rem;
+}
+
+.site-header {
+  min-height: 96px;
+  grid-template-columns: minmax(310px, 410px) minmax(0, 1fr) minmax(310px, 410px);
+}
+
+.brand img {
+  width: clamp(285px, 20vw, 382px);
+}
+
+.site-main {
+  padding-top: clamp(2.8rem, 4.5vw, 4.8rem);
+}
+
+/* Antologia: elimina a sensação de número flutuante/desconfigurado */
+.timeline {
+  max-width: 1320px;
+  gap: 1.05rem;
+}
+
+.timeline-card {
+  grid-template-columns: 92px 230px minmax(0, 1fr);
+  gap: 1.45rem;
+  align-items: start;
+  min-height: 0;
+  padding: 1.25rem 1.45rem;
+}
+
+.timeline-index {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 92px;
+  min-height: auto;
+  height: 100%;
+  padding: .18rem 0 0;
+  border-right: 1px solid rgba(242,234,223,.13);
+  font-family: var(--serif);
+  font-size: clamp(2.45rem, 3.55vw, 4.35rem);
+  font-weight: 400;
+  line-height: .82;
+  letter-spacing: 0;
+  text-align: center;
+  color: #e06a62;
+}
+
+.timeline-cover {
+  width: 230px;
+  align-self: start;
+  justify-self: center;
+}
+
+.timeline-cover img {
+  width: 230px;
+  min-width: 230px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.timeline-body {
+  justify-content: flex-start;
+  padding: .1rem 1.2rem .1rem 0;
+}
+
+.timeline-body h2 {
+  margin-bottom: .42rem;
+  font-size: clamp(1.75rem, 2.35vw, 2.55rem);
+  line-height: 1.02;
+}
+
+.timeline-body .state-label {
+  margin-bottom: .35rem;
+  color: rgba(242,234,223,.72);
+}
+
+.public-line {
+  font-size: 1.14rem;
+  line-height: 1.24;
+}
+
+.timeline-body p:not(.state-label):not(.public-line) {
+  max-width: 820px;
+  font-size: 1.08rem;
+  line-height: 1.42;
+}
+
+.inline-actions {
+  margin-top: .9rem;
+  gap: .65rem 1.05rem;
+}
+
+/* Fragmentos: força layout editorial mesmo se cache antigo tentar impor grid */
+.page-fragmentos .fragment-grid {
+  display: block;
+  columns: 3 270px;
+  column-gap: 1.1rem;
+}
+
+.page-fragmentos .fragment-card {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1.1rem;
+  break-inside: avoid;
+  vertical-align: top;
+}
+
+.page-fragmentos .fragment-media,
+.page-fragmentos .fragment-card img {
+  display: block;
+  width: 100%;
+}
+
+.page-fragmentos .fragment-card img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.page-fragmentos .fragment-card.mode-texto blockquote {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.3vw, 2.05rem);
+}
+
+/* Footer e microcopy: menos lista solta, mais editorial */
+.site-footer p,
+.footer-kicker,
+.footer-links {
+  font-size: 1rem;
+}
+
+.footer-brand {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1120px) {
+  .site-header {
+    grid-template-columns: minmax(245px, 320px) minmax(0, 1fr) minmax(245px, 320px);
+  }
+  .brand img { width: clamp(230px, 25vw, 315px); }
+  .timeline-card {
+    grid-template-columns: 76px 190px minmax(0, 1fr);
+    gap: 1.2rem;
+  }
+  .timeline-index { min-width: 76px; font-size: clamp(2.2rem, 3.2vw, 3.55rem); }
+  .timeline-cover { width: 190px; }
+  .timeline-cover img { width: 190px; min-width: 190px; }
+}
+
+@media (max-width: 860px) {
+  .timeline-card {
+    grid-template-columns: 66px 150px minmax(0, 1fr);
+    gap: .95rem;
+    padding: 1rem;
+  }
+  .timeline-index {
+    min-width: 66px;
+    font-size: 2.25rem;
+  }
+  .timeline-cover { width: 150px; }
+  .timeline-cover img { width: 150px; min-width: 150px; }
+  .timeline-body h2 { font-size: clamp(1.45rem, 4.5vw, 2rem); }
+}
+
+@media (max-width: 760px) {
+  .main-nav { font-size: .92rem; }
+  .brand img { width: 196px; }
+  .page-fragmentos .fragment-grid { columns: 2 220px; }
+}
+
+@media (max-width: 640px) {
+  .timeline-card {
+    grid-template-columns: 1fr;
+    gap: .85rem;
+  }
+  .timeline-index {
+    justify-content: flex-start;
+    min-width: 0;
+    width: 100%;
+    padding: 0 0 .55rem;
+    border-right: 0;
+    border-bottom: 1px solid rgba(242,234,223,.13);
+    font-size: 2.35rem;
+  }
+  .timeline-cover { width: min(68vw, 230px); justify-self: start; }
+  .timeline-cover img { width: 100%; min-width: 0; }
+  .timeline-body { padding: 0; }
+  .page-fragmentos .fragment-grid { columns: 1; }
+}
+
+
+/* HERMES V5.0 — Fragmentos reconfigurado: ou imagem, ou frase; rotação automática; sem labels públicos */
+.page-fragmentos .intro-prose {
+  margin-bottom: clamp(1.2rem, 3vw, 2.2rem);
+}
+
+.fragment-carousel {
+  width: min(1440px, calc(100vw - 1rem));
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  padding: .6rem 0 clamp(3rem, 5vw, 5rem);
+}
+
+.fragment-drift {
+  display: grid;
+  gap: clamp(.8rem, 1.6vw, 1.3rem);
+}
+
+.fragment-lane {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.fragment-track {
+  display: flex;
+  align-items: center;
+  gap: clamp(.8rem, 1.4vw, 1.2rem);
+  width: max-content;
+  animation: amorfa-fragment-drift 62s linear infinite;
+  will-change: transform;
+}
+
+.fragment-lane.lane-2 .fragment-track {
+  animation-duration: 76s;
+  animation-direction: reverse;
+}
+
+.fragment-lane.lane-3 .fragment-track {
+  animation-duration: 88s;
+}
+
+.fragment-carousel:hover .fragment-track {
+  animation-play-state: paused;
+}
+
+@keyframes amorfa-fragment-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.333%); }
+}
+
+.page-fragmentos .fragment-item {
+  flex: 0 0 auto;
+  border: 1px solid rgba(242,234,223,.16);
+  background: rgba(4,4,5,.68);
+  box-shadow: 0 24px 80px rgba(0,0,0,.32);
+  overflow: hidden;
+}
+
+.page-fragmentos .fragment-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform .28s ease, border-color .28s ease, filter .28s ease;
+}
+
+.page-fragmentos .fragment-image:hover {
+  transform: translateY(-2px) scale(1.012);
+  border-color: rgba(224,106,98,.55);
+  filter: brightness(1.06);
+}
+
+.page-fragmentos .fragment-image img {
+  display: block;
+  width: auto;
+  max-width: min(62vw, 620px);
+  height: clamp(190px, 25vw, 355px);
+  object-fit: contain;
+  background: #020202;
+}
+
+.page-fragmentos .frag-small img { height: clamp(145px, 18vw, 250px); }
+.page-fragmentos .frag-large img { height: clamp(240px, 31vw, 440px); }
+.page-fragmentos .frag-tall img { height: clamp(260px, 34vw, 500px); }
+.page-fragmentos .frag-wide img { height: clamp(170px, 22vw, 315px); }
+.page-fragmentos .frag-square img { height: clamp(205px, 25vw, 360px); }
+
+.page-fragmentos .fragment-quote {
+  display: grid;
+  place-items: center;
+  min-height: clamp(170px, 20vw, 280px);
+  width: clamp(230px, 24vw, 360px);
+  padding: clamp(1.1rem, 2.2vw, 2rem);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(224,106,98,.16), transparent 36%),
+    linear-gradient(145deg, rgba(10,10,12,.88), rgba(20,8,10,.58));
+}
+
+.page-fragmentos .fragment-quote blockquote {
+  margin: 0;
+  padding: 0;
+  color: rgba(242,234,223,.9);
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.4vw, 2.45rem);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.page-fragmentos .frag-quote-wide { width: clamp(310px, 34vw, 520px); }
+.page-fragmentos .frag-quote-tall { min-height: clamp(240px, 29vw, 410px); width: clamp(230px, 24vw, 340px); }
+
+/* neutraliza versões antigas de fragmentos que exibiam F-000/tom/tamanho/legenda */
+.page-fragmentos .fragment-card,
+.page-fragmentos .fragment-card .state-label,
+.page-fragmentos .fragment-card blockquote {
+  all: unset;
+}
+
+@media (max-width: 760px) {
+  .fragment-carousel {
+    width: min(100vw, 100%);
+    margin-left: 0;
+    transform: none;
+    padding-inline: 0;
+  }
+  .fragment-drift { gap: .85rem; }
+  .fragment-track { gap: .85rem; animation-duration: 44s; }
+  .fragment-lane.lane-2 .fragment-track { animation-duration: 56s; }
+  .fragment-lane.lane-3 { display: none; }
+  .page-fragmentos .fragment-image img {
+    max-width: 82vw;
+    height: clamp(160px, 52vw, 290px);
+  }
+  .page-fragmentos .fragment-quote {
+    width: min(76vw, 320px);
+    min-height: 170px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fragment-track { animation: none; }
+  .fragment-lane { overflow-x: auto; mask-image: none; }
+}
