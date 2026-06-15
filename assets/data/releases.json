@@ -245,8 +245,8 @@
         "Rock alternativo",
         "Synth-pop sombrio"
       ],
-      "cover": "/assets/img/optimized/albums/album_vi-960.webp",
-      "ogImage": "https://amorfa.online/assets/img/og/album-vi-og.jpg",
+      "cover": "/assets/img/optimized/albums/album_vi_final-960.webp",
+      "ogImage": "https://amorfa.online/assets/img/og/album-vi-og-v2.jpg",
       "url": "/discografia/albuns/antologia/album-vi.html",
       "stream_url": "https://offstep.link/153028538319",
       "shortDescription": "O sexto álbum da Antologia AMORFA fecha o ciclo como arquivo final. Nova massa, sedimento, fratura, permissão, registro e última mentira organizam aquilo que não voltou inteiro, mas encontrou uma forma de permanecer.",
@@ -264,11 +264,11 @@
         "A Última Mentira",
         "Onde Se Guarda o Que Não Existe Mais"
       ],
-      "image": "/assets/img/optimized/albums/album_vi-960.webp",
+      "image": "/assets/img/optimized/albums/album_vi_final-960.webp",
       "page": "discografia/albuns/antologia/album-vi.html",
       "axis": "O que não voltou inteiro encontra uma forma de permanecer.",
       "description": "O sexto álbum da Antologia AMORFA fecha o ciclo como arquivo final. Nova massa, sedimento, fratura, permissão, registro e última mentira organizam aquilo que não voltou inteiro, mas encontrou uma forma de permanecer.",
-      "coverOptimized": "/assets/img/optimized/albums/album_vi-960.webp",
+      "coverOptimized": "/assets/img/optimized/albums/album_vi_final-960.webp",
       "smartLink": "https://offstep.link/153028538319",
       "ctaLabel": "Pré-save"
     },
