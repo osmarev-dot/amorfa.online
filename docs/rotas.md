@@ -15,7 +15,7 @@
 - `/discografia/albuns/antologia/album-iii.html` — Teologia dos Fracassos Afetivos em Cama de Solteiro
 - `/discografia/albuns/antologia/album-iv.html` — Fantasmogênese
 - `/discografia/albuns/antologia/album-v.html` — O Arranjo do Submundo
-- `/discografia/albuns/antologia/album-vi.html` — Epílogo: Onde Se Guarda o Que Não Existe Mais
+- `/discografia/albuns/antologia/album-vi.html` — Onde Se Guarda o Que Não Existe Mais
 
 ## EPs
 - `/discografia/eps/dia-dos-namorados-macabro.html` — Dia dos Namorados Macabro
