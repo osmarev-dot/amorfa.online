@@ -29,51 +29,19 @@ const AMORFA = (() => {
           mount.innerHTML = '<p class="cms-empty">Nenhum fragmento publicado.</p>';
           return;
         }
-
-        const imageSizes = ['frag-wide', 'frag-mini', 'frag-tall', 'frag-small', 'frag-square', 'frag-medium'];
-        const quoteSizes = ['frag-quote-small', 'frag-quote-wide', 'frag-quote-tall'];
         const cards = [];
-
-        items.forEach((item, index) => {
+        items.forEach((item) => {
           const texto = item.texto || '';
           const img = normalizeAsset(item.imagem);
           const modo = String(item.modo || (img ? 'imagem' : 'texto')).toLowerCase();
           const alt = item.imagemAlt || 'Fragmento visual AMORFA';
-
-          // Regra pública definitiva:
-          // modo imagem = só imagem, sem frase, sem tom, sem ID;
-          // modo texto = só frase, sem imagem.
           if (modo === 'texto' || !img) {
-            if (texto) {
-              const size = quoteSizes[index % quoteSizes.length];
-              cards.push(`<article class="fragment-item fragment-quote ${size}"><blockquote>${nl2br(texto)}</blockquote></article>`);
-            }
+            if (texto) cards.push(`<article class="fragment-item fragment-quote"><blockquote>${nl2br(texto)}</blockquote></article>`);
             return;
           }
-
-          const size = imageSizes[index % imageSizes.length];
-          cards.push(`<a class="fragment-item fragment-image ${size}" href="${escapeHTML(img)}" target="_blank" rel="noopener" aria-label="Abrir fragmento visual"><img src="${escapeHTML(img)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async"></a>`);
+          cards.push(`<a class="fragment-item fragment-image" href="${escapeHTML(img)}" target="_blank" rel="noopener" aria-label="Abrir fragmento visual"><img src="${escapeHTML(img)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async"></a>`);
         });
-
-        if (!cards.length) {
-          mount.innerHTML = '<p class="cms-empty">Nenhum fragmento publicado.</p>';
-          return;
-        }
-
-        const laneCount = cards.length > 12 ? 4 : 3;
-        const lanes = Array.from({ length: laneCount }, () => []);
-        cards.forEach((card, index) => lanes[index % laneCount].push(card));
-        mount.innerHTML = `<div class="fragment-drift">${lanes.map((lane, index) => {
-          const laneCards = lane.length ? lane : cards;
-          const repeated = [...laneCards, ...laneCards, ...laneCards].join('');
-          return `<div class="fragment-lane lane-${index + 1}" aria-hidden="${index > 0 ? 'true' : 'false'}"><div class="fragment-track">${repeated}</div></div>`;
-        }).join('')}</div>`;
-        mount.querySelectorAll('.fragment-track').forEach((track) => {
-          track.style.animationPlayState = 'running';
-          ['mouseenter','mouseover','mousemove','pointerenter','pointerover','touchstart','focusin'].forEach((eventName) => {
-            track.addEventListener(eventName, () => { track.style.animationPlayState = 'running'; }, { passive: true });
-          });
-        });
+        mount.innerHTML = cards.length ? `<div class="fragment-static-grid">${cards.join('')}</div>` : '<p class="cms-empty">Nenhum fragmento publicado.</p>';
       })
       .catch(() => {
         mount.innerHTML = '<p class="cms-empty">Não foi possível carregar os fragmentos.</p>';
