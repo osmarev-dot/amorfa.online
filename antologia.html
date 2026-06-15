@@ -21,13 +21,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/amorfa.css?v=5.7">
+<link rel="stylesheet" href="assets/amorfa.css?v=5.8">
 <style id="page-background-image">
 .page-bg { background-image: url('assets/img/backgrounds/antologia_desktop.webp'); }
 @media (max-width: 760px) {
   .page-bg { background-image: url('assets/img/backgrounds/antologia_mobile.webp'); }
 }
 </style>
+
+<style id="antologia-v58-inline">
+.antologia-map{display:grid;gap:.78rem;margin:clamp(2rem,4vw,3.5rem) 0}.state-row{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:1.2rem;align-items:center;border:1px solid rgba(238,232,220,.16);background:rgba(4,4,5,.58);backdrop-filter:blur(12px);padding:1.05rem 1.2rem}.state-num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,4vw,3.4rem);line-height:1;color:#d45e55;text-align:center;border-right:1px solid rgba(238,232,220,.13)}.state-text{min-width:0}.state-text .state-label{margin-bottom:.22rem}.state-text h2{margin:0 0 .25rem;font-size:clamp(1.45rem,2.5vw,2.15rem);line-height:1.02}.state-text .public-line{margin:.15rem 0 .45rem}.state-text p:not(.state-label):not(.public-line){max-width:820px;margin:0;color:rgba(238,232,220,.68)}.state-actions{display:flex;flex-direction:column;gap:.45rem;align-items:flex-end;min-width:148px}.state-actions a{font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid #8f3531;padding-bottom:.18rem;white-space:nowrap}.state-track{display:block;margin-top:.48rem;font-family:'Inter',sans-serif;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(238,232,220,.55)}@media(max-width:760px){.state-row{grid-template-columns:1fr;align-items:start}.state-num{text-align:left;border-right:0;border-bottom:1px solid rgba(238,232,220,.13);padding-bottom:.45rem}.state-actions{align-items:flex-start;min-width:0;flex-direction:row;flex-wrap:wrap}}
+</style>
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"AMORFA","url":"https://amorfa.online","description":"Entidade musical sintética brasileira entre dark synthetic pop, rock alternativo e synth-pop sombrio.","genre":["Dark synthetic pop","Rock alternativo","Synth-pop sombrio"],"sameAs":["https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys","https://music.apple.com/br/artist/amorfa/1896548394","https://music.youtube.com/channel/UCf4NhTyzi2UVOfR83s49V4g","https://music.amazon.com.br/artists/B0H24NS7Q1/amorfa","https://www.deezer.com/br/artist/391523921","https://tidal.com/artist/79743124","https://www.instagram.com/amorfa.online","https://www.tiktok.com/@amorfa.online","https://x.com/amorfaonline","https://www.youtube.com/@AMORFA"]}</script>
 </head>
 <body class="page-antologia">
@@ -45,85 +50,104 @@
 
 <section class="hero hero-internal narrow-hero">
   <p class="eyebrow">Antologia AMORFA</p>
-  <h1>A Antologia AMORFA se completa em 03.07.</h1>
-  <p class="lead">Seis álbuns. Seis estados da forma. Uma travessia entre imagem, corpo, ausência, dissolução, submundo e arquivo final.</p>
+  <h1>Seis estados da forma.</h1>
+  <p class="lead">A Antologia atravessa superfície, contato, devoção, dissolução, submundo e arquivo final.</p>
 </section>
 <section class="prose intro-prose">
-  <p>Um mapa de deformações em seis salas: superfície, contato, devoção, dissolução, submundo e arquivo final.</p>
-  <p>Cada disco abre um mecanismo: imagem pública, corpo como prova, culto doméstico, costura exposta, fundo psíquico e permanência.</p>
+  <p>Esta página é o mapa conceitual. A discografia guarda capas, fichas e tracklists. Aqui fica a travessia.</p>
+  <p>Cada álbum abre uma operação: imagem pública, corpo como prova, culto doméstico, costura exposta, fundo psíquico e permanência.</p>
 </section>
-<section class="timeline" aria-label="Seis estados da Antologia">
-<article id="album-i" class="timeline-card">
-  <div class="timeline-index">I</div>
-  <figure class="timeline-cover"><img src="assets/img/optimized/albums/album_i-480.webp" alt="Capa de Tudo Que Eu Uso Me Usa de Volta, álbum I da Antologia AMORFA." loading="lazy" decoding="async"></figure>
-  <div class="timeline-body">
+<section class="antologia-map" aria-label="Mapa dos seis estados da Antologia">
+<article class="state-row" id="estado-i">
+  <div class="state-num">I</div>
+  <div class="state-text">
     <p class="state-label">Superfície</p>
     <h2>Tudo Que Eu Uso Me Usa de Volta</h2>
     <p class="public-line">A imagem salva e devora.</p>
     <p>Tela, vitrine, app e pose organizam a fome em superfície pública.</p>
-    <div class="inline-actions"><span>Faixa de entrada: <strong>Luz Azul</strong></span><a href="https://offstep.link/170005410386" target="_blank" rel="noopener">Ouvir álbum</a><a href="discografia/albuns/antologia/album-i.html">Abrir álbum</a></div>
+    <span class="state-track">Faixa de entrada: Luz Azul</span>
+  </div>
+  <div class="state-actions">
+    <a href="https://offstep.link/170005410386" target="_blank" rel="noopener">Ouvir álbum</a>
+    <a href="discografia/albuns/antologia/album-i.html">Ficha</a>
   </div>
 </article>
-<article id="album-ii" class="timeline-card">
-  <div class="timeline-index">II</div>
-  <figure class="timeline-cover"><img src="assets/img/optimized/albums/album_ii-480.webp" alt="Capa de Pequenos Incêndios sob o Ar-Condicionado no Máximo, álbum II da Antologia AMORFA." loading="lazy" decoding="async"></figure>
-  <div class="timeline-body">
+<article class="state-row" id="estado-ii">
+  <div class="state-num">II</div>
+  <div class="state-text">
     <p class="state-label">Contato</p>
     <h2>Pequenos Incêndios sob o Ar-Condicionado no Máximo</h2>
     <p class="public-line">O corpo queima sob contenção fria.</p>
     <p>Marca, temperatura, mordida, contrato e vidro transformam vínculo em prova física.</p>
-    <div class="inline-actions"><span>Faixa de entrada: <strong>Hematoma</strong></span><a href="https://offstep.link/175161299145" target="_blank" rel="noopener">Ouvir álbum</a><a href="discografia/albuns/antologia/album-ii.html">Abrir álbum</a></div>
+    <span class="state-track">Faixa de entrada: Hematoma</span>
+  </div>
+  <div class="state-actions">
+    <a href="https://offstep.link/175161299145" target="_blank" rel="noopener">Ouvir álbum</a>
+    <a href="discografia/albuns/antologia/album-ii.html">Ficha</a>
   </div>
 </article>
-<article id="album-iii" class="timeline-card">
-  <div class="timeline-index">III</div>
-  <figure class="timeline-cover"><img src="assets/img/optimized/albums/album_iii-480.webp" alt="Capa de Teologia dos Fracassos Afetivos em Cama de Solteiro, álbum III da Antologia AMORFA." loading="lazy" decoding="async"></figure>
-  <div class="timeline-body">
+<article class="state-row" id="estado-iii">
+  <div class="state-num">III</div>
+  <div class="state-text">
     <p class="state-label">Devoção</p>
     <h2>Teologia dos Fracassos Afetivos em Cama de Solteiro</h2>
     <p class="public-line">A ausência vira religião doméstica.</p>
-    <p>O quarto vira capela; espera, quase e indisponibilidade ganham liturgia doméstica.</p>
-    <div class="inline-actions"><span>Faixa de entrada: <strong>O Reino do Quase</strong></span><a href="https://offstep.link/181015218083" target="_blank" rel="noopener">Pré-save</a><a href="discografia/albuns/antologia/album-iii.html">Abrir álbum</a></div>
+    <p>Quarto, cama, espera e quase-amor funcionam como liturgia privada.</p>
+    <span class="state-track">Faixa de entrada: O Reino do Quase</span>
+  </div>
+  <div class="state-actions">
+    <a href="https://offstep.link/181015218083" target="_blank" rel="noopener">Pré-save</a>
+    <a href="discografia/albuns/antologia/album-iii.html">Ficha</a>
   </div>
 </article>
-<article id="album-iv" class="timeline-card">
-  <div class="timeline-index">IV</div>
-  <figure class="timeline-cover"><img src="assets/img/optimized/albums/album_iv-480.webp" alt="Capa de Fantasmogênese, álbum IV da Antologia AMORFA." loading="lazy" decoding="async"></figure>
-  <div class="timeline-body">
+<article class="state-row" id="estado-iv">
+  <div class="state-num">IV</div>
+  <div class="state-text">
     <p class="state-label">Dissolução</p>
     <h2>Fantasmogênese</h2>
     <p class="public-line">A forma falha e começa a nascer outra.</p>
-    <p>A imagem racha; o fantasma perde sustentação e a voz aparece no contorno quebrado.</p>
-    <div class="inline-actions"><span>Faixa de entrada: <strong>Baixa Resolução</strong></span><a href="https://offstep.link/206171508190" target="_blank" rel="noopener">Pré-save</a><a href="discografia/albuns/antologia/album-iv.html">Abrir álbum</a></div>
+    <p>Vidro, frequência, baixa resolução e fantasma expõem a costura da imagem.</p>
+    <span class="state-track">Faixa de entrada: Fantasmogênese</span>
+  </div>
+  <div class="state-actions">
+    <a href="https://offstep.link/206171508190" target="_blank" rel="noopener">Pré-save</a>
+    <a href="discografia/albuns/antologia/album-iv.html">Ficha</a>
   </div>
 </article>
-<article id="album-v" class="timeline-card">
-  <div class="timeline-index">V</div>
-  <figure class="timeline-cover"><img src="assets/img/optimized/albums/album_v-480.webp" alt="Capa de O Arranjo do Submundo, álbum V da Antologia AMORFA." loading="lazy" decoding="async"></figure>
-  <div class="timeline-body">
+<article class="state-row" id="estado-v">
+  <div class="state-num">V</div>
+  <div class="state-text">
     <p class="state-label">Submundo</p>
     <h2>O Arranjo do Submundo</h2>
     <p class="public-line">O fundo psíquico revela suas entidades.</p>
     <p>Ânfora, sutura, guardião e porta subterrânea desenham a arquitetura interna.</p>
-    <div class="inline-actions"><span>Faixa de entrada: <strong>A Ânfora</strong></span><a href="https://offstep.link/208187531497" target="_blank" rel="noopener">Pré-save</a><a href="discografia/albuns/antologia/album-v.html">Abrir álbum</a></div>
+    <span class="state-track">Faixa de entrada: A Ânfora</span>
+  </div>
+  <div class="state-actions">
+    <a href="https://offstep.link/208187531497" target="_blank" rel="noopener">Pré-save</a>
+    <a href="discografia/albuns/antologia/album-v.html">Ficha</a>
   </div>
 </article>
-<article id="album-vi" class="timeline-card">
-  <div class="timeline-index">VI</div>
-  <figure class="timeline-cover"><img src="assets/img/optimized/albums/album_vi_final-480.webp" alt="Capa de Onde Se Guarda o Que Não Existe Mais, álbum VI da Antologia AMORFA." loading="lazy" decoding="async"></figure>
-  <div class="timeline-body">
+<article class="state-row" id="estado-vi">
+  <div class="state-num">VI</div>
+  <div class="state-text">
     <p class="state-label">Arquivo final</p>
     <h2>Onde Se Guarda o Que Não Existe Mais</h2>
     <p class="public-line">O que não voltou inteiro encontra uma forma de permanecer.</p>
-    <p>Os vestígios dos discos anteriores entram no arquivo: superfície, corpo, culto, dissolução e fundo.</p>
-    <div class="inline-actions"><span>Faixa de entrada: <strong>Nota de Corte (O Amor Que Achei Merecer)</strong></span><a href="https://offstep.link/153028538319" target="_blank" rel="noopener">Pré-save</a><a href="discografia/albuns/antologia/album-vi.html">Abrir álbum</a></div>
+    <p>Nova massa, sedimento, fratura, registro e última mentira fecham o arquivo.</p>
+    <span class="state-track">Faixa de entrada: Nota de Corte</span>
+  </div>
+  <div class="state-actions">
+    <a href="https://offstep.link/153028538319" target="_blank" rel="noopener">Pré-save</a>
+    <a href="discografia/albuns/antologia/album-vi.html">Ficha</a>
   </div>
 </article>
 </section>
 <section class="content-band final-note">
   <div><p class="eyebrow">encerramento</p><h2>Toda forma é uma tentativa.</h2></div>
-  <div><p class="lead">AMORFA é a que falha melhor.</p><div class="cta-row"><a class="btn primary" href="ouvir.html">Ouvir a Antologia</a></div></div>
+  <div><p class="lead">AMORFA é a que falha melhor.</p><div class="cta-row"><a class="btn primary" href="ouvir.html">Pré-saves e smart links</a><a class="btn ghost" href="discografia.html">Ver discografia</a></div></div>
 </section>
+
 </main>
 <footer class="site-footer">
   <div class="footer-inner">
@@ -135,6 +159,6 @@
     <nav class="footer-social" aria-label="Links oficiais"><a class="social-icon social-spotify" href="https://open.spotify.com/intl-pt/artist/6hbGT8M54r38uokc9q09ys" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M7 9.2c3.8-1 7-.6 10 1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.8 12c2.9-.7 5.6-.4 8 .8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 14.7c2.1-.4 3.9-.2 5.7.7" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg></a><a class="social-icon social-instagram" href="https://www.instagram.com/amorfa.online" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="16.3" cy="7.9" r=".9" fill="currentColor"/></svg></a><a class="social-icon social-tiktok" href="https://www.tiktok.com/@amorfa.online" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 5v9.4a3.8 3.8 0 1 1-3.8-3.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13.5 5c.7 2.7 2.3 4.1 5 4.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></a><a class="social-icon social-x" href="https://x.com/amorfaonline" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5l12 14M18 5L6 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a><a class="social-icon social-youtube" href="https://www.youtube.com/@AMORFA" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.5 9.5v5l4.3-2.5-4.3-2.5z" fill="currentColor"/></svg></a></nav>
   </div>
 </footer>
-<script src="assets/amorfa.js?v=5.7" defer></script>
+<script src="assets/amorfa.js?v=5.8" defer></script>
 </body>
 </html>
