@@ -2764,3 +2764,44 @@ body {
   .hub-row span:not(.hub-row-kicker) { display: none !important; }
   .home-states-strip { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
 }
+
+
+/* V12 — fixed dock restored: not a duplicated header */
+body { padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px)) !important; }
+.site-footer.amorfa-dock {
+  position: fixed !important; left: 0 !important; right: 0 !important; bottom: 0 !important; z-index: 90 !important;
+  padding: .58rem clamp(.75rem,2vw,1.4rem) calc(.58rem + env(safe-area-inset-bottom,0px)) !important;
+  border-top: 1px solid rgba(238,232,220,.16) !important;
+  background: linear-gradient(180deg, rgba(3,3,3,.70), rgba(3,3,3,.97)) !important;
+  backdrop-filter: blur(22px) saturate(1.08) !important;
+  box-shadow: 0 -18px 44px rgba(0,0,0,.48) !important;
+}
+.fixed-footer-inner {
+  width: min(1180px, calc(100vw - 1.2rem)) !important; margin: 0 auto !important;
+  min-height: 50px !important; padding: .12rem .25rem !important;
+  display: grid !important; grid-template-columns: 130px minmax(220px,1fr) auto auto !important;
+  align-items: center !important; gap: .95rem !important;
+}
+.footer-home { font-family: var(--serif) !important; font-size: 1.06rem !important; letter-spacing: .18em !important; color: #fff3e8 !important; white-space: nowrap !important; }
+.footer-context { display: block !important; min-width: 0 !important; color: rgba(238,232,220,.58) !important; }
+.footer-context span { display: block !important; font-family: var(--mono) !important; font-size: .62rem !important; letter-spacing: .15em !important; text-transform: uppercase !important; color: rgba(238,232,220,.46) !important; line-height: 1.15 !important; }
+.footer-context strong { display: block !important; font-family: var(--serif) !important; font-weight: 500 !important; font-size: .92rem !important; line-height: 1.15 !important; color: rgba(238,232,220,.78) !important; overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+.footer-primary { display: flex !important; align-items: center !important; justify-content: flex-end !important; gap: .9rem !important; }
+.footer-primary a { font-family: var(--mono) !important; font-size: .68rem !important; letter-spacing: .15em !important; text-transform: uppercase !important; color: rgba(238,232,220,.70) !important; border-bottom: 1px solid transparent !important; padding-bottom: .14rem !important; white-space: nowrap !important; }
+.footer-primary a:hover { color: #fff !important; border-bottom-color: var(--red) !important; }
+.footer-social { display: flex !important; align-items: center !important; justify-content: flex-end !important; gap: .48rem !important; min-width: max-content !important; }
+.social-icon { width: 36px !important; height: 36px !important; border: 1px solid rgba(238,232,220,.20) !important; background: rgba(238,232,220,.055) !important; color: rgba(238,232,220,.82) !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; }
+.social-icon svg { width: 18px !important; height: 18px !important; display: block !important; }
+.social-icon:hover { color:#fff !important; border-color: rgba(212,94,85,.72) !important; background: rgba(212,94,85,.12) !important; transform: translateY(-1px) !important; }
+@media (max-width: 820px) {
+  body { padding-bottom: calc(122px + env(safe-area-inset-bottom,0px)) !important; }
+  .fixed-footer-inner { grid-template-columns: 1fr auto !important; grid-template-areas: "brand social" "context context" "nav nav" !important; gap: .35rem .65rem !important; }
+  .footer-home { grid-area: brand !important; }
+  .footer-context { grid-area: context !important; }
+  .footer-primary { grid-area: nav !important; justify-content: flex-start !important; overflow-x: auto !important; }
+  .footer-social { grid-area: social !important; }
+  .social-icon { width: 32px !important; height: 32px !important; }
+  .social-icon svg { width: 16px !important; height: 16px !important; }
+}
+
+/* V13 audit marker: footer icons restored, playlist embedded on home/links, discography structure verified. */
