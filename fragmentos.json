@@ -3,7 +3,7 @@
     {
       "id": "F-001",
       "modo": "imagem",
-      "texto": "Corpo-entulho. O que sobra depois que a pose morre. O que ninguém posta.",
+      "texto": "",
       "imagem": "/assets/uploads/fragmentos/f-001-corpo-entulho-o-que-sobra-depois-que-a.webp",
       "data": "2026-05-30",
       "tamanho": "medio",
@@ -12,8 +12,8 @@
     {
       "id": "F-002",
       "modo": "imagem",
-      "texto": "esse frio\nnão vem com o vento",
-      "imagem": "assets/uploads/fragmentos/FOTOS DIVULGAÇÂO E SITE (17)-2.png",
+      "texto": "",
+      "imagem": "/assets/uploads/fragmentos/f-002.webp",
       "data": "2026-06-04",
       "tamanho": "medio",
       "tom": "azul"
@@ -21,8 +21,8 @@
     {
       "id": "F-003",
       "modo": "imagem",
-      "texto": "sua língua\ndançando atrás\ndos dentes",
-      "imagem": "assets/uploads/fragmentos/FOTOS DIVULGAÇÂO E SITE (14)-1.png",
+      "texto": "",
+      "imagem": "/assets/uploads/fragmentos/f-003.webp",
       "data": "",
       "tamanho": "medio",
       "tom": "neutro"
@@ -30,8 +30,8 @@
     {
       "id": "F-004",
       "modo": "imagem",
-      "texto": "a forma falha",
-      "imagem": "assets/uploads/fragmentos/FOTOS DIVULGAÇÂO E SITE (18)-1.png",
+      "texto": "",
+      "imagem": "/assets/uploads/fragmentos/f-004.webp",
       "data": "",
       "tamanho": "medio",
       "tom": "neutro"
@@ -39,7 +39,7 @@
     {
       "id": "F-005",
       "modo": "imagem",
-      "texto": "a transmissão\ncontinua",
+      "texto": "",
       "imagem": "/assets/uploads/fragmentos/f-005-a-transmissao.webp",
       "data": "",
       "tamanho": "medio",
@@ -47,9 +47,9 @@
     },
     {
       "id": "F-006",
-      "modo": "texto",
-      "texto": "um adeus\nsem olá",
-      "imagem": "assets/uploads/fragmentos/Imagens amorfa PB (22)-1.png",
+      "modo": "imagem",
+      "texto": "",
+      "imagem": "/assets/uploads/fragmentos/f-006.webp",
       "data": "",
       "tamanho": "medio",
       "tom": "azul"
@@ -58,7 +58,7 @@
       "id": "F-007",
       "modo": "imagem",
       "texto": "",
-      "imagem": "assets/uploads/fragmentos/Imagens amorfa PB (1).png",
+      "imagem": "/assets/uploads/fragmentos/f-007.webp",
       "data": "",
       "tamanho": "medio",
       "tom": "vermelho"
@@ -76,7 +76,7 @@
       "id": "F-009",
       "modo": "imagem",
       "texto": "",
-      "imagem": "assets/uploads/fragmentos/FUndo site (3).png",
+      "imagem": "/assets/uploads/fragmentos/f-009.webp",
       "data": "2026-05-30",
       "tamanho": "medio",
       "tom": "azul"
