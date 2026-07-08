@@ -1,19 +1,3 @@
 {
-  "posts": [
-    {
-      "id": "TR-001",
-      "tipo": "transmissao",
-      "titulo": "PRIMEIRA SUPERFÍCIE",
-      "data": "2026-05-29",
-      "imagem": "/assets/uploads/transmissoes/primeira-superficie.webp",
-      "imagemFormato": "quadrada",
-      "imagemAlinhamento": "centro",
-      "imagemTamanho": "pequena",
-      "imagemLegenda": "AMORFA",
-      "imagemAlt": "Imagem oficial AMORFA.",
-      "conteudo": "Tudo Que Eu Uso Me Usa de Volta está disponível.",
-      "faixa": "",
-      "playerUrl": "https://open.spotify.com/intl-pt/track/5UsMQqBXVsyc5YX96QwnMg?si=8b890aecb52543c0"
-    }
-  ]
+  "posts": []
 }
