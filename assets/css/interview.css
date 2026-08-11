@@ -9,3 +9,27 @@
 .interview-page .footer{background:#0a0a0a;color:#eee;border-color:#2b2b2b}.interview-page .footer-bottom{border-color:#2b2b2b}
 @media(max-width:900px){.article-hero-inner{grid-template-columns:1fr 38%;min-height:620px}.story-section{grid-template-columns:52px 1fr}.section-columns,.story-section.photo-first .section-columns{grid-template-columns:1fr 260px}.story-section.photo-first .section-photo{grid-column:2}.story-section.photo-first .section-copy{grid-column:1}.interview-page .outro-grid{grid-template-columns:1fr}}
 @media(max-width:700px){.article-hero-inner{grid-template-columns:1fr;min-height:auto;padding:46px 0}.article-mast{margin-bottom:42px}.article-hero h1{font-size:clamp(55px,17vw,78px)}.article-hero-media{justify-content:flex-start;margin-top:28px}.article-hero-media img{height:auto;max-height:none;width:100%}.article-byline{grid-template-columns:1fr 1fr}.article-lead,.article-index{width:calc(100% - 36px);grid-template-columns:1fr;gap:10px}.article-lead{padding:40px 0 26px}.article-lead p{font-size:19px}.article-index nav{grid-template-columns:1fr}.story-section{width:calc(100% - 36px);display:block;padding:44px 0 50px}.section-marker{display:flex;gap:10px;align-items:baseline;margin-bottom:15px}.section-marker .rail-label{margin:0}.section-body h2{font-size:40px}.section-columns,.story-section.photo-first .section-columns{display:flex;flex-direction:column}.story-section.photo-first .section-copy{order:1}.story-section.photo-first .section-photo{order:2}.section-photo{width:min(100%,360px);margin:0 0 24px}.section-copy p.prose,.section-copy p.answer{font-size:17px}.interview-pull{padding:42px 18px}.interview-page .outro{padding:58px 18px 62px}}
+
+
+/* Edição 02 — Som & máquina */
+.issue-02{--iv-paper:#edf0ed;--iv-ink:#101317;--iv-muted:#637077;--iv-rule:#adb9bb;--iv-red:#0b7f92}
+.issue-02 .site-header{background:rgba(237,240,237,.97)}
+.issue-02 .article-hero{background:#071219}.issue-02 .article-hero-media img{width:min(100%,520px);height:auto;max-height:none;object-fit:contain}
+.issue-02 .article-hero h1 em{font-family:var(--serif);font-style:italic;font-weight:300;color:#85dbe5}
+.issue-02 .article-issue{color:#87cbd4}
+.issue-02 .article-byline{background:#d8eff1;border-color:#87aeb4}
+.issue-02 .article-byline>div{border-color:#87aeb4}
+.issue-02 .article-lead.article-context{padding-top:10px}
+.issue-02 .article-lead .opening-subtitle{font-size:14px;line-height:1.4;margin-top:15px;color:#5c6d72;font-family:var(--sans);text-transform:uppercase;letter-spacing:.08em}
+.issue-02 .interview-sidequote{width:min(960px,calc(100% - 2*var(--gutter)));margin:14px auto 46px;border-left:2px solid var(--iv-red);padding:4px 0 4px 28px;display:grid;grid-template-columns:120px minmax(0,620px);gap:36px}
+.issue-02 .interview-sidequote b{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--iv-red);padding-top:7px}
+.issue-02 .interview-sidequote p{font-family:var(--serif);font-size:27px;line-height:1.16;letter-spacing:-.02em;margin:0;color:#203338}
+.issue-02 .interview-pull{background:linear-gradient(110deg,#0a5060,#122d39 58%,#5b1b4f)}
+.issue-02 .interview-pull>div{font-size:clamp(30px,4vw,52px)}
+.section-columns.no-photo{grid-template-columns:minmax(0,760px)}
+.section-columns.no-photo .section-copy{max-width:760px}
+.issue-02 .section-photo{background:#071219}
+.issue-02 .section-photo figcaption{background:var(--iv-paper)}
+.issue-02 .issue-endnote{border-top:1px solid #3d4f55;padding-top:18px;margin-top:28px}
+.issue-02 .next strong+strong{margin-top:16px}
+@media(max-width:700px){.issue-02 .interview-sidequote{width:calc(100% - 36px);grid-template-columns:1fr;gap:8px;padding-left:18px}.issue-02 .interview-sidequote p{font-size:23px}}

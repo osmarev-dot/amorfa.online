@@ -25,5 +25,33 @@
     "status": "publicada",
     "mes": "Agosto",
     "ano": 2026
+  },
+  {
+    "id": "002",
+    "slug": "se-eu-preciso-do-nome-de-outro-artista",
+    "titulo": "Se eu preciso do nome de outro artista...",
+    "subtitulo": "Ela ainda não é minha.",
+    "tipo": "entrevista-especial",
+    "eixos": [
+      "som",
+      "influencia",
+      "inteligencia-artificial",
+      "direitos-dos-artistas",
+      "autoria"
+    ],
+    "data": "2026",
+    "entrevista": "",
+    "fotografia": "Estúdio AMORFA",
+    "direcaoCriativa": "R. J. Wolf",
+    "url": "entrevistas/002-se-eu-preciso-do-nome-de-outro-artista.html",
+    "imagem": "assets/img/interviews/002/motion.webp",
+    "publicada": true,
+    "edicao": 2,
+    "secao": "Entrevista especial",
+    "serie": "AMORFA / CONVERSAS",
+    "ordem": 2,
+    "status": "publicada",
+    "mes": "",
+    "ano": 2026
   }
 ]
