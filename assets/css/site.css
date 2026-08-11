@@ -34,3 +34,50 @@
 @media(max-width:1100px){.home-music-grid,.release-grid{grid-template-columns:repeat(3,1fr)}.track-columns.three{grid-template-columns:repeat(2,1fr)}.mag-feature{grid-template-columns:45% 1fr}.release-coda{grid-template-columns:240px 1fr}}
 @media(max-width:860px){.header-inner{grid-template-columns:1fr auto}.nav,.listen-link{display:none}.menu{display:block}.site-header.open{position:fixed;background:#080808}.site-header.open .nav{display:flex;position:fixed;top:70px;left:0;right:0;bottom:0;background:#080808;flex-direction:column;align-items:flex-start;padding:40px var(--gutter);gap:24px}.magazine .site-header.open .nav{background:var(--paper)}.site-header.open .nav a{font-family:var(--serif);font-size:34px;text-transform:none;letter-spacing:0}.home-hero-bg{object-position:center center}.home-hero-grid,.home-intro-grid,.section-head,.page-head-row{grid-template-columns:1fr;gap:22px}.home-hero-portrait{max-width:420px;justify-self:start}.home-archive-grid,.editorial-callout-grid{grid-template-columns:1fr}.archive-feature{grid-template-columns:260px 1fr}.editorial-callout figure{max-width:520px}.release-hero{grid-template-columns:300px 1fr;gap:40px}.about-layout{grid-template-columns:1fr}.about-photo{max-width:500px}.listen-grid{grid-template-columns:repeat(2,1fr)}.mag-title{grid-template-columns:1fr}.mag-title p{text-align:left}.mag-feature{grid-template-columns:1fr}.mag-photo{max-width:720px}.mag-copy{max-width:720px}.mag-secondary-grid{grid-template-columns:36% 1fr}}
 @media(max-width:640px){.site-header{height:60px}.header-inner{width:calc(100% - 36px)}.brand{font-size:20px}.home-hero{min-height:96svh}.home-hero-bg{object-position:center center}.home-hero::after{background:linear-gradient(180deg,rgba(0,0,0,.14),rgba(0,0,0,.28) 40%,rgba(0,0,0,.9) 86%)}.home-hero-inner{padding:108px 0 40px}.home-hero h1{font-size:clamp(50px,15vw,74px);line-height:.85}.home-hero .deck{font-size:18px}.home-hero-portrait{display:none}.home-hero-meta{display:none}.home-intro-grid{padding:40px 0;gap:18px}.home-archive-band{padding:50px 0 56px}.archive-feature{grid-template-columns:1fr;padding:18px}.section{padding:56px 0}.home-music-grid,.release-grid{grid-template-columns:repeat(2,1fr);gap:26px 13px}.home-release h3,.release-card h2{font-size:17px}.editorial-callout-grid{padding:40px 0}.page-head{padding-top:44px}.release-detail{padding-top:42px}.release-hero{grid-template-columns:1fr}.release-art{max-width:340px}.release-title{font-size:42px}.release-dek{font-size:19px}.track-columns,.track-columns.three{grid-template-columns:1fr}.release-coda{grid-template-columns:1fr}.release-coda figure{max-width:300px}.about-hero{padding-top:44px}.about-facts{grid-template-columns:1fr}.listen-grid{grid-template-columns:1fr}.mag-mast{padding-top:40px}.mag-title h1{font-size:52px}.mag-hero{padding-top:28px}.mag-feature{gap:28px}.mag-copy h2{font-size:46px}.mag-secondary-grid{grid-template-columns:1fr}.mag-archive-head{display:none}.interview-archive a{grid-template-columns:52px 1fr}.archive-type,.archive-date{display:none}.footer-main{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/3}.footer-bottom{display:block}.footer-bottom div+div{margin-top:6px}}
+
+
+/* AMORFA / CONVERSAS — padronização editorial v8 */
+.home-archive-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.archive-feature{display:flex;flex-direction:column;gap:0;padding:0;background:#f5f1e8;color:var(--paper-ink);border:1px solid var(--paper-line);min-width:0;overflow:hidden}
+.archive-feature figure{margin:0;aspect-ratio:4/5;overflow:hidden;background:#111}
+.archive-feature img{display:block;width:100%;height:100%;max-height:none;object-fit:cover;transition:transform .35s ease,filter .35s ease}
+.archive-feature:hover img{transform:scale(1.012);filter:brightness(.96)}
+.archive-feature .copy{padding:20px 20px 22px;display:flex;flex:1;flex-direction:column}
+.archive-feature .status{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
+.archive-feature h3{font-family:var(--serif);font-size:clamp(27px,2.2vw,36px);font-weight:300;line-height:.96;letter-spacing:-.035em;margin:12px 0 12px}
+.archive-feature p{font-size:11.5px;line-height:1.58;color:#5b554d;margin:0 0 18px}
+.archive-feature .more{margin-top:auto;font-size:9px;text-transform:uppercase;letter-spacing:.14em}
+.archive-feature--003 img{object-position:center 38%}
+.archive-feature--002 img{object-position:center 38%}
+.archive-feature--001 img{object-position:center 44%}
+.archive-feature--dark{background:#f5f1e8;color:var(--paper-ink);border-color:var(--paper-line)}
+.archive-feature--dark .status{color:var(--red)}
+.archive-feature--dark p{color:#5b554d}
+
+.mag-listing{padding:38px 0 60px}
+.mag-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start}
+.mag-card{min-width:0;border-top:1px solid var(--paper-line);padding-top:14px}
+.mag-card-media{display:block;aspect-ratio:4/5;overflow:hidden;background:#111}
+.mag-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease,filter .35s ease}
+.mag-card:hover .mag-card-media img{transform:scale(1.012);filter:brightness(.96)}
+.mag-card--003 .mag-card-media img{object-position:center 38%}
+.mag-card--002 .mag-card-media img{object-position:center 38%}
+.mag-card--001 .mag-card-media img{object-position:center 44%}
+.mag-card-copy{padding-top:18px}
+.mag-card-copy .status{font-size:8px;line-height:1.35;letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
+.mag-card-copy h2{font-family:var(--serif);font-size:clamp(31px,2.7vw,43px);font-weight:300;line-height:.94;letter-spacing:-.04em;margin:12px 0 12px}
+.mag-card-copy .dek{font-family:var(--serif);font-size:18px;line-height:1.3;margin:0 0 12px;color:#2f2b27}
+.mag-card-copy .meta{font-size:10.5px;line-height:1.6;color:#6c665e;margin:0 0 20px}
+.mag-card--003{border-top:3px solid var(--red);padding-top:12px}
+.mag-card--003 .status{color:var(--red);font-weight:600}
+.mag-archive{padding-top:12px}
+
+@media(max-width:1100px){
+  .home-archive-grid,.mag-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .home-archive-grid,.mag-card-grid{grid-template-columns:1fr}
+  .archive-feature figure,.mag-card-media{aspect-ratio:4/5}
+  .archive-feature .copy{padding:18px}
+  .mag-card-copy h2{font-size:36px}
+}

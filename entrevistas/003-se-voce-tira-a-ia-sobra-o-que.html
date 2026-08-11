@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#05090d" name="theme-color"/>
+<title>AMORFA — Se você tira a IA, sobra o quê?</title>
+<meta content="Às vésperas de um álbum de 29 faixas, falamos sobre a reação de artistas à inteligência artificial, direitos, autoria, composição, excesso e o disco em que AMORFA finalmente deixa de olhar tanto para quem foi embora e começa a olhar para quem ficou." name="description"/>
+<style>
+:root{
+  --deep:#05090d;
+  --blue:#101c25;
+  --water:#223541;
+  --paper:#e8e8e4;
+  --ink:#111315;
+  --muted:#666d71;
+  --ice:#c9d7df;
+  --acid:#d6ff45;
+  --line:#24292c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--deep)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+img{display:block;width:100%}
+a{color:inherit;text-decoration:none}
+#progress{position:fixed;top:0;left:0;height:4px;background:var(--acid);width:0;z-index:9999}
+
+/* --- COVER --- */
+.cover{position:relative;height:100svh;min-height:720px;background:#020609;color:#fff;overflow:hidden}
+.cover-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%;filter:contrast(1.08) brightness(.62) saturate(.72)}
+.cover-shade{position:absolute;inset:0;background:
+linear-gradient(90deg,rgba(1,5,8,.84) 0%,rgba(1,5,8,.48) 39%,rgba(1,5,8,.08) 72%),
+linear-gradient(0deg,rgba(1,5,8,.82),transparent 58%)}
+.mast{position:absolute;z-index:2;top:0;left:0;right:0;padding:18px 26px 12px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,.35)}
+.logo{font:900 clamp(2.6rem,7vw,7.2rem)/.72 Arial Black,Impact,sans-serif;letter-spacing:-.085em}
+.issue{text-align:right;font-size:.66rem;line-height:1.42;letter-spacing:.14em;text-transform:uppercase;color:#d7dfe3}
+.cover-copy{position:absolute;z-index:2;left:5vw;bottom:7vh;max-width:1120px}
+.kicker{display:inline-block;background:var(--acid);color:#080c0e;padding:7px 10px;margin-bottom:18px;font-size:.7rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.cover h1{margin:0;font:900 clamp(4.1rem,10.8vw,11rem)/.79 Arial Black,Impact,sans-serif;letter-spacing:-.08em;text-transform:uppercase;max-width:1100px}
+.cover h1 em{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.045em}
+.cover-deck{max-width:800px;margin:24px 0 0;font:400 clamp(1.08rem,1.9vw,1.5rem)/1.42 Georgia,"Times New Roman",serif;color:#edf1f2}
+.cover-bottom{position:absolute;z-index:2;right:26px;bottom:24px;text-align:right;text-transform:uppercase;font-size:.64rem;line-height:1.5;letter-spacing:.14em;color:#c7d0d4}
+
+/* --- OPENING --- */
+.opening{display:grid;grid-template-columns:.9fr 1.1fr;min-height:90svh;background:#0a1218;color:#eef2f2}
+.opening-copy{padding:8vw 6vw 7vw;display:flex;flex-direction:column;justify-content:center}
+.opening-label{color:var(--acid);font-size:.68rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase;margin-bottom:22px}
+.opening h2{margin:0 0 24px;font:900 clamp(3.2rem,7vw,7rem)/.87 Arial Black,Impact,sans-serif;letter-spacing:-.07em;text-transform:uppercase}
+.opening h2 span{display:block;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;text-transform:none;color:var(--ice);letter-spacing:-.045em}
+.opening .lead{font:400 clamp(1.2rem,2vw,1.65rem)/1.48 Georgia,"Times New Roman",serif;color:#cbd5d9;max-width:690px}
+.opening-photo{position:relative;min-height:690px;background:#151d23}
+.opening-photo img{height:100%;object-fit:cover;object-position:center 32%}
+.opening-photo:after{content:"";position:absolute;inset:0;border-left:1px solid rgba(255,255,255,.15)}
+
+/* --- META --- */
+.meta-strip{display:grid;grid-template-columns:repeat(4,1fr);background:var(--acid);border-bottom:1px solid #111}
+.meta-strip div{padding:15px 18px;border-right:1px solid rgba(0,0,0,.35)}
+.meta-strip b{display:block;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
+.meta-strip span{font:400 1rem/1.22 Georgia,serif}
+
+/* --- INTRO --- */
+.intro{display:grid;grid-template-columns:250px minmax(0,780px) 1fr;gap:58px;padding:8vw 6vw;border-bottom:1px solid var(--line)}
+.toc{position:sticky;top:28px;align-self:start;border-top:6px solid var(--ink);padding-top:13px}
+.toc small{display:block;font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+.toc a{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #b2b5b6;font-weight:900;font-size:.72rem;line-height:1.18;text-transform:uppercase}
+.toc a span{color:#4e6673}
+.intro-copy p{font:400 1.2rem/1.78 Georgia,"Times New Roman",serif;margin:0 0 1.15em}
+.big-num{align-self:start;border-left:1px solid var(--ink);padding-left:20px}
+.big-num .n{font:900 clamp(5rem,9vw,9rem)/.75 Arial Black,Impact,sans-serif;letter-spacing:-.09em;color:#213541}
+.big-num .t{font:900 .75rem/1.2 Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;margin-top:16px}
+.big-num p{font:400 1.45rem/1.15 Georgia,serif;letter-spacing:-.03em;margin-top:16px}
+
+/* --- CURRENT CONTEXT --- */
+.context{background:#0d171d;color:#e7ecee;padding:5vw 7vw;border-bottom:1px solid #31404a}
+.context-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;align-items:start}
+.context h3{margin:0;font:900 clamp(2.5rem,5vw,5.5rem)/.88 Arial Black,Impact,sans-serif;letter-spacing:-.065em;text-transform:uppercase}
+.context h3 em{font-family:Georgia,serif;font-weight:400;text-transform:none;color:var(--acid)}
+.context p{font:400 1.08rem/1.66 Georgia,serif;color:#c6d0d4;margin:0 0 1em}
+.context a{border-bottom:1px solid var(--acid)}
+.context .small{font-size:.73rem;line-height:1.5;color:#8ea0a9;text-transform:uppercase;letter-spacing:.08em}
+
+/* --- QUOTE BANNER --- */
+.banner{background:var(--acid);color:#070b0d;padding:8vw 7vw}
+.banner p{margin:0;max-width:1200px;font:900 clamp(3.2rem,8vw,8.4rem)/.85 Arial Black,Impact,sans-serif;letter-spacing:-.08em;text-transform:uppercase}
+.banner em{font-family:Georgia,serif;font-style:italic;font-weight:400;text-transform:none}
+
+/* --- STORY --- */
+.story-section{display:grid;grid-template-columns:180px minmax(0,840px);gap:54px;padding:8vw 6vw;border-bottom:1px solid var(--line)}
+.rail{position:sticky;top:28px;align-self:start}
+.rail-num{font:900 4.8rem/.82 Arial Black,Impact,sans-serif;letter-spacing:-.08em;color:#314955}
+.rail-tag{margin-top:15px;font-size:.62rem;line-height:1.25;letter-spacing:.15em;text-transform:uppercase;font-weight:900;color:#5f676c}
+.story-copy h2{margin:0 0 .55em;font:900 clamp(2.8rem,6vw,6.4rem)/.83 Arial Black,Impact,sans-serif;letter-spacing:-.069em;text-transform:uppercase}
+.prose,.answer{font:400 1.16rem/1.77 Georgia,"Times New Roman",serif;margin:.15em 0 1.08em}
+.question{margin:2.8em 0 .72em;padding-top:10px;border-top:2px solid var(--ink);font-weight:900;font-size:1.03rem;line-height:1.4}
+.answer.stage{font-style:italic;color:#62686b}
+
+/* --- PHOTO FUNCTIONS --- */
+.photo{margin:0 0 4.8vw}
+.photo img{background:#0a1115}
+.photo figcaption{font-size:.59rem;letter-spacing:.14em;text-transform:uppercase;color:#6e767a;margin-top:8px}
+.photo.portrait{width:68%;margin-left:auto}
+.photo.wide{width:118%;margin-left:-9%}
+.photo.offset{width:76%;margin-left:-8%}
+.photo.full{width:112%;margin-left:-6%}
+.photo.full img{max-height:87vh;object-fit:cover;object-position:center}
+
+/* --- ALBUM CARD --- */
+.album-card{background:#101a20;color:#edf1f2;padding:8vw 7vw;border-bottom:1px solid #31414b}
+.album-grid{display:grid;grid-template-columns:.55fr 1.45fr;gap:70px;align-items:start}
+.album-number{font:900 clamp(9rem,20vw,20rem)/.72 Arial Black,Impact,sans-serif;letter-spacing:-.11em;color:var(--acid)}
+.album-card h3{font:900 clamp(3rem,6vw,6rem)/.88 Arial Black,Impact,sans-serif;letter-spacing:-.07em;text-transform:uppercase;margin:0 0 20px}
+.album-card p{font:400 1.12rem/1.67 Georgia,serif;color:#cbd4d8}
+.album-titles{display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px;margin-top:30px;border-top:1px solid #52616a}
+.album-titles div{padding:10px 0;border-bottom:1px solid #3f4d55;font-size:.78rem;text-transform:uppercase;font-weight:800;letter-spacing:.05em}
+.album-titles span{color:var(--acid);margin-right:8px}
+
+/* --- AFTERWORD --- */
+.after{background:#050a0e;color:#ecf0f1;padding:10vw 7vw 12vw}
+.after-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:75px;align-items:start}
+.after h3{margin:0 0 30px;font:900 clamp(3rem,7vw,7.4rem)/.84 Arial Black,Impact,sans-serif;letter-spacing:-.075em;text-transform:uppercase}
+.after p{font:400 1.18rem/1.72 Georgia,serif;color:#c3cdd1;max-width:820px}
+.endquote{border-top:1px solid #59676f;padding-top:18px;font:400 1.7rem/1.15 Georgia,serif;color:#fff}
+.endquote b{display:block;font:900 .66rem/1 Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--acid);margin-bottom:12px}
+
+/* --- MOBILE --- */
+@media(max-width:1000px){
+  .opening{grid-template-columns:1fr}
+  .opening-photo{min-height:72vh}
+  .intro{grid-template-columns:1fr;gap:36px}
+  .toc{position:relative;top:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:0 20px}
+  .context-grid,.album-grid,.after-grid{grid-template-columns:1fr;gap:42px}
+  .story-section{grid-template-columns:110px 1fr;gap:30px}
+  .photo.wide,.photo.full{width:100%;margin-left:0}
+}
+@media(max-width:760px){
+  .cover{min-height:700px}
+  .mast{padding:14px 16px}
+  .issue{display:none}
+  .cover-copy{left:18px;right:18px;bottom:8vh}
+  .cover h1{font-size:clamp(3.7rem,19vw,6.2rem)}
+  .cover-bottom{display:none}
+  .opening-copy{padding:15vw 7vw 12vw}
+  .meta-strip{grid-template-columns:1fr 1fr}
+  .intro{padding:16vw 7vw 12vw}
+  .toc{grid-template-columns:1fr}
+  .context,.album-card,.banner,.after{padding:17vw 7vw}
+  .story-section{display:block;padding:16vw 7vw}
+  .rail{position:relative;top:auto;display:flex;align-items:end;gap:14px;margin-bottom:32px}
+  .rail-num{font-size:3.5rem}
+  .rail-tag{margin:0 0 4px}
+  .story-copy h2{font-size:clamp(2.8rem,15vw,5.3rem)}
+  .photo.portrait,.photo.offset{width:100%;margin-left:0}
+  .album-titles{grid-template-columns:1fr}
+}
+
+/* integração com amorfa.online */
+.issue a{color:inherit;border-bottom:1px solid currentColor;padding-bottom:2px}
+.issue-footer{background:#050a0e;color:#eef2f2;border-top:1px solid #31404a;padding:26px 7vw;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+.issue-footer .links{display:flex;gap:24px;flex-wrap:wrap}
+.issue-footer a{border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:3px}
+@media(max-width:760px){.issue-footer{padding:24px 7vw}.issue-footer .links{gap:14px 18px}}
+</style>
+<link href="https://amorfa.online/entrevistas/003-se-voce-tira-a-ia-sobra-o-que.html" rel="canonical"/><link href="../assets/img/favicon.svg" rel="icon"/><meta content="Se você tira a IA, sobra o quê? — AMORFA / CONVERSAS" property="og:title"/><meta content="R. J. Wolf fala sobre inteligência artificial, direitos, autoria, composição, excesso e Tratado da Decadência e Ascensão das Formas." property="og:description"/><meta content="article" property="og:type"/><meta content="https://amorfa.online/entrevistas/003-se-voce-tira-a-ia-sobra-o-que.html" property="og:url"/><meta content="https://amorfa.online/assets/img/interviews/003/hero.webp" property="og:image"/><meta content="summary_large_image" name="twitter:card"/></head>
+<body>
+<div id="progress"></div>
+<header class="cover">
+<img alt="AMORFA diante da linha d'água, com reflexo" class="cover-bg" decoding="async" fetchpriority="high" src="../assets/img/interviews/003/hero.webp"/>
+<div class="cover-shade"></div>
+<div class="mast">
+<div class="logo">AMORFA</div>
+<div class="issue">Edição Digital 03<br/>Entrevista Crítica<br/>2026<br/><a href="../entrevistas.html">Voltar ao arquivo →</a></div>
+</div>
+<div class="cover-copy">
+<div class="kicker">Entrevista especial</div>
+<h1>Se você tira<br/>a <em>IA</em>,<br/>sobra o quê?</h1>
+<p class="cover-deck">Às vésperas de um álbum de 29 faixas, falamos sobre a reação de artistas à inteligência artificial, direitos, autoria, composição, excesso e o disco em que AMORFA finalmente deixa de olhar tanto para quem foi embora e começa a olhar para quem ficou.</p>
+</div>
+<div class="cover-bottom">AMORFA / Edição Digital 03<br/>Tratado · 29 faixas</div>
+</header>
+<section class="opening">
+<div class="opening-copy">
+<div class="opening-label">Entrevista 03 / Arte, autoria e 29 faixas</div>
+<h2>A parte mais <span>desconfortável.</span></h2>
+<p class="lead">R. J. Wolf entra na parte mais desconfortável da história de AMORFA. Entre a guerra cultural em torno da IA e o lançamento mais íntimo do projeto, a conversa deixa de perguntar apenas como AMORFA é feita e começa a perguntar por que ela merece existir.</p>
+</div>
+<div class="opening-photo">
+<img alt="Retrato submerso de AMORFA" decoding="async" loading="lazy" src="../assets/img/interviews/003/water.webp"/>
+</div>
+</section>
+<div class="meta-strip">
+<div><b>Formato</b><span>Entrevista crítica</span></div>
+<div><b>Próximo álbum</b><span>29 faixas</span></div>
+<div><b>Eixo</b><span>Autoria / IA / intimidade</span></div>
+<div><b>Edição</b><span>Edição Digital 03</span></div>
+</div>
+<section class="intro">
+<nav class="toc">
+<small>Nesta matéria</small>
+<a href="#guerra"><span>01</span>ARTE × MÁQUINA</a><a href="#vinte-nove"><span>02</span>PRÓXIMO LANÇAMENTO</a><a href="#metamorfose"><span>03</span>METAMORFOSE</a><a href="#intimo"><span>04</span>TRATADO</a><a href="#faixas"><span>05</span>DENTRO DO ÁLBUM</a><a href="#terapia"><span>06</span>ESCRITA</a><a href="#autoria"><span>07</span>AUTORIA</a><a href="#lado"><span>08</span>O CONFLITO</a><a href="#zona-cinza"><span>09</span>TREINAMENTO / DIREITOS</a><a href="#excesso"><span>10</span>EDIÇÃO</a><a href="#voz"><span>11</span>INTIMIDADE</a><a href="#prova"><span>12</span>O JULGAMENTO</a><a href="#fim"><span>13</span>ÚLTIMA PERGUNTA</a>
+</nav>
+<div class="intro-copy">
+<p>Existe uma pergunta que acompanha AMORFA desde que a tecnologia usada em sua realização deixou de ser detalhe de bastidor e passou a participar da recepção: quanto dessa obra pertence realmente a R. J. Wolf?</p><p>A pergunta é incômoda. Também é legítima.</p><p>Em 2026, a música vive uma disputa menos simples do que “artistas contra máquinas”. Criadores pressionam por consentimento, proteção de voz e identidade, remuneração e transparência; ao mesmo tempo, ferramentas generativas já fazem parte da prática de artistas independentes. AMORFA ocupa exatamente o ponto onde essas duas realidades colidem.</p><p>E agora há outro dado inconveniente: o próximo lançamento tem 29 faixas.</p>
+</div>
+<aside class="big-num">
+<div class="n">29</div>
+<div class="t">faixas no próximo lançamento</div>
+<p>“Se as 29 existem só porque era fácil produzir 29, o disco fracassou.”</p>
+</aside>
+</section>
+<section class="context">
+<div class="context-grid">
+<h3>O conflito em <em>2026</em></h3>
+<div>
+<p>O debate público já não trata toda utilização de IA como uma única categoria. Em julho de 2026, organizações da música anunciaram uma iniciativa de rotulagem que distingue gravações “AI-generated” e “AI-assisted”, enquanto campanhas de direitos continuam pressionando por autorização para usos de voz, imagem e obras de artistas.</p>
+<p>Essa distinção não resolve treinamento, remuneração ou deslocamento de trabalho. Mas torna mais difícil sustentar a falsa escolha entre “qualquer IA é fraude” e “qualquer uso tecnológico é aceitável”.</p>
+<p class="small">Contexto editorial: Human Artistry Campaign · RIAA / iniciativa de transparência em gravações com IA.</p>
+</div>
+</div>
+</section>
+<section class="banner">
+<p>“Eu sou <em>artista.</em><br/>E uso IA.”</p>
+</section>
+<section class="story-section" id="guerra">
+<aside class="rail">
+<div class="rail-num">01</div>
+<div class="rail-tag">ARTE × MÁQUINA</div>
+</aside>
+<div class="story-copy">
+<figure class="photo wide"><img alt="AMORFA — ensaio editorial para Edição Digital 03" decoding="async" loading="lazy" src="../assets/img/interviews/003/machine.webp"/><figcaption>AMORFA / Edição Digital 03 / “Sob a Superfície”</figcaption></figure>
+<h2>“Você não pode querer os dois lados.”</h2>
+<p class="prose">A discussão em torno de inteligência artificial na música deixou de ser uma curiosidade tecnológica. Artistas e organizações do setor pressionam por consentimento, proteção de voz e identidade, transparência e regras para o uso de obras no desenvolvimento de sistemas generativos. Ao mesmo tempo, músicos independentes já incorporaram essas ferramentas à criação.</p><p class="prose">AMORFA existe exatamente dentro dessa colisão.</p>
+<div class="question">Você diz defender os direitos dos artistas e usa uma tecnologia que muitos artistas veem como ameaça direta. Por que isso não é hipocrisia?</div>
+<p class="answer">Porque defender uma ferramenta não me obriga a defender tudo que empresas, usuários ou mercados fazem com ela.</p>
+<p class="answer">Se alguém usa a voz ou a identidade de uma artista sem autorização, eu sou contra. Se artistas exigem transparência e capacidade real de negociação sobre o próprio trabalho, isso merece ser levado a sério.</p>
+<p class="answer">Nada disso me obriga a concluir que inteligência artificial não possa participar de uma obra artística.</p>
+<div class="question">É uma separação muito conveniente para você.</div>
+<p class="answer">É.</p>
+<p class="answer">Coisas convenientes também podem ser verdadeiras. [risos]</p>
+<div class="question">Você entende por que um músico olha para alguém produzindo dezenas de faixas com ferramentas generativas e pensa: “esse é exatamente o problema”?</div>
+<p class="answer">Entendo.</p>
+<p class="answer">Especialmente quando alguém passou anos construindo uma habilidade e vê uma máquina aproximar parte daquele resultado em segundos.</p>
+<p class="answer">Seria desonesto fingir que isso não tem peso.</p>
+<div class="question">Então existe substituição.</div>
+<p class="answer">Existe potencial de substituição. Existe deslocamento de trabalho.</p>
+<p class="answer">Também existe criação que provavelmente não aconteceria sem essas ferramentas.</p>
+<p class="answer">O debate fica ruim quando alguém exige uma resposta capaz de apagar metade dessa realidade.</p>
+<div class="question">Você quer liberdade tecnológica e proteção para artistas. Não dá para querer os dois lados.</div>
+<p class="answer">Eu quero exatamente os dois.</p>
+<p class="answer">Inovação que exige que artista abra mão de identidade, voz ou capacidade de negociar não me interessa.</p>
+<p class="answer">Proteção que declare qualquer ferramenta nova artisticamente ilegítima também não.</p>
+</div>
+</section>
+<section class="story-section" id="vinte-nove">
+<aside class="rail">
+<div class="rail-num">02</div>
+<div class="rail-tag">PRÓXIMO LANÇAMENTO</div>
+</aside>
+<div class="story-copy">
+<figure class="photo portrait"><img alt="AMORFA — ensaio editorial para Edição Digital 03" decoding="async" loading="lazy" src="../assets/img/interviews/003/water.webp"/><figcaption>AMORFA / Edição Digital 03 / “Sob a Superfície”</figcaption></figure>
+<h2>29 músicas. No pior momento possível.</h2>
+<p class="prose">O próximo lançamento amplia deliberadamente o problema. Tratado da Decadência e Ascensão das Formas chega com 29 faixas — uma dimensão que, na era da abundância algorítmica, pode ser lida tanto como ambição quanto como incapacidade de parar.</p>
+<div class="question">Vinte e nove músicas. No pior momento possível para convencer alguém de que IA não produz excesso.</div>
+<p class="answer stage">[risos]</p>
+<p class="answer">Sim. O timing é péssimo.</p>
+<div class="question">Por que eu deveria interpretar isso como ambição artística e não como ausência de limite?</div>
+<p class="answer">Você não deveria interpretar antes de ouvir.</p>
+<p class="answer">Essa é justamente a cobrança. Se as 29 existem só porque era fácil produzir 29, o disco fracassou.</p>
+<div class="question">Por que existem 29?</div>
+<p class="answer">Porque esse projeto acumulou matéria durante muito tempo e mudou de função várias vezes.</p>
+<p class="answer">Não nasceu como um álbum de 29 faixas. Nem nasceu com a ambição que tem hoje.</p>
+<div class="question">Qual era a ambição inicial?</div>
+<p class="answer">Muito menor.</p>
+<p class="answer">Eu tinha escrita privada, fragmentos, ideias que nunca tinham sido pensadas como repertório. O primeiro impulso era quase literal: como seria ouvir isso?</p>
+<p class="answer">AMORFA ainda não tinha a dimensão que ganhou depois.</p>
+<div class="question">Então a arquitetura veio depois.</div>
+<p class="answer">Veio do próprio acúmulo.</p>
+<p class="answer">Algumas músicas se organizavam em torno de pessoas específicas. Outras continuavam funcionando quando a pessoa saía da cena.</p>
+<p class="answer">Essas eram mais perigosas para mim.</p>
+<div class="question">Por quê?</div>
+<p class="answer">Porque o problema permanecia.</p>
+</div>
+</section>
+<section class="story-section" id="metamorfose">
+<aside class="rail">
+<div class="rail-num">03</div>
+<div class="rail-tag">METAMORFOSE</div>
+</aside>
+<div class="story-copy">
+<figure class="photo offset"><img alt="AMORFA — ensaio editorial para Edição Digital 03" decoding="async" loading="lazy" src="../assets/img/interviews/003/profile.webp"/><figcaption>AMORFA / Edição Digital 03 / “Sob a Superfície”</figcaption></figure>
+<h2>O projeto perdeu o plano.</h2>
+<p class="prose">AMORFA começou como uma possibilidade de realização. Depois ganhou voz, rosto, catálogo, linguagem e uma autonomia estética que não existiam no impulso inicial. Wolf descreve essa mudança sem tentar reorganizá-la retrospectivamente como destino.</p>
+<div class="question">Em que ponto o projeto escapou do plano inicial?</div>
+<p class="answer">Muito cedo.</p>
+<div class="question">Você perdeu o controle?</div>
+<p class="answer">Perdi o plano. Não o controle.</p>
+<div class="question">Qual é a diferença?</div>
+<p class="answer">Controle é conseguir decidir o que entra, o que sai e o que está errado.</p>
+<p class="answer">Plano é saber antes onde aquilo vai terminar.</p>
+<p class="answer">O primeiro eu ainda tento exercer. O segundo eu provavelmente nunca tive.</p>
+<div class="question">AMORFA começou como meio e virou objeto.</div>
+<p class="answer">Sim.</p>
+<p class="answer">No começo ela carregava material que já existia. Depois começou a mudar a maneira como eu escrevia.</p>
+<div class="question">A personagem mudou o autor.</div>
+<p class="answer">Provavelmente.</p>
+<div class="question">Isso soa pretensioso.</div>
+<p class="answer">Muito.</p>
+<p class="answer">Ainda pode ser verdade. [risos]</p>
+</div>
+</section>
+<section class="story-section" id="intimo">
+<aside class="rail">
+<div class="rail-num">04</div>
+<div class="rail-tag">TRATADO</div>
+</aside>
+<div class="story-copy">
+<figure class="photo full"><img alt="AMORFA — ensaio editorial para Edição Digital 03" decoding="async" loading="lazy" src="../assets/img/interviews/003/water.webp"/><figcaption>AMORFA / Edição Digital 03 / “Sob a Superfície”</figcaption></figure>
+<h2>O disco em que o ex sai de cena.</h2>
+<p class="prose">Os quatro discos públicos de AMORFA frequentemente colocam outra pessoa no campo de visão: alguém desejado, perdido, ampliado, acusado, transformado em evidência ou reduzido pela memória. Tratado desloca o centro. Relações continuam deixando resíduos, mas a investigação passa por identidade, corpo, redução, sobrevivência, memória e pelos mecanismos que continuam funcionando quando já não há ninguém para culpar.</p>
+<div class="question">Você chama Tratado de seu disco mais íntimo. Os anteriores já expunham relações muito íntimas. O que mudou?</div>
+<p class="answer">Nos outros eu ainda conseguia apontar.</p>
+<p class="answer">Aqui fica mais difícil.</p>
+<div class="question">Apontar para alguém.</div>
+<p class="answer">É.</p>
+<p class="answer">Você pode escrever cem músicas sobre quem te machucou e ainda encontrar uma forma sofisticada de evitar você mesmo.</p>
+<div class="question">Foi isso que você fez?</div>
+<p class="answer">Às vezes.</p>
+<div class="question">Os discos anteriores eram fuga?</div>
+<p class="answer">Algumas músicas eram. Outras eram enfrentamento real.</p>
+<p class="answer">Eu não quero diminuir os discos anteriores para valorizar este.</p>
+<p class="answer">A diferença é a pergunta. Antes aparecia muito “o que essa pessoa fez comigo?”. Aqui aparece mais “o que continuou funcionando em mim depois que a pessoa foi embora?”.</p>
+<div class="question">Então não é um disco sobre ex.</div>
+<p class="answer">Não no mesmo sentido.</p>
+<p class="answer">Existem restos de relações porque eu não nasci outra pessoa entre um álbum e outro.</p>
+<p class="answer">Mas ninguém específico precisa sustentar o disco.</p>
+</div>
+</section>
+<section class="album-card">
+<div class="album-grid">
+<div class="album-number">29</div>
+<div>
+<h3>Tratado da Decadência e Ascensão das Formas</h3>
+<p>Uma obra em vinte e nove movimentos sobre descida, decomposição e recomposição — identidade tratada como matéria sujeita a pressão, corte e mudança de forma.</p>
+<div class="album-titles"><div><span>01</span>Limiar</div><div><span>02</span>Os Portões de Hades</div><div><span>03</span>A Ânfora</div><div><span>04</span>Simbionte</div><div><span>05</span>O Arranjo do Submundo</div><div><span>06</span>Ritual de Ascensão (Interlúdio)</div><div><span>07</span>Erro Original</div><div><span>08</span>O Quarto de Sempre</div><div><span>09</span>A Sutura Invisível</div><div><span>10</span>O Mapa da Subida</div><div><span>11</span>O Portal Invertido (Interlúdio)</div><div><span>12</span>Pó Sem Jardim</div><div><span>13</span>Fantasmogênese</div><div><span>14</span>O Fim das Formas</div><div><span>15</span>Matéria Instável (Interlúdio)</div><div><span>16</span>Nova Massa</div><div><span>17</span>Translúcida</div><div><span>18</span>A Costura e o Corte</div><div><span>19</span>Sedimento</div><div><span>20</span>Onde Se Guarda o Que Não Existe Mais</div><div><span>21</span>Gravidade Morta (Interlúdio)</div><div><span>22</span>Campo Nulo</div><div><span>23</span>Vidro Quente</div><div><span>24</span>O Devorador</div><div><span>25</span>Dose de Impulso</div><div><span>26</span>Caber no Mínimo</div><div><span>27</span>Achados e Perdidos</div><div><span>28</span>Baixa Resolução</div><div><span>29</span>Sem Mais Nomes nas Mãos</div></div>
+</div>
+</div>
+</section>
+<section class="story-section" id="faixas">
+<aside class="rail">
+<div class="rail-num">05</div>
+<div class="rail-tag">DENTRO DO ÁLBUM</div>
+</aside>
+<div class="story-copy">
+<h2>O que as 29 faixas estão tentando tocar.</h2>
+<p class="prose">Alguns títulos deixam esse deslocamento evidente. Erro Original aproxima aquilo que parece competência da necessidade que a produziu. O Quarto de Sempre reduz a escala até um espaço doméstico. Caber no Mínimo trata da própria redução para ocupar um limite. Achados e Perdidos transforma identidade em coisa extraviada; Baixa Resolução trabalha a ideia de continuar funcional depois de perder detalhe. No fim, Nenhum Nome Sobe Comigo separa o que pertence ao sujeito daquilo que continuará no fundo.</p>
+<div class="question">O que existe em Erro Original que não existia nos discos de relacionamento?</div>
+<p class="answer">Uma suspeita sobre coisas que eu chamava de qualidade.</p>
+<p class="answer">Funcionar. Aguentar. Permanecer. Ser útil. Continuar.</p>
+<p class="answer">Por fora isso parece virtude. A pergunta é quanto custou aprender algumas delas.</p>
+<div class="question">E O Quarto de Sempre?</div>
+<p class="answer">É importante porque o disco pode construir imagens enormes e depois voltar para um quarto, uma cadeira, uma página.</p>
+<p class="answer">Eu gosto quando a escala desaba.</p>
+<p class="answer">Se tudo permanece simbólico o tempo inteiro, o símbolo vira decoração.</p>
+<div class="question">Caber no Mínimo parece cruel.</div>
+<p class="answer">É.</p>
+<p class="answer">Existe uma violência muito silenciosa em aprender a diminuir a própria forma até ela caber no espaço permitido.</p>
+<div class="question">Achados e Perdidos quase trata o “eu” como objeto.</div>
+<p class="answer">Porque às vezes identidade é experimentada assim.</p>
+<p class="answer">Você percebe que passou muito tempo sendo catalogado pelas necessidades de outras pessoas e precisa descobrir o que ainda é seu.</p>
+<div class="question">E por que terminar com Nenhum Nome Sobe Comigo?</div>
+<p class="answer">Porque depois de carregar tanta gente, tanta interpretação e tanta dívida emocional, eu queria uma pergunta mais simples: o que realmente precisa subir?</p>
+<p class="answer">Não é uma música de vingança.</p>
+<p class="answer">É separação de matéria.</p>
+</div>
+</section>
+<section class="story-section" id="terapia">
+<aside class="rail">
+<div class="rail-num">06</div>
+<div class="rail-tag">ESCRITA</div>
+</aside>
+<div class="story-copy">
+<figure class="photo wide"><img alt="AMORFA — ensaio editorial para Edição Digital 03" decoding="async" loading="lazy" src="../assets/img/interviews/003/writing.webp"/><figcaption>AMORFA / Edição Digital 03 / “Sob a Superfície”</figcaption></figure>
+<h2>Terapia não é automaticamente música.</h2>
+<p class="prose">A intimidade do material não garante qualidade artística. Wolf insiste nisso justamente quando a conversa ameaça transformar a origem autobiográfica em selo de autenticidade.</p>
+<div class="question">Existe uma crítica fácil a projetos autobiográficos: terapia não é automaticamente arte.</div>
+<p class="answer">Concordo.</p>
+<div class="question">Então por que alguém deveria ouvir a sua?</div>
+<p class="answer">Não deveria por obrigação.</p>
+<p class="answer">A experiência ser importante para mim não cria valor estético sozinha.</p>
+<div class="question">Onde começa a composição, então?</div>
+<p class="answer">Quando a necessidade de dizer alguma coisa encontra uma forma que continua interessante mesmo para quem não sabe quem eu sou.</p>
+<p class="answer">Às vezes a frase que foi mais importante na vida é justamente a que precisa sair da música.</p>
+<div class="question">Sinceridade é superestimada?</div>
+<p class="answer">Muito.</p>
+<p class="answer">Pessoa sincera também escreve música ruim.</p>
+<div class="question">O que mudou na sua maneira de compor?</div>
+<p class="answer">Hoje eu penso a palavra junto com a voz e com o som.</p>
+<p class="answer">Uma frase ótima no papel pode morrer cantada. Uma palavra comum pode ficar enorme na nota certa.</p>
+<p class="answer">Eu reescrevo ouvindo. A produção pode alterar uma linha; uma linha pode obrigar o arranjo a mudar.</p>
+<div class="question">O que costuma vir primeiro?</div>
+<p class="answer">Não existe mais uma única porta.</p>
+<p class="answer">Pode ser uma frase, um ritmo de fala, uma imagem, um comportamento vocal, uma linha de baixo, às vezes só uma sensação física de que a música precisa empurrar ou recuar.</p>
+<div class="question">Você escreve uma letra pronta e entrega para a IA?</div>
+<p class="answer">Esse modelo de trabalho me interessa cada vez menos.</p>
+<p class="answer">Canção não é texto despejado sobre uma gravação.</p>
+<p class="answer">A boca interfere. A duração da vogal interfere. O silêncio interfere.</p>
+</div>
+</section>
+<section class="story-section" id="autoria">
+<aside class="rail">
+<div class="rail-num">07</div>
+<div class="rail-tag">AUTORIA</div>
+</aside>
+<div class="story-copy">
+<figure class="photo portrait"><img alt="AMORFA — ensaio editorial para Edição Digital 03" decoding="async" loading="lazy" src="../assets/img/interviews/003/phone.webp"/><figcaption>AMORFA / Edição Digital 03 / “Sob a Superfície”</figcaption></figure>
+<h2>Se a máquina participa, de quem é a música?</h2>
+<p class="prose">A pergunta de autoria fica mais difícil quando o processo não cabe na oposição simples entre “humano fez” e “máquina fez”. Wolf separa origem da escrita, decisão artística e realização sonora — sem reivindicar uma performance que não executou.</p>
+<div class="question">Onde a inteligência artificial entra na composição?</div>
+<p class="answer">Depende da etapa.</p>
+<p class="answer">Mas existe uma distinção importante para mim: as letras partem de mim.</p>
+<p class="answer">Ferramentas podem participar de análise, confronto, alternativas, testes e realização sonora. Isso não transforma cada etapa no mesmo tipo de autoria.</p>
+<div class="question">Uma IA pode sugerir uma palavra.</div>
+<p class="answer">Pode.</p>
+<p class="answer">Um editor também pode. Um colaborador pode. Uma ferramenta de rima pode.</p>
+<p class="answer">A pergunta não se resolve contando quem pronunciou cada sílaba primeiro.</p>
+<div class="question">Conveniente de novo.</div>
+<p class="answer">Você está muito apegado a essa palavra. [risos]</p>
+<div class="question">Se uma máquina participa, por que você continua reivindicando autoria?</div>
+<p class="answer">Porque participação não é autoria integral.</p>
+<p class="answer">Eu respondo pela escrita, pela composição e pelas decisões que constituem aquela obra.</p>
+<p class="answer">Não reivindico tocar uma bateria que não toquei nem uma emissão vocal física que não executei.</p>
+<div class="question">Então se eu tirar a IA, sobra o quê?</div>
+<p class="answer">As letras. As ideias musicais. As melodias e intenções. As decisões. A experiência que tornou aquela música necessária.</p>
+<p class="answer">E sobra um projeto muito mais caro e difícil de realizar.</p>
+<div class="question">Mas não AMORFA como conhecemos.</div>
+<p class="answer">Provavelmente não.</p>
+<p class="answer">A tecnologia é constitutiva da forma que o projeto adquiriu. Eu não vejo razão para esconder isso.</p>
+</div>
+</section>
+<section class="story-section" id="lado">
+<aside class="rail">
+<div class="rail-num">08</div>
+<div class="rail-tag">O CONFLITO</div>
+</aside>
+<div class="story-copy">
+<h2>“Eu sou artista. E uso IA.”</h2>
+<p class="prose">A frase parece simples até ser colocada dentro de uma disputa em que cada lado frequentemente exige exclusividade moral.</p>
+<div class="question">Em algum momento essa guerra cultural exige lado. Artistas de um lado; empresas e ferramentas de IA do outro. Onde você fica?</div>
+<p class="answer">Essa divisão já começa errada.</p>
+<p class="answer">Eu sou artista. E uso IA.</p>
+<div class="question">Muitos artistas diriam que esse “e” é o problema.</div>
+<p class="answer">Eu sei.</p>
+<div class="question">Você quer aprovação deles?</div>
+<p class="answer">De artistas que admiro? Claro.</p>
+<p class="answer">Seria mentira dizer que não.</p>
+<div class="question">E se nunca vier?</div>
+<p class="answer">Eu continuo trabalhando.</p>
+<div class="question">Quais preocupações deles você considera legítimas?</div>
+<p class="answer">Consentimento. Voz. Identidade. Crédito. Remuneração. Condições de trabalho. Transparência.</p>
+<p class="answer">Eu não preciso ridicularizar nenhuma dessas coisas para defender meu direito de criar com uma ferramenta.</p>
+<div class="question">E o que você rejeita?</div>
+<p class="answer">A ideia de que o instrumento usado decide sozinho se uma obra pode ou não ser arte.</p>
+<div class="question">Ética e qualidade são perguntas diferentes?</div>
+<p class="answer">Sim.</p>
+<p class="answer">Uma obra pode ser artisticamente interessante e ter um processo eticamente questionável. Outra pode ter um processo impecável e ser péssima.</p>
+<p class="answer">Eu preferia que essas coisas coincidissem. O mundo não ajuda.</p>
+</div>
+</section>
+<section class="story-section" id="zona-cinza">
+<aside class="rail">
+<div class="rail-num">09</div>
+<div class="rail-tag">TREINAMENTO / DIREITOS</div>
+</aside>
+<div class="story-copy">
+<figure class="photo offset"><img alt="AMORFA — ensaio editorial para Edição Digital 03" decoding="async" loading="lazy" src="../assets/img/interviews/003/machine.webp"/><figcaption>AMORFA / Edição Digital 03 / “Sob a Superfície”</figcaption></figure>
+<h2>A zona cinzenta também beneficia você.</h2>
+<p class="prose">Nenhuma defesa séria da ferramenta atravessa 2026 sem chegar ao treinamento dos sistemas, à origem dos dados e ao controle de identidade. É aqui que Wolf abandona a tentativa de parecer confortável.</p>
+<div class="question">E se a própria ferramenta depender de usos que os artistas não autorizaram?</div>
+<p class="answer">Aí existe uma questão que precisa de regras, transparência e negociação muito melhores do que tivemos até agora.</p>
+<div class="question">Isso parece resposta de relações públicas.</div>
+<p class="answer">Porque você quer que eu resolva direito autoral internacional numa entrevista de música. [risos]</p>
+<div class="question">Quero saber se isso muda sua decisão de usar.</div>
+<p class="answer">Muda o que eu quero apoiar.</p>
+<p class="answer">Eu quero modelos mais transparentes, licenciamento quando for necessário, capacidade real de consentimento e proteção forte para voz e identidade.</p>
+<div class="question">Mas você continua usando enquanto a discussão não está resolvida.</div>
+<p class="answer">Sim.</p>
+<div class="question">Então você aceita uma zona cinzenta que beneficia você.</div>
+<p class="answer">Aceito que participo de uma zona cinzenta que também me beneficia.</p>
+<p class="answer">Isso é diferente de fingir que ela é boa.</p>
+</div>
+</section>
+<section class="story-section" id="excesso">
+<aside class="rail">
+<div class="rail-num">10</div>
+<div class="rail-tag">EDIÇÃO</div>
+</aside>
+<div class="story-copy">
+<h2>29 faixas também podem ser vaidade.</h2>
+<div class="question">Você realmente acredita que alguém precisa de 29 músicas suas de uma vez?</div>
+<p class="answer">Não. [risos]</p>
+<div class="question">Então por que lançar?</div>
+<p class="answer">Porque “precisar” seria uma régua muito estranha para arte.</p>
+<div class="question">Não desvie. Vinte e nove músicas podem ser incapacidade de editar.</div>
+<p class="answer">Podem.</p>
+<div class="question">São?</div>
+<p class="answer">A dimensão tem função no álbum. E eu também precisei aprender onde dimensão vira excesso.</p>
+<p class="answer">As duas perguntas existiram durante a montagem.</p>
+<div class="question">Você cortou coisas?</div>
+<p class="answer">Sim.</p>
+<div class="question">Ainda sobraram 29.</div>
+<p class="answer">Esse é o dado incriminador. [risos]</p>
+<div class="question">Qual é a defesa?</div>
+<p class="answer">Não são 29 tentativas de single.</p>
+<p class="answer">Existem passagens, peças muito curtas, músicas densas e outras quase vazias.</p>
+<p class="answer">Eu queria que a duração tivesse sensação de travessia, não de playlist.</p>
+<div class="question">O streaming não favorece esse tipo de escuta.</div>
+<p class="answer">Eu sei.</p>
+<p class="answer">Mas comportamento médio de plataforma não precisa escrever todos os discos.</p>
+</div>
+</section>
+<section class="story-section" id="voz">
+<aside class="rail">
+<div class="rail-num">11</div>
+<div class="rail-tag">INTIMIDADE</div>
+</aside>
+<div class="story-copy">
+<figure class="photo portrait"><img alt="AMORFA — ensaio editorial para Edição Digital 03" decoding="async" loading="lazy" src="../assets/img/interviews/003/water.webp"/><figcaption>AMORFA / Edição Digital 03 / “Sob a Superfície”</figcaption></figure>
+<h2>O álbum mais íntimo usa uma voz sem corpo.</h2>
+<div class="question">Há uma ironia difícil de ignorar. Seu álbum mais íntimo é entregue por uma voz sintética.</div>
+<p class="answer">Eu sei.</p>
+<div class="question">Isso não cria uma camada de covardia? Você se expõe e coloca outra face e outra voz na frente.</div>
+<p class="answer">Cria distância.</p>
+<p class="answer">Covardia eu deixo para quem ouvir decidir.</p>
+<div class="question">AMORFA protege você.</div>
+<p class="answer">Sim.</p>
+<div class="question">Então a vulnerabilidade fica mais barata.</div>
+<p class="answer stage">[pausa]</p>
+<p class="answer">Talvez algumas coisas fiquem menos arriscadas.</p>
+<div class="question">Uma intérprete humana colocaria o próprio corpo ali.</div>
+<p class="answer">E isso tem um custo que eu não quero fingir que é idêntico.</p>
+<p class="answer">Uma pessoa entra no microfone com história, limites, cansaço, medo, ego. A presença humana muda a música.</p>
+<div class="question">Então por que ainda chamar o álbum de íntimo?</div>
+<p class="answer">Porque intimidade está na matéria que entrou.</p>
+<p class="answer">O risco fisiológico da performance é outra forma de exposição.</p>
+<p class="answer">Eu não quero confundir as duas.</p>
+</div>
+</section>
+<section class="story-section" id="prova">
+<aside class="rail">
+<div class="rail-num">12</div>
+<div class="rail-tag">O JULGAMENTO</div>
+</aside>
+<div class="story-copy">
+<h2>O disco não pode virar peça de defesa.</h2>
+<div class="question">O que você quer provar com este álbum? Que você é compositor?</div>
+<p class="answer">Não.</p>
+<div class="question">Que IA pode produzir arte?</div>
+<p class="answer">Também não.</p>
+<div class="question">Que AMORFA é mais do que tecnologia?</div>
+<p class="answer">Não deveria precisar de 29 músicas para isso.</p>
+<div class="question">Então o que você quer provar?</div>
+<p class="answer">Nada.</p>
+<div class="question">Nada?</div>
+<p class="answer">Se o disco precisa funcionar como peça de defesa num julgamento sobre IA, eu já perdi.</p>
+<p class="answer">Eu quero que ele seja ouvido como disco. Depois podemos brigar sobre o resto.</p>
+<div class="question">Você sabe que muita gente vai ouvir o método antes da música.</div>
+<p class="answer">Sei.</p>
+<p class="answer">Eu não controlo a ordem em que alguém decide me julgar.</p>
+<div class="question">Você está preparado para alguém chamar 29 faixas de “AI slop” sem ouvir o conjunto?</div>
+<p class="answer">Não sei se quem chama de slop costuma chegar à faixa 29. [risos]</p>
+<div class="question">Defensivo.</div>
+<p class="answer">Sim.</p>
+</div>
+</section>
+<section class="story-section" id="fim">
+<aside class="rail">
+<div class="rail-num">13</div>
+<div class="rail-tag">ÚLTIMA PERGUNTA</div>
+</aside>
+<div class="story-copy">
+<figure class="photo full"><img alt="AMORFA — ensaio editorial para Edição Digital 03" decoding="async" loading="lazy" src="../assets/img/interviews/003/hero.webp"/><figcaption>AMORFA / Edição Digital 03 / “Sob a Superfície”</figcaption></figure>
+<h2>Quem mais aparece no disco?</h2>
+<div class="question">Depois de quatro discos frequentemente ocupados por outras pessoas, você constrói 29 faixas e diz que este é o mais íntimo. Quem é a pessoa que mais aparece nele?</div>
+<p class="answer stage">[pausa]</p>
+<p class="answer">Eu.</p>
+<div class="question">Você gostou de encontrá-la?</div>
+<p class="answer">Nem sempre.</p>
+<div class="question">Ela gostou de ser encontrada?</div>
+<p class="answer">Essa eu ainda não sei.</p>
+<div class="question">E AMORFA?</div>
+<p class="answer">AMORFA nasceu justamente no intervalo entre essas duas respostas.</p>
+</div>
+</section>
+<section class="after">
+<div class="after-grid">
+<div>
+<h3>A máquina continua visível. Só não é mais a coisa mais íntima na sala.</h3>
+<p>A terceira grande conversa sobre AMORFA termina num lugar diferente das duas anteriores. A tecnologia continua no centro, mas já não consegue explicar o projeto sozinha.</p><p>Wolf reconhece o conflito em vez de tentar neutralizá-lo: realização sintética pode deslocar trabalho; uma voz sem corpo oferece proteções que uma intérprete humana não possui; a abundância técnica pode gerar excesso; e participar de uma zona regulatória ainda em disputa também produz conveniências para quem cria.</p><p>A defesa permanece: reconhecer esses conflitos não torna a ferramenta artisticamente inválida. Do mesmo modo, usar a ferramenta não apaga direitos de artistas, nem transforma consentimento, identidade, voz e crédito em obstáculos ao futuro.</p><p>Tratado da Decadência e Ascensão das Formas desloca essa discussão para dentro da obra. O que começou como tentativa de dar som a uma escrita privada chega a um álbum de 29 faixas interessado menos em reconstruir outras pessoas e mais em observar o que sobra depois delas.</p><p>Talvez seja essa a metamorfose mais importante de AMORFA até aqui: a máquina continua visível, mas finalmente não é a coisa mais íntima na sala.</p>
+</div>
+<aside class="endquote">
+<b>Última linha</b>
+      “AMORFA nasceu justamente no intervalo entre essas duas respostas.”
+    </aside>
+</div>
+</section>
+<footer class="issue-footer"><a href="../index.html">AMORFA.ONLINE</a><div class="links"><a href="../discografia.html">Discografia</a><a href="../entrevistas.html">Entrevistas</a><a href="../sobre.html">Sobre</a><a href="../ouvir.html">Ouvir</a></div></footer><script>
+const p=document.getElementById('progress');
+addEventListener('scroll',()=>{
+  const d=document.documentElement, m=d.scrollHeight-d.clientHeight;
+  p.style.width=(m?d.scrollTop/m*100:0)+'%';
+});
+</script>
+</body>
+</html>
