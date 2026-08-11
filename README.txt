@@ -1,8 +1,3 @@
-AMORFA.ONLINE — versão final editorial 2026
-
-Revisão integral de home, discografia, páginas de obra, AMORFA / CONVERSAS, entrevista, sobre e ouvir.
-Capas usadas apenas na discografia/obras. Fotografias usadas como linguagem editorial e chamadas.
-Sem minutagens de faixas.
-
-
-Edição 02 integrada em entrevistas/002-se-eu-preciso-do-nome-de-outro-artista.html.
+AMORFA.ONLINE v7 — revisão de direção de arte e responsividade.
+Home com fotografia full-bleed; AMORFA / CONVERSAS em escala editorial; artigos com capa fotográfica integral; discografia, páginas de obra, sobre e ouvir revisados.
+Copie o conteúdo desta pasta para a raiz do GitHub Pages.
