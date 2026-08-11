@@ -1,0 +1,29 @@
+[
+  {
+    "id": "001",
+    "slug": "quem-puxa-os-fios",
+    "titulo": "Quem puxa os fios?",
+    "subtitulo": "O arquivo que aprendeu a cantar.",
+    "tipo": "materia-de-capa",
+    "eixos": [
+      "persona",
+      "processo",
+      "tecnologia",
+      "obra"
+    ],
+    "data": "2026-08",
+    "entrevista": "M. Voss",
+    "fotografia": "Estúdio AMORFA",
+    "direcaoCriativa": "R. J. Wolf",
+    "url": "entrevistas/001-quem-puxa-os-fios.html",
+    "imagem": "assets/img/interviews/capa-preta.webp",
+    "publicada": true,
+    "edicao": 1,
+    "secao": "Matéria de capa",
+    "serie": "AMORFA / CONVERSAS",
+    "ordem": 1,
+    "status": "publicada",
+    "mes": "Agosto",
+    "ano": 2026
+  }
+]

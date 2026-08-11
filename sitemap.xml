@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://amorfa.online/</loc><priority>1.0</priority></url>
-  <url><loc>https://amorfa.online/links.html</loc><priority>0.95</priority></url>
-  <url><loc>https://amorfa.online/discografia.html</loc><priority>0.9</priority></url>
-  <url><loc>https://amorfa.online/sobre.html</loc><priority>0.65</priority></url>
-  <url><loc>https://amorfa.online/fragmentos.html</loc><priority>0.45</priority></url>
-  <url><loc>https://amorfa.online/transmissoes.html</loc><priority>0.45</priority></url>
-  <url><loc>https://amorfa.online/discografia/albuns/desaparecer-bonito.html</loc><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/discografia/albuns/toque-fantasma.html</loc><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/discografia/albuns/o-amor-que-achei-merecer.html</loc><priority>0.8</priority></url>
-  <url><loc>https://amorfa.online/discografia/albuns/erro-de-calculo.html</loc><priority>0.8</priority></url>
+<url><loc>https://amorfa.online/</loc></url>
+<url><loc>https://amorfa.online/discografia.html</loc></url>
+<url><loc>https://amorfa.online/entrevistas.html</loc></url>
+<url><loc>https://amorfa.online/sobre.html</loc></url>
+<url><loc>https://amorfa.online/ouvir.html</loc></url>
+<url><loc>https://amorfa.online/musica/rituais.html</loc></url>
+<url><loc>https://amorfa.online/musica/tratado.html</loc></url>
+<url><loc>https://amorfa.online/musica/nao-te-absolve.html</loc></url>
+<url><loc>https://amorfa.online/musica/por-pouco.html</loc></url>
+<url><loc>https://amorfa.online/musica/o-primeiro-erro.html</loc></url>
+<url><loc>https://amorfa.online/musica/o-amor-que-achei-merecer.html</loc></url>
+<url><loc>https://amorfa.online/musica/toque-fantasma.html</loc></url>
+<url><loc>https://amorfa.online/musica/desaparecer-bonito.html</loc></url>
+  <url><loc>https://amorfa.online/entrevistas/001-quem-puxa-os-fios.html</loc></url>
 </urlset>
