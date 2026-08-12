@@ -112,24 +112,25 @@
   },
   {
     "id": "005",
-    "slug": "quem-e-voce-quando-a-musica-nao-e-sua",
-    "titulo": "Quem é você quando a música não é sua?",
-    "subtitulo": "Produzir sem colonizar.",
+    "slug": "eu-entendo-amorfa-mas-sinto-como-ecco",
+    "titulo": "Eu entendo AMORFA. Mas sinto como ECCO.",
+    "subtitulo": "Por Pouco, visto do lado de ECCO.",
     "tipo": "entrevista-especial",
     "eixos": [
       "ecco",
       "por-pouco",
+      "letras",
+      "contraponto",
+      "vulnerabilidade",
       "producao",
-      "composicao",
-      "identidade",
       "inteligencia-artificial"
     ],
     "data": "2026-08-11",
     "entrevista": "",
     "fotografia": "Arquivo AMORFA / Por Pouco",
     "direcaoCriativa": "R. J. Wolf",
-    "url": "entrevistas/005-quem-e-voce-quando-a-musica-nao-e-sua.html",
-    "imagem": "assets/img/covers/por-pouco.webp",
+    "url": "entrevistas/005-eu-entendo-amorfa-mas-sinto-como-ecco.html",
+    "imagem": "assets/img/interviews/005/photo-01.png",
     "publicada": true,
     "edicao": 5,
     "secao": "Entrevista especial",
@@ -137,6 +138,8 @@
     "ordem": 5,
     "status": "publicada",
     "mes": "Agosto",
-    "ano": 2026
+    "ano": 2026,
+    "entrevistado": "L.A. Kuhn",
+    "credito": "Letrista das faixas de ECCO"
   }
 ]
