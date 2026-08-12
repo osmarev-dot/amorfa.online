@@ -11,7 +11,7 @@
 <meta property="og:description" content="Encarte virtual: músicas, letras, poemas, curiosidades e a primeira versão do álbum.">
 <meta property="og:type" content="music.album">
 <meta property="og:url" content="https://amorfa.online/musica/desaparecer-bonito.html">
-<meta property="og:image" content="https://amorfa.online/assets/img/albums/desaparecer-bonito/encarte/cover-current.webp">
+<meta property="og:image" content="https://amorfa.online/assets/img/albums/desaparecer-bonito/encarte/hero-current.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 html,body{margin:0;padding:0}
@@ -196,6 +196,45 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
   .db-footer{flex-direction:column}
 }
 </style>
+
+<style id="db-final-overrides">
+body{overflow-x:hidden}
+.db-section{padding:clamp(60px,7vw,96px) clamp(20px,5vw,72px)}
+.db-reading,.db-track{max-width:1260px}
+.db-hero{grid-template-columns:minmax(0,1.04fr) minmax(360px,.96fr);min-height:min(960px,calc(100svh - 68px))}
+.db-hero__image img{min-height:min(960px,calc(100svh - 68px));object-position:center 18%}
+.db-hero__copy{padding:clamp(48px,7vw,92px) clamp(24px,4vw,64px)}
+.db-photo-break{background:#03132c;padding:28px 20px 72px}
+.db-photo-break figure{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);min-height:auto;background:#07162d;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.db-photo-break img{height:clamp(420px,52vw,620px);object-fit:cover;object-position:center 18%}
+.db-photo-break figcaption{padding:36px;min-height:0;background:#071f46;font:400 clamp(26px,3vw,42px)/1.12 Georgia,serif}
+.db-history__grid,.db-rel__grid,.db-sound__grid,.db-opening__grid{align-items:start}
+.db-rel__image img{max-height:680px;object-fit:cover;object-position:center 18%}
+.db-interlude{max-width:none;padding:20px 20px 72px}
+.db-interlude figure{max-width:1260px;margin:0 auto;border:1px solid rgba(255,255,255,.08)}
+.db-interlude img{min-height:0;height:clamp(440px,56vw,700px);object-fit:cover;object-position:center 18%}
+.db-interlude__copy{padding:clamp(28px,4vw,52px)}
+.db-spread{max-width:none;padding:0 20px 72px}
+.db-spread figure{max-width:1260px;margin:0 auto}
+.db-spread img{height:clamp(380px,46vw,560px);object-fit:cover;object-position:center 18%}
+.db-spread figcaption{padding:34px 36px;font:400 clamp(24px,2.7vw,38px)/1.1 Georgia,serif}
+.db-curio{min-height:0}
+.db-final img{height:clamp(460px,58vw,680px);object-position:center 18%}
+@media (max-width:980px){
+  .db-hero{grid-template-columns:1fr;min-height:auto}
+  .db-hero__image img{height:auto;min-height:0;aspect-ratio:4/5;object-position:center top}
+  .db-photo-break{padding:0 20px 60px}
+  .db-photo-break figure,.db-interlude figure,.db-spread figure{grid-template-columns:1fr}
+  .db-photo-break img,.db-interlude img,.db-spread img{height:auto;min-height:0;max-height:none}
+}
+@media (max-width:680px){
+  .db-section{padding-left:18px;padding-right:18px}
+  .db-photo-break{padding:0 0 56px}
+  .db-photo-break figure,.db-interlude figure,.db-spread figure{border:0}
+  .db-photo-break figcaption,.db-interlude__copy,.db-spread figcaption{padding:24px 20px}
+}
+</style>
+
 </head>
 <body>
 <div id="db-page">
@@ -214,7 +253,7 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
 <main>
 <section class="db-hero">
   <div class="db-hero__image">
-    <img src="../assets/img/albums/desaparecer-bonito/encarte/cover-current.webp" alt="Capa de Desaparecer Bonito, de AMORFA">
+    <img src="../assets/img/albums/desaparecer-bonito/encarte/hero-current.png" alt="Capa de Desaparecer Bonito, de AMORFA">
   </div>
   <div class="db-hero__copy">
     <div class="db-kicker">ÁLBUM · 13 FAIXAS</div>
@@ -246,7 +285,7 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
 
 <section class="db-photo-break">
   <figure>
-    <img src="../assets/img/albums/desaparecer-bonito/encarte/session-full.webp" alt="AMORFA em corpo inteiro sob projeções prismáticas azuis">
+    <img src="../assets/img/albums/desaparecer-bonito/encarte/intro-seated.png" alt="AMORFA em corpo inteiro sob projeções prismáticas azuis">
     <figcaption>Uma imagem bonita pode esconder muita coisa. Às vezes a música começa justamente quando ela falha.</figcaption>
   </figure>
 </section>
@@ -255,7 +294,7 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
   <div class="db-reading">
     <div class="db-history__grid">
       <figure class="db-oldcover">
-        <img src="../assets/img/albums/desaparecer-bonito/encarte/cover-first-version.webp" alt="Capa original da primeira versão do Álbum I, com dois manequins em preto e branco">
+        <img src="../assets/img/albums/desaparecer-bonito/encarte/cover-first-version.png" alt="Capa original da primeira versão do Álbum I, com dois manequins em preto e branco">
         <figcaption>Capa original de <em>Tudo Que Eu Uso Me Usa de Volta</em>, primeira configuração do Álbum I.</figcaption>
       </figure>
       <div>
@@ -320,7 +359,7 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
       </div>
     </div>
     <figure class="db-rel__image">
-      <img src="../assets/img/albums/desaparecer-bonito/encarte/session-portrait.webp" alt="Retrato de AMORFA sob projeções prismáticas">
+      <img src="../assets/img/albums/desaparecer-bonito/encarte/portrait-close.png" alt="Retrato de AMORFA sob projeções prismáticas">
       <figcaption>AMORFA — sessão visual de <em>Desaparecer Bonito</em>.</figcaption>
     </figure>
   </div>
@@ -655,7 +694,7 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
 
   <div class="db-interlude">
     <figure>
-      <img src="../assets/img/albums/desaparecer-bonito/encarte/session-profile.webp" alt="AMORFA de perfil sob luz prismática">
+      <img src="../assets/img/albums/desaparecer-bonito/encarte/profile-rainbow.png" alt="AMORFA de perfil sob luz prismática">
       <div class="db-interlude__copy">
         <div class="db-kicker">DO ARQUIVO DE ESCRITA</div>
         <h3>Fome viral</h3>
@@ -894,7 +933,7 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
 <p>Isso é qualquer coisa menos amor<br>vício coletivo.<br>febre por aprovação.<br>culto onde o corpo é deus<br>e o afeto tratado como pecado.</p></div>
         <small>Poema ligado ao núcleo que depois aparece em <em>Livre Pra Quem?</em>: aplicativo, corpo como critério, desejo que reproduz exclusão e afeto tratado como custo.</small>
       </div>
-      <img src="../assets/img/albums/desaparecer-bonito/encarte/session-hands.webp" alt="AMORFA sob luz prismática com as mãos no cabelo">
+      <img src="../assets/img/albums/desaparecer-bonito/encarte/hands-head.png" alt="AMORFA sob luz prismática com as mãos no cabelo">
     </figure>
   </div>
 
@@ -1272,7 +1311,7 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
 
   <div class="db-spread">
     <figure>
-      <img src="../assets/img/albums/desaparecer-bonito/encarte/session-portrait.webp" alt="Retrato de AMORFA no ensaio de Desaparecer Bonito">
+      <img src="../assets/img/albums/desaparecer-bonito/encarte/squat-floor.png" alt="Retrato de AMORFA no ensaio de Desaparecer Bonito">
       <figcaption>Às vezes a pose é assunto. Às vezes a música começa quando ela desaba.</figcaption>
     </figure>
   </div>
@@ -1638,7 +1677,7 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
   <div class="db-spread">
     <figure style="grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr)">
       <figcaption>Entre aparecer demais e desaparecer por completo, quase todas essas músicas encontram uma maneira ruim de continuar olhando.</figcaption>
-      <img src="../assets/img/albums/desaparecer-bonito/encarte/session-full.webp" alt="AMORFA em corpo inteiro no ensaio prismático">
+      <img src="../assets/img/albums/desaparecer-bonito/encarte/standing-wall.png" alt="AMORFA em corpo inteiro no ensaio prismático">
     </figure>
   </div>
 
@@ -2174,7 +2213,7 @@ body{background:#f1f2ef;color:#111820;font-family:Arial,Helvetica,sans-serif}
 </section>
 
 <section class="db-final">
-  <img src="../assets/img/albums/desaparecer-bonito/encarte/session-profile.webp" alt="AMORFA de perfil sob luz prismática">
+  <img src="../assets/img/albums/desaparecer-bonito/encarte/seated-boots.png" alt="AMORFA de perfil sob luz prismática">
   <div class="db-final__shade"></div>
   <div class="db-final__text">“A tela acende.<br>Eu não respondo.”</div>
 </section>
