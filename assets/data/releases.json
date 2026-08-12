@@ -1,38 +1,5 @@
 [
   {
-    "slug": "rituais",
-    "title": "Rituais",
-    "artist": "AMORFA",
-    "year": "2026",
-    "kind": "Álbum",
-    "status": "Em preparação",
-    "cover": "assets/img/covers/rituais.webp",
-    "smartlink": "",
-    "spotify": "",
-    "sound": "Ritual electronic pop · industrial · chamber synthetic pop",
-    "dek": "Quatorze faixas sobre hábito, devoção, vigilância e corpo — um disco que observa a repetição antes de chamá-la de fé.",
-    "tracks": [
-      "Rituais",
-      "Acendo Vela pra Apolo",
-      "Quando Ela Dorme",
-      "Eva Olha",
-      "Ela Foi",
-      "Fiquei Difícil",
-      "Devota da Noite",
-      "Oráculo de Bolso",
-      "Homodeus",
-      "Mundo (No Mudo)",
-      "Gaia",
-      "O Vazio Aceita Tudo",
-      "Forma Nenhuma",
-      "Apofenia"
-    ],
-    "essay": [
-      "Em Rituais, gestos cotidianos ganham a gravidade de uma liturgia: esperar, vigiar, desejar, repetir, obedecer ao próprio impulso. Apolo, Gaia, oráculos e vazios entram como vocabulário de uma experiência contemporânea, não como ornamentação mística.",
-      "A produção alterna pressão eletrônica, matéria acústica processada e zonas de silêncio. O disco procura menos um grande clímax do que a sensação de um mecanismo que continua funcionando mesmo quando ninguém está mandando."
-    ]
-  },
-  {
     "slug": "tratado",
     "title": "Tratado da Decadência e Ascensão das Formas",
     "artist": "AMORFA",
@@ -78,6 +45,39 @@
     "essay": [
       "Tratado da Decadência e Ascensão das Formas troca a cronologia íntima por uma arquitetura de matéria. Ferro, pó, vidro, costura, sedimento e gravidade deixam de ser metáforas de apoio e passam a organizar o modo como o disco pensa perda, permanência e transformação.",
       "A sequência é atravessada por interlúdios que funcionam como mudança de estado, não como pausa decorativa. O resultado é um álbum de longa duração que prefere transição, atrito e instabilidade a uma ideia simples de queda seguida por redenção."
+    ]
+  },
+  {
+    "slug": "rituais",
+    "title": "Rituais",
+    "artist": "AMORFA",
+    "year": "2026",
+    "kind": "Álbum",
+    "status": "Em preparação",
+    "cover": "assets/img/covers/rituais.webp",
+    "smartlink": "",
+    "spotify": "",
+    "sound": "Ritual electronic pop · industrial · chamber synthetic pop",
+    "dek": "Quatorze faixas sobre hábito, devoção, vigilância e corpo — um disco que observa a repetição antes de chamá-la de fé.",
+    "tracks": [
+      "Rituais",
+      "Acendo Vela pra Apolo",
+      "Quando Ela Dorme",
+      "Eva Olha",
+      "Ela Foi",
+      "Fiquei Difícil",
+      "Devota da Noite",
+      "Oráculo de Bolso",
+      "Homodeus",
+      "Mundo (No Mudo)",
+      "Gaia",
+      "O Vazio Aceita Tudo",
+      "Forma Nenhuma",
+      "Apofenia"
+    ],
+    "essay": [
+      "Em Rituais, gestos cotidianos ganham a gravidade de uma liturgia: esperar, vigiar, desejar, repetir, obedecer ao próprio impulso. Apolo, Gaia, oráculos e vazios entram como vocabulário de uma experiência contemporânea, não como ornamentação mística.",
+      "A produção alterna pressão eletrônica, matéria acústica processada e zonas de silêncio. O disco procura menos um grande clímax do que a sensação de um mecanismo que continua funcionando mesmo quando ninguém está mandando."
     ]
   },
   {
