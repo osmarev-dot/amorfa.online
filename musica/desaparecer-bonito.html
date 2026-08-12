@@ -235,6 +235,321 @@ body{overflow-x:hidden}
 }
 </style>
 
+
+<style id="db-image-scale-revision">
+/* REVISAO EDITORIAL — imagens menores, proporção texto/foto equilibrada,
+   menos vazio vertical e hierarquia tipográfica mais consistente. */
+
+.db-section{
+  padding:clamp(52px,5.8vw,82px) clamp(20px,5vw,68px);
+}
+.db-reading,
+.db-track{
+  max-width:1180px;
+}
+
+/* HERO: continua sendo capa, mas deixa de ocupar praticamente uma tela inteira. */
+.db-hero{
+  grid-template-columns:minmax(0,1.02fr) minmax(380px,.98fr);
+  min-height:0;
+}
+.db-hero__image img{
+  height:clamp(600px,70vw,760px);
+  min-height:0;
+  object-fit:cover;
+  object-position:center 14%;
+}
+.db-hero__copy{
+  min-height:0;
+  padding:clamp(48px,6vw,76px) clamp(28px,4vw,58px);
+}
+.db-hero h1{
+  font-size:clamp(54px,7vw,104px);
+}
+.db-hero__lead{
+  font-size:clamp(17px,1.45vw,22px);
+}
+
+/* ABERTURA: mais compacta. */
+.db-opening__grid{
+  grid-template-columns:minmax(250px,.62fr) minmax(0,1.38fr);
+  gap:clamp(34px,5vw,72px);
+}
+.db-opening__quote{
+  font-size:clamp(38px,4.8vw,66px);
+}
+.db-prose p{
+  font-size:clamp(17px,1.2vw,20px);
+  line-height:1.7;
+}
+
+/* PRIMEIRO RESPIRO FOTOGRAFICO:
+   imagem passa a ser uma página editorial, não um painel de cinema. */
+.db-photo-break{
+  padding:30px 20px 58px;
+}
+.db-photo-break figure{
+  max-width:1120px;
+  min-height:0;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(310px,1.1fr);
+  align-items:stretch;
+  background:#071f46;
+  overflow:hidden;
+}
+.db-photo-break img{
+  height:460px;
+  min-height:0;
+  object-fit:cover;
+  object-position:center 18%;
+}
+.db-photo-break figcaption{
+  min-height:0;
+  padding:32px 38px;
+  font-size:clamp(24px,2.45vw,36px);
+  line-height:1.13;
+}
+
+/* HISTORICO: a capa antiga vira documento dentro da página, não domina a seção. */
+.db-history__grid{
+  grid-template-columns:minmax(280px,.58fr) minmax(0,1.42fr);
+  gap:clamp(36px,5vw,66px);
+}
+.db-oldcover{
+  max-width:390px;
+}
+.db-history h2,
+.db-rel h2,
+.db-sound h2,
+.db-curios h2,
+.db-index h2{
+  font-size:clamp(42px,5vw,72px);
+  margin-bottom:22px;
+}
+.db-pull{
+  margin:30px 0;
+  font-size:clamp(27px,2.8vw,40px);
+}
+.db-compare{
+  margin-top:42px;
+}
+
+/* RELACIONAMENTOS: retrato lateral menor e mais próximo do texto. */
+.db-rel__grid{
+  grid-template-columns:minmax(0,1.42fr) minmax(280px,.58fr);
+  gap:clamp(36px,5vw,62px);
+}
+.db-rel__image{
+  max-width:390px;
+  justify-self:end;
+}
+.db-rel__image img{
+  width:100%;
+  max-height:520px;
+  object-fit:cover;
+  object-position:center 16%;
+}
+
+/* BLOCO SONORO: menos massa vertical. */
+.db-sound__grid{
+  grid-template-columns:minmax(0,1.28fr) minmax(280px,.72fr);
+  gap:clamp(36px,5vw,62px);
+}
+
+/* INDICE */
+.db-index__grid{
+  grid-template-columns:240px minmax(0,1fr);
+  gap:38px;
+}
+
+/* FAIXAS: reduz os grandes vazios entre títulos, citações e comentários. */
+.db-track{
+  padding:clamp(54px,5vw,72px) 0;
+}
+.db-track__head{
+  grid-template-columns:92px minmax(0,1fr);
+  gap:18px;
+}
+.db-track__num{
+  font-size:clamp(58px,7vw,92px);
+}
+.db-track h3{
+  font-size:clamp(38px,5vw,66px);
+}
+.db-track blockquote{
+  margin:34px 0 30px;
+  font-size:clamp(27px,3vw,43px);
+}
+.db-track__body{
+  gap:clamp(28px,4vw,52px);
+}
+.db-lyrics{
+  margin-top:30px;
+}
+
+/* POEMAS: texto vira protagonista.
+   A foto ocupa aproximadamente 1/3, sem ser esticada pela altura do poema. */
+.db-interlude{
+  max-width:none;
+  padding:8px 20px 58px;
+}
+.db-interlude figure{
+  max-width:1120px;
+  margin:0 auto;
+  grid-template-columns:minmax(270px,.36fr) minmax(0,.64fr) !important;
+  align-items:start;
+  overflow:hidden;
+}
+.db-interlude figure:has(> .db-interlude__copy:first-child){
+  grid-template-columns:minmax(0,.64fr) minmax(270px,.36fr) !important;
+}
+.db-interlude img{
+  width:100%;
+  height:480px;
+  min-height:0;
+  object-fit:cover;
+  object-position:center 14%;
+  align-self:start;
+}
+.db-interlude__copy{
+  padding:32px 38px;
+}
+.db-interlude__copy h3{
+  font-size:clamp(38px,4vw,58px);
+  margin-bottom:18px;
+}
+.db-interlude__copy .db-poem p{
+  font-size:clamp(15px,1vw,17px);
+  line-height:1.55;
+  margin-bottom:.9em;
+}
+
+/* IMAGENS ENTRE BLOCOS: pequenas páginas duplas, não banners gigantes. */
+.db-spread{
+  max-width:none;
+  padding:0 20px 58px;
+}
+.db-spread figure{
+  max-width:1040px;
+  margin:0 auto;
+  grid-template-columns:minmax(0,.46fr) minmax(0,.54fr) !important;
+  align-items:stretch;
+}
+.db-spread figure:has(> figcaption:first-child){
+  grid-template-columns:minmax(0,.54fr) minmax(0,.46fr) !important;
+}
+.db-spread img{
+  height:390px;
+  object-fit:cover;
+  object-position:center 16%;
+}
+.db-spread figcaption{
+  padding:30px 34px;
+  font-size:clamp(23px,2.25vw,32px);
+}
+
+/* CURIOSIDADES */
+.db-curio{
+  min-height:185px;
+  padding:24px;
+}
+
+/* FINAL: mantém impacto, sem virar outra tela inteira. */
+.db-final{
+  max-height:none;
+}
+.db-final img{
+  height:500px;
+  object-fit:cover;
+  object-position:center 18%;
+}
+.db-final__text{
+  max-width:700px;
+  font-size:clamp(36px,4.8vw,62px);
+  bottom:44px;
+}
+
+/* MOBILE: uma coluna, mas sem fotos gigantes. */
+@media (max-width:980px){
+  .db-hero{
+    grid-template-columns:1fr;
+  }
+  .db-hero__image img{
+    height:auto;
+    aspect-ratio:4/5;
+    max-height:720px;
+    object-position:center top;
+  }
+  .db-opening__grid,
+  .db-history__grid,
+  .db-rel__grid,
+  .db-sound__grid,
+  .db-index__grid{
+    grid-template-columns:1fr;
+  }
+  .db-oldcover,
+  .db-rel__image{
+    max-width:420px;
+    justify-self:start;
+  }
+  .db-photo-break figure,
+  .db-interlude figure,
+  .db-interlude figure:has(> .db-interlude__copy:first-child),
+  .db-spread figure,
+  .db-spread figure:has(> figcaption:first-child){
+    grid-template-columns:1fr !important;
+  }
+  .db-photo-break img{
+    height:420px;
+  }
+  .db-interlude img{
+    height:430px;
+  }
+  .db-spread img{
+    height:360px;
+  }
+}
+@media (max-width:680px){
+  .db-section{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  .db-photo-break,
+  .db-interlude,
+  .db-spread{
+    padding-left:0;
+    padding-right:0;
+  }
+  .db-photo-break img{
+    height:auto;
+    max-height:480px;
+  }
+  .db-interlude img{
+    height:auto;
+    max-height:460px;
+  }
+  .db-spread img{
+    height:auto;
+    max-height:420px;
+  }
+  .db-photo-break figcaption,
+  .db-interlude__copy,
+  .db-spread figcaption{
+    padding:24px 20px;
+  }
+  .db-final img{
+    height:420px;
+  }
+  .db-track__head{
+    grid-template-columns:58px minmax(0,1fr);
+  }
+  .db-track__num{
+    font-size:52px;
+  }
+}
+</style>
+
 </head>
 <body>
 <div id="db-page">
