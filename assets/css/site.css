@@ -81,3 +81,15 @@
   .archive-feature .copy{padding:18px}
   .mag-card-copy h2{font-size:36px}
 }
+
+/* AMORFA / CONVERSAS — grade 01—04 padronizada */
+.home-archive-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+.mag-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 28px;align-items:start}
+.archive-feature figure,.mag-card-media{aspect-ratio:4/5}
+.archive-feature--004 img,.mag-card--004 .mag-card-media img{object-position:center 48%}
+.archive-feature--003 img,.mag-card--003 .mag-card-media img{object-position:center 38%}
+.archive-feature--002 img,.mag-card--002 .mag-card-media img{object-position:center 38%}
+.archive-feature--001 img,.mag-card--001 .mag-card-media img{object-position:center 44%}
+.mag-card--004{border-top:3px solid var(--red);padding-top:12px}
+.mag-card--004 .status{color:var(--red);font-weight:600}
+@media(max-width:760px){.home-archive-grid,.mag-card-grid{grid-template-columns:1fr}}

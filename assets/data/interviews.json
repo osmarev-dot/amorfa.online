@@ -81,5 +81,33 @@
     "status": "publicada",
     "mes": "Agosto",
     "ano": 2026
+  },
+  {
+    "id": "004",
+    "slug": "rituais-tem-data-o-resto-ainda-pode-mudar",
+    "titulo": "Rituais tem data. O resto ainda pode mudar.",
+    "subtitulo": "Um disco vai sair. O outro ainda pode estar errado.",
+    "tipo": "entrevista-especial",
+    "eixos": [
+      "rituais",
+      "futuro",
+      "composicao",
+      "album-duplo",
+      "inteligencia-artificial"
+    ],
+    "data": "2026-08-11",
+    "entrevista": "",
+    "fotografia": "Estúdio AMORFA",
+    "direcaoCriativa": "R. J. Wolf",
+    "url": "entrevistas/004-rituais-tem-data-o-resto-ainda-pode-mudar.html",
+    "imagem": "assets/img/interviews/004/01-capa-fogo.webp",
+    "publicada": true,
+    "edicao": 4,
+    "secao": "Entrevista especial",
+    "serie": "AMORFA / CONVERSAS",
+    "ordem": 4,
+    "status": "publicada",
+    "mes": "Agosto",
+    "ano": 2026
   }
 ]
