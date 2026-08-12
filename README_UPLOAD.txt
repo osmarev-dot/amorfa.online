@@ -1,21 +1,25 @@
-AMORFA — DESAPARECER BONITO — ENCARTE FINAL
+AMORFA — O PRIMEIRO ERRO — ENCARTE ELETRÔNICO FINAL
 
-Suba o conteúdo desta pasta na raiz do repositório.
+Subir o conteúdo desta pasta na raiz do repositório.
 
 SUBSTITUIR:
-- musica/desaparecer-bonito.html
+- musica/o-primeiro-erro.html
 
-MANTER / ATUALIZAR:
-- desaparecer-bonito.html (redirect para /musica/desaparecer-bonito.html)
+MANTER / ATUALIZAR REDIRECT:
+- discografia/albuns/o-primeiro-erro.html
 
-ASSETS NOVOS:
-- assets/img/albums/desaparecer-bonito/encarte/cover-current.webp
-- assets/img/albums/desaparecer-bonito/encarte/cover-first-version.webp
-- assets/img/albums/desaparecer-bonito/encarte/session-full.webp
-- assets/img/albums/desaparecer-bonito/encarte/session-portrait.webp
-- assets/img/albums/desaparecer-bonito/encarte/session-profile.webp
-- assets/img/albums/desaparecer-bonito/encarte/session-hands.webp
+ASSETS:
+- assets/img/albums/o-primeiro-erro/encarte/
 
-A página é autocontida em CSS e não depende de site.css, evitando conflito/desconfiguração.
-As imagens foram distribuídas ao longo do texto; não existe mais galeria empilhada.
-Foram incluídos apenas os dois poemas fornecidos: “Fome viral” e “Amor em condições de uso”.
+A página contém:
+- capa atual
+- cinco imagens novas do ensaio aprovado
+- abertura editorial
+- breve contexto da mudança Erro de Cálculo -> O Primeiro Erro
+- bloco sonoro público e não técnico
+- comentários das 13 faixas
+- três fragmentos curtos do arquivo de escrita
+- links de busca de letras no Musixmatch
+- créditos
+
+O HTML é autocontido em CSS, sem dependência de site.css, para evitar conflito de layout.
