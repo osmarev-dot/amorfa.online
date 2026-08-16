@@ -1,0 +1,33 @@
+{
+  "base": "amorfa.online-main(3).zip",
+  "data_atualizacao": "2026-08-16",
+  "catalogo": {
+    "obra_removida": "Tratado da Decadência e Ascensão das Formas — 29 faixas",
+    "obras_adicionadas": [
+      {
+        "titulo": "O Arranjo do Submundo",
+        "data": "2026-08-17",
+        "faixas": 11,
+        "duracao": "42:37"
+      },
+      {
+        "titulo": "Amorfa",
+        "data": "2026-08-18",
+        "faixas": 14,
+        "duracao": "59:36"
+      }
+    ],
+    "total_obras_discografia": 9
+  },
+  "entrevista_removida": "003-se-voce-tira-a-ia-sobra-o-que.html",
+  "checks": [
+    "capas novas presentes em WebP",
+    "páginas individuais dos dois álbuns presentes",
+    "discografia.html com 9 obras",
+    "releases.json sem slug tratado e com os dois novos álbuns",
+    "entrevista 003 removida do HTML, JSON, home e sitemap",
+    "navegação entre entrevistas 002 e 004 corrigida após remoção da 003",
+    "nenhum link ou recurso local quebrado nos HTMLs públicos",
+    "nenhuma referência pública a Tratado/29 faixas nos HTMLs, JSONs de conteúdo ou sitemap"
+  ]
+}

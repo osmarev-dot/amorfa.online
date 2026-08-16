@@ -1,53 +1,5 @@
 [
   {
-    "slug": "tratado",
-    "title": "Tratado da Decadência e Ascensão das Formas",
-    "artist": "AMORFA",
-    "year": "2026",
-    "kind": "Álbum",
-    "status": "14 AGO 2026",
-    "cover": "assets/img/covers/tratado.webp",
-    "smartlink": "https://offstep.link/199189007563",
-    "spotify": "",
-    "sound": "Spectral post-punk · industrial alt-rock · chamber dark-pop",
-    "dek": "Uma obra em vinte e nove movimentos sobre descida, decomposição e recomposição — identidade tratada como matéria sujeita a pressão, corte e mudança de forma.",
-    "tracks": [
-      "Limiar",
-      "Os Portões de Hades",
-      "A Ânfora",
-      "Simbionte",
-      "O Arranjo do Submundo",
-      "Ritual de Ascensão (Interlúdio)",
-      "Erro Original",
-      "O Quarto de Sempre",
-      "A Sutura Invisível",
-      "O Mapa da Subida",
-      "O Portal Invertido (Interlúdio)",
-      "Pó Sem Jardim",
-      "Fantasmogênese",
-      "O Fim das Formas",
-      "Matéria Instável (Interlúdio)",
-      "Nova Massa",
-      "Translúcida",
-      "A Costura e o Corte",
-      "Sedimento",
-      "Onde Se Guarda o Que Não Existe Mais",
-      "Gravidade Morta (Interlúdio)",
-      "Campo Nulo",
-      "Vidro Quente",
-      "O Devorador",
-      "Dose de Impulso",
-      "Caber no Mínimo",
-      "Achados e Perdidos",
-      "Baixa Resolução",
-      "Sem Mais Nomes nas Mãos"
-    ],
-    "essay": [
-      "Tratado da Decadência e Ascensão das Formas troca a cronologia íntima por uma arquitetura de matéria. Ferro, pó, vidro, costura, sedimento e gravidade deixam de ser metáforas de apoio e passam a organizar o modo como o disco pensa perda, permanência e transformação.",
-      "A sequência é atravessada por interlúdios que funcionam como mudança de estado, não como pausa decorativa. O resultado é um álbum de longa duração que prefere transição, atrito e instabilidade a uma ideia simples de queda seguida por redenção."
-    ]
-  },
-  {
     "slug": "rituais",
     "title": "Rituais",
     "artist": "AMORFA",
@@ -78,6 +30,71 @@
     "essay": [
       "Em Rituais, gestos cotidianos ganham a gravidade de uma liturgia: esperar, vigiar, desejar, repetir, obedecer ao próprio impulso. Apolo, Gaia, oráculos e vazios entram como vocabulário de uma experiência contemporânea, não como ornamentação mística.",
       "A produção alterna pressão eletrônica, matéria acústica processada e zonas de silêncio. O disco procura menos um grande clímax do que a sensação de um mecanismo que continua funcionando mesmo quando ninguém está mandando."
+    ]
+  },
+  {
+    "slug": "amorfa",
+    "title": "Amorfa",
+    "artist": "AMORFA",
+    "year": "2026",
+    "kind": "Álbum",
+    "status": "18 AGO 2026",
+    "cover": "assets/img/covers/amorfa.webp",
+    "smartlink": "",
+    "spotify": "",
+    "sound": "Rock · Alternative",
+    "duration": "59:36",
+    "dek": "Quatorze faixas, 59:36 de duração e lançamento em 18 de agosto de 2026.",
+    "tracks": [
+      "Nova Massa",
+      "O Mapa da Subida",
+      "Translúcida",
+      "Pó Sem Jardim",
+      "Fantasmogênese",
+      "A Costura e o Corte",
+      "Espessura",
+      "Campo Nulo",
+      "Achados e Perdidos",
+      "Baixa Resolução",
+      "Sem Mais Nomes",
+      "O Fim das Formas",
+      "Onde Se Guarda o Que Não Existe Mais",
+      "Caber no Mínimo (Faixa Bônus)"
+    ],
+    "essay": [
+      "Amorfa é um álbum de 14 faixas, classificado como Rock / Alternative, com lançamento em 18 de agosto de 2026.",
+      "A ordem oficial apresentada à distribuidora abre com Nova Massa e encerra com Caber no Mínimo (Faixa Bônus). Duração total: 59:36."
+    ]
+  },
+  {
+    "slug": "o-arranjo-do-submundo",
+    "title": "O Arranjo do Submundo",
+    "artist": "AMORFA",
+    "year": "2026",
+    "kind": "Álbum",
+    "status": "17 AGO 2026",
+    "cover": "assets/img/covers/o-arranjo-do-submundo.webp",
+    "smartlink": "",
+    "spotify": "",
+    "sound": "Electronic · Alternative",
+    "duration": "42:37",
+    "dek": "Onze faixas, 42:37 de duração e lançamento em 17 de agosto de 2026.",
+    "tracks": [
+      "Limiar",
+      "Os Portões de Hades",
+      "A Ânfora",
+      "Simbionte",
+      "A Sutura Invisível",
+      "O Devorador",
+      "O Arranjo do Submundo",
+      "Erro Original",
+      "Vidro Quente",
+      "Dose de Impulso",
+      "O Quarto de Sempre"
+    ],
+    "essay": [
+      "O Arranjo do Submundo é um álbum de 11 faixas, classificado como Electronic / Alternative, com lançamento em 17 de agosto de 2026.",
+      "A ordem oficial apresentada à distribuidora abre com Limiar e encerra com O Quarto de Sempre. Duração total: 42:37."
     ]
   },
   {

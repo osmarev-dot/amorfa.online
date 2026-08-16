@@ -55,34 +55,6 @@
     "ano": 2026
   },
   {
-    "id": "003",
-    "slug": "se-voce-tira-a-ia-sobra-o-que",
-    "titulo": "Se você tira a IA, sobra o quê?",
-    "subtitulo": "A parte mais desconfortável da história de AMORFA.",
-    "tipo": "entrevista-critica",
-    "eixos": [
-      "inteligencia-artificial",
-      "direitos-dos-artistas",
-      "autoria",
-      "composicao",
-      "tratado"
-    ],
-    "data": "2026",
-    "entrevista": "",
-    "fotografia": "Estúdio AMORFA",
-    "direcaoCriativa": "R. J. Wolf",
-    "url": "entrevistas/003-se-voce-tira-a-ia-sobra-o-que.html",
-    "imagem": "assets/img/interviews/003/water.webp",
-    "publicada": true,
-    "edicao": 3,
-    "secao": "Entrevista crítica",
-    "serie": "AMORFA / CONVERSAS",
-    "ordem": 3,
-    "status": "publicada",
-    "mes": "Agosto",
-    "ano": 2026
-  },
-  {
     "id": "004",
     "slug": "rituais-tem-data-o-resto-ainda-pode-mudar",
     "titulo": "Rituais tem data. O resto ainda pode mudar.",
