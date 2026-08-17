@@ -28,3 +28,9 @@ index.html recebeu a nova release rail.
 
 INSTALAÇÃO
 O ZIP mantém a mesma estrutura de pastas do pacote recebido. Pode ser sobreposto à raiz do site/repositório.
+
+
+ATUALIZAÇÃO v4.1 — HOME / PLAYLIST
+- Playlist oficial do Spotify adicionada em destaque na página inicial, entre lançamentos e editorial.
+- Bloco tratado como módulo editorial premium: fundo grafite, tipografia serifada, acento ciano mínimo, sem glow ou gradientes chamativos.
+- Embed responsivo preservando o código oficial do Spotify e link externo para abrir a playlist.
