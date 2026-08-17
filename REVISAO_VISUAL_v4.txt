@@ -1,0 +1,30 @@
+AMORFA.ONLINE — REVISÃO VISUAL v4
+17/08/2026
+
+OBJETIVO
+Transformar o site em uma presença editorial mais sofisticada, cinematográfica e coerente com AMORFA, removendo efeitos chamativos e cores usadas como decoração.
+
+PRINCIPAIS MUDANÇAS
+- Paleta reequilibrada: preto/grafite e marfim como base; vermelho e ciano usados apenas como pontuação.
+- Ticker vermelho animado da home substituído por uma agenda de lançamentos estática e editorial.
+- Removidos visualmente: cursor glow, wipe vermelho+ciano, brilho atravessando imagens, hover com salto e borda vermelha.
+- Motion system reduzido a fades e deslocamentos mínimos, com suporte a prefers-reduced-motion.
+- Cards e capas maiores, mais espaço negativo, bordas finas e tratamento fotográfico menos saturado.
+- Discografia reorganizada visualmente em grade editorial de 3 colunas no desktop.
+- Cabeçalho refinado com glass discreto e indicador de navegação por linha fina.
+- AMORFA / CONVERSAS recebeu um sistema editorial compartilhado novo em assets/css/interview.css.
+- Entrevistas especiais 003/004/005 foram normalizadas para retirar verde ácido, laranja e gradientes exuberantes como elementos dominantes.
+- Encartes Desaparecer Bonito e O Primeiro Erro foram preservados como microsites, mas tiveram progress bars, tipografia, cores e fundos refinados.
+- Footer, botões, foco de teclado, contraste e responsividade harmonizados.
+
+ARQUIVOS NOVOS
+assets/css/refinement.css
+assets/css/interview.css
+
+ARQUIVOS ATUALIZADOS
+assets/js/site.js
+Todos os HTML receberam a camada refinement.css.
+index.html recebeu a nova release rail.
+
+INSTALAÇÃO
+O ZIP mantém a mesma estrutura de pastas do pacote recebido. Pode ser sobreposto à raiz do site/repositório.
