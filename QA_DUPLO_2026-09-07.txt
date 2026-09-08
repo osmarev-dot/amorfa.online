@@ -1,0 +1,29 @@
+AMORFA — QA / ATUALIZAÇÃO DO SITE — 07 SET 2026
+
+ESCOPO
+- Home revisada: bloco Rituais alinhado, sem deslocamento artificial da segunda fotografia.
+- Home: texto da playlist oficial reescrito.
+- Home: bloco de lançamento duplo atualizado e links para os dois novos encartes.
+- Discografia: Febre Neon + A Hora Mais Escura adicionados aos próximos lançamentos.
+- Entrevistas: grade desktop recalibrada para proporções consistentes; card 005 deixa de dominar a página.
+- Novo encarte: musica/febre-neon.html — 15 faixas, conceito, influências/produção, galeria e comentários faixa a faixa.
+- Novo encarte: musica/a-hora-mais-escura.html — 14 faixas, conceito, influências/produção, galeria e comentários faixa a faixa.
+- Sitemap atualizado.
+
+IMAGENS
+- As imagens novas geradas durante a tentativa anterior NÃO foram incorporadas ao site.
+- Os dois encartes usam apenas a capa oficial e fotografias originais já fornecidas pelo usuário.
+- Fotografias editoriais convertidas para WebP preservando a imagem quadrada completa, sem crop editorial forçado.
+
+LINKS
+- Febre Neon: pre-save oficial mantido em https://offstep.link/246030340353
+- A Hora Mais Escura: nenhum smartlink foi inventado; permanece “em breve” onde aplicável.
+
+VALIDAÇÃO ESTÁTICA
+- 60 arquivos HTML verificados.
+- 0 referências locais href/src quebradas no pacote.
+- Febre Neon: 15 blocos de faixa e 8 imagens na página.
+- A Hora Mais Escura: 14 blocos de faixa e 8 imagens na página.
+
+OBSERVAÇÃO
+- A validação foi estática (estrutura, caminhos e assets). O ambiente de execução bloqueou renderização local em navegador; portanto não foi alegada inspeção visual pixel a pixel do ZIP final.

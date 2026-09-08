@@ -671,3 +671,107 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--lux-cyan-soft)}
   .hp-playlist{padding:44px 0 48px}
   .hp-playlist__copy h2{font-size:clamp(34px,10vw,46px)}
 }
+
+
+/* =====================================================================
+   CONTRAST PASS — 07 SEP 2026
+   Restores explicit foreground colors when dark global chrome meets
+   light editorial sections. Keeps the visual system; fixes legibility.
+   ===================================================================== */
+
+/* Shared dark chrome: small type must remain readable. */
+.footer h4{color:#918c84!important}
+.footer-bottom{color:#918c84!important}
+.release-page .track .n,.release-page .track-count{color:#918c84!important}
+.discography-page .page-count{color:#918c84!important}
+.discography-page .encarte-mark{color:#c37872!important}
+
+/* Paper/magazine footers need the inverse contrast. */
+.magazine .footer h4{color:#5d5953!important}
+.magazine .footer-bottom{color:#5d5953!important}
+.magazine .archive-number,.magazine .archive-type,.magazine .archive-date{color:#5d5953!important}
+
+/* Interview microsites: paper navigation + dark footer. */
+.interview-custom .article-nav a,.interview-custom .interview-nav a{color:var(--lux-paper-ink)!important}
+.interview-custom .footer-brand{color:var(--lux-ink)!important}
+.interview-custom .footer h4{color:#918c84!important}
+.interview-custom .footer-bottom{color:#918c84!important}
+.interview-custom .section-marker .num,.interview-custom .num{color:#746f67!important}
+.interview-custom figcaption{color:#5d5953!important}
+
+/* Desaparecer Bonito: light editorial sections were inheriting the global
+   off-white text color from body. Force ink colors only on paper blocks. */
+.encarte-db .db-opening,
+.encarte-db .db-rel,
+.encarte-db .db-tracks,
+.encarte-db .db-curios{color:#171a1d!important}
+.encarte-db .db-opening .db-prose p,
+.encarte-db .db-rel .db-prose p,
+.encarte-db .db-tracks .db-track h3,
+.encarte-db .db-tracks .db-track__comment p,
+.encarte-db .db-tracks .db-note p,
+.encarte-db .db-curios p,
+.encarte-db .db-curios h2{color:#1f2529!important}
+.encarte-db .db-rel h2{color:#173a58!important}
+.encarte-db .db-track__num{color:#7b878c!important}
+.encarte-db .db-note{color:#283239!important}
+
+/* O Primeiro Erro: refinement.css changes the page-level color to light;
+   these sections are paper and therefore require explicit dark ink. */
+.encarte-ope .opening,
+.encarte-ope .sound,
+.encarte-ope .sound-card,
+.encarte-ope .tracks{color:#1f1d1a!important}
+.encarte-ope .sound h2,
+.encarte-ope .sound .prose p,
+.encarte-ope .sound-card p,
+.encarte-ope .sound-card strong,
+.encarte-ope .sound-card .tags span,
+.encarte-ope .tracks .track h3,
+.encarte-ope .tracks .track-text p,
+.encarte-ope .tracks .track-note p{color:#25211d!important}
+.encarte-ope .track-no{color:#817b73!important}
+.encarte-ope .sound-card .tags span{border-color:#817b73!important}
+
+
+
+/* Contrast pass — detail corrections */
+.interview-page .footer-brand{color:var(--lux-ink)!important}
+.interview-page .footer h4{color:#918c84!important}
+.interview-page .footer-bottom{color:#918c84!important}
+.interview-page .section-marker .num,.interview-page .num{color:#746f67!important}
+.interview-page .article-issue,.interview-page .rail-label,.interview-page figcaption,
+.interview-page .article-index-label{color:#5d5953!important}
+.interview-page .article-mast,.interview-page .lead-label,.interview-page .article-index span{color:#2d6870!important}
+
+.encarte-db .db-opening .db-kicker,
+.encarte-db .db-rel .db-kicker,
+.encarte-db .db-tracks .db-kicker,
+.encarte-db .db-curios .db-kicker{color:#205f98!important}
+.encarte-db .db-curio b{color:#205f98!important}
+.encarte-db .db-note b,.encarte-db .db-note a{color:#205f98!important;border-color:#205f98!important}
+.encarte-db .db-lyrics a{color:#8de9ff!important;border-color:#8de9ff!important}
+.encarte-db .db-language b{color:#7ba8ad!important}
+
+.encarte-ope .opening .micro,
+.encarte-ope .sound .micro,
+.encarte-ope .tracks .micro{color:#6b5438!important}
+.encarte-ope .track-note b,.encarte-ope .track-note a,
+.encarte-ope .poem-inline .label{color:#6b563e!important;border-color:#6b563e!important}
+
+.discography-page .release-card .meta{color:#918c84!important}
+.interview-custom .opening-label{color:#2d6870!important}
+.interview-custom .rail-tag{color:#5d5953!important}
+.interview-custom .outro b{color:#c37872!important}
+
+/* 07 Sep 2026 — proportional pass for Interviews */
+@media(min-width:761px){
+.magazine .mag-card-grid{max-width:1160px;margin:0 auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:46px 34px!important;}
+.magazine .mag-card--005{grid-column:auto!important;display:block!important;border-top:1px solid var(--lux-paper-line)!important;padding-top:16px!important;}
+.magazine .mag-card--005 .mag-card-media{aspect-ratio:4/5!important;max-width:none!important;}
+.magazine .mag-card--005 .mag-card-media img{object-fit:cover!important;}
+.magazine .mag-card--005 .mag-card-copy{padding-top:18px!important;max-width:none!important;}
+.magazine .mag-card--005 .mag-card-copy h2{font-size:clamp(31px,2.7vw,43px)!important;line-height:.94!important;}
+.magazine .mag-card--005 .mag-card-copy .dek{font-size:18px!important;}
+.magazine .mag-title{grid-template-columns:minmax(0,1fr) minmax(220px,300px)!important;gap:36px!important;}
+}
