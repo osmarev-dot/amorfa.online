@@ -1,0 +1,13 @@
+AMORFA — QA CATÁLOGO CORRIGIDO — 2026-09-07
+
+Correção aplicada:
+- Amorfa restaurado visualmente na Discografia como álbum lançado (18 AGO 2026).
+- O Arranjo do Submundo restaurado visualmente na Discografia como álbum lançado (17 AGO 2026).
+- Catálogo corrigido de 6 para 8 obras lançadas.
+- Total da página mantido em 11 obras: 8 lançadas + 3 próximos lançamentos (Rituais, Febre Neon, A Hora Mais Escura).
+- Páginas e capas dos dois álbuns confirmadas no pacote.
+- Sitemap já continha ambas as páginas e foi preservado.
+- Auditoria de links/assets locais executada após a correção.
+
+Causa do erro anterior:
+Ao substituir os antigos banners de lançamentos de agosto pelos novos lançamentos de setembro/outubro, Amorfa e O Arranjo do Submundo deixaram de aparecer nos banners, mas não foram transferidos para a grade de catálogo. Os arquivos dos álbuns não haviam sido apagados; a omissão era de navegação/listagem.
