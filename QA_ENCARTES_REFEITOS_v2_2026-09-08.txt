@@ -1,0 +1,34 @@
+AMORFA — QA ENCARTE EDITORIAL v2
+Data: 2026-09-08
+
+ESCOPO REFEITO DO ZERO
+- musica/amorfa.html
+- musica/toque-fantasma.html
+- musica/o-amor-que-achei-merecer.html
+- musica/o-arranjo-do-submundo.html
+- musica/nao-te-absolve.html
+- musica/por-pouco.html
+- musica/tratado.html
+- assets/css/encarte-editorial.css
+
+CORREÇÕES VISUAIS
+- Contraste corrigido: labels/eyebrows em blocos claros agora usam --accent-ink escuro.
+- Cada encarte possui paleta derivada da capa/identidade do próprio disco.
+- AMORFA: removidas integralmente as fotos da campanha do primeiro álbum; usa somente a capa do auto-intitulado como matéria visual.
+- O Arranjo do Submundo: removidas imagens de entrevistas; usa capa + background explicitamente ligado ao ciclo Submundo.
+- Não Te Absolve: removidas imagens de entrevistas; usa somente a capa do EP e recortes da própria capa.
+- Toque Fantasma: usa somente /assets/img/albums/toque-fantasma/encarte/ + capa.
+- O Amor Que Achei Merecer: usa somente /assets/img/albums/o-amor-que-achei-merecer/encarte/ + capa.
+- Por Pouco: usa o arquivo editorial da dupla em /assets/img/interviews/005/ + capa.
+- Tratado: usa somente /assets/img/albums/tratado/encarte/ + capa.
+
+CONTEÚDO
+- Encartes ampliados com: origem/processo, curiosidades, arquitetura sonora, ensaio editorial, mapa do disco, leituras de faixas-chave, arquivo visual e créditos.
+- Toque Fantasma e O Amor Que Achei Merecer: origem autobiográfica anonimizada; nomes e detalhes identificáveis não aparecem na página pública.
+- Tratado: faixa 29 corrigida para “Nenhum Nome Sobe Comigo”, conforme base ativa de 17/07/2026.
+- Por Pouco: preservada a sequência pública já exibida no site; o arquivo de revisão de julho aparece apenas como contexto de processo, sem substituir silenciosamente a formação pública.
+
+QA ESTRUTURAL
+- 60 HTMLs varridos.
+- 0 referências locais quebradas (links/assets internos).
+- Nenhuma imagem nova foi gerada para os encartes.

@@ -1,0 +1,38 @@
+AMORFA — QA ENCARTE VIRTUAL — 08/09/2026
+
+ESCOPO
+Site completo derivado de AMORFA_SITE_COMPLETO_CATALOGO_CORRIGIDO_2026-09-07.zip.
+Nenhuma imagem nova foi gerada para esta edição. Foram usados apenas assets já existentes no site e imagens fornecidas pelo usuário, convertidas para WebP para uso web.
+
+ENCARTES PRESERVADOS (já desenvolvidos)
+- Desaparecer Bonito
+- O Primeiro Erro
+- Rituais
+- Febre Neon
+- A Hora Mais Escura
+
+ENCARTES NOVOS / EXPANDIDOS
+- Amorfa
+- Toque Fantasma
+- O Amor Que Achei Merecer
+- O Arranjo do Submundo
+- Não Te Absolve
+- Por Pouco
+- Tratado da Decadência e Ascensão das Formas
+
+PRINCÍPIOS EDITORIAIS
+- Toque Fantasma, O Amor Que Achei Merecer e O Primeiro Erro: origem autobiográfica tratada por mecanismo, sem nomes ou dados identificáveis de terceiros.
+- Processo de composição apresentado por objetos, arquitetura sonora, curadoria e escolhas formais.
+- Tracklists existentes no site foram preservadas; divergências de arquivo interno não foram silenciosamente reconciliadas.
+- Smartlinks já existentes foram preservados.
+
+DESIGN
+- CSS compartilhado: assets/css/encarte-editorial.css
+- Hero com capa 1:1 sem deformação.
+- Blocos: Como nasceu / Curiosidades do processo / Arquitetura sonora / Mapa do disco / Faixas-chave / Arquivo visual / Créditos.
+- Responsivo para desktop, tablet e mobile.
+- Imagens editoriais em proporções controladas; sem wallpaper infinito nem crop obrigatório da capa.
+
+QA ESTÁTICO
+- 60 arquivos HTML verificados.
+- 0 referências locais quebradas em href/src/link/script.

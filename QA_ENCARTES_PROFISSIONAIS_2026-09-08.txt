@@ -1,0 +1,36 @@
+AMORFA.ONLINE — RECURADORIA PROFISSIONAL DOS ENCARTES
+Data: 2026-09-08
+
+BASE
+- Site completo preservado a partir da revisão integral mais recente.
+- Nenhuma página do catálogo, home, entrevistas, ensaios ou discografia foi removida.
+
+ENCARTES RECURADOS
+- musica/amorfa.html
+- musica/toque-fantasma.html
+- musica/o-amor-que-achei-merecer.html
+- musica/o-arranjo-do-submundo.html
+- musica/nao-te-absolve.html
+- musica/por-pouco.html
+- musica/tratado.html
+- musica/o-primeiro-erro.html
+
+CRITÉRIO VISUAL
+- Fotografias do corpo do encarte deixaram de funcionar como galerias autônomas ou mosaicos soltos.
+- Imagens foram aproximadas dos blocos de texto que elas interpretam.
+- Largura editorial controlada: em geral 340–430 px para retratos; até ~520 px em duplas/landscape.
+- Duplas de imagens usam hierarquia principal/secundária, não três ou quatro fotos equivalentes em sequência.
+- Responsividade revisada por CSS: pares viram coluna única em telas menores; imagens mantêm proporção e object-fit.
+- Seções antigas de visual-row, gallery, cover-study e essay-mosaic foram removidas das páginas migradas.
+
+CORREÇÕES ESPECÍFICAS
+- AMORFA: água/reflexo distribuídos junto à leitura de forma e identidade; nenhuma foto do primeiro álbum.
+- O Arranjo do Submundo: corpo, guarda, anatomia e retorno distribuídos em quatro núcleos com imagens do ciclo correto.
+- O Primeiro Erro: incorporadas as novas fotos do círculo de pedra; adicionadas standing-open.webp e fabric-open.webp; imagens distribuídas entre origem, som, devoção, desmontagem e fechamento.
+- Não Te Absolve: removida repetição de três recortes da mesma capa; uma única imagem editorial acompanha o texto.
+- Toque Fantasma / O Amor Que Achei Merecer / Por Pouco / Tratado: seções genéricas de “arquivo visual” substituídas por leituras visuais específicas e imagens próximas ao argumento.
+- Removidos comentários metalinguísticos de processo do tipo “o encarte usa”, “imagem de outra era”, “preenchimento”, “estudo da capa” e equivalentes.
+
+QA ESTRUTURAL
+- 60 HTMLs analisados.
+- 0 referências locais quebradas entre links, imagens, CSS e scripts.

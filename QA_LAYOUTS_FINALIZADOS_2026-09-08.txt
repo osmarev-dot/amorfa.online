@@ -1,0 +1,30 @@
+AMORFA — fechamento dos novos layouts — 2026-09-08
+
+Integrado ao site completo:
+- discografia.html — novo layout editorial em linha do tempo/lista de obras.
+- musica/amorfa.html — novo layout.
+- musica/o-amor-que-achei-merecer.html — novo layout.
+- musica/o-arranjo-do-submundo.html — novo layout.
+- musica/por-pouco.html — novo layout.
+- musica/toque-fantasma.html — novo layout.
+
+Layouts concluídos nesta revisão:
+- musica/nao-te-absolve.html — díptico visual em duas colunas, paleta derivada da capa, leitura do altar/piano.
+- musica/tratado.html — estrutura em quatro movimentos + epílogo, tracklist organizada por movimento, paleta azul/cinza derivada da capa.
+
+Correções de integração:
+- Removidos componentes de edição <sc-if> que exibiriam notas internas/placeholder no site publicado.
+- Removidos placeholders “trecho da letra —” de Amorfa.
+- Removida a nota interna “nota de produção · não publicar” da Discografia.
+- Removido o placeholder de pré-save sem link de A Hora Mais Escura.
+- Tratado reinserido na Discografia; contagem publicada atualizada de 8 para 9 obras.
+- Links e caminhos locais dos 8 arquivos modificados verificados: 0 referências locais quebradas.
+
+Mantidos sem alteração de layout nesta passagem:
+- Rituais
+- Febre Neon
+- A Hora Mais Escura
+- Desaparecer Bonito
+- O Primeiro Erro
+
+Esses cinco já tinham arquitetura visual própria no pacote-base. Podem receber uma rodada posterior apenas de refinamento responsivo/editorial sem retornar ao molde antigo.

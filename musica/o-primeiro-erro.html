@@ -1,17 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>O Primeiro Erro — AMORFA</title>
-<meta name="description" content="O Primeiro Erro, de AMORFA — encarte virtual com comentários faixa a faixa, fragmentos do arquivo de escrita e ensaio visual.">
-<meta name="theme-color" content="#080907">
-<link rel="canonical" href="https://amorfa.online/musica/o-primeiro-erro.html">
-<meta property="og:title" content="O Primeiro Erro — AMORFA">
-<meta property="og:description" content="Treze canções sobre a primeira fé, o primeiro amor e aquilo que continuou funcionando depois.">
-<meta property="og:type" content="music.album">
-<meta property="og:url" content="https://amorfa.online/musica/o-primeiro-erro.html">
-<meta property="og:image" content="https://amorfa.online/assets/img/albums/o-primeiro-erro/encarte/cover.webp">
+<meta content="O Primeiro Erro, de AMORFA — encarte virtual com comentários faixa a faixa, fragmentos do arquivo de escrita e ensaio visual." name="description"/>
+<meta content="#080907" name="theme-color"/>
+<link href="https://amorfa.online/musica/o-primeiro-erro.html" rel="canonical"/>
+<meta content="O Primeiro Erro — AMORFA" property="og:title"/>
+<meta content="Treze canções sobre a primeira fé, o primeiro amor e aquilo que continuou funcionando depois." property="og:description"/>
+<meta content="music.album" property="og:type"/>
+<meta content="https://amorfa.online/musica/o-primeiro-erro.html" property="og:url"/>
+<meta content="https://amorfa.online/assets/img/albums/o-primeiro-erro/encarte/cover.webp" property="og:image"/>
 <style>
 :root{--black:#070806;--stone:#171915;--ink:#171613;--ivory:#f0eee7;--paper:#e6e2d8;--bronze:#a58a63;--bronze2:#c6ab7f;--ash:#96958e;--line:#c9c3b7;--wine:#5f2626}
 *{box-sizing:border-box} html{scroll-behavior:smooth;background:var(--black)} body{margin:0;background:var(--ivory);color:var(--ink);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden} a{color:inherit;text-decoration:none} img{display:block;width:100%}
@@ -36,169 +37,176 @@
 .credits{background:#070806;color:#d8d3c9} .credit-grid{display:grid;grid-template-columns:1fr minmax(330px,.72fr);gap:60px} .credits p{font:400 16px/1.65 Georgia,serif;color:#a9a59c} .credit-lines div{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:11px 0;border-top:1px solid #31332d} .credit-lines b{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#b99e74} .credit-lines span{font:400 14px/1.4 Georgia,serif} .footer{display:flex;justify-content:space-between;gap:20px;padding:28px clamp(20px,5vw,72px) 44px;background:#070806;color:#77776f;border-top:1px solid #282a25;font-size:9px;letter-spacing:.11em;text-transform:uppercase}
 @media(max-width:980px){.hero{grid-template-columns:1fr;min-height:0} .hero-art img{height:auto;min-height:0;aspect-ratio:1/1;object-fit:cover} .opening-grid,.origin-grid,.sound-grid,.credit-grid{grid-template-columns:1fr} .opening-photo{justify-self:start;max-width:420px} .index-grid{grid-template-columns:1fr} .track-grid{grid-template-columns:1fr} .track-note{border-left:0;border-top:1px solid #9d988e;padding:18px 0 0} .poem-card,.image-card{grid-template-columns:1fr} .poem-card img{min-height:0;height:520px} .image-card img{height:520px}}
 @media(max-width:680px){.topbar{height:58px;padding:0 18px} .nav{display:none} .hero-copy{padding:54px 20px 60px} .hero h1{font-size:56px} .section,.tracks{padding-left:18px;padding-right:18px} .toc{grid-template-columns:1fr} .track-head{grid-template-columns:55px 1fr} .track-no{font-size:50px} .track h3{font-size:38px} .poem-band{padding-bottom:48px} .poem-card img,.image-card img{height:auto} .poem-copy{padding:26px 20px} .final-image{padding:46px 0} .final-quote{left:20px;right:20px} .credit-lines div{grid-template-columns:1fr;gap:4px} .footer{flex-direction:column}}
+
+/* professional editorial curation */
+.ope-professional .opening-grid{grid-template-columns:minmax(0,1.18fr) minmax(260px,.62fr);gap:clamp(38px,6vw,76px);align-items:center}
+.ope-professional .opening-photo{max-width:340px}.ope-professional .opening-photo img{aspect-ratio:4/5;object-fit:cover}
+.ope-professional .origin-grid{grid-template-columns:minmax(260px,.62fr) minmax(0,1.18fr);gap:clamp(38px,6vw,76px);align-items:center}
+.ope-professional .blind-card{max-width:340px}.ope-professional .blind-card img{aspect-ratio:4/5;height:auto;max-height:none;object-fit:cover}
+.ope-professional .sound-grid{grid-template-columns:minmax(0,1.05fr) minmax(260px,.55fr);align-items:start}.ope-professional .sound-card{padding:0;background:transparent;border-top:0}.ope-professional .sound-card figure{margin:0 0 22px}.ope-professional .sound-card figure img{aspect-ratio:4/5;object-fit:cover;max-height:390px}.ope-professional .sound-card .sound-note{padding:20px 22px;border-top:4px solid #272824;background:#ebe7de}
+.ope-professional .poem-band{max-width:980px;padding:28px 0 58px}.ope-professional .poem-card{grid-template-columns:minmax(240px,.36fr) minmax(0,.64fr)}.ope-professional .poem-card img{min-height:0;height:420px;object-fit:cover}.ope-professional .poem-copy{padding:34px 40px}
+.ope-professional .image-break{max-width:900px;padding:24px 0 56px}.ope-professional .image-card{grid-template-columns:minmax(240px,.38fr) minmax(0,.62fr);align-items:center}.ope-professional .image-card img{height:380px;object-fit:cover}.ope-professional .image-card figcaption{padding:34px 40px}
+.ope-professional .fabric-interlude{max-width:980px;margin:0 auto;padding:24px 0 58px;display:grid;grid-template-columns:minmax(0,.62fr) minmax(240px,.38fr);gap:42px;align-items:center}.ope-professional .fabric-interlude figure{margin:0;max-width:340px;justify-self:end}.ope-professional .fabric-interlude img{aspect-ratio:4/5;object-fit:cover}.ope-professional .fabric-interlude h4{margin:0 0 14px;font:400 clamp(28px,3.1vw,42px)/1.06 Georgia,serif}.ope-professional .fabric-interlude p{margin:0;font:400 17px/1.68 Georgia,serif;color:#3f392f}
+.ope-professional .final-image{padding:68px 20px}.ope-professional .final-image figure{max-width:980px;display:grid;grid-template-columns:minmax(260px,.42fr) minmax(0,.58fr);align-items:center;gap:54px}.ope-professional .final-image img{height:500px;max-height:none;object-fit:cover}.ope-professional .final-quote{position:static;padding:0;background:none;font:400 clamp(34px,4vw,58px)/1.02 Georgia,serif;color:#f2eee5}.ope-professional .final-quote small{display:block;margin-top:18px;max-width:36ch;font:400 15px/1.65 Georgia,serif;color:#9e9a91}
+@media(max-width:980px){.ope-professional .opening-grid,.ope-professional .origin-grid,.ope-professional .sound-grid{grid-template-columns:1fr}.ope-professional .opening-photo,.ope-professional .blind-card{justify-self:start;max-width:360px}.ope-professional .sound-card{max-width:420px}.ope-professional .final-image figure{grid-template-columns:1fr}.ope-professional .final-image img{height:auto;max-width:420px}}
+@media(max-width:680px){.ope-professional .poem-card,.ope-professional .image-card,.ope-professional .fabric-interlude{grid-template-columns:1fr}.ope-professional .poem-card img,.ope-professional .image-card img{height:auto;max-height:500px}.ope-professional .fabric-interlude figure{justify-self:start;max-width:84vw}.ope-professional .poem-copy,.ope-professional .image-card figcaption{padding:26px}.ope-professional .final-image{padding-left:18px;padding-right:18px}}
 </style>
-<link href="../assets/css/refinement.css" rel="stylesheet"/>
-</head>
-<body class="encarte-page encarte-ope">
+<link href="../assets/css/refinement.css" rel="stylesheet">
+</link></head>
+<body class="encarte-page encarte-ope ope-professional">
 <div class="progress" id="progress"></div>
 <header class="topbar"><a class="brand" href="../index.html">AMORFA</a><nav class="nav"><a href="../discografia.html">Discografia</a><a href="../entrevistas.html">Entrevistas</a><a href="../ensaios.html">Ensaios</a><a href="../sobre.html">Sobre</a><a href="../ouvir.html">Ouvir</a></nav></header>
 <main>
 <section class="hero">
-  <div class="hero-art"><img src="../assets/img/albums/o-primeiro-erro/encarte/cover.webp" alt="Capa de O Primeiro Erro, de AMORFA"></div>
-  <div class="hero-copy"><div class="micro">ÁLBUM · 13 FAIXAS · 2026</div><h1>O Primeiro <span>Erro</span></h1><p class="hero-lead">O primeiro amor visto depois que a devoção perdeu a inocência — e deixou hábitos que continuaram funcionando muito depois do fim.</p><div class="meta"><div><b>FORMATO</b><span>Álbum</span></div><div><b>FAIXAS</b><span>13</span></div><div><b>LINGUAGEM</b><span>Gothic art-rock / coldwave / dark alternative</span></div></div><div class="actions"><a class="btn main" href="../ouvir.html">OUVIR ↗</a><a class="btn" href="https://www.musixmatch.com/search?query=AMORFA+O+Primeiro+Erro" target="_blank" rel="noopener">MUSIXMATCH ↗</a><a class="btn" href="../discografia.html">DISCOGRAFIA</a></div></div>
+<div class="hero-art"><img alt="Capa de O Primeiro Erro, de AMORFA" src="../assets/img/albums/o-primeiro-erro/encarte/cover.webp"/></div>
+<div class="hero-copy"><div class="micro">ÁLBUM · 13 FAIXAS · 2026</div><h1>O Primeiro <span>Erro</span></h1><p class="hero-lead">O primeiro amor visto depois que a devoção perdeu a inocência — e deixou hábitos que continuaram funcionando muito depois do fim.</p><div class="meta"><div><b>FORMATO</b><span>Álbum</span></div><div><b>FAIXAS</b><span>13</span></div><div><b>LINGUAGEM</b><span>Gothic art-rock / coldwave / dark alternative</span></div></div><div class="actions"><a class="btn main" href="../ouvir.html">OUVIR ↗</a><a class="btn" href="https://www.musixmatch.com/search?query=AMORFA+O+Primeiro+Erro" rel="noopener" target="_blank">MUSIXMATCH ↗</a><a class="btn" href="../discografia.html">DISCOGRAFIA</a></div></div>
 </section>
-
-<section class="section opening"><div class="wrap opening-grid"><div><div class="micro" style="color:#795f3f">PRIMEIRA FÉ</div><h2>Antes de aprender a desconfiar.</h2><div class="prose"><p>Há uma crueldade específica em rever o primeiro amor: quem olha de volta já conhece aquilo que a pessoa dentro da lembrança ainda não sabia. <em>O Primeiro Erro</em> vive nessa distância.</p><p>A juventude aparece generosa, teatral, absoluta e pouco equipada para medir o que estava oferecendo. Em <em>Até na Morte</em>, amar ainda pode significar entregar a garganta. Em <em>Antiga Fé</em>, anos depois, aquela entrega já virou mobília. Em <em>Erro de Cálculo</em>, uma paz nova chega e encontra o corpo procurando o impacto antigo.</p><p>O primeiro amor ocupa o álbum como unidade de medida. Algumas músicas voltam diretamente à devoção. Outras observam o que ela ensinou: o medo de presença, a facilidade de chamar afinidade de destino, a tendência de transformar ausência em prova e o impulso de construir um santo antes de conhecer a pessoa inteira.</p></div></div><figure class="opening-photo"><img src="../assets/img/albums/o-primeiro-erro/encarte/portrait-open.webp" alt="AMORFA diante do círculo de pedra, sem venda"><figcaption>AMORFA — ensaio visual de <em>O Primeiro Erro</em>.</figcaption></figure></div></section>
-
-<section class="section origin"><div class="wrap origin-grid"><figure class="blind-card"><img src="../assets/img/albums/o-primeiro-erro/encarte/blindfold-close.webp" alt="AMORFA com os olhos vendados junto ao círculo de pedra"></figure><div><div class="micro">DO NOME</div><h2>Erro de cálculo ficou dentro do disco.</h2><div class="prose"><p>O projeto chegou a carregar o nome <em>Erro de Cálculo</em>. A faixa permaneceu; o álbum ganhou outro título. A mudança desloca o foco de uma situação específica para algo anterior: a primeira vez em que desejo, fé, medo e valor próprio foram colocados na mesma conta.</p><p>Isso também explica por que as treze músicas não precisam permanecer presas a uma única cena. O primeiro erro produz descendentes. Um deles lê abrigo como perigo. Outro chama falta de antiga fé. Outro confunde afinidade com destino. Outro guarda o dano até ele adquirir brilho.</p><div class="pull">O passado não precisa continuar acontecendo para continuar organizando a casa.</div></div></div></div></section>
-
-<section class="section sound"><div class="wrap sound-grid"><div><div class="micro" style="color:#795f3f">O SOM DO DISCO</div><h2>Gótico perto da pele.</h2><div class="prose"><p>O disco percorre piano assombrado, coldwave, rock alternativo, eletrônica mínima e momentos mais físicos de guitarra. A unidade vem menos de uma fórmula do que de uma temperatura: tudo parece acontecer num quarto escuro, perto demais da voz.</p><p>Mesmo quando cresce, a música evita transformar sofrimento em vitória. O peso serve à devoção, ao susto, ao desejo e ao desgaste. A faixa mais acelerada pode ser amarga; a mais bonita pode carregar a frase mais desagradável.</p></div></div><aside class="sound-card"><p><strong>Entre as linguagens do álbum:</strong></p><div class="tags"><span>gothic alt-rock</span><span>devotional coldwave</span><span>dark synth-pop</span><span>slowcore</span><span>minimal electronic</span></div><p style="margin-top:18px">Piano, baixo grave, órgãos escuros, synths frios e guitarras entram conforme a música precisa — sem transformar o disco numa fantasia de catedral.</p></aside></div></section>
-
+<section class="section opening"><div class="wrap opening-grid"><div><div class="micro" style="color:#795f3f">PRIMEIRA FÉ</div><h2>Antes de aprender a desconfiar.</h2><div class="prose"><p>Há uma crueldade específica em rever o primeiro amor: quem olha de volta já conhece aquilo que a pessoa dentro da lembrança ainda não sabia. <em>O Primeiro Erro</em> vive nessa distância.</p><p>A juventude aparece generosa, teatral, absoluta e pouco equipada para medir o que estava oferecendo. Em <em>Até na Morte</em>, amar ainda pode significar entregar a garganta. Em <em>Antiga Fé</em>, anos depois, aquela entrega já virou mobília. Em <em>Erro de Cálculo</em>, uma paz nova chega e encontra o corpo procurando o impacto antigo.</p><p>O primeiro amor ocupa o álbum como unidade de medida. Algumas músicas voltam diretamente à devoção. Outras observam o que ela ensinou: o medo de presença, a facilidade de chamar afinidade de destino, a tendência de transformar ausência em prova e o impulso de construir um santo antes de conhecer a pessoa inteira.</p></div></div><figure class="opening-photo"><img alt="AMORFA diante do círculo de pedra, sem venda" src="../assets/img/albums/o-primeiro-erro/encarte/portrait-open.webp"/><figcaption>Retrato do ciclo visual de O Primeiro Erro.</figcaption></figure></div></section>
+<section class="section origin"><div class="wrap origin-grid"><figure class="blind-card"><img alt="AMORFA em pé diante do círculo de pedra" src="../assets/img/albums/o-primeiro-erro/encarte/standing-open.webp"/></figure><div><div class="micro">DO NOME</div><h2>Erro de cálculo ficou dentro do disco.</h2><div class="prose"><p>O projeto chegou a carregar o nome <em>Erro de Cálculo</em>. A faixa permaneceu; o álbum ganhou outro título. A mudança desloca o foco de uma situação específica para algo anterior: a primeira vez em que desejo, fé, medo e valor próprio foram colocados na mesma conta.</p><p>Isso também explica por que as treze músicas não precisam permanecer presas a uma única cena. O primeiro erro produz descendentes. Um deles lê abrigo como perigo. Outro chama falta de antiga fé. Outro confunde afinidade com destino. Outro guarda o dano até ele adquirir brilho.</p><div class="pull">O passado não precisa continuar acontecendo para continuar organizando a casa.</div></div></div></div></section>
+<section class="section sound"><div class="wrap sound-grid"><div><div class="micro" style="color:#795f3f">O SOM DO DISCO</div><h2>Gótico perto da pele.</h2><div class="prose"><p>O disco percorre piano assombrado, coldwave, rock alternativo, eletrônica mínima e momentos mais físicos de guitarra. A unidade vem menos de uma fórmula do que de uma temperatura: tudo parece acontecer num quarto escuro, perto demais da voz.</p><p>Mesmo quando cresce, a música evita transformar sofrimento em vitória. O peso serve à devoção, ao susto, ao desejo e ao desgaste. A faixa mais acelerada pode ser amarga; a mais bonita pode carregar a frase mais desagradável.</p></div></div><aside class="sound-card"><figure><img alt="AMORFA diante do círculo de pedra segurando o tecido preto" loading="lazy" src="../assets/img/albums/o-primeiro-erro/encarte/fabric-open.webp"/><figcaption>Tecido, pedra e pouca luz mantêm o corpo no mesmo registro de contenção que organiza o som.</figcaption></figure><div class="sound-note"><p><strong>Entre as linguagens do álbum:</strong></p><div class="tags"><span>gothic alt-rock</span><span>devotional coldwave</span><span>dark synth-pop</span><span>slowcore</span><span>minimal electronic</span></div><p style="margin-top:18px">Piano, baixo grave, órgãos escuros, synths frios e guitarras entram conforme a música precisa — sem transformar o disco numa fantasia de catedral.</p></div></aside></div></section>
 <section class="index"><div class="index-grid"><h2>13 faixas.</h2><nav class="toc"><a href="#faixa-01"><span>01</span>Até na Morte</a><a href="#faixa-02"><span>02</span>Erro de Cálculo</a><a href="#faixa-03"><span>03</span>Antiga Fé</a><a href="#faixa-04"><span>04</span>Menos Eu</a><a href="#faixa-05"><span>05</span>Amor Com Dentes</a><a href="#faixa-06"><span>06</span>Ritual de Fogo</a><a href="#faixa-07"><span>07</span>Tela Preta</a><a href="#faixa-08"><span>08</span>A Metade Errada</a><a href="#faixa-09"><span>09</span>O Culto da Carne</a><a href="#faixa-10"><span>10</span>Como Se Fôssemos uma Banda Que Nunca Soube Ficar</a><a href="#faixa-11"><span>11</span>Dano em Âmbar</a><a href="#faixa-12"><span>12</span>Fora de Horário</a><a href="#faixa-13"><span>13</span>Quem Escapou?</a></nav></div></section>
 <section class="tracks">
 <article class="track" id="faixa-01">
-      <header class="track-head">
-        <span class="track-no">01</span>
-        <div><div class="micro">FAIXA 01</div><h3>Até na Morte</h3></div>
-      </header>
-      <blockquote>“Havia um santo / no teu erro.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>É a faixa em que a inocência ainda está inteira. A promessa é enorme, quase indecente de tão absoluta, e justamente por isso soa verdadeira. A voz que canta já conhece o final, mas olha para aquela versão mais jovem sem reduzir tudo a constrangimento.</p><p>No meio da música, o ponto de vista muda: “eu encontro aquela versão de mim / ajoelhada na ruína”. O primeiro amor aparece como uma fé que só mais tarde ganhou vocabulário para ser examinada.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A abertura “Eu vejo de longe / aquela febre / tão jovem / tão certa” instala a distância temporal que organiza boa parte do disco.</p><a href="https://www.musixmatch.com/search?query=AMORFA+At%C3%A9+na+Morte" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article><article class="track" id="faixa-02">
-      <header class="track-head">
-        <span class="track-no">02</span>
-        <div><div class="micro">FAIXA 02</div><h3>Erro de Cálculo</h3></div>
-      </header>
-      <blockquote>“A paz parecia / erro de cálculo.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>Aqui o primeiro erro já virou método. A paz entra devagar e o corpo procura sirene, mudança de tom, atraso, qualquer coisa que devolva ao mundo uma mecânica conhecida.</p><p>A linha “mas a emboscada era eu” desloca a música. Não absolve ninguém do passado; mostra o que ficou funcionando depois dele. O afeto chega sem guerra e encontra alguém armado para sobreviver.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>O álbum chegou a carregar “Erro de Cálculo” como nome de trabalho. Quando o título passou a ser O Primeiro Erro, esta faixa permaneceu como uma peça central da ideia.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Erro+de+C%C3%A1lculo" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article><article class="track" id="faixa-03">
-      <header class="track-head">
-        <span class="track-no">03</span>
-        <div><div class="micro">FAIXA 03</div><h3>Antiga Fé</h3></div>
-      </header>
-      <blockquote>“O primeiro erro / virou mobília.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>Talvez seja a faixa que explica melhor a persistência do primeiro amor no resto do álbum. Ele já não precisa estar presente. Basta ter ensinado uma forma de reconhecer desejo, perigo e falta.</p><p>“Antiga fé” é isso: uma regra antiga interferindo em ofertas novas. O santo pode ter saído da parede; o joelho ainda conhece o movimento.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>“Santo errado” foi um título de origem preservado para a canção. A expressão sobreviveu dentro do refrão.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Antiga+F%C3%A9" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article>
-<div class="poem-band"><div class="poem-card"><img src="../assets/img/albums/o-primeiro-erro/encarte/blindfold-overhead.webp" alt="AMORFA vendada deitada no círculo de pedra"><div class="poem-copy"><div class="label">DO ARQUIVO DE ESCRITA · O CULTO</div><div class="poem-lines">Entrai no Reino do Quase.<br>Aqui se adora o que não responde,<br>o que não toca, o que não desce.<br><br><em>O real não merece altar.</em></div><small>O fragmento antecede a mesma gramática de devoção que aparece em Até na Morte e Antiga Fé.</small></div></div></div>
+<header class="track-head">
+<span class="track-no">01</span>
+<div><div class="micro">FAIXA 01</div><h3>Até na Morte</h3></div>
+</header>
+<blockquote>“Havia um santo / no teu erro.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>É a faixa em que a inocência ainda está inteira. A promessa é enorme, quase indecente de tão absoluta, e justamente por isso soa verdadeira. A voz que canta já conhece o final, mas olha para aquela versão mais jovem sem reduzir tudo a constrangimento.</p><p>No meio da música, o ponto de vista muda: “eu encontro aquela versão de mim / ajoelhada na ruína”. O primeiro amor aparece como uma fé que só mais tarde ganhou vocabulário para ser examinada.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A abertura “Eu vejo de longe / aquela febre / tão jovem / tão certa” instala a distância temporal que organiza boa parte do disco.</p><a href="https://www.musixmatch.com/search?query=AMORFA+At%C3%A9+na+Morte" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article><article class="track" id="faixa-02">
+<header class="track-head">
+<span class="track-no">02</span>
+<div><div class="micro">FAIXA 02</div><h3>Erro de Cálculo</h3></div>
+</header>
+<blockquote>“A paz parecia / erro de cálculo.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>Aqui o primeiro erro já virou método. A paz entra devagar e o corpo procura sirene, mudança de tom, atraso, qualquer coisa que devolva ao mundo uma mecânica conhecida.</p><p>A linha “mas a emboscada era eu” desloca a música. Não absolve ninguém do passado; mostra o que ficou funcionando depois dele. O afeto chega sem guerra e encontra alguém armado para sobreviver.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>O álbum chegou a carregar “Erro de Cálculo” como nome de trabalho. Quando o título passou a ser O Primeiro Erro, esta faixa permaneceu como uma peça central da ideia.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Erro+de+C%C3%A1lculo" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article><article class="track" id="faixa-03">
+<header class="track-head">
+<span class="track-no">03</span>
+<div><div class="micro">FAIXA 03</div><h3>Antiga Fé</h3></div>
+</header>
+<blockquote>“O primeiro erro / virou mobília.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>Talvez seja a faixa que explica melhor a persistência do primeiro amor no resto do álbum. Ele já não precisa estar presente. Basta ter ensinado uma forma de reconhecer desejo, perigo e falta.</p><p>“Antiga fé” é isso: uma regra antiga interferindo em ofertas novas. O santo pode ter saído da parede; o joelho ainda conhece o movimento.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>“Santo errado” foi um título de origem preservado para a canção. A expressão sobreviveu dentro do refrão.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Antiga+F%C3%A9" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article>
+<div class="poem-band"><div class="poem-card"><img alt="AMORFA vendada junto ao círculo de pedra" src="../assets/img/albums/o-primeiro-erro/encarte/blindfold-close.webp"/><div class="poem-copy"><div class="label">DO ARQUIVO DE ESCRITA · O CULTO</div><div class="poem-lines">Entrai no Reino do Quase.<br/>Aqui se adora o que não responde,<br/>o que não toca, o que não desce.<br/><br/><em>O real não merece altar.</em></div><small>O fragmento antecede a mesma gramática de devoção que aparece em Até na Morte e Antiga Fé.</small></div></div></div>
 <article class="track" id="faixa-04">
-      <header class="track-head">
-        <span class="track-no">04</span>
-        <div><div class="micro">FAIXA 04</div><h3>Menos Eu</h3></div>
-      </header>
-      <blockquote>“Quanto mais perto / menos eu fico.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>O medo muda de cenário. Alguém chega sem faca na mão e, ainda assim, proximidade produz desaparecimento. A pessoa quer carinho e ao mesmo tempo reduz a própria presença antes que ele possa cobrar alguma coisa.</p><p>É uma música sobre a parte pouco fotogênica da defesa: não fugir de alguém específico, mas já chegar preparado para ocupar menos espaço.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>O refrão não trata distância como liberdade. Cada aproximação cobra identidade.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Menos+Eu" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article><article class="track" id="faixa-05">
-      <header class="track-head">
-        <span class="track-no">05</span>
-        <div><div class="micro">FAIXA 05</div><h3>Amor Com Dentes</h3></div>
-      </header>
-      <blockquote>“Meu zelo / tinha maxilar.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>O título já elimina qualquer conforto. A canção observa cuidado, medo, controle e posse até eles começarem a usar a mesma mão.</p><p>“Eu te feria / com a parte mais cuidadosa da mão” é uma das frases mais duras do disco porque o dano não chega disfarçado de ódio. Chega com flores, perguntas baixas e a convicção de que aquilo ainda pode ser chamado de amor.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A palavra “dente” reaparece como imagem física do que o afeto pode fazer quando a proteção aperta demais.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Amor+Com+Dentes" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article><article class="track" id="faixa-06">
-      <header class="track-head">
-        <span class="track-no">06</span>
-        <div><div class="micro">FAIXA 06</div><h3>Ritual de Fogo</h3></div>
-      </header>
-      <blockquote>“Eu te dei / a minha melhor parte. / Não me leu.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>Esta é a música da oferta. Papel, nome, corpo e escrita aparecem quase como a mesma coisa. Entregar algo íntimo cria a expectativa de que o outro ao menos reconheça o peso daquela entrega.</p><p>O refrão recusa essa recompensa. A melhor parte vira peso morto. No fim, a cinza é mais leve do que a pessoa para quem tudo foi oferecido.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>“A cinza não pesa. / Você também não.” encerra a faixa depois de uma música inteira sobre algo que levou anos para ganhar forma.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Ritual+de+Fogo" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article>
-<div class="image-break"><figure class="image-card"><img src="../assets/img/albums/o-primeiro-erro/encarte/seated-open.webp" alt="AMORFA sentada junto ao círculo de pedra"><figcaption>Há músicas em que a devoção ainda parece bela. O problema começa quando beleza vira prova.</figcaption></figure></div>
-<div class="poem-inline"><div class="label">DO ARQUIVO DE ESCRITA · O DECÁLOGO DO ÍDOLO</div><div class="poem-lines">Eu só disse <em>mano</em>.<br>Tu ouviste oráculo.<br><br>O templo é teu.<br>A fé é tua.<br>O ouro é teu.</div><small>Um gesto banal cresce quando quem olha já trouxe o altar pronto.</small></div>
+<header class="track-head">
+<span class="track-no">04</span>
+<div><div class="micro">FAIXA 04</div><h3>Menos Eu</h3></div>
+</header>
+<blockquote>“Quanto mais perto / menos eu fico.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>O medo muda de cenário. Alguém chega sem faca na mão e, ainda assim, proximidade produz desaparecimento. A pessoa quer carinho e ao mesmo tempo reduz a própria presença antes que ele possa cobrar alguma coisa.</p><p>É uma música sobre a parte pouco fotogênica da defesa: não fugir de alguém específico, mas já chegar preparado para ocupar menos espaço.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>O refrão não trata distância como liberdade. Cada aproximação cobra identidade.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Menos+Eu" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article><article class="track" id="faixa-05">
+<header class="track-head">
+<span class="track-no">05</span>
+<div><div class="micro">FAIXA 05</div><h3>Amor Com Dentes</h3></div>
+</header>
+<blockquote>“Meu zelo / tinha maxilar.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>O título já elimina qualquer conforto. A canção observa cuidado, medo, controle e posse até eles começarem a usar a mesma mão.</p><p>“Eu te feria / com a parte mais cuidadosa da mão” é uma das frases mais duras do disco porque o dano não chega disfarçado de ódio. Chega com flores, perguntas baixas e a convicção de que aquilo ainda pode ser chamado de amor.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A palavra “dente” reaparece como imagem física do que o afeto pode fazer quando a proteção aperta demais.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Amor+Com+Dentes" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article><article class="track" id="faixa-06">
+<header class="track-head">
+<span class="track-no">06</span>
+<div><div class="micro">FAIXA 06</div><h3>Ritual de Fogo</h3></div>
+</header>
+<blockquote>“Eu te dei / a minha melhor parte. / Não me leu.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>Esta é a música da oferta. Papel, nome, corpo e escrita aparecem quase como a mesma coisa. Entregar algo íntimo cria a expectativa de que o outro ao menos reconheça o peso daquela entrega.</p><p>O refrão recusa essa recompensa. A melhor parte vira peso morto. No fim, a cinza é mais leve do que a pessoa para quem tudo foi oferecido.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>“A cinza não pesa. / Você também não.” encerra a faixa depois de uma música inteira sobre algo que levou anos para ganhar forma.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Ritual+de+Fogo" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article>
+<div class="image-break"><figure class="image-card"><img alt="AMORFA vendada deitada no círculo de pedra" src="../assets/img/albums/o-primeiro-erro/encarte/blindfold-overhead.webp"/><figcaption>A venda aparece quando a devoção já não pode ser confundida com visão clara. A imagem acompanha o trecho em que o disco começa a desmontar aquilo que antes parecia prova.</figcaption></figure></div>
+<div class="poem-inline"><div class="label">DO ARQUIVO DE ESCRITA · O DECÁLOGO DO ÍDOLO</div><div class="poem-lines">Eu só disse <em>mano</em>.<br/>Tu ouviste oráculo.<br/><br/>O templo é teu.<br/>A fé é tua.<br/>O ouro é teu.</div><small>Um gesto banal cresce quando quem olha já trouxe o altar pronto.</small></div>
 <article class="track" id="faixa-07">
-      <header class="track-head">
-        <span class="track-no">07</span>
-        <div><div class="micro">FAIXA 07</div><h3>Tela Preta</h3></div>
-      </header>
-      <blockquote>“Você continua. / O amor, não.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>Talvez seja o luto mais estranho do disco: ninguém morreu. A pessoa atende chamada, compra remédio, atravessa terça-feira. O que acabou não recebe funeral, flor ou licença para interromper o expediente.</p><p>A crueldade está no tempo real. A voz chega inteira; aquilo que se amava nela já chega quebrado. O fim existe sem precisar matar ninguém.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A tela funciona como espelho quando apaga: depois da imagem, sobra a dificuldade de reconhecer o que ainda existe.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Tela+Preta" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article><article class="track" id="faixa-08">
-      <header class="track-head">
-        <span class="track-no">08</span>
-        <div><div class="micro">FAIXA 08</div><h3>A Metade Errada</h3></div>
-      </header>
-      <blockquote>“Você não era / a metade que faltava.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>A faixa desmonta a fantasia do encaixe perfeito usando justamente sua linguagem. Falta, metade, destino e reconhecimento aparecem primeiro como promessa e depois como explicação conveniente para uma dor repetida.</p><p>O verso mais importante talvez seja “eu me dobrei / para parecer amor”. A violência não está no desencontro; está na tentativa de corrigir a própria forma para caber nele.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A música trata afinidade e reconhecimento como coisas sedutoras demais para serem confundidas automaticamente com destino.</p><a href="https://www.musixmatch.com/search?query=AMORFA+A+Metade+Errada" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article><article class="track" id="faixa-09">
-      <header class="track-head">
-        <span class="track-no">09</span>
-        <div><div class="micro">FAIXA 09</div><h3>O Culto da Carne</h3></div>
-      </header>
-      <blockquote>“Ele era pele quente. / Eu queria milagre.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>Depois de tanta devoção abstrata, o corpo real entra em cena. Beijo torto, barba, peso, saliva, quarto fechado. Nada ali alcança a escala do mito — e essa diferença é justamente o assunto.</p><p>“Usei tua boca como laboratório” transforma o primeiro contato em teste de realidade. A pele responde. Nenhum deus aparece.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A faixa preserva o atrito entre desejo imaginado e corpo concreto sem transformar a experiência em revelação romântica.</p><a href="https://www.musixmatch.com/search?query=AMORFA+O+Culto+da+Carne" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article><article class="track" id="faixa-10">
-      <header class="track-head">
-        <span class="track-no">10</span>
-        <div><div class="micro">FAIXA 10</div><h3>Como Se Fôssemos uma Banda Que Nunca Soube Ficar</h3></div>
-      </header>
-      <blockquote>“Quando a carência / tem bom gosto, / parece amor.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>É a faixa mais rápida e uma das mais engraçadas do disco. Duas pessoas gostam das mesmas coisas, começam bem, funcionam na primeira semana — e isso recebe um tamanho que talvez nunca tenha merecido.</p><p>“A gente sabia começar. / Ninguém soube continuar.” resolve a música sem precisar de culpado exemplar. Afinidade ajuda muito. Continuar exige outras competências.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A metáfora da banda é simples e eficaz: tocar junto por alguns compassos não garante repertório para o resto da noite.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Como+Se+F%C3%B4ssemos+uma+Banda+Que+Nunca+Soube+Ficar" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article>
-<div class="poem-inline"><div class="label">DO ARQUIVO DE ESCRITA · O APÓSTATA</div><div class="poem-lines">A boca era menor que o mito.<br><br>O deus desceu do altar<br>e era só um homem.</div><small>O choque da realidade aparece quando o corpo concreto já não sustenta a dimensão criada à distância.</small></div>
-<article class="track" id="faixa-11">
-      <header class="track-head">
-        <span class="track-no">11</span>
-        <div><div class="micro">FAIXA 11</div><h3>Dano em Âmbar</h3></div>
-      </header>
-      <blockquote>“Bonito. / Contaminado.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>Aqui a lembrança já mudou de estado. O dano não está acontecendo no presente; secou, ganhou brilho, estrutura e uma espécie de valor de exposição.</p><p>O âmbar preserva e deforma ao mesmo tempo. É uma imagem boa para aquilo que a memória faz quando transforma choque em objeto bonito o bastante para continuar sendo carregado.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>“Por fora, pele. / Por dentro, fóssil.” resume a passagem do acontecimento para o vestígio.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Dano+em+%C3%82mbar" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article><article class="track" id="faixa-12">
-      <header class="track-head">
-        <span class="track-no">12</span>
-        <div><div class="micro">FAIXA 12</div><h3>Fora de Horário</h3></div>
-      </header>
-      <blockquote>“Tudo comparece. / Nada estreia.”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>A grande ruína já passou. Sobra uma gaveta, um papel dobrado, uma xícara, uma chave sem dono, o café esfriando. O passado entra pela rotina, não por aparição.</p><p>O título descreve uma pequena defasagem: a casa continua no horário normal e a pessoa chega um segundo depois. É uma das músicas mais quietas do álbum e talvez uma das mais devastadoras.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>“Tem gente que não destrói. / Só ensina o corpo a pedir licença pra existir.” é uma das linhas que mais ampliam a memória para além de uma única cena.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Fora+de+Hor%C3%A1rio" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article><article class="track" id="faixa-13">
-      <header class="track-head">
-        <span class="track-no">13</span>
-        <div><div class="micro">FAIXA 13</div><h3>Quem Escapou?</h3></div>
-      </header>
-      <blockquote>“Por que fui eu / quem escapou?”</blockquote>
-      <div class="track-grid">
-        <div class="track-text"><p>O álbum termina sem transformar sobrevivência em vitória. A pergunta parece simples até percebermos que escapar também pode carregar culpa, dúvida e a sensação de ter deixado alguma coisa para trás.</p><p>A música volta várias vezes à mesma pergunta e não entrega resposta. Depois de um disco tão interessado em fé, cálculo e explicação, terminar sem saber é a decisão certa.</p></div>
-        <aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>O fechamento não corrige o primeiro amor. Deixa o arquivo aberto justamente onde a certeza falha.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Quem+Escapou%3F" target="_blank" rel="noopener">LETRA NO MUSIXMATCH ↗</a></aside>
-      </div>
-    </article>
+<header class="track-head">
+<span class="track-no">07</span>
+<div><div class="micro">FAIXA 07</div><h3>Tela Preta</h3></div>
+</header>
+<blockquote>“Você continua. / O amor, não.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>Talvez seja o luto mais estranho do disco: ninguém morreu. A pessoa atende chamada, compra remédio, atravessa terça-feira. O que acabou não recebe funeral, flor ou licença para interromper o expediente.</p><p>A crueldade está no tempo real. A voz chega inteira; aquilo que se amava nela já chega quebrado. O fim existe sem precisar matar ninguém.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A tela funciona como espelho quando apaga: depois da imagem, sobra a dificuldade de reconhecer o que ainda existe.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Tela+Preta" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article><article class="track" id="faixa-08">
+<header class="track-head">
+<span class="track-no">08</span>
+<div><div class="micro">FAIXA 08</div><h3>A Metade Errada</h3></div>
+</header>
+<blockquote>“Você não era / a metade que faltava.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>A faixa desmonta a fantasia do encaixe perfeito usando justamente sua linguagem. Falta, metade, destino e reconhecimento aparecem primeiro como promessa e depois como explicação conveniente para uma dor repetida.</p><p>O verso mais importante talvez seja “eu me dobrei / para parecer amor”. A violência não está no desencontro; está na tentativa de corrigir a própria forma para caber nele.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A música trata afinidade e reconhecimento como coisas sedutoras demais para serem confundidas automaticamente com destino.</p><a href="https://www.musixmatch.com/search?query=AMORFA+A+Metade+Errada" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article><article class="track" id="faixa-09">
+<header class="track-head">
+<span class="track-no">09</span>
+<div><div class="micro">FAIXA 09</div><h3>O Culto da Carne</h3></div>
+</header>
+<blockquote>“Ele era pele quente. / Eu queria milagre.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>Depois de tanta devoção abstrata, o corpo real entra em cena. Beijo torto, barba, peso, saliva, quarto fechado. Nada ali alcança a escala do mito — e essa diferença é justamente o assunto.</p><p>“Usei tua boca como laboratório” transforma o primeiro contato em teste de realidade. A pele responde. Nenhum deus aparece.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A faixa preserva o atrito entre desejo imaginado e corpo concreto sem transformar a experiência em revelação romântica.</p><a href="https://www.musixmatch.com/search?query=AMORFA+O+Culto+da+Carne" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article><article class="track" id="faixa-10">
+<header class="track-head">
+<span class="track-no">10</span>
+<div><div class="micro">FAIXA 10</div><h3>Como Se Fôssemos uma Banda Que Nunca Soube Ficar</h3></div>
+</header>
+<blockquote>“Quando a carência / tem bom gosto, / parece amor.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>É a faixa mais rápida e uma das mais engraçadas do disco. Duas pessoas gostam das mesmas coisas, começam bem, funcionam na primeira semana — e isso recebe um tamanho que talvez nunca tenha merecido.</p><p>“A gente sabia começar. / Ninguém soube continuar.” resolve a música sem precisar de culpado exemplar. Afinidade ajuda muito. Continuar exige outras competências.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>A metáfora da banda é simples e eficaz: tocar junto por alguns compassos não garante repertório para o resto da noite.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Como+Se+F%C3%B4ssemos+uma+Banda+Que+Nunca+Soube+Ficar" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article>
+<div class="poem-inline"><div class="label">DO ARQUIVO DE ESCRITA · O APÓSTATA</div><div class="poem-lines">A boca era menor que o mito.<br/><br/>O deus desceu do altar<br/>e era só um homem.</div><small>O choque da realidade aparece quando o corpo concreto já não sustenta a dimensão criada à distância.</small></div>
+<div class="fabric-interlude"><div><div class="micro" style="color:#795f3f">DEPOIS DO ALTAR</div><h4>A memória perde solenidade e ganha peso cotidiano.</h4><p>Quando o disco chega a <em>Dano em Âmbar</em>, <em>Fora de Horário</em> e <em>Quem Escapou?</em>, a liturgia cede espaço a vestígio, rotina e sobrevivência. O enquadramento sentado reduz a escala e aproxima o corpo do que restou.</p></div><figure><img alt="AMORFA sentada junto ao círculo de pedra" loading="lazy" src="../assets/img/albums/o-primeiro-erro/encarte/seated-open.webp"/></figure></div><article class="track" id="faixa-11">
+<header class="track-head">
+<span class="track-no">11</span>
+<div><div class="micro">FAIXA 11</div><h3>Dano em Âmbar</h3></div>
+</header>
+<blockquote>“Bonito. / Contaminado.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>Aqui a lembrança já mudou de estado. O dano não está acontecendo no presente; secou, ganhou brilho, estrutura e uma espécie de valor de exposição.</p><p>O âmbar preserva e deforma ao mesmo tempo. É uma imagem boa para aquilo que a memória faz quando transforma choque em objeto bonito o bastante para continuar sendo carregado.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>“Por fora, pele. / Por dentro, fóssil.” resume a passagem do acontecimento para o vestígio.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Dano+em+%C3%82mbar" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article><article class="track" id="faixa-12">
+<header class="track-head">
+<span class="track-no">12</span>
+<div><div class="micro">FAIXA 12</div><h3>Fora de Horário</h3></div>
+</header>
+<blockquote>“Tudo comparece. / Nada estreia.”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>A grande ruína já passou. Sobra uma gaveta, um papel dobrado, uma xícara, uma chave sem dono, o café esfriando. O passado entra pela rotina, não por aparição.</p><p>O título descreve uma pequena defasagem: a casa continua no horário normal e a pessoa chega um segundo depois. É uma das músicas mais quietas do álbum e talvez uma das mais devastadoras.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>“Tem gente que não destrói. / Só ensina o corpo a pedir licença pra existir.” é uma das linhas que mais ampliam a memória para além de uma única cena.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Fora+de+Hor%C3%A1rio" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article><article class="track" id="faixa-13">
+<header class="track-head">
+<span class="track-no">13</span>
+<div><div class="micro">FAIXA 13</div><h3>Quem Escapou?</h3></div>
+</header>
+<blockquote>“Por que fui eu / quem escapou?”</blockquote>
+<div class="track-grid">
+<div class="track-text"><p>O álbum termina sem transformar sobrevivência em vitória. A pergunta parece simples até percebermos que escapar também pode carregar culpa, dúvida e a sensação de ter deixado alguma coisa para trás.</p><p>A música volta várias vezes à mesma pergunta e não entrega resposta. Depois de um disco tão interessado em fé, cálculo e explicação, terminar sem saber é a decisão certa.</p></div>
+<aside class="track-note"><b>UMA COISA SOBRE ESTA FAIXA</b><p>O fechamento não corrige o primeiro amor. Deixa o arquivo aberto justamente onde a certeza falha.</p><a href="https://www.musixmatch.com/search?query=AMORFA+Quem+Escapou%3F" rel="noopener" target="_blank">LETRA NO MUSIXMATCH ↗</a></aside>
+</div>
+</article>
 </section>
-
-<section class="final-image"><figure><img src="../assets/img/albums/o-primeiro-erro/encarte/profile-open.webp" alt="AMORFA de perfil diante do círculo de pedra"><div class="final-quote">“Quem escapou?”</div></figure></section>
-
-<section class="section credits"><div class="wrap credit-grid"><div><div class="micro">O PRIMEIRO ERRO</div><h2>Créditos</h2><p>Os comentários deste encarte usam a ordem publicada do álbum e trechos das letras lançadas. Os três interlúdios vêm do arquivo de escrita anterior às canções, apresentados aqui apenas como aproximações — sem converter cada poema numa chave obrigatória para o disco.</p></div><div class="credit-lines"><div><b>ARTISTA</b><span>AMORFA</span></div><div><b>COMPOSIÇÃO</b><span>R. J. Wolf</span></div><div><b>PRODUÇÃO / DIREÇÃO CRIATIVA</b><span>R. J. Wolf</span></div><div><b>FORMATO</b><span>Álbum · 13 faixas</span></div><div><b>ANO</b><span>2026</span></div></div></div></section>
+<section class="final-image"><figure><img alt="AMORFA de perfil diante do círculo de pedra" src="../assets/img/albums/o-primeiro-erro/encarte/profile-open.webp"/><div class="final-quote"><span>“Quem escapou?”</span><small>O fechamento não transforma sobrevivência em triunfo. Depois de um álbum sobre devoção, hábito e projeção, a pergunta final permanece sem resposta — e o retrato de perfil encerra o ciclo sem reconstituir a figura em pose monumental.</small></div></figure></section>
+<section class="section credits"><div class="wrap credit-grid"><div><div class="micro">O PRIMEIRO ERRO</div><h2>Créditos</h2><p>Entre devoção, projeção e queda do ídolo, <em>O Primeiro Erro</em> mantém o atrito entre gesto banal e dimensão mítica. Os interlúdios ampliam essa tensão sem transformar o disco numa explicação única de si mesmo.</p></div><div class="credit-lines"><div><b>ARTISTA</b><span>AMORFA</span></div><div><b>COMPOSIÇÃO</b><span>R. J. Wolf</span></div><div><b>PRODUÇÃO / DIREÇÃO CRIATIVA</b><span>R. J. Wolf</span></div><div><b>FORMATO</b><span>Álbum · 13 faixas</span></div><div><b>ANO</b><span>2026</span></div></div></div></section>
 </main>
 <footer class="footer"><div>© 2026 AMORFA</div><div><a href="../discografia.html">Discografia</a> · <a href="../entrevistas.html">Entrevistas</a> · <a href="../index.html">amorfa.online</a></div></footer>
 <script>const p=document.getElementById('progress');function u(){const d=document.documentElement,m=d.scrollHeight-d.clientHeight;p.style.width=(m?d.scrollTop/m*100:0)+'%'}addEventListener('scroll',u,{passive:true});u();</script>

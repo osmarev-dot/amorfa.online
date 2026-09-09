@@ -1,0 +1,13 @@
+AMORFA — QA FINAL — 08/09/2026
+
+Pacote preparado para substituição no GitHub.
+
+Ajustes finais aplicados:
+- O Arranjo do Submundo: substituído pela versão arranjo_v2.html fornecida no projeto.
+- Tratado da Decadência e Ascensão das Formas: removido da discografia como obra lançada independente.
+- Rota antiga musica/tratado.html preservada apenas como página de arquivo, apontando para O Arranjo do Submundo e Amorfa.
+- Amorfa: texto atualizado para registrar Tratado apenas como título de trabalho abandonado, não como álbum vigente.
+- Discografia: contagem de obras publicada corrigida de 9 para 8; Amorfa e O Arranjo do Submundo tratados como obra dupla em dois álbuns autônomos.
+- Entrevista 003: legenda histórica corrigida e nota editorial adicionada para contextualizar o antigo título de trabalho.
+- Protótipos DESIGN_TRATADO.html e DESIGN_NAO_TE_ABSOLVE.html removidos do pacote público.
+- Auditoria local de href/src: 478 referências verificadas, 0 arquivos locais quebrados.
